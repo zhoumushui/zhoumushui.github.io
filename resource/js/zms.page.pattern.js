@@ -38,7 +38,7 @@ function insertHeader() {
         "<li><a href=\"" + path + "book\"> <i class=\"zmdi zmdi-book\"></i><small>书籍</small></a></li>" +
         "<li><a href=\"" + path + "world\"> <i class=\"zmdi zmdi-globe\"></i><small>足迹</small></a></li>" +
         //"<li><a href=\"" + path + "timeline.html\"> <i class=\"zmdi zmdi-chart\"></i><small>年鉴</small></a></li>" +
-        "<li><a href=\"" + path + "dream\"> <i class=\"zmdi zmdi-flag\"></i><small>梦想</small></a></li>" +
+        //"<li><a href=\"" + path + "dream\"> <i class=\"zmdi zmdi-flag\"></i><small>梦想</small></a></li>" +
         "<li><a href=\"" + path + "profile\"> <i class=\"zmdi zmdi-account-circle\"></i><small>关于</small></a></li>" +
         "</ul>" +
         "</li>" +
@@ -59,7 +59,7 @@ function insertHeader() {
 function getHtmlName() {
     let str = window.location.href;
     if (str.indexOf("essay") != -1) { // 随笔
-        str = 'index';
+        str = 'essay';
     } else {
         str = str.substring(str.lastIndexOf("/") + 1);
         if (isEmpty(str)) {
@@ -69,7 +69,7 @@ function getHtmlName() {
             // str = str.substring(str.lastIndexOf("/"));
         } else {
             str = str.substring(0, str.lastIndexOf("."));
-            if (str > 0 && str < 1000) str = 'index';
+            if (str > 0 && str < 1000) str = 'essay';
         }
     }
     console.log("HTML.NAME=" + str);
@@ -97,7 +97,7 @@ function insertNavigation() {
         (htmlName == 'book' ? liActive : liNormal) + "<a href='" + path + "book'><i class='zmdi zmdi-book'></i><span class='nav-left'>书籍</span></a></li>" +
         (htmlName == 'world' ? liActive : liNormal) + "<a href='" + path + "world'><i class='zmdi zmdi-globe'></i><span class='nav-left'>足迹</span></a></li>" +
         //(htmlName == 'timeline' ? liActive : liNormal) + "<a href='" + path + "az/timeline/'><i class='zmdi zmdi-chart'></i><span class='nav-left'>年鉴</span></a></li>" +
-        (htmlName == 'dream' ? liActive : liNormal) + "<a href='" + path + "dream'><i class='zmdi zmdi-flag'></i><span class='nav-left'>梦想</span></a></li>" +
+        //(htmlName == 'dream' ? liActive : liNormal) + "<a href='" + path + "dream'><i class='zmdi zmdi-flag'></i><span class='nav-left'>梦想</span></a></li>" +
         (htmlName == 'profile' ? liActive : liNormal) + "<a href='" + path + "profile'><i class='zmdi zmdi-account-circle'></i><span class='nav-left'>关于</span></a></li>" +
         "</ul>";
 }
