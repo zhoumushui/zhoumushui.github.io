@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>愿望清单</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../resource/css/az.css" rel="stylesheet">
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../resource/css/essay.material.floating.button.css" rel="stylesheet">
+
+    <style>
+        .digit-blue {
+            text-align: right;
+            font-family: "Courier New", Courier, monospace, "digit";
+            color: #00a1d8;
+            font-size: 22px
+        }
+
+        .digit-red {
+            text-align: right;
+            font-family: "Courier New", Courier, monospace, "digit";
+            color: #f44336;
+            font-size: 22px
+        }
+
+        .dateRange {
+            font-family: "digit";
+            color: #00a1d8;
+            font-size: 20px
+        }
+    </style>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e3a97a0eee3cb03b5caf792f58032743";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">梦</a>
+            <a href="" data-toggle="tab">想</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+        <script>
+            var essayTitle = '我的梦想清单';
+            var essaySummary = '如果没有梦想，和咸鱼有什么区别？';
+            var essayUrl = 'http://www.zhoumushui.com/dream/';
+            //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+            var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+        </script>
+        <!--
+        AZ Share: Material Floating Button;
+        Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+        Position:mfb-component--br,bl,tr,tl;
+        Action:hover,click
+        -->
+        <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+
+        <!--
+        <div class="card__header" style="display: none">
+            DONE <span id="doneTotal" style="color: #00a1d8"></span>&nbsp;
+            2009 <span id="done2009" style="color: #00a1d8"></span>&nbsp;
+            2010 <span id="done2010" style="color: #00a1d8"></span>&nbsp;
+            2011 <span id="done2011" style="color: #00a1d8"></span>&nbsp;
+            2012 <span id="done2012" style="color: #00a1d8"></span>&nbsp;
+            2013 <span id="done2013" style="color: #00a1d8"></span>&nbsp;
+            2014 <span id="done2014" style="color: #00a1d8"></span>&nbsp;
+            2015 <span id="done2015" style="color: #00a1d8"></span>&nbsp;
+            2016 <span id="done2016" style="color: #00a1d8"></span>&nbsp;
+            2017 <span id="done2017" style="color: #00a1d8"></span>&nbsp;
+            2018 <span id="done2018" style="color: #00a1d8"></span>
+        </div>
+        -->
+
+        <div class="card">
+
+            <div align="center">
+                <br>
+                <h3 id="time_elapse">TIME</h3>
+            </div>
+            <div class="card__body">
+
+                <div id="dream-year-line" class="flot-chart"></div>
+                <div class="flot-chart-legend flot-chart-legend--line"></div>
+            </div>
+
+            <div class="card__body">
+                <div class="table-responsive">
+                    <!-- id="data-table-basic,data-table-selection,data-table-command" -->
+                    <table id="table-dream-list" class="table table-striped"
+                           style="font-family: 'Microsoft YaHei', sans-serif">
+                        <thead>
+                        <tr>
+                            <th data-column-id="state" data-formatter="state" data-type="numeric">状态
+                            </th><!-- (√,×) -->
+                            <!--<th data-column-id="id"  data-identifier="true">编号</th>--><!-- data-type="numeric"-->
+                            <th data-column-id="content" data-formatter="content">Content</th>
+                            <th data-column-id="content_cn" data-formatter="content_cn">内容</th>
+                            <th data-column-id="date" data-formatter="date">日期</th>
+                            <!-- data-order="desc,asc" -->
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--
+                        <tr>
+                            <td>1991</td>
+                            <td>····· ····· ····· ····· ····· 60 ····· ····· ····· ····· ·····</td>
+                            <td>····· 60 · 82 · 32 ·····</td>
+                            <td>2051.09.23</td>
+                        </tr>
+                        <tr>
+                            <td>1991</td>
+                            <td>····· ····· ····· ····· ····· 50 ····· ····· ····· ····· ·····</td>
+                            <td>····· 50 · 72 · 22 ·····</td>
+                            <td>2041.09.23</td>
+                        </tr>
+                        <tr>
+                            <td>1991</td>
+                            <td>····· ····· ····· ····· ····· 40 ····· ····· ····· ····· ·····</td>
+                            <td>····· 40 · 62 · 12 ·····</td>
+                            <td>2031.09.23</td>
+                        </tr>
+                        <tr>
+                            <td>1991</td>
+                            <td>····· ····· ····· ····· ····· 30 ····· ····· ····· ····· ·····</td>
+                            <td>····· 30 · 52 · 2 ·····</td>
+                            <td>2021.09.23</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Name a Road.</td>
+                            <td>命名一条道路。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Eat at Michelin Starred Restaurant.</td>
+                            <td>米其林餐厅就餐。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Hangzhou: West Lake.</td>
+                            <td>杭州：西湖。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Visit Zhejiang University.</td>
+                            <td>游玩浙江大学。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Ropeway.</td>
+                            <td>滑索。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Beijing: Forbidden City.</td>
+                            <td>北京：故宫。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Tianjin.</td>
+                            <td>天津。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Xiamen: Kulangsu.</td>
+                            <td>厦门：鼓浪屿。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Chongqing: Dazu Rock Carvings.</td>
+                            <td>重庆：大足石刻。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Chengdu: Dujiangyan irrigation system.</td>
+                            <td>成都：都江堰。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Lexus.</td>
+                            <td>雷克萨斯。</td>
+                            <td>2031.09.23</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Earn ￥1,000,000 One Year.</td>
+                            <td>年入百万.</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Pay off House Loan.</td>
+                            <td>还清房贷。</td>
+                            <td>2025.01.21</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>100 Car Models.</td>
+                            <td>100个汽车模型。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Record a Music Demo.</td>
+                            <td>录制音乐唱片。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Register a Company.</td>
+                            <td>注册公司。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Job with 2 Days Off.</td>
+                            <td>双休工作。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Learn to Play a Tune on the Piano.</td>
+                            <td>学会用钢琴弹一首曲子。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Bilibili 100,000 fans.</td>
+                            <td>B站10万粉丝。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Read 50,000,000 Words Totally.</td>
+                            <td>读书5000万字。</td>
+                            <td>2035.01.21</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Pass Japanese grade N1.</td>
+                            <td>通过日语N1。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>55555 Push-ups.</td>
+                            <td>俯卧撑55555个。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Solve 500 LeetCode Problems.</td>
+                            <td>解决500道LeetCode题目。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>55555 Spring Expanders.</td>
+                            <td>弹簧扩张器55555个。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Running 5555 Minutes.</td>
+                            <td>跑步5555分钟。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>55555 Rope Skippings.</td>
+                            <td>跳绳55555个。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Lose Weight to 55Kg.</td>
+                            <td>减重至55Kg。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Solve 100 LeetCode Problems.</td>
+                            <td>解决100道LeetCode题目。</td>
+                            <td></td>
+                        </tr>
+                        -->
+
+                        <tr>
+                            <td>0</td>
+                            <td>France: Watch Le-Mans 24.</td>
+                            <td>法国：观看勒芒24小时耐力赛。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Switzerland: Audrey Hepburn Cemetery.</td>
+                            <td>瑞士：奥黛丽·赫本墓地。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Watch FCB on the Scene.</td>
+                            <td>现场观看巴萨踢球。</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Japan: Watch WRC.</td>
+                            <td>日本：观看WRC。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Shoot with Real Gun.</td>
+                            <td>实弹射击。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Take Helicopter.</td>
+                            <td>乘坐直升机。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Travel Around China.</td>
+                            <td>环游中国。</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>0</td>
+                            <td>Diving.</td>
+                            <td>潜水。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Ride Horse.</td>
+                            <td>骑马。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Skiing.</td>
+                            <td>滑雪。</td>
+                            <td></td>
+                        </tr>
+                        <tr><!--八大沙漠：塔克拉玛干、古尔班通古特（准噶尔盆地）、巴丹吉林、腾格里、库木塔格、柴达木盆地、库布齐、乌兰布和。-->
+                            <td>0</td>
+                            <td>Feel Desert.</td>
+                            <td>沙漠。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Tibet: Potala Palace.</td>
+                            <td>西藏：布达拉宫。</td>
+                            <td></td>
+                        </tr>
+                        <tr><!--太原航校、大同航校、长治航校；莱芜航空基地；平顶山；木兰围场景区；济宁、克什克腾旗也有；东方绿洲；苏州；腾冲；阳朔；三亚和海口；西岭雪山；神农架-->
+                            <td>0</td>
+                            <td>Hot Air Balloon with Daughter.</td>
+                            <td>带着女儿坐一次热气球。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Shanghai: Watch F1.</td>
+                            <td>上海：观看F1比赛。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Ferris Wheel with Daughter.</td>
+                            <td>带着女儿坐一次摩天轮。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Luoyang: Longmen Grottoes.</td>
+                            <td>洛阳：龙门石窟。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Portable Device with Folding Screen.</td>
+                            <td>折叠屏设备。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Analog Steering Wheel.</td>
+                            <td>模拟方向盘。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Golden Retriever, from Beginning to End.</td>
+                            <td>养条金毛：从始至终。</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Circling the 3rd Ring Road of Zhengzhou by Bike.</td>
+                            <td>骑行郑州三环。</td>
+                            <td></td>
+                        </tr>
+
+
+                        <tr>
+                            <td>0</td>
+                            <td>Write a Short Novel.</td>
+                            <td>写部小说。</td>
+                            <td>2020</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Half Marathon.</td>
+                            <td>半程马拉松。</td><!-- 21Km -->
+                            <td>2020</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>House Decoration, Smart Home.</td>
+                            <td>装修：智能家居。</td>
+                            <td>2020</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Level 13 Tower in Clash Royale.</td>
+                            <td>皇室战争13级皇家塔。</td>
+                            <td>2020</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Level 10 in Netease Cloud Music.</td>
+                            <td>网易云音乐10级。</td>
+                            <td>2020</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Plant a Populus Euphratica Oliv in Ant Forest.</td>
+                            <td>在蚂蚁森林种棵胡杨。</td>
+                            <td>2020</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Galaxy Buds+.</td>
+                            <td>Galaxy Buds+。</td>
+                            <td>2020</td><!-- 800↓ -->
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>1,000,000 Visit in CSDN Blog.</td>
+                            <td>CSDN访问量100万。</td><!--（967054-04.03）-->
+                            <td>2020</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Cambridge BEC Words: Higher.</td>
+                            <td>剑桥商务英语高级单词。</td>
+                            <td>2020</td>
+                        </tr>
+
+                        <!-- Done -->
+                        <tr>
+                            <td>1</td>
+                            <td>Personal Website 100K UV.</td>
+                            <td>个人网站10万UV。</td>
+                            <td>2019.12.29</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Personal Website 10K UV in One Day.</td>
+                            <td>个人网站单日1万UV。</td>
+                            <td>2019.12.26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Personal Website 50K UV.</td>
+                            <td>个人网站5万UV。</td>
+                            <td>2019.11.04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>10K Points in CSDN Blog.</td>
+                            <td>CSDN博客1万积分。</td>
+                            <td>2019.11.04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>10Km Running.</td>
+                            <td>10公里跑。</td>
+                            <td>2019.09.29</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Score 800 in Zhima Credit.</td>
+                            <td>芝麻信用800分。</td>
+                            <td>2019.09.06</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>100 Books.</td>
+                            <td>读100本书。</td>
+                            <td>2019.09.01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1,000 Movies.</td>
+                            <td>看1000部电影。</td>
+                            <td>2019.08.26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Cambridge BEC Words: Vantage.</td>
+                            <td>剑桥商务英语中级单词。</td>
+                            <td>2019.08.25</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Kindle Paperwhite.</td>
+                            <td>Kindle电纸书。</td>
+                            <td>2019.08.08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>10 Million Steps Record by S Health.</td>
+                            <td>步行1000万步。</td>
+                            <td>2019.06.15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Donate 500 Eggs in Ant Farm.</td>
+                            <td>蚂蚁庄园捐赠500颗鸡蛋。</td>
+                            <td>2019.05.15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Cambridge BEC Words: Preliminary.</td>
+                            <td>剑桥商务英语初级单词。</td>
+                            <td>2019.05.08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Take Photo for Daughter Everyday Until 100 Days.</td>
+                            <td>女儿100天前每天拍照。</td>
+                            <td>2019.04.30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Input 1,000,000 Words by Sougou IME Totally.</td>
+                            <td>使用搜狗输入100万字。</td>
+                            <td>2019.04.25</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Haircut myself.</td>
+                            <td>给自己理发。</td>
+                            <td>2019.04.18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>RAID.</td><!-- DELL H700, RAID5, 3T*3 -->
+                            <td>磁盘阵列。</td>
+                            <td>2019.03.03</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Dual Channel DDR.</td><!-- 32GB -->
+                            <td>双通道内存。</td>
+                            <td>2018.12.27</td>
+                        </tr>
+                        <tr>
+                            <td>-1</td>
+                            <td>Level 1 Certified Fire Engineer.</td>
+                            <td>一级注册消防工程师。</td>
+                            <td>2018.12.25</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Infinite Capacity in QQ Mail.</td>
+                            <td>QQ邮箱无限容量。</td>
+                            <td>2018.10.08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Airplane.</td>
+                            <td>乘坐飞机。</td>
+                            <td>2018.08.13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Get Married.</td>
+                            <td>结婚。</td>
+                            <td>2018.08.08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>IMDB TOP250.</td>
+                            <td>看完IMDB电影TOP250。</td>
+                            <td>2018.07.19</td>
+                        </tr>
+                        <tr>
+                            <td>-1</td>
+                            <td>Join Google, Microsoft, Apple or BAT.</td>
+                            <td>加入谷歌、微软、苹果或BAT。</td>
+                            <td>2018.06.20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Driving License.</td>
+                            <td>驾照。</td>
+                            <td>2018.06.14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Macao.</td>
+                            <td>澳门。</td>
+                            <td>2018.04.30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Succulent Plants.</td>
+                            <td>多肉植物。</td>
+                            <td>2018.04.23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Use Shared Bicycle 1,000 Times.</td>
+                            <td>使用1000次共享单车。</td>
+                            <td>2018.04.08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Buy a House.</td>
+                            <td>买房。</td>
+                            <td>2018.02.26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Clothes with FCB Badge.</td>
+                            <td>巴萨徽章衣服。</td>
+                            <td>2018.01.08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Douban Movie TOP250.</td>
+                            <td>看完豆瓣电影TOP250。</td>
+                            <td>2017.12.22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Hongkong.</td>
+                            <td>香港。</td>
+                            <td>2017.12.03</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Mechanical Keyboard.</td><!-- Red Switch-->
+                            <td>机械键盘。</td>
+                            <td>2017.11.11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Use Sharing Bikes 500 Times.</td>
+                            <td>使用500次共享单车。</td>
+                            <td>2017.10.10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Group Photo with Koala.</td><!-- 广州番禺长隆野生动物世界 -->
+                            <td>和考拉合影。</td>
+                            <td>2017.10.05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Gear Watch.</td>
+                            <td>Gear手表。</td>
+                            <td>2017.10.05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Don't Say a Word Whole Day.</td>
+                            <td>一整天不说话。</td>
+                            <td>2017.10.01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50,000 Steps a Day.</td>
+                            <td>单日5万步。</td>
+                            <td>2017.09.09</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>500 Movies.</td>
+                            <td>看500部电影。</td>
+                            <td>2017.06.26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Plant a Tree in Ant Forest.</td>
+                            <td>在蚂蚁森林种棵树。</td>
+                            <td>2017.06.20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Personal Website.</td>
+                            <td>个人网站。</td>
+                            <td>2017.05.18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Be a Marshal in Cross Fire Game.</td>
+                            <td>CF元帅军衔。</td>
+                            <td>2017.03.18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Portable Device with Curve Screen.</td>
+                            <td>曲屏设备。</td>
+                            <td>2016.11.14</td>
+                        </tr>
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>ML 500 Times.</td>
+                            <td>ML 500次。</td>
+                            <td>2016.11.08</td>
+                        </tr>
+                        -->
+                        <tr>
+                            <td>1</td>
+                            <td>Desktop PC, Assemble Myself.</td>
+                            <td>组装台式电脑。</td>
+                            <td>2016.10.01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>30,000 Steps a Day.</td>
+                            <td>单日3万步。</td>
+                            <td>2016.07.16</td>
+                        </tr>
+                        <tr>
+                            <td>-1</td>
+                            <td>Alienware.</td>
+                            <td>Alienware.</td>
+                            <td>2016.06.10</td>
+                        </tr>
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Earn ￥20,000 One Month.</td>
+                            <td>月入2万.</td>
+                            <td>2015.12.31</td>
+                        </tr>
+                        -->
+                        <tr>
+                            <td>1</td>
+                            <td>Learned to Swim.</td>
+                            <td>学会游泳。</td>
+                            <td>2015.10.01</td>
+                        </tr>
+                        <!--
+                        <tr>
+                            <td>1</td>
+                            <td>Earn ￥10,000 One Month.</td>
+                            <td>月入10000.</td>
+                            <td>2015.08.31</td>
+                        </tr>
+                        -->
+                        <tr>
+                            <td>1</td>
+                            <td>Register a Domain.</td>
+                            <td>注册域名。</td>
+                            <td>2015.08.10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Aquarium.</td>
+                            <td>海洋馆。</td>
+                            <td>2015.06.21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>CSDN Expert.</td>
+                            <td>CSDN专家。</td>
+                            <td>2015.06.13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Auto Exhibition.</td>
+                            <td>车展。</td>
+                            <td>2015.05.01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Input 10,000 Words in One Day.</td><!-- 10176 -->
+                            <td>单日输入一万字。</td>
+                            <td>2015.03.23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Buy Cellphones for Parents.</td>
+                            <td>给爸妈买手机。</td>
+                            <td>2015.02.03</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Portable Device with S-pen.</td>
+                            <td>拥有S-Pen的便携设备。</td>
+                            <td>2014.10.15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Feel Sea.</td>
+                            <td>大海。</td>
+                            <td>2014.08.24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Get Salary.</td>
+                            <td>工资。</td>
+                            <td>2014.08.15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Create an App, Fun and Useful.</td>
+                            <td>写个有趣有用的应用。</td>
+                            <td>2014.07.18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>High Speed Railway.</td>
+                            <td>乘高铁。</td>
+                            <td>2014.07.05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Subway.</td>
+                            <td>乘地铁。</td>
+                            <td>2014.07.01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Pirate Ship.</td>
+                            <td>海盗船。</td>
+                            <td>2014.06.15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Touch the Limit in 2048 Puzzle.</td>
+                            <td>2048中达到极限分数。</td>
+                            <td>2014.05.28</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Pectoral Muscle.</td>
+                            <td>胸肌。</td>
+                            <td>2014.04.25</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Fenghuang Ancient City.</td>
+                            <td>凤凰古城。</td>
+                            <td>2014.01.17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Express Love Successful.</td>
+                            <td>成功表白。</td>
+                            <td>2013.11.01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Android Pad.</td>
+                            <td>平板电脑。</td>
+                            <td>2013.10.22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Get a Full-time Job Offer.</td>
+                            <td>获得全职工作。</td>
+                            <td>2013.10.10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Climb a Mountain 2Km+ above Sea Level.</td>
+                            <td>登顶海拔2000米以上的山峰。</td>
+                            <td>2013.10.04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Rafting.</td>
+                            <td>漂流。</td>
+                            <td>2013.06.12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>3D Movie.</td>
+                            <td>3D电影。</td>
+                            <td>2013.06.02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>C-Walk.</td>
+                            <td>C-Walk.</td>
+                            <td>2013.04.28</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Ranking 1st in Major.</td>
+                            <td>专业成绩第一。</td>
+                            <td>2012.12.30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Pass CET-6.</td>
+                            <td>通过英语6级。</td>
+                            <td>2012.12.14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Get a Scholarship in University.</td>
+                            <td>获得奖学金。</td>
+                            <td>2012.11.12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Yangshuo, Guilin.</td>
+                            <td>桂林阳朔。</td>
+                            <td>2012.08.21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Heng Dian World Studios.</td>
+                            <td>横店影视城。</td>
+                            <td>2012.07.29</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Pass CET-4.</td>
+                            <td>通过英语4级。</td>
+                            <td>2011.12.17</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>1991</td>
+                            <td>····· ····· ····· ····· ····· 20 ····· ····· ····· ····· ·····</td>
+                            <td>····· 20 · 42 ·····</td>
+                            <td>2011.09.23</td>
+                        </tr>
+                        -->
+                        <tr>
+                            <td>1</td>
+                            <td>Loudspeaker Box.</td>
+                            <td>音箱。</td>
+                            <td>2011.09.21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Portable Disk.</td>
+                            <td>移动硬盘。</td>
+                            <td>2011.04.16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Roller Skating.</td>
+                            <td>轮滑。</td>
+                            <td>2011.03.21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>MP3 Player.</td>
+                            <td>MP3播放器。</td>
+                            <td>2011.03.05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Digital Camera.</td>
+                            <td>数码相机。</td>
+                            <td>2010.12.31</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Laptop Computer.</td>
+                            <td>笔记本电脑。</td>
+                            <td>2010.11.21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Train.</td>
+                            <td>乘火车。</td>
+                            <td>2010.09.10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Buy a Cellphone MySelf.</td>
+                            <td>自己买部手机。</td>
+                            <td>2010.08.22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Buy a Lottery.</td>
+                            <td>买张彩票。</td>
+                            <td>2009.09.23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Write a Poetry.</td>
+                            <td>写首诗。</td>
+                            <td>2009.04.27</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Shopping Online.</td>
+                            <td>网购。</td>
+                            <td>2009.04.02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Translate Article.</td>
+                            <td>翻译一篇文章。</td>
+                            <td>2009.01.14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Publish on newspaper.</td>
+                            <td>作品见报。</td><!-- 淮阳《作文》报：诗歌《抉择》-->
+                            <td>2006.05.24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Diary.</td>
+                            <td>写日记。</td>
+                            <td>2002.11.19</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>1991</td>
+                            <td>····· ····· ····· ····· ····· 10 ····· ····· ····· ····· ·····</td>
+                            <td>····· 10 · 32 ·····</td>
+                            <td>2001.09.23</td>
+                        </tr>
+                        -->
+                        <tr>
+                            <td>1</td>
+                            <td>Sing in Public.</td>
+                            <td>面对众人唱歌。</td>
+                            <td>2000.09.23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Get Full Marks in School.</td>
+                            <td>取得满分成绩。</td>
+                            <td>1998.01.21</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td>1991</td>
+                            <td>····· ····· ····· ····· ····· 00 ····· ····· ····· ····· ·····</td>
+                            <td>····· 00 · 22 ·····</td>
+                            <td>1991.09.23</td>
+                        </tr>
+                        -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <link rel="stylesheet" href="../resource/css/toolbox.reset.css"><!-- CSS reset -->
+    <link rel="stylesheet" href="../resource/css/toolbox.style.css"><!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../resource/js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../resource/js/canvas-nest.min.js"></script>
+
+<!-- Flot Charts -->
+<script src="../resource/js/flot-charts/curved-line.js"></script>
+<script src="../resource/js/sparkline-charts.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.pie.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.resize.js"></script>
+<script src="../vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+<!-- Sparkline Charts -->
+<script src="../vendors/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+<script type="text/javascript">
+    let numDone = 0, numTotal = 0;
+    let num2002 = 0, num2009 = 0, num2010 = 0, num2011 = 0, num2012 = 0;
+    let num2013 = 0, num2014 = 0, num2015 = 0, num2016 = 0, num2017 = 0;
+    let num2018 = 0, num2019 = 0, num2020 = 0;
+    calculateStep = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
+        let trs = table.getElementsByTagName('tr');
+        let start = 1, // 开始计算的行号，忽略第一行的表头
+            end = trs.length; // 结束计算的行号，忽略最后合计的一行
+        numTotal = trs.length - 1;
+
+        for (let i = start; i < end; i++) {
+            let tdState = trs[i].getElementsByTagName('td')[0];
+            let tdDate = trs[i].getElementsByTagName('td')[3];
+
+            if (tdState.innerHTML.indexOf("1991") == 0 || tdState.innerHTML.indexOf("-1") == 0) {
+                numTotal--;
+            } else if (tdState.innerHTML.indexOf('1') == 0) { // Achieved Dreams
+                numDone++; // Done
+
+                if (tdDate.innerHTML.indexOf('2002') == 0) num2002++;
+                else if (tdDate.innerHTML.indexOf('2009') == 0) num2009++;
+                else if (tdDate.innerHTML.indexOf('2010') == 0) num2010++;
+                else if (tdDate.innerHTML.indexOf('2011') == 0) num2011++;
+                else if (tdDate.innerHTML.indexOf('2012') == 0) num2012++;
+                else if (tdDate.innerHTML.indexOf('2013') == 0) num2013++;
+                else if (tdDate.innerHTML.indexOf('2014') == 0) num2014++;
+                else if (tdDate.innerHTML.indexOf('2015') == 0) num2015++;
+                else if (tdDate.innerHTML.indexOf('2016') == 0) num2016++;
+                else if (tdDate.innerHTML.indexOf('2017') == 0) num2017++;
+                else if (tdDate.innerHTML.indexOf('2018') == 0) num2018++;
+                else if (tdDate.innerHTML.indexOf('2019') == 0) num2019++;
+                else if (tdDate.innerHTML.indexOf('2020') == 0) num2020++;
+            }
+        }
+        // document.getElementById("doneTotal").innerHTML = numDone + '/' + numTotal;
+        // document.getElementById("done2009").innerHTML = num2009;
+        // document.getElementById("done2010").innerHTML = num2010;
+        // document.getElementById("done2011").innerHTML = num2011;
+        // document.getElementById("done2012").innerHTML = num2012;
+        // document.getElementById("done2013").innerHTML = num2013;
+        // document.getElementById("done2014").innerHTML = num2014;
+        // document.getElementById("done2015").innerHTML = num2015;
+        // document.getElementById("done2016").innerHTML = num2016;
+        // document.getElementById("done2017").innerHTML = num2017;
+    };
+    calculateStep(document.getElementById('table-dream-list'));
+
+
+    'use strict';
+    $(document).ready(function () {
+        let dataDone = [
+            // [2002, num2002],
+            [2009, num2009],
+            [2010, num2010],
+            [2011, num2011],
+            [2012, num2012],
+            [2013, num2013],
+            [2014, num2014],
+            [2015, num2015],
+            [2016, num2016],
+            [2017, num2017],
+            [2018, num2018],
+            [2019, num2019],
+            [2020, num2020]
+        ];
+
+        let barData = [ // Create an Array push the data + Draw the bars
+            {
+                label: numDone + '/' + numTotal,
+                data: dataDone,
+                color: '#009688'//'#2196F3'
+            }
+        ]
+        // 每年达成的数目
+        if ($('#dream-year-line')[0]) {
+            $.plot($("#dream-year-line"), barData, {
+                series: {
+                    shadowSize: 0
+                },
+                grid: {
+                    borderWidth: 2, // 1
+                    borderColor: '#31424b',
+                    show: true,
+                    hoverable: true
+                },
+                yaxis: {
+                    max: 20,
+                    tickColor: '#31424b',
+                    tickDecimals: 0,
+                    font: {
+                        lineHeight: 13,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    shadowSize: 0
+                },
+                xaxis: {
+                    tickColor: '#31424b',
+                    tickDecimals: 0,
+                    font: {
+                        lineHeight: 13,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    shadowSize: 0
+                },
+                legend: {
+                    // container: '.flot-chart-legend--line', // AZ:location
+                    show: true,
+                    noColumns: 5
+                }
+            });
+        }
+    });
+
+    // AZ:Count Date.
+    function timeElapse(dateBirth, dateDeath) {
+        let current = Date();
+        // Birth-->Now
+        let secondPast = (Date.parse(current) - Date.parse(dateBirth)) / 1000;
+        let dayPast = Math.floor(secondPast / (3600 * 24));
+        let yearPast = (dayPast / 365).toFixed(2);
+        secondPast = secondPast % (3600 * 24);
+        let hourPast = Math.floor(secondPast / 3600);
+        if (hourPast < 10) {
+            hourPast = "0" + hourPast;
+        }
+        secondPast = secondPast % 3600;
+        let minutePast = Math.floor(secondPast / 60);
+        if (minutePast < 10) {
+            minutePast = "0" + minutePast;
+        }
+        secondPast = secondPast % 60;
+        if (secondPast < 10) {
+            secondPast = "0" + secondPast;
+        }
+
+        let resultPast = "<span class='digit-blue'>" + dayPast + "</span> 天 <span class='digit-blue'>"
+            + hourPast + "</span> 时 <span class='digit-blue'>" + minutePast
+            + "</span> 分 <span class='digit-blue'>" + secondPast +
+            "</span> 秒 (<span class='digit-blue'>" + yearPast + "</span> 年) <span class='digit-blue'>PAST</span></div><br>";
+
+        // Now-->Death
+        let secondLeft = (Date.parse(dateDeath) - Date.parse(current)) / 1000;
+        let dayLeft = Math.floor(secondLeft / (3600 * 24));
+        let yearLeft = (dayLeft / 365).toFixed(2);
+        secondLeft = secondLeft % (3600 * 24);
+        let hourLeft = Math.floor(secondLeft / 3600);
+        if (hourLeft < 10) {
+            hourLeft = "0" + hourLeft;
+        }
+        secondLeft = secondLeft % 3600;
+        let minuteLeft = Math.floor(secondLeft / 60);
+        if (minuteLeft < 10) {
+            minuteLeft = "0" + minuteLeft;
+        }
+        secondLeft = secondLeft % 60;
+        if (secondLeft < 10) {
+            secondLeft = "0" + secondLeft;
+        }
+        let resultLeft = "<span class='digit-red'>" + dayLeft + "</span> 天 <span class='digit-red'>"
+            + hourLeft + "</span> 时 <span class=\"digit-red\">" + minuteLeft
+            + "</span> 分 <span class='digit-red'>" + secondLeft +
+            "</span> 秒 (<span class='digit-red'>" + yearLeft + "</span> 年) <span class='digit-red'>LEFT</span></div>";
+
+        $("#time_elapse").html(resultPast + resultLeft); // AZ:Add date range
+    }
+
+    function getNowFormatDate() {
+        let date = new Date();
+        let seperator1 = ".";
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        return year + seperator1 + month + seperator1 + strDate;
+    }
+
+    let dateBirth = new Date();
+    dateBirth.setFullYear(1991, 9 - 1, 23); // 1991.09.23
+    dateBirth.setHours(0);
+    dateBirth.setMinutes(0);
+    dateBirth.setSeconds(0);
+    dateBirth.setMilliseconds(0);
+    let dateDeath = new Date();
+    dateDeath.setFullYear(2055, 12 - 1, 12); // 2055.12.12
+    dateDeath.setHours(0);
+    dateDeath.setMinutes(0);
+    dateDeath.setSeconds(0);
+    dateDeath.setMilliseconds(0);
+
+    timeElapse(dateBirth, dateDeath);
+    setInterval(function () {
+        timeElapse(dateBirth, dateDeath);
+    }, 500);
+
+    // AZ: for lists of dream page.
+    $("#table-dream-list").bootgrid({
+        //Override default icon classes
+        rowCount: -1, // AZ: -1 mains show all
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "state": function (column, row) {
+                switch (row.state) {
+                    case -1: //D.R.O.P
+                        return "<i class=\"zmdi zmdi-close-circle dream-drop\"></i>";
+                    case 1: // D.O.N.E
+                        return "<i class=\"zmdi zmdi-check-circle dream-done\"></i>";
+                    case 1991: // T.I.M.E
+                        return "<i class=\"zmdi zmdi-calendar dream-time\"></i>";
+                    case 0: // T.O.D.O
+                    default:
+                        return "<i class=\"zmdi zmdi-circle-o dream-todo\"></i>";
+                }
+            },
+            "content": function (column, row) {
+                switch (row.state) {
+                    case -1: // D.R.O.P
+                        return "<span class=\"dream-drop line-through\">" + row.content + "</span>";
+                    case 1: // D.O.N.E
+                        return "<span class=\"dream-done\">" + row.content + "</span>";
+                    case 1991: // T.I.M.E
+                        return "<span class=\"dream-time\">" + row.content + "</span>";
+                    case 0: // T.O.D.O
+                    default:
+                        return "<span class=\"dream-todo\">" + row.content + "</span>";
+                }
+            },
+            "content_cn": function (column, row) {
+                switch (row.state) {
+                    case -1: // D.R.O.P
+                        return "<span class=\"dream-drop line-through\">" + row.content_cn + "</span>";
+                    case 1: // D.O.N.E
+                        return "<span class=\"dream-done\">" + row.content_cn + "</span>";
+                    case 1991: // T.I.M.E
+                        return "<span class=\"dream-time\">" + row.content_cn + "</span>";
+                    case 0: // T.O.D.O
+                    default:
+                        return "<span class=\"dream-todo\">" + row.content_cn + "</span>";
+                }
+            },
+            "date": function (column, row) {
+                switch (row.state) {
+                    case -1: // D.R.O.P
+                        return "<span class=\"dream-drop\">" + row.date + "</span>";
+                    case 1: // D.O.N.E
+                        return "<span class=\"dream-done\">" + row.date + "</span>";
+                    case 1991: // T.I.M.E
+                        return "<span class=\"dream-time\">" + row.date + "</span>";
+                    case 0: // T.O.D.O
+                    default:
+                        return "<span class=\"dream-todo\">" + row.date + "</span>";
+                }
+            }
+        }
+    });
+</script>
+
+
+<!-- Toolbox -->
+<script src="../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 1;</script>
+<script src="../resource/js/zms.page.pattern.js"></script>
+</body>
+</html>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../resource/css/az.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <script src="../../resource/js/google.prettify.js"></script>
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../resource/css/essay.material.floating.button.css" rel="stylesheet">
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e3a97a0eee3cb03b5caf792f58032743";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <div class="card">
+            <div class="action-header">
+                <span class="actions essay-back-arrow">
+                    <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title">你根本不是注释！</span>
+                <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-mood"></i>&nbsp;<span class="essay-type">Fun</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2017-01-23 04:56</span>
+                </span>
+
+                <!--
+                AZ Share: Material Floating Button;
+                Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+                Position:mfb-component--br,bl,tr,tl;
+                Action:hover,click
+                -->
+                <script>
+                    var essayTitle = document.title;
+                    var essaySummary = '魔性注释大聚会';
+                    var essayUrl = window.location.href;
+                    //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                    var essayPic = window.location.href+'/img/4.1.png'; // This
+                </script>
+                <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+            </div>
+
+            <div class="card__body">
+                <blockquote>魔性注释大搜罗~</blockquote>
+
+                <div class="card__header card__header--img"
+                     style="background-image: url(img/4.1.png);max-width: 600px; height: 278px;"></div>
+                <br>
+
+                <h4>1.Doge：Excuse me ?</h4>
+                <pre class="prettyprint" style="max-width: 700px">
+/*
+                     ::
+                    :;J7, :,                        ::;7:
+                    ,ivYi, ,                       ;LLLFS:
+                    :iv7Yi                       :7ri;j5PL
+                   ,:ivYLvr                    ,ivrrirrY2X,
+                   :;r@Wwz.7r:               zhOUmusHui.cOM
+                  :iL7::,:::iiirii:ii;::::,,irvF7rvvLujL7ur
+                 ri::,:,::i:iiiiiii:i:irrv177JX7rYXqZEkvv17
+              ;i:, , ::::iirrririi:i:::iiir2XXvii;L8OGJr71i
+            :,, ,,:   ,::ir@mingyi.irii:i:::j1jri7ZBOS7ivv,
+               ,::,    ::rv77iiiriii:iii:i::,rvLq@huhao.Li
+           ,,      ,, ,:ir7ir::,:::i;ir:::i:i::rSGGYri712:
+         :::  ,v7r:: ::rrv77:, ,, ,:i7rrii:::::, ir7ri7Lri
+        ,     2OBBOi,iiir;r::        ,irriiii::,, ,iv7Luur:
+      ,,     i78MBBi,:,:::,:,  :7FSL: ,iriii:::i::,,:rLqXv::
+      :      iuMMP: :,:::,:ii;2GY7OBB0viiii:i:iii:i:::iJqL;::
+     ,     ::::i   ,,,,, ::LuBBu BBBBBErii:i:i:i:i:i:i:r77ii
+    ,       :       , ,,:::rruBZ1MBBqi, :,,,:::,::::::iiriri:
+   ,               ,,,,::::i:  @arqiao.       ,:,, ,:::ii;i7:
+  :,       rjujLYLi   ,,:::::,:::::::::,,   ,:i,:,,,,,::i:iii
+  ::      BBBBBBBBB0,    ,,::: , ,:::::: ,      ,,,, ,,:::::::
+  i,  ,  ,8BMMBBBBBBi     ,,:,,     ,,, , ,   , , , :,::ii::i::
+  :      iZMOMOMBBM2::::::::::,,,,     ,,,,,,:,,,::::i:irr:i:::,
+  i   ,,:;u0MBMOG1L:::i::::::  ,,,::,   ,,, ::::::i:i:iirii:i:i:
+  :    ,iuUuuXUkFu7i:iii:i:::, :,:,: ::::::::i:i:::::iirr7iiri::
+  :     :rk@Yizero.i:::::, ,:ii:::::::i:::::i::,::::iirrriiiri::,
+   :      5BMBBBBBBSr:,::rv2kuii:::iii::,:i:,, , ,,:,:i@petermu.,
+        , :r50EZ8MBBBBGOBBBZP7::::i::,:::::,: :,:,::i;rrririiii::
+            :jujYY7LS0ujJL7r::,::i::,::::::::::::::iirirrrrrrr:ii:
+         ,:  :@kevensun.:,:,,,::::i:i:::::,,::::::iir;ii;7v77;ii;i,
+         ,,,     ,,:,::::::i:iiiii:i::::,, ::::iiiir@xingjief.r;7:i,
+      , , ,,,:,,::::::::iiiiiiiiii:,:,:::::::::iiir;ri7vL77rrirri::
+       :,, , ::::::::i:::i:::i:i::,,,,,:,::i:i:::iir;@Secbone.ii:::
+*/</pre>
+                <br>
+
+                <h4>2.佛祖保佑，永无BUG (⊙o⊙)…</h4>
+                <pre class="prettyprint" style="max-width: 700px">/*
+                   _ooOoo_
+                  o8888888o
+                  88" . "88
+                  (| -_- |)
+                   O\ = /O
+               ____/`---'\____
+             .   ' \\| |// `.
+              / \\||| : |||// \
+            / _||||| -:- |||||- \
+              | | \\\ - /// | |
+            | \_| ''\---/'' | |
+             \ .-\__ `-` ___/-. /
+          ___`. .' /--.--\ `. . __
+       ."" '< `.___\_<|>_/___.' >'"".
+      | | : `- \`.;`\ _ /`;.`/ - ` : | |
+        \ \ `-. \_ __\ /__ _/ .-` / /
+======`-.____`-.___\_____/___.-`____.-'======
+                   `=---='
+
+.............................................
+         佛祖保佑             永无BUG
+ 佛曰:
+         写字楼里写字间，写字间里程序员；
+         程序人员写程序，又拿程序换酒钱。
+         酒醒只在网上坐，酒醉还来网下眠；
+         酒醉酒醒日复日，网上网下年复年。
+         但愿老死电脑间，不愿鞠躬老板前；
+         奔驰宝马贵者趣，公交自行程序员。
+         别人笑我忒疯癫，我笑自己命太贱；
+         不见满街漂亮妹，哪个归得程序员？
+*/</pre>
+                <br>
+
+                <h4>3.神兽出没</h4>
+                <pre class="prettyprint" style="max-width: 700px;font-family:'Courier New'">/*
+　┏┓　　　┏┓
+┏┛┻━━━┛┻┓
+┃　　　　　　　┃
+┃　　　━　　　┃
+┃　┳┛　┗┳　┃
+┃　　　　　　　┃
+┃　　　┻　　　┃
+┃　　　　　　　┃
+┗━┓　　　┏━┛
+　　┃　　　┃神兽保佑
+　　┃　　　┃代码无BUG！
+　　┃　　　┗━━━┓
+　　┃　　　　　　　┣┓
+　　┃　　　　　　　┏┛
+　　┗┓┓┏━┳┓┏┛
+　　　┃┫┫　┃┫┫
+　　　┗┻┛　┗┻┛
+*/</pre>
+
+
+                <br>
+                <h4>4.GirlFriendNotFoundException</h4>
+                <pre class="prettyprint" style="max-width: 700px">/*
+                       .::::.
+                     .::::::::.
+                    :::::::::::
+                 ..:::::::::::'
+              '::::::::::::'
+                .::::::::::
+           '::::::::::::::..
+                ..::::::::::::.
+              ``::::::::::::::::
+               ::::``:::::::::'        .:::.
+              ::::'   ':::::'       .::::::::.
+            .::::'      ::::     .:::::::'::::.
+           .:::'       :::::  .:::::::::' ':::::.
+          .::'        :::::.:::::::::'      ':::::.
+         .::'         ::::::::::::::'         ``::::.
+     ...:::           ::::::::::::'              ``::.
+    ```` ':.          ':::::::::'                  ::::..
+                       '.:::::'                    ':'````..
+*/</pre>
+
+                <br>
+                <h4>5.小老鼠</h4>
+                <pre class="prettyprint" style="max-width: 700px">/*
+    .--,       .--,
+   ( (  \.---./  ) )
+    '.__/o   o\__.'
+       {=  ^  =}
+        >  -  <
+       /       \
+      //       \\
+     //|   .   |\\
+     "'\       /'"_.-~^`'-.
+        \  _  /--'         `
+      ___)( )(___
+     (((__) (__)))    高山仰止,景行行止.虽不能至,心向往之。
+*/</pre>
+
+                <br>
+                <h4>6.键盘君</h4>
+                <pre class="prettyprint" style="max-width: 700px">/*
+  ┌───┐   ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┐
+  │Esc│   │ F1│ F2│ F3│ F4│ │ F5│ F6│ F7│ F8│ │ F9│F10│F11│F12│ │P/S│S L│P/B│  ┌┐    ┌┐    ┌┐
+  └───┘   └───┴───┴───┴───┘ └───┴───┴───┴───┘ └───┴───┴───┴───┘ └───┴───┴───┘  └┘    └┘    └┘
+  ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐ ┌───┬───┬───┐ ┌───┬───┬───┬───┐
+  │~ `│! 1│@ 2│# 3│$ 4│% 5│^ 6│& 7│* 8│( 9│) 0│_ -│+ =│ BacSp │ │Ins│Hom│PUp│ │N L│ / │ * │ - │
+  ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤ ├───┼───┼───┤ ├───┼───┼───┼───┤
+  │ Tab │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │{ [│} ]│ | \ │ │Del│End│PDn│ │ 7 │ 8 │ 9 │   │
+  ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤ └───┴───┴───┘ ├───┼───┼───┤ + │
+  │ Caps │ A │ S │ D │ F │ G │ H │ J │ K │ L │: ;│" '│ Enter  │               │ 4 │ 5 │ 6 │   │
+  ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────────┤     ┌───┐     ├───┼───┼───┼───┤
+  │ Shift  │ Z │ X │ C │ V │ B │ N │ M │< ,│> .│? /│  Shift   │     │ ↑ │     │ 1 │ 2 │ 3 │   │
+  ├─────┬──┴─┬─┴──┬┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤ ┌───┼───┼───┐ ├───┴───┼───┤ E││
+  │ Ctrl│    │Alt │         Space         │ Alt│    │    │Ctrl│ │ ← │ ↓ │ → │ │   0   │ . │←─┘│
+  └─────┴────┴────┴───────────────────────┴────┴────┴────┴────┘ └───┴───┴───┘ └───────┴───┴───┘
+*/</pre>
+
+                <br>
+                <h4>7.骷髅头</h4>
+                <pre class="prettyprint" style="max-width: 700px">/*
+                    ______
+                 .-"      "-.
+                /            \
+    _          |              |          _
+   ( \         |,  .-.  .-.  ,|         / )
+    > "=._     | )(__/  \__)( |     _.=" <
+   (_/"=._"=._ |/     /\     \| _.="_.="\_)
+          "=._"(_     ^^     _)"_.="
+              "=\__|IIIIII|__/="
+             _.="| \IIIIII/ |"=._
+   _     _.="_.="\          /"=._"=._     _
+  ( \_.="_.="     `--------`     "=._"=._/ )
+   > _.="                            "=._ <
+  (_/                                    \_)
+*/</pre>
+
+                <br>
+                <h4>7.葵花宝典</h4>
+                <pre class="prettyprint" style="max-width: 700px">/*
+  ┏━━━━━━━━━━━┓
+  ┃███████████┃
+  ┃███████┏━┓█┃
+  ┃███████┃　┃█┃
+  ┃███████┃葵┃█┃
+  ┃███████┃　┃█┃
+  ┃███████┃花┃█┃
+  ┃███████┃　┃█┃
+  ┃███████┃宝┃█┃
+  ┃███████┃　┃█┃
+  ┃███████┃典┃█┃
+  ┃███████┃　┃█┃
+  ┃███████┗━┛█┃
+  ┃███████████┃
+  ┗━━━━━━━━━━━┛
+*/</pre>
+
+                <br>
+                <h4>8.帅醒</h4>
+                <pre class="prettyprint" style="max-width: 700px">/*
+  　　  ∧＿∧
+  　　 ( ﾟ∀ﾟ )
+  　 　|　⊃ ⊃
+  　　 └-⊃-⊃
+
+  　　　　｜｜
+
+  |￣￣￣￣￣￣￣|
+  |＼⌒⌒⌒⌒⌒⌒＼
+  |　＼ 　　　 　 ＼ 　帅醒！！
+  ＼　｜⌒⌒⌒⌒⌒⌒｜
+  　＼|＿＿＿＿＿＿＿|
+*/</pre>
+
+                <br>
+                <h4>8.Nike</h4><!-- http://www.nike.com/robots.txt -->
+                <pre class="prettyprint" style="max-width: 700px">/*
+
+             ``                                                                        ```.`
+           `+/                                                                 ``.-/+o+:-.
+         `/mo                                                          ``.-:+syhdhs/-`
+        -hMd                                                    `..:+oyhmNNmds/-`
+      `oNMM/                                            ``.-/oyhdmMMMMNdy+:.
+     .hMMMM-                                     `.-/+shdmNMMMMMMNdy+:.
+    :mMMMMM+                             `.-:+sydmNMMMMMMMMMNmho:.`
+   :NMMMMMMN:                    `.-:/oyhmmNMMMMMMMMMMMNmho:.`
+  .NMMMMMMMMNy:`          `.-/oshdmNMMMMMMMMMMMMMMMmhs/-`
+  hMMMMMMMMMMMMmhysooosyhdmNMMMMMMMMMMMMMMMMMMmds/-`
+ .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdy+-.`
+ -MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdy+-.`
+ `NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmyo:.`
+  /NMMMMMMMMMMMMMMMMMMMMMMMmho:.`
+   .yNMMMMMMMMMMMMMMMMmhs/.`
+     ./shdmNNmmdhyo/-``
+          `````
+*/</pre>
+
+                <br>
+                <h4>9.鸟</h4>
+                <pre class="prettyprint" style="max-width: 700px">/*
+                               /
+                              /
+                             /;
+                            //
+                           ;/
+                         ,//
+                     _,-' ;_,,
+                  _,'-_  ;|,'
+              _,-'_,..--. |
+      ___   .'-'_)'  ) _)\|      ___
+    ,'"""`'' _  )   ) _)  ''--'''_,-'
+  -={-o-  /|    )  _)  ) ; '_,--''
+    \ -' ,`.  ) .)  _)_,''|
+     `."(   `------''     /
+       `.\             _,'
+         `-.____....-\\
+                   || \\
+                   // ||
+                  //  ||
+              _-.//_ _||_,
+                ,'  ,-'/
+*/</pre>
+
+                <br>
+                <h4>10.蒙娜丽莎?</h4>
+                <pre class="prettyprint" style="max-width: 700px">/*
+           ____
+          o8%8888,
+        o88%8888888.
+       8'-    -:8888b
+      8'         8888
+     d8.-=. ,==-.:888b
+     >8 `~` :`~' d8888
+     88         ,88888
+     88b. `-~  ':88888
+     888b ~==~ .:88888
+     88888o--:':::8888
+     `88888| :::' 8888b
+     8888^^'       8888b
+    d888           ,%888b.
+   d88%            %%%8--'-.
+  /88:.__ ,       _%-' ---  -
+      '''::===..-'   =  --.  `
+*/</pre>
+
+                <br>
+                <h4>11.一群小鸭子</h4>
+                <pre class="prettyprint" style="max-width: 700px">/*
+     _      _      _
+  __(.)< __(.)> __(.)=
+  \___)  \___)  \___)
+         _      _      _
+      __(.)< __(.)> __(.)=
+      \___)  \___)  \___)
+     _      _      _
+  __(.)< __(.)> __(.)=
+  \___)  \___)  \___)
+         _      _      _
+      __(.)< __(.)> __(.)=
+      \___)  \___)  \___)
+*/</pre>
+
+                <br>
+                <h4>12.Lock</h4>
+                <pre class="prettyprint" style="max-width: 700px">/*
+       .--------.
+      / .------. \
+     / /        \ \
+     | |        | |
+    _| |________| |_
+  .' |_|        |_| '.
+  '._____ ____ _____.'
+  |     .'____'.     |
+  '.__.'.'    '.'.__.'
+  '.__  |      |  __.'
+  |   '.'.____.'.'   |
+  '.____'.____.'____.'
+  '.________________.'
+
+*/</pre>
+
+                <br><br>
+                <h3>未完待续 ^^</h3>
+                <br>
+
+                <!-- ASCII Generator http://www.network-science.de/ascii/ -->
+                <pre class="prettyprint" style="background:#99ffff">/*
+       .__                                      .__          .__
+_______|  |__   ____  __ __  _____  __ __  _____|  |__  __ __|__|      ____  ____   _____
+\___   /  |  \ /  _ \|  |  \/     \|  |  \/  ___/  |  \|  |  \  |    _/ ___\/  _ \ /     \
+ /    /|   Y  (  |_| )  |  /  Y Y  \  |  /\___ \|   Y  \  |  /  |    \  \__(  |_| )  Y Y  \
+/_____ \___|  /\____/|____/|__|_|  /____//____  >___|  /____/|__| /\  \___  >____/|__|_|  /
+      \/    \/                   \/           \/     \/           \/      \/            \/
+
+        __                                     __          _        _                                     _           _
+ ____  / /_  ____  __  ______ ___  __  _______/ /_  __  __(_)   ___| |__   ___  _   _ _ __ ___  _   _ ___| |__  _   _(_)
+/_  / / __ \/ __ \/ / / / __ `__ \/ / / / ___/ __ \/ / / / /   |_  / '_ \ / _ \| | | | '_ ` _ \| | | / __| '_ \| | | | |
+ / /_/ / / / /_/ / /_/ / / / / / / /_/ (__  ) / / / /_/ / /     / /| | | | (_) | |_| | | | | | | |_| \__ \ | | | |_| | |
+/___/_/ /_/\____/\__,_/_/ /_/ /_/\__,_/____/_/ /_/\__,_/_/     /___|_| |_|\___/ \__,_|_| |_| |_|\__,_|___/_| |_|\__,_|_|
+
+      ___           ___           ___           ___           ___           ___           ___           ___           ___
+     /\  \         /\__\         /\  \         /\__\         /\__\         /\__\         /\  \         /\__\         /\__\          ___
+     \:\  \       /:/  /        /::\  \       /:/  /        /::|  |       /:/  /        /::\  \       /:/  /        /:/  /         /\  \
+      \:\  \     /:/__/        /:/\:\  \     /:/  /        /:|:|  |      /:/  /        /:/\ \  \     /:/__/        /:/  /          \:\  \
+       \:\  \   /::\  \ ___   /:/  \:\  \   /:/  /  ___   /:/|:|__|__   /:/  /  ___   _\:\~\ \  \   /::\  \ ___   /:/  /  ___      /::\__\
+ _______\:\__\ /:/\:\  /\__\ /:/__/ \:\__\ /:/__/  /\__\ /:/ |::::\__\ /:/__/  /\__\ /\ \:\ \ \__\ /:/\:\  /\__\ /:/__/  /\__\  __/:/\/__/
+ \::::::::/__/ \/__\:\/:/  / \:\  \ /:/  / \:\  \ /:/  / \/__/~~/:/  / \:\  \ /:/  / \:\ \:\ \/__/ \/__\:\/:/  / \:\  \ /:/  / /\/:/  /
+  \:\~~\~~          \::/  /   \:\  /:/  /   \:\  /:/  /        /:/  /   \:\  /:/  /   \:\ \:\__\        \::/  /   \:\  /:/  /  \::/__/
+   \:\  \           /:/  /     \:\/:/  /     \:\/:/  /        /:/  /     \:\/:/  /     \:\/:/  /        /:/  /     \:\/:/  /    \:\__\
+    \:\__\         /:/  /       \::/  /       \::/  /        /:/  /       \::/  /       \::/  /        /:/  /       \::/  /      \/__/
+     \/__/         \/__/         \/__/         \/__/         \/__/         \/__/         \/__/         \/__/         \/__/
+       __                                                   __
+      /\ \                                                 /\ \              __
+ ____ \ \ \___     ___   __  __    ___ ___   __  __    ____\ \ \___   __  __/\_\        ___    ___     ___ ___
+/\_ ,`\\ \  _ `\  / __`\/\ \/\ \ /' __` __`\/\ \/\ \  /',__\\ \  _ `\/\ \/\ \/\ \      /'___\ / __`\ /' __` __`\
+\/_/  /_\ \ \ \ \/\ \L\ \ \ \_\ \/\ \/\ \/\ \ \ \_\ \/\__, `\\ \ \ \ \ \ \_\ \ \ \  __/\ \__//\ \L\ \/\ \/\ \/\ \
+  /\____\\ \_\ \_\ \____/\ \____/\ \_\ \_\ \_\ \____/\/\____/ \ \_\ \_\ \____/\ \_\/\_\ \____\ \____/\ \_\ \_\ \_\
+  \/____/ \/_/\/_/\/___/  \/___/  \/_/\/_/\/_/\/___/  \/___/   \/_/\/_/\/___/  \/_/\/_/\/____/\/___/  \/_/\/_/\/_/
+
+              _/                                                                _/                  _/
+   _/_/_/_/  _/_/_/      _/_/    _/    _/  _/_/_/  _/_/    _/    _/    _/_/_/  _/_/_/    _/    _/
+      _/    _/    _/  _/    _/  _/    _/  _/    _/    _/  _/    _/  _/_/      _/    _/  _/    _/  _/
+   _/      _/    _/  _/    _/  _/    _/  _/    _/    _/  _/    _/      _/_/  _/    _/  _/    _/  _/
+_/_/_/_/  _/    _/    _/_/      _/_/_/  _/    _/    _/    _/_/_/  _/_/_/    _/    _/    _/_/_/  _/
+
+         dP                                                      dP                oo
+         88                                                      88
+d888888b 88d888b. .d8888b. dP    dP 88d8b.d8b. dP    dP .d8888b. 88d888b. dP    dP dP
+   .d8P' 88'  `88 88'  `88 88    88 88'`88'`88 88    88 Y8ooooo. 88'  `88 88    88 88
+ .Y8P    88    88 88.  .88 88.  .88 88  88  88 88.  .88       88 88    88 88.  .88 88
+d888888P dP    dP `88888P' `88888P' dP  dP  dP `88888P' `88888P' dP    dP `88888P' dP
+
+        _                                            _             _
+ _____ (_)                                     ____ (_)           (_)
+(_____)(_)__    ___   _   _   __   __   _   _ (____)(_)__   _   _  _          _                         _       _
+  _(_) (____)  (___) (_) (_) (__)_(__) (_) (_)(_)__ (____) (_) (_)(_)      ___| |_ ___ _ _ _____ _ _ ___| |_ _ _|_|
+ (_)__ (_) (_)(_)_(_)(_)_(_)(_) (_) (_)(_)_(_) _(__)(_) (_)(_)_(_)(_)     |- _|   | . | | |     | | |_ -|   | | | |
+(_____)(_) (_) (___)  (___) (_) (_) (_) (___) (____)(_) (_) (___) (_)     |___|_|_|___|___|_|_|_|___|___|_|_|___|_|
+
+    dMMMMMP dMP dMP .aMMMb  dMP dMP dMMMMMMMMb dMP dMP .dMMMb  dMP dMP dMP dMP dMP
+     .dMP" dMP dMP dMP"dMP dMP dMP dMP"dMP"dMPdMP dMP dMP" VP dMP dMP dMP dMP amr
+   .dMP"  dMMMMMP dMP dMP dMP dMP dMP dMP dMPdMP dMP  VMMMb  dMMMMMP dMP dMP dMP
+ .dMP"   dMP dMP dMP.aMP dMP.aMP dMP dMP dMPdMP.aMP dP .dMP dMP dMP dMP.aMP dMP
+dMMMMMP dMP dMP  VMMMP"  VMMMP" dMP dMP dMP VMMMP"  VMMMP" dMP dMP  VMMMP" dMP
+
+       888                                                     888               ,e,
+8P d8P 888 ee   e88 88e  8888 8888 888 888 8e  8888 8888  dP"Y 888 ee  8888 8888  "
+P d8P  888 88b d888 888b 8888 8888 888 888 88b 8888 8888 C88b  888 88b 8888 8888 888
+ d8P d 888 888 Y888 888P Y888 888P 888 888 888 Y888 888P  Y88D 888 888 Y888 888P 888
+d8P d8 888 888  "88 88"   "88 88"  888 888 888  "88 88"  d,dP  888 888  "88 88"  888
+
+ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____
+||z |||h |||o |||u |||m |||u |||s |||h |||u |||i |||. |||c |||o |||m ||
+||__|||__|||__|||__|||__|||__|||__|||__|||__|||__|||__|||__|||__|||__||
+|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|
+
+ ________   __    __    ______    __    __  .___  ___.  __    __       _______. __    __   __    __   __
+|       /  |  |  |  |  /  __  \  |  |  |  | |   \/   | |  |  |  |     /       ||  |  |  | |  |  |  | |  |
+`---/  /   |  |__|  | |  |  |  | |  |  |  | |  \  /  | |  |  |  |    |   (----`|  |__|  | |  |  |  | |  |
+   /  /    |   __   | |  |  |  | |  |  |  | |  |\/|  | |  |  |  |     \   \    |   __   | |  |  |  | |  |
+  /  /----.|  |  |  | |  `--'  | |  `--'  | |  |  |  | |  `--'  | .----)   |   |  |  |  | |  `--'  | |  |
+ /________||__|  |__|  \______/   \______/  |__|  |__|  \______/  |_______/    |__|  |__|  \______/  |__|
+
+          88                                                                           88                      88
+          88                                                                           88                      ""
+          88                                                                           88
+888888888 88,dPPYba,   ,adPPYba,  88       88 88,dPYba,,adPYba,  88       88 ,adPPYba, 88,dPPYba,  88       88 88
+     a8P" 88P'    "8a a8"     "8a 88       88 88P'   "88"    "8a 88       88 I8[    "" 88P'    "8a 88       88 88
+  ,d8P'   88       88 8b       d8 88       88 88      88      88 88       88  `"Y8ba,  88       88 88       88 88
+,d8"      88       88 "8a,   ,a8" "8a,   ,a88 88      88      88 "8a,   ,a88 aa    ]8I 88       88 "8a,   ,a88 88
+888888888 88       88  `"YbbdP"'   `"YbbdP'Y8 88      88      88  `"YbbdP'Y8 `"YbbdP"' 88       88  `"YbbdP'Y8 88
+
+*/</pre>
+
+                <br>
+
+            </div>
+        </div>
+
+
+    </section>
+
+    <link rel="stylesheet" href="../../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../../resource/js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../../resource/js/canvas-nest.min.js"></script>
+
+<script src="../../resource/js/essay.material.floating.button.js"></script>
+<script type="text/javascript">
+    let panel = document.getElementById('panel'),
+        menu = document.getElementById('menu'),
+        showcode = document.getElementById('showcode'),
+        selectFx = document.getElementById('selections-fx'),
+        selectPos = document.getElementById('selections-pos'),
+        // demo defaults
+        effect = 'mfb-zoomin',
+        pos = 'mfb-component--br';
+
+    showcode.addEventListener('click', _toggleCode);
+    selectFx.addEventListener('change', switchEffect);
+    selectPos.addEventListener('change', switchPos);
+
+    function _toggleCode() {
+        panel.classList.toggle('viewCode');
+    }
+
+    function switchEffect(e) {
+        effect = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function switchPos(e) {
+        pos = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function renderMenu() {
+        menu.style.display = 'none';
+        // ?:-)
+        setTimeout(function () {
+            menu.style.display = 'block';
+            menu.className = pos + effect;
+        }, 1);
+    }
+</script>
+
+<!-- Toolbox -->
+<script src="../../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 2;</script>
+<script src="../../resource/js/zms.page.pattern.js"></script>
+</body>
+</html>

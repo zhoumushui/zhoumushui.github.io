@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../resource/css/az.css" rel="stylesheet">
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../resource/css/essay.material.floating.button.css" rel="stylesheet">
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e3a97a0eee3cb03b5caf792f58032743";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <script>
+            var essaySummary = 'GDP: GitHub Desirable Project';
+            document.title = essaySummary;
+            var essayTitle = document.title;
+            var essayUrl = window.location.href;
+            //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+            var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+        </script>
+        <!--
+        AZ Share: Material Floating Button;
+        Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+        Position:mfb-component--br,bl,tr,tl;
+        Action:hover,click
+        -->
+        <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+
+        <!--
+        <div class="content__header">
+            <h2 class="font-yahei"><i class="zmdi zmdi-flag"></i> 随笔</h2>
+            <div class="actions">
+                <a href=""><i class="zmdi zmdi-check-all"></i></a>
+                <a href=""><i class="zmdi zmdi-trending-up"></i></a>
+                <div class="dropdown">
+                    <a href="" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="">Change Date Range</a></li>
+                        <li><a href="">Change Graph Type</a></li>
+                        <li><a href="">Other Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        -->
+        <div class="card">
+
+            <div class="action-header">
+                <span class="actions essay-back-arrow">
+                    <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title"><i class="zmdi zmdi-github"></i> GDP: GitHub Desirable Project</span>
+                <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-github"></i>&nbsp;<span class="essay-type">GitHub</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2017-12-25 15:55</span>
+                </span>
+            </div>
+
+
+            <div class="card__body">
+                <div class="table-responsive">
+                    <!-- id="data-table-basic,data-table-selection,data-table-command" -->
+                    <table id="table-github-list" class="table table-striped table--vmiddle"
+                           style="font-family: 'Microsoft YaHei', sans-serif">
+                        <thead>
+                        <tr>
+                            <!-- data-type="numeric"-->
+                            <th data-column-id="title" data-formatter="title">名称</th>
+                            <th data-column-id="summary" data-formatter="type">简介</th>
+                            <th data-column-id="url" data-formatter="url" data-visible="false" data-sortable="false">
+                                链接
+                            </th>
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <!-- A -->
+                        <tr>
+                            <td>ActionBar-PullToRefresh</td><!-- Name -->
+                            <td>在ActionBar显示进度的下拉刷新</td><!-- Summary -->
+                            <td>chrisbanes/ActionBar-PullToRefresh</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>advancedrecyclerview</td><!-- Name -->
+                            <td>增强RecyclerView</td><!-- Summary -->
+                            <td>h6ah4i/android-advancedrecyclerview</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>androidannotations</td><!-- Name -->
+                            <td>注解</td><!-- Summary -->
+                            <td>androidannotations/androidannotations</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>android-async-http</td><!-- Name -->
+                            <td>异步HTTP库</td><!-- Summary -->
+                            <td>loopj/android-async-http</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Android-Bootstrap</td><!-- Name -->
+                            <td>Bootstrap控件：按钮、图标、进度条、输入框……</td><!-- Summary -->
+                            <td>Bearded-Hen/Android-Bootstrap</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>android-common</td><!-- Name -->
+                            <td>Android常用工具类</td><!-- Summary -->
+                            <td>litesuits/android-common</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>android-common</td><!-- Name -->
+                            <td>Android常用工具类</td><!-- Summary -->
+                            <td>Trinea/android-common</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>android_dragdropable_gridview</td><!-- Name -->
+                            <td>implement gridview drag and drop user long press ,and can enable click event</td>
+                            <!-- Summary -->
+                            <td>jerryjobs/android_dragdropable_gridview</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>android-flat-button</td><!-- Name -->
+                            <td>Android扁平化按钮</td><!-- Summary -->
+                            <td>hoang8f/android-flat-button</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Android-GridView-Example</td><!-- Name -->
+                            <td>Android Gridview Example- Building Image Gallery in android</td><!-- Summary -->
+                            <td>StackTipsLab/Android-GridView-Example</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Android-GridView-PhotoGallery</td><!-- Name -->
+                            <td>An Image Cache extension that holds image in both memory and sdcard</td><!-- Summary -->
+                            <td>searover/Android-GridView-PhotoGallery</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Android-GridView-ImageSelector</td><!-- Name -->
+                            <td>GridView图片选择</td><!-- Summary -->
+                            <td>RanaRanvijaySingh/Android-GridView-ImageSelector</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>android-GridViewWithHeaderAndFooter</td><!-- Name -->
+                            <td>A GridView which can addHeaderView and addFooterView</td><!-- Summary -->
+                            <td>liaohuqiu/android-GridViewWithHeaderAndFooter</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Android-HorizontalScrollView</td><!-- Name -->
+                            <td>Android HorizontalScrollview with center lock current selection item</td>
+                            <!-- Summary -->
+                            <td>krishnalalstha/Android-HorizontalScrollView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>android_interview</td><!-- Name -->
+                            <td>gitbook地址</td><!-- Summary -->
+                            <td>LRH1993/android_interview</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>android-jobs</td><!-- Name -->
+                            <td>2018 年最新内推！我们相信来到这里的，无论工程师还是招聘者都是靠谱的！微信公众号:codekk，</td><!-- Summary -->
+                            <td>android-cn/android-jobs</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>android-open-project</td><!-- Name -->
+                            <td>Android开源项目集合</td><!-- Summary -->
+                            <td>Trinea/android-open-project</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>android-parallax-listview</td><!-- Name -->
+                            <td>A parallax listview, scrollview and gridview with zoom support. Like Google Play Store
+                            </td><!-- Summary -->
+                            <td>kanytu/android-parallax-listview</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Android-PictureTagView</td><!-- Name -->
+                            <td>仿nice图片上打标签控件</td><!-- Summary -->
+                            <td>saiwu-bigkoo/Android-PictureTagView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Android-PullPushScrollView</td><!-- Name -->
+                            <td>上滑下拉动效ScrollView(模仿淘宝IOS客户端天猫商品商情页面效果)</td><!-- Summary -->
+                            <td>teisun/Android-PullPushScrollView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Android-PullToRefresh</td><!-- Name -->
+                            <td>DEPRECATED</td><!-- Summary -->
+                            <td>chrisbanes/Android-PullToRefresh</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>android_radiogroup_switch_fragment_replace_tabhost</td><!-- Name -->
+                            <td>使用radiogroup切换fragment，替代tabhost。这是常用的iOS首页模式,献给被iOS产品经理折磨的Android程序员</td>
+                            <!-- Summary -->
+                            <td>jackuhan/android_radiogroup_switch_fragment_replace_tabhost</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>android-samples</td><!-- Name -->
+                            <td>Samples demonstrating how to use Google Maps Android API v2.</td><!-- Summary -->
+                            <td>googlemaps/android-samples</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Android-ScrollBarPanel</td><!-- Name -->
+                            <td>Android-ScrollBarPanel allows to attach a View to a scroll indicator like it's done in
+                                Path 2.0.
+                            </td><!-- Summary -->
+                            <td>rno/Android-ScrollBarPanel</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>AndroidSlidingUpPanel</td><!-- Name -->
+                            <td>Android上划界面，可用于音乐播放器</td><!-- Summary -->
+                            <td>umano/AndroidSlidingUpPanel</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>AndroidSlidingUpPanel-ScrollView</td><!-- Name -->
+                            <td>AndroidSlidingUpPanel with sliding over ScrollView support</td><!-- Summary -->
+                            <td>arbuzz/AndroidSlidingUpPanel-ScrollView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>AndroidTVLauncher</td><!-- Name -->
+                            <td>猫桌面：使用leanback的电视桌面</td><!-- Summary -->
+                            <td>JackyAndroid/AndroidTVLauncher</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>AndroidUtilCode</td><!-- Name -->
+                            <td>常用库：剪贴板、定位、拼音、线程池</td><!-- Summary -->
+                            <td>Blankj/AndroidUtilCode</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Android-Universal-Image-Loader</td><!-- Name -->
+                            <td>图片加载、缓存、显示</td><!-- Summary -->
+                            <td>nostra13/Android-Universal-Image-Loader</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>AndroidVideoCache</td><!-- Name -->
+                            <td>视频缓存</td><!-- Summary -->
+                            <td>danikula/AndroidVideoCache</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>AnimatedLoadingIndicator</td><!-- Name -->
+                            <td>Animated Loader or Animated Progress Dialog android code.</td><!-- Summary -->
+                            <td>yash786agg/AnimatedLoadingIndicator</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>AnimShopButton</td><!-- Name -->
+                            <td>一个带伸缩位移旋转动画的购物车按钮</td><!-- Summary -->
+                            <td>mcxtzhang/AnimShopButton</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ArcProgressStackView</td><!-- Name -->
+                            <td>弧形进度条，类似苹果Watch运动</td><!-- Summary -->
+                            <td>Devlight/ArcProgressStackView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>AsymmetricGridView</td><!-- Name -->
+                            <td>瀑布流，支持行或列</td><!-- Summary -->
+                            <td>felipecsl/AsymmetricGridView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>awesome-android-tips</td><!-- Name -->
+                            <td>Android代码小技巧 Tips</td><!-- Summary -->
+                            <td>jiang111/awesome-android-tips</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>awesome-awesome</td><!-- Name -->
+                            <td>A curated list of awesome curated lists of many topics.</td><!-- Summary -->
+                            <td>emijrp/awesome-awesome</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>awesome-awesomeness</td><!-- Name -->
+                            <td>A curated list of awesome awesomeness</td><!-- Summary -->
+                            <td>bayandin/awesome-awesomeness</td><!-- URL -->
+                        </tr>
+                        <!-- B -->
+                        <tr>
+                            <td>BackgroundProgress</td><!-- Name -->
+                            <td>一个可渐变，可在文字背景后显示的进度条</td><!-- Summary -->
+                            <td>linheimx/BackgroundProgress</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>BadgeView</td><!-- Name -->
+                            <td>角标</td><!-- Summary -->
+                            <td>stefanjauker/BadgeView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>BannerView</td><!-- Name -->
+                            <td>三行代码就能实现轮播图</td><!-- Summary -->
+                            <td>123ufo/BannerView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>baseAdapter</td><!-- Name -->
+                            <td>万能的Adapter for ListView,RecyclerView,GridView等，支持多种Item类型的情况</td><!-- Summary -->
+                            <td>hongyangAndroid/baseAdapter</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>BatteryProgressView</td><!-- Name -->
+                            <td>Custom progress view to show progress with cool animation.</td><!-- Summary -->
+                            <td>jineshfrancs/BatteryProgressView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>BeautifulRefreshLayout</td><!-- Name -->
+                            <td>A beautiful RefreshLayout</td><!-- Summary -->
+                            <td>android-cjj/BeautifulRefreshLayout</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>BGABadgeView-Android</td><!-- Name -->
+                            <td>类似QQ消息数圆点，可拖拽消除</td><!-- Summary -->
+                            <td>bingoogolapple/BGABadgeView-Android</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>BlurEffectForAndroidDesign</td><!-- Name -->
+                            <td>毛玻璃效果</td><!-- Summary -->
+                            <td>PomepuyN/BlurEffectForAndroidDesign</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>BooheeScrollView</td><!-- Name -->
+                            <td>interesting scrollview</td><!-- Summary -->
+                            <td>zhaozhentao/BooheeScrollView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>BottomBar</td><!-- Name -->
+                            <td>Deprecated</td><!-- Summary -->
+                            <td>roughike/BottomBar</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Bubble-Notification</td><!-- Name -->
+                            <td>Bubble Notification with explosion animation.</td><!-- Summary -->
+                            <td>dkmeteor/Bubble-Notification</td><!-- URL -->
+                        </tr>
+                        <!-- C -->
+                        <tr>
+                            <td>canvas-nest.js</td><!-- Name -->
+                            <td> Interactive Particle / Nest System With JavaScript and Canvas, no jQuery.</td>
+                            <!-- Summary -->
+                            <td>hustcc/canvas-nest.js</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>cheesesquare</td><!-- Name -->
+                            <td>Demos the new Android Design library.</td><!-- Summary -->
+                            <td>chrisbanes/cheesesquare</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Chinese-Names-Corpus</td><!-- Name -->
+                            <td>中文人名语料库</td><!-- Summary -->
+                            <td>wainshine/Chinese-Names-Corpus</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Circle</td><!-- Name -->
+                            <td>你没有看错，全是纯手工打造！</td><!-- Summary -->
+                            <td>lovejjfg/Circle</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>CircleProgress</td><!-- Name -->
+                            <td>A circle progress animation view on Android</td><!-- Summary -->
+                            <td>Fichardu/CircleProgress</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>CircleProgress</td><!-- Name -->
+                            <td>Android自定义圆形进度条</td><!-- Summary -->
+                            <td>MyLifeMyTravel/CircleProgress</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>CircleProgressBar</td><!-- Name -->
+                            <td>A circular android ProgressBar library which extends ProgressBar</td><!-- Summary -->
+                            <td>dinuscxj/CircleProgressBar</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Circle-Progress-View</td><!-- Name -->
+                            <td>Animated circular progress view for Android</td><!-- Summary -->
+                            <td>jakob-grabner/Circle-Progress-View</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>CircularProgressBar</td><!-- Name -->
+                            <td>Create circular progressBar in android</td><!-- Summary -->
+                            <td>lopspower/CircularProgressBar</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>CircularProgressDrawable</td><!-- Name -->
+                            <td>A drawable with capabilities to indicate progress.</td><!-- Summary -->
+                            <td>Sefford/CircularProgressDrawable</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>circular-progress-button</td><!-- Name -->
+                            <td>环形进度条</td><!-- Summary -->
+                            <td>dmytrodanylyk/circular-progress-button</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>code-prettify</td><!-- Name -->
+                            <td>google-code-prettify</td><!-- Summary -->
+                            <td>google/code-prettify</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>CoolProgressViews</td><!-- Name -->
+                            <td>Android library with collection of cool progress views.</td><!-- Summary -->
+                            <td>amanjeetsingh150 / CoolProgressViews</td><!-- URL -->
+                        </tr>
+                        <!-- D -->
+                        <tr>
+                            <td>DanmakuFlameMaster</td><!-- Name -->
+                            <td>弹幕解析绘制引擎</td><!-- Summary -->
+                            <td>Bilibili/DanmakuFlameMaster</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>dashed-circular-progress</td><!-- Name -->
+                            <td>A Circular progress animated where you can put any view inside</td><!-- Summary -->
+                            <td>glomadrian/dashed-circular-progress</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>devices.css</td><!-- Name -->
+                            <td>Pure CSS phones and tablets</td><!-- Summary -->
+                            <td>marvelapp/devices.css</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>dexposed</td><!-- Name -->
+                            <td>dexposed enable 'god' mode for single android application.</td><!-- Summary -->
+                            <td>alibaba/dexposed</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Dialog</td><!-- Name -->
+                            <td>自定义一些常见的 Dialog 效果，居中显示、顶部显示、仿 IOS 版淘宝、回弹效果、宽度和高度占屏比等 ；这是一个完整的，且能运行的工程</td>
+                            <!-- Summary -->
+                            <td>Alex-Cin/Dialog</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Dialog</td><!-- Name -->
+                            <td>多款原生dialog，总有一款适合你（通知对话框，列表对话框，单选对话框，多选对话框，进度对话框）</td><!-- Summary -->
+                            <td>Qiang3570/Dialog</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>dialogplus</td><!-- Name -->
+                            <td>增强型对话框</td><!-- Summary -->
+                            <td>orhanobut/dialogplus</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>DilatingDotsProgressBar</td><!-- Name -->
+                            <td>A customizable indeterminate progress bar</td><!-- Summary -->
+                            <td>JustZak/DilatingDotsProgressBar</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>dmca</td><!-- Name -->
+                            <td>Repository with text of DMCA takedown notices as received</td><!-- Summary -->
+                            <td>github/dmca</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>DownloadProgressBar</td><!-- Name -->
+                            <td>awesome custom progress bar</td><!-- Summary -->
+                            <td>panwrona/DownloadProgressBar</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>DragVideo</td><!-- Name -->
+                            <td>A Method to Drag the Video When Playing Video</td><!-- Summary -->
+                            <td>hejunlin2013/DragVideo</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>DroidPlugin</td><!-- Name -->
+                            <td>在无需安装、修改的情况下运行APK文件</td><!-- Summary -->
+                            <td>DroidPluginTeam/DroidPlugin</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>DynamicGrid</td><!-- Name -->
+                            <td>Drag and drop GridView for Android</td><!-- Summary -->
+                            <td>askerov/DynamicGrid</td><!-- URL -->
+                        </tr>
+                        <!-- E -->
+                        <tr>
+                            <td>ElasticScrollView</td><!-- Name -->
+                            <td>A scrollView,has elastic</td><!-- Summary -->
+                            <td>Kitdroid/ElasticScrollView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>EventBus</td><!-- Name -->
+                            <td>替代传统的Intent,Handler,Broadcast或接口函数,在Fragment,Activity,Service线程之间传递数据，执行方法</td>
+                            <!-- Summary -->
+                            <td>greenrobot/EventBus</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ExpandableGridView</td><!-- Name -->
+                            <td>Android customized expandable GridView</td><!-- Summary -->
+                            <td>thewaychung/ExpandableGridView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ExpandableLayout</td><!-- Name -->
+                            <td>伸缩布局</td><!-- Summary -->
+                            <td>cachapa/ExpandableLayout</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ExpandableLayout</td><!-- Name -->
+                            <td>伸缩布局</td><!-- Summary -->
+                            <td>traex/ExpandableLayout</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ExpandablePager</td><!-- Name -->
+                            <td>ViewPager that slides vertically.</td><!-- Summary -->
+                            <td>Telenav/ExpandablePager</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ExpandablePanel</td><!-- Name -->
+                            <td>Android library for creating an expandable to full screen view inside a viewgroup
+                                composition.
+                            </td><!-- Summary -->
+                            <td>JorgeCastilloPrz/ExpandablePanel</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ExpandableRecyclerview</td><!-- Name -->
+                            <td>An ExpandableRecycleradapter with Recyclerview</td><!-- Summary -->
+                            <td>zaihuishou/ExpandableRecyclerview</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ExpandableSelector</td><!-- Name -->
+                            <td>ExpandableSelector is an Android library created to show a list of Button/ImageButton
+                                widgets inside a animated container which can be collapsed or expanded.
+                            </td><!-- Summary -->
+                            <td>Karumi/ExpandableSelector</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ExpandableTextView</td><!-- Name -->
+                            <td>伸缩TextView</td><!-- Summary -->
+                            <td>Manabu-GT/ExpandableTextView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ExpandableViewpager</td><!-- Name -->
+                            <td>A Cool Viewpager ~ 可以展开缩放的Viewpager</td><!-- Summary -->
+                            <td>githubwing/ExpandableViewpager</td><!-- URL -->
+                        </tr>
+                        <!-- F -->
+                        <tr>
+                            <td>FabButton</td><!-- Name -->
+                            <td>Android Floating ActionButton with a progress indicator ring</td><!-- Summary -->
+                            <td>ckurtm/FabButton</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>FancyProgress</td><!-- Name -->
+                            <td>绚丽的进度加载器</td><!-- Summary -->
+                            <td>PoplarTang/FancyProgress</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>FFmpegRecorder</td><!-- Name -->
+                            <td>An Android video recorder using JavaCV and FFmpeg.</td><!-- Summary -->
+                            <td>CrazyOrr/FFmpegRecorder</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>FileExplorer</td><!-- Name -->
+                            <td>MIUI文件管理器社区开源版</td><!-- Summary -->
+                            <td>MiCode/FileExplorer</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>filemanager</td><!-- Name -->
+                            <td>File Manager for Android</td><!-- Summary -->
+                            <td>mick88/filemanager</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>FlickerProgressBar</td><!-- Name -->
+                            <td>Android 仿应用宝下载进度条</td><!-- Summary -->
+                            <td>LineChen/FlickerProgressBar</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>flv.js</td><!-- Name -->
+                            <td>HTML5 FLV播放器</td><!-- Summary -->
+                            <td>Bilibili/flv.js</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>FlyGallery</td><!-- Name -->
+                            <td>基于ViewPager实现的画廊效果</td><!-- Summary -->
+                            <td>FlyRecker/FlyGallery</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Fotoapparat</td><!-- Name -->
+                            <td>更便捷的使用Camera API</td><!-- Summary -->
+                            <td>Fotoapparat/Fotoapparat</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>freeline</td><!-- Name -->
+                            <td>替代Instant Run</td><!-- Summary -->
+                            <td>alibaba/freeline</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>FuckingVolumeSlider</td><!-- Name -->
+                            <td>android实现的反人类音量滑块</td><!-- Summary -->
+                            <td>shellljx/FuckingVolumeSlider</td><!-- URL -->
+                        </tr>
+                        <!-- G -->
+                        <tr>
+                            <td>Gallery</td><!-- Name -->
+                            <td>a Gallery demo like the souhu app</td><!-- Summary -->
+                            <td>jianghejie/Gallery</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Gallery</td><!-- Name -->
+                            <td>Quick Simple Android Image Gallery with Glide</td><!-- Summary -->
+                            <td>Suleiman19/Gallery</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>GalleryPick</td><!-- Name -->
+                            <td>Android 图片选择器</td><!-- Summary -->
+                            <td>YancyYe/GalleryPick</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>GoogleClock</td><!-- Name -->
+                            <td>Google风格时钟，The core of it is SVG</td><!-- Summary -->
+                            <td>lypeer/GoogleClock</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>GoogleProgressBar</td><!-- Name -->
+                            <td>Google风格进度条</td><!-- Summary -->
+                            <td>jpardogo/GoogleProgressBar</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>GSYVideoPlayer</td><!-- Name -->
+                            <td>视频播放器</td><!-- Summary -->
+                            <td>CarGuo/GSYVideoPlayer</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>gridview-autoresized-images-sample</td><!-- Name -->
+                            <td>Sample code for GridView with Auto Resized Images on Android post on rogcg.com</td>
+                            <!-- Summary -->
+                            <td>rogcg/gridview-autoresized-images-sample</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>GridViewPager</td><!-- Name -->
+                            <td>GridViewPager</td><!-- Summary -->
+                            <td>109021017/GridViewPager</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>GridImagePicker</td><!-- Name -->
+                            <td>View & Pick(Select) & Manager Images in GridView and ViewPager.</td><!-- Summary -->
+                            <td>habzy/GridImagePicker</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>GridView-MutiSelectItem</td><!-- Name -->
+                            <td>GridView多选</td><!-- Summary -->
+                            <td>zhxhcoder/GridView-MutiSelectItem</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>GridViewSelectPopWin</td><!-- Name -->
+                            <td>类似网购电影票的GridView选择器</td><!-- Summary -->
+                            <td>noyo/GridViewSelectPopWin</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>guard</td><!-- Name -->
+                            <td>A generic high performance circuit breaker & proxy server written in Go</td>
+                            <!-- Summary -->
+                            <td>jiajunhuang/guard</td><!-- URL -->
+                        </tr>
+                        <!-- H -->
+                        <tr>
+                            <td>HeaderViewPager</td><!-- Name -->
+                            <td>具有共同头部的 ViewPager，支持与ListView，GridView，ScrollView，WebView，RecyclerView 嵌套使用。具有连续的滑动事件 和
+                                滑动监听， 支持下拉刷新。
+                            </td><!-- Summary -->
+                            <td>jeasonlzy/HeaderViewPager</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>hello-world</td><!-- Name -->
+                            <td>多种语言的Hello World</td><!-- Summary -->
+                            <td>leachim6/hello-world</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>HTML5test</td><!-- Name -->
+                            <td>How well does your browser support HTML5?</td><!-- Summary -->
+                            <td>WebPlatformTest/HTML5test</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>hubble_gallery</td><!-- Name -->
+                            <td>View, Save, and Read about Hubble's best images.</td><!-- Summary -->
+                            <td>derekcsm/hubble_gallery</td><!-- URL -->
+                        </tr>
+                        <!-- I -->
+                        <tr>
+                            <td>ImagePicker</td><!-- Name -->
+                            <td>Super Image Picker is a powerful image selector</td><!-- Summary -->
+                            <td>martin90s/ImagePicker</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ImmersionBar</td><!-- Name -->
+                            <td>4.4以上沉浸式状态栏导航栏管理</td><!-- Summary -->
+                            <td>gyf-dev/ImmersionBar</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>InputMethodHolder</td><!-- Name -->
+                            <td>通过hook监听系统键盘显示</td><!-- Summary -->
+                            <td>pqpo/InputMethodHolder</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>InnerListview</td><!-- Name -->
+                            <td>可以镶嵌在Listview或者是ScrollView里面的ListView</td><!-- Summary -->
+                            <td>ZhaoKaiQiang/InnerListview</td><!-- URL -->
+                        </tr>
+                        <!-- J -->
+                        <!-- K -->
+                        <tr>
+                            <td>kotlin-in-chinese</td><!-- Name -->
+                            <td>kotlin官方文档翻译</td><!-- Summary -->
+                            <td>huanglizhuo/kotlin-in-chinese</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Kotlin-Tutorials</td><!-- Name -->
+                            <td>kotlin入门到进阶 视频教程</td><!-- Summary -->
+                            <td>enbandari/Kotlin-Tutorials</td><!-- URL -->
+                        </tr>
+                        <!-- L -->
+                        <tr>
+                            <td>lantern</td><!-- Name -->
+                            <td>蓝灯VPN</td><!-- Summary -->
+                            <td>getlantern/lantern</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>leakcanary</td><!-- Name -->
+                            <td>分析内存溢出</td><!-- Summary -->
+                            <td>square/leakcanary</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Lemniscate</td><!-- Name -->
+                            <td>An easy way to make your progress view nice and sleek.</td><!-- Summary -->
+                            <td>vlad1m1r990/Lemniscate</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>LilyPinyinInputMethod</td><!-- Name -->
+                            <td>A java implemented Pinyin Input method</td><!-- Summary -->
+                            <td>skyline0623/LilyPinyinInputMethod</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>LiveWallPaper</td><!-- Name -->
+                            <td>【玩Android】【第一期】视频墙纸</td><!-- Summary -->
+                            <td>WanAndroid/LiveWallPaper</td><!-- URL -->
+                        </tr>
+                        <!-- M -->
+                        <tr>
+                            <td>MagicViewPager</td><!-- Name -->
+                            <td>单页显示3个Item的ViewPager炫酷切换效果，适用于Banner等。</td><!-- Summary -->
+                            <td>hongyangAndroid / MagicViewPager</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>material-design-icons</td><!-- Name -->
+                            <td>MD图标</td><!-- Summary -->
+                            <td>google/material-design-icons</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>material-dialogs</td><!-- Name -->
+                            <td>MD对话框</td><!-- Summary -->
+                            <td>afollestad/material-dialogs</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>MaterialLoadingProgressBar</td><!-- Name -->
+                            <td>ProgressBar which looks like SwipeRefreshLayout's loading indicator(support-v4 v21+)
+                            </td><!-- Summary -->
+                            <td>lsjwzh/MaterialLoadingProgressBar</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>MaterialViewPager</td><!-- Name -->
+                            <td>MD ViewPager</td><!-- Summary -->
+                            <td>florent37/MaterialViewPager</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>materialish-progress</td><!-- Name -->
+                            <td>MD进度条for 2.3+</td><!-- Summary -->
+                            <td>pnikosis/materialish-progress</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>MaterialSpinner</td><!-- Name -->
+                            <td>Spinner with Material Design - Down to API 14</td><!-- Summary -->
+                            <td>ganfra/MaterialSpinner</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>MediaCenter</td><!-- Name -->
+                            <td>-</td><!-- Summary -->
+                            <td>linqh0806/MediaCenter</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>MichaelCustomGridviewWithMultiSelectMode</td><!-- Name -->
+                            <td>NoScrollGridView and NoScrollListView with Multi select mode</td><!-- Summary -->
+                            <td>zhxhcoder/MichaelCustomGridviewWithMultiSelectMode</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Music_Android</td><!-- Name -->
+                            <td>Simple music player</td><!-- Summary -->
+                            <td>NickAndroid/Music_Android</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>MVideo</td><!-- Name -->
+                            <td>An imitation of WeChat circle of friends video effects, can drag and zoom ,video
+                                view,base on ijkplayer.
+                            </td><!-- Summary -->
+                            <td>miaoyongjun / MVideo</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>MyMusic</td><!-- Name -->
+                            <td>模仿天天动听android版的音乐播放器</td><!-- Summary -->
+                            <td>longdw/MyMusic</td><!-- URL -->
+                        </tr>
+                        <!-- N -->
+                        <tr>
+                            <td>NeteaseCloudMusicApi</td><!-- Name -->
+                            <td>网易云音乐 Node.js API service</td><!-- Summary -->
+                            <td>Binaryify/NeteaseCloudMusicApi</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>new-pac</td><!-- Name -->
+                            <td>自由/科学/翻墙上网；免费ss/ssr账号；搭建ss/ssr教程</td><!-- Summary -->
+                            <td>Alvin9999/new-pac</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>NiftyDialogEffects</td><!-- Name -->
+                            <td>Nifty Modal Dialog Effects</td><!-- Summary -->
+                            <td>sd6352051/NiftyDialogEffects</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Notes</td><!-- Name -->
+                            <td>Material Design Notes App</td><!-- Summary -->
+                            <td>lguipeng/Notes</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Notes</td><!-- Name -->
+                            <td>小米便签社区开源版</td><!-- Summary -->
+                            <td>MiCode/Notes</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>NumberProgressBar</td><!-- Name -->
+                            <td>数字进度条</td><!-- Summary -->
+                            <td>daimajia/NumberProgressBar</td><!-- URL -->
+                        </tr>
+                        <!-- O -->
+                        <tr>
+                            <td>openwrt-on-android</td><!-- Name -->
+                            <td>Openwrt on Android</td><!-- Summary -->
+                            <td>droiter/openwrt-on-android</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>overscroll-decor</td><!-- Name -->
+                            <td>Android: iOS-like over-scrolling effect applicable over almost all scrollable Android
+                                views.
+                            </td><!-- Summary -->
+                            <td>EverythingMe/overscroll-decor</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>OverScrollView</td><!-- Name -->
+                            <td>A ScrollView with over scroll capabilities, a complete replacement for android's
+                                ScrollView
+                            </td><!-- Summary -->
+                            <td>EverythingMe/OverScrollView</td><!-- URL -->
+                        </tr>
+                        <!-- P -->
+                        <tr>
+                            <td>ParallaxScroll</td><!-- Name -->
+                            <td>Parallax ScrollView and ListView for Android</td><!-- Summary -->
+                            <td>nirhart/ParallaxScroll</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Persei.android</td><!-- Name -->
+                            <td>Animated top menu for ListView or RecyclerView or ScrollView or GridView</td>
+                            <!-- Summary -->
+                            <td>android-cjj/Persei.android</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>PhotoView</td><!-- Name -->
+                            <td>使用双指或双击缩放图片</td><!-- Summary -->
+                            <td>chrisbanes/PhotoView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>pickerview</td><!-- Name -->
+                            <td>时间选择器，聚合的时间选择器和联动选择器。</td><!-- Summary -->
+                            <td>jaaksi/pickerview</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>PlaceHolderView</td><!-- Name -->
+                            <td>糅合RecyclerView和StackView</td><!-- Summary -->
+                            <td>janishar/PlaceHolderView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>PopularMovies</td><!-- Name -->
+                            <td>Android App that lists popular movies in a GridView and displays movie details when the
+                                movie poster is selected.
+                            </td><!-- Summary -->
+                            <td>mansonjones/PopularMovies</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>PopupList</td><!-- Name -->
+                            <td>The editing menu in Android, like the UIMenuController in iOS.</td><!-- Summary -->
+                            <td>shangmingchao/PopupList</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ProgressButton</td><!-- Name -->
+                            <td>登录加载、返回按钮转场动画控件</td><!-- Summary -->
+                            <td>ldoublem/ProgressButton</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>progresshint</td><!-- Name -->
+                            <td>ProgressBar/SeekBar delegate to show floating progress with style</td><!-- Summary -->
+                            <td>techery/progresshint</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ProgressRoundButton</td><!-- Name -->
+                            <td>A DownloadProgressButton with Animation for Android</td><!-- Summary -->
+                            <td>cctanfujun/ProgressRoundButton</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ProgressView</td><!-- Name -->
+                            <td>用于展示注册进度的view</td><!-- Summary -->
+                            <td>jiang111/ProgressView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ProgressView</td><!-- Name -->
+                            <td>Styleable progress view</td><!-- Summary -->
+                            <td>WhiteDG/ProgressView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ProgressWheel</td><!-- Name -->
+                            <td>环形进度条</td><!-- Summary -->
+                            <td>Todd-Davies/ProgressWheel</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>PullLeftToRefreshLayout</td><!-- Name -->
+                            <td>带有贝塞尔曲线效果的横向刷新布局，支持多种view，如RecyclerView，HorizontalScrollView等。希望童鞋们多提建议，多多star！</td>
+                            <!-- Summary -->
+                            <td>yzl520/PullLeftToRefreshLayout</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>PullToRefresh</td><!-- Name -->
+                            <td>根据Maxwin的XListView改造而来，完善下拉刷新上拉加载更多的功能并实现自动刷新以及自动加载等功能， 并增加对ScrollView的支持。</td>
+                            <!-- Summary -->
+                            <td>MarkMjw/PullToRefresh</td><!-- URL -->
+                        </tr>
+                        <!-- Q -->
+                        <tr>
+                            <td>QMUI_Android</td><!-- Name -->
+                            <td>提高 Android UI 开发效率的 UI 库</td><!-- Summary -->
+                            <td>QMUI/QMUI_Android</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>QuickReturnHeader</td><!-- Name -->
+                            <td>A ListView/ScrollView header that hides when scrolling down and reappears immediately
+                                when scrolling up, regardless of how far down the list we've gone. Like the one from the
+                                Google Keep app.
+                            </td><!-- Summary -->
+                            <td>ManuelPeinado/QuickReturnHeader</td><!-- URL -->
+                        </tr>
+                        <!-- R -->
+                        <tr>
+                            <td>recent-images</td><!-- Name -->
+                            <td>They show your latest images when you try to attach or post a picture</td>
+                            <!-- Summary -->
+                            <td>amirarcane/recent-images</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>RecyclerViewCardGallery</td><!-- Name -->
+                            <td>@Deprecated RecyclerView实现Card Gallery效果，替代ViewPager方案</td><!-- Summary -->
+                            <td>huazhiyuan2008/RecyclerViewCardGallery</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>RecyclerViewItemAnimators</td><!-- Name -->
+                            <td>RecyclerView动画</td><!-- Summary -->
+                            <td>gabrielemariotti/RecyclerViewItemAnimators</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>referrer-killer</td><!-- Name -->
+                            <td>It prevents the browser from sending the http referrer when clicking a link (not latests
+                                IE) and loading an image.
+                            </td><!-- Summary -->
+                            <td>jpgerek/referrer-killer</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>RefreshLoadMoreLayout</td><!-- Name -->
+                            <td>支持RecyclerView,View, ScrollView, ListView, GridView下拉刷新,上拉加载更多,上拉自动加载更多.</td>
+                            <!-- Summary -->
+                            <td>qbaowei/RefreshLoadMoreLayout</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>RippleEffect</td><!-- Name -->
+                            <td>Ripple effect for API 9+</td><!-- Summary -->
+                            <td>traex/RippleEffect</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>RingProgress</td><!-- Name -->
+                            <td>a circle progress bar with effect</td><!-- Summary -->
+                            <td>ldoublem/RingProgress</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>RxAndroid</td><!-- Name -->
+                            <td>基于事件的异步库</td><!-- Summary -->
+                            <td>ReactiveX/RxAndroid</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>RxGalleryFinal</td><!-- Name -->
+                            <td>Android图片单选/多选、拍照、裁剪、压缩。视频选择和录制</td><!-- Summary -->
+                            <td>FinalTeam/RxGalleryFinal</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>RxJava</td><!-- Name -->
+                            <td>基于事件的异步库</td><!-- Summary -->
+                            <td>ReactiveX/RxJava</td><!-- URL -->
+                        </tr>
+                        <!-- S -->
+                        <tr>
+                            <td>samples</td><!-- Name -->
+                            <td>WebRTC示例</td><!-- Summary -->
+                            <td>webrtc/samples</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ScrollGalleryView</td><!-- Name -->
+                            <td> Android image gallery with bottom scroll view</td><!-- Summary -->
+                            <td>VEINHORN/ScrollGalleryView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ScrollView</td><!-- Name -->
+                            <td>各种ScrollView</td><!-- Summary -->
+                            <td>jooking/ScrollView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ScrollViewContainer</td><!-- Name -->
+                            <td>模仿淘宝商品查看详细信息时，上拉加载更多的功能</td><!-- Summary -->
+                            <td>ghplove/ScrollViewContainer</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ScrollViewContainer</td><!-- Name -->
+                            <td>Android仿淘宝商品浏览控件</td><!-- Summary -->
+                            <td>jingchenUSTC/ScrollViewContainer</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ScrollViewOnTouch</td><!-- Name -->
+                            <td>仿百度助手头部搜索框缩放.</td><!-- Summary -->
+                            <td>hanks-zyh/ScrollViewOnTouch</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>SelectPhoto</td><!-- Name -->
+                            <td>仿微信发图片GridView，最后一张显示 + 号</td><!-- Summary -->
+                            <td>cn-huangzhou/SelectPhoto</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>SimpleCropView</td><!-- Name -->
+                            <td>图片裁剪</td><!-- Summary -->
+                            <td>IsseiAoki/SimpleCropView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>SlideBottomPanel</td><!-- Name -->
+                            <td>底部划动菜单，滑动时背景图透明度渐变，支持嵌套 LiewView 或 ScrollView</td><!-- Summary -->
+                            <td>kingideayou/SlideBottomPanel</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>SlidingCardLayout</td><!-- Name -->
+                            <td>SlidingCardLayout</td><!-- Summary -->
+                            <td>ZhangdroidApp/SlidingCardLayout</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>SlidingSquaresLoader</td><!-- Name -->
+                            <td>A simple progress loader inspired by Can you Code this UI? Volume 6!</td>
+                            <!-- Summary -->
+                            <td>biodunalfet/SlidingSquaresLoader</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>SmartAppUpdates</td><!-- Name -->
+                            <td>Android应用增量更新</td><!-- Summary -->
+                            <td>cundong/SmartAppUpdates</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>smoothie</td><!-- Name -->
+                            <td>[DEPRECATED] Easy async loading for Android's ListView/GridView</td><!-- Summary -->
+                            <td>lucasr/smoothie</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>SmoothTransition</td><!-- Name -->
+                            <td>Smooth activity switch animation.</td><!-- Summary -->
+                            <td>dkmeteor/SmoothTransition</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>SpringView</td><!-- Name -->
+                            <td>A custom view can pull up and down,support ScrollView,ListView,RecyclerView,WebView and
+                                all another views, easy to use
+                            </td><!-- Summary -->
+                            <td>liaoinstan/SpringView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>StaggeredGridView</td><!-- Name -->
+                            <td>A simple StaggeredGridView implemented using ScrollView.</td><!-- Summary -->
+                            <td>smanikandan14/StaggeredGridView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>StaggeredTextGridView</td><!-- Name -->
+                            <td>Custom wrapped text gridview.</td><!-- Summary -->
+                            <td>riontech-xten/StaggeredTextGridView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>StandOut</td><!-- Name -->
+                            <td>StandOut lets you easily create floating windows in your Android app.</td>
+                            <!-- Summary -->
+                            <td>pingpongboss/StandOut</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>StateProgressBar</td><!-- Name -->
+                            <td>Android library to realize the various states and transitions in a ProgressBar.</td>
+                            <!-- Summary -->
+                            <td>kofigyan/StateProgressBar</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>StickyScrollViewItems</td><!-- Name -->
+                            <td>A small android library for tagging views inside a ScrollView as "sticky" making them
+                                stick to the top of the scroll container until a new sticky view comes and takes it's
+                                place.
+                            </td><!-- Summary -->
+                            <td>emilsjolander/StickyScrollViewItems</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>stickyViewpager</td><!-- Name -->
+                            <td>[deprecated] sticky view in viewpager which includes scrollview and listview - viewpager
+                                with headers.
+                            </td><!-- Summary -->
+                            <td>xmuSistone/stickyViewpager</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>StockMarket</td><!-- Name -->
+                            <td>主流股票行情显示 ScrollView+HorizontalScrollView+listview联动 垂直滚动 横向滚动.</td><!-- Summary -->
+                            <td>lovemelovemydog/StockMarket</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>SunDay</td><!-- Name -->
+                            <td>天气</td>
+                            <!-- Summary -->
+                            <td>iQuick/SunDay</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>sweet-alert-dialog</td><!-- Name -->
+                            <td>动画对话框</td><!-- Summary -->
+                            <td>pedant/sweet-alert-dialog</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>Swipecards</td><!-- Name -->
+                            <td>A Tinder-like Android library to create the swipe cards effect. You can swipe left or
+                                right to like or dislike the content.
+                            </td><!-- Summary -->
+                            <td>Diolor/Swipecards</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>SwipeMenu</td><!-- Name -->
+                            <td>A swipe menu for horizontal/vertical, support left/right add top/bottom directions</td>
+                            <!-- Summary -->
+                            <td>TUBB/SwipeMenu</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>SwitchButton</td><!-- Name -->
+                            <td>漂亮的Switch开关</td><!-- Summary -->
+                            <td>kyleduo/SwitchButton</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>syntaxhighlighter</td><!-- Name -->
+                            <td>代码高亮</td><!-- Summary -->
+                            <td>syntaxhighlighter/syntaxhighlighter</td><!-- URL -->
+                        </tr>
+                        <!-- T -->
+                        <tr>
+                            <td>tensorflow</td><!-- Name -->
+                            <td>一个采用数据流图进行数值计算的可升级机器学习库</td><!-- Summary -->
+                            <td>tensorflow/tensorflow</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>transmission</td><!-- Name -->
+                            <td>Official Transmission BitTorrent client repository</td><!-- Summary -->
+                            <td>transmission/transmission</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>TVRemoteIME</td><!-- Name -->
+                            <td>电视盒子的远程输入法应用，可跨屏远程输入、跨屏远程控制盒子、远程播放视频、文件管理</td><!-- Summary -->
+                            <td>kingthy/TVRemoteIME</td><!-- URL -->
+                        </tr>
+                        <!-- U -->
+                        <tr>
+                            <td>UcMainPagerDemo</td><!-- Name -->
+                            <td>Use custom behavior to implement UC Browser 's MainPager UI</td><!-- Summary -->
+                            <td>BCsl/UcMainPagerDemo</td><!-- URL -->
+                        </tr>
+                        <!-- V -->
+                        <tr>
+                            <td>VerticalSlideView</td><!-- Name -->
+                            <td>类似淘宝的商品详情页，继续拖动查看详情，其中拖动增加了阻尼，并且重写了ListView，GridView，ScrollView，WebView，RecyclerView 的
+                                dispatchTouchEvent 方法，使用的时候无须额外的代码，可以任意嵌套使用。
+                            </td><!-- Summary -->
+                            <td>jeasonlzy/VerticalSlideView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ViewPagerExtensions</td><!-- Name -->
+                            <td>A set of custom views for the ViewPager from the Android Support Package</td>
+                            <!-- Summary -->
+                            <td>astuetz/ViewPagerExtensions</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ViewPagerIndicator</td><!-- Name -->
+                            <td>ViewPager指示器</td><!-- Summary -->
+                            <td>JakeWharton/ViewPagerIndicator</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ViewPagerIndicator</td><!-- Name -->
+                            <td>ViewPager指示器</td><!-- Summary -->
+                            <td>LuckyJayce/ViewPagerIndicator</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ViewPagerIndicator</td><!-- Name -->
+                            <td>android viewpager indicator</td><!-- Summary -->
+                            <td>ifnnn/ViewPagerIndicator</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>VideoPlayerManager</td><!-- Name -->
+                            <td>多个视频的显示与播放</td><!-- Summary -->
+                            <td>danylovolokh/VideoPlayerManager</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>VideoRecorder</td><!-- Name -->
+                            <td>android视频录制，模仿微视，支持按下录制、抬起暂停。进度条断点显示。</td><!-- Summary -->
+                            <td>qdrzwd/VideoRecorder</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>VolumeView</td><!-- Name -->
+                            <td>酷炫的音量调节自定义View</td><!-- Summary -->
+                            <td>JangGwa/VolumeView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>vue-element-admin</td><!-- Name -->
+                            <td>A magical vue admin</td><!-- Summary -->
+                            <td>PanJiaChen/vue-element-admin</td><!-- URL -->
+                        </tr>
+                        <!-- W -->
+                        <tr>
+                            <td>WayHoo</td><!-- Name -->
+                            <td>本应用是以变形金刚作为主题元素的天气实用型软件</td><!-- Summary -->
+                            <td>way1989/WayHoo</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>weex</td><!-- Name -->
+                            <td>跨平台UI</td><!-- Summary -->
+                            <td>alibaba/weex</td><!-- URL -->
+                        </tr>
+                        <!-- X -->
+                        <tr>
+                            <td>Xposed</td><!-- Name -->
+                            <td>native part of the Xposed framework</td><!-- Summary -->
+                            <td>rovo89/Xposed</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>xUtils3</td><!-- Name -->
+                            <td>包含了orm, http(s), image, view注解, 但依然很轻量级(246K)</td><!-- Summary -->
+                            <td>wyouflf/xUtils3</td><!-- URL -->
+                        </tr>
+                        <!-- Y -->
+                        <tr>
+                            <td>yaaw</td><!-- Name -->
+                            <td>Yet Another Aria2 Web Frontend in pure HTML/CSS/Javascirpt</td><!-- Summary -->
+                            <td>binux/yaaw</td><!-- URL -->
+                        </tr>
+                        <!-- Z -->
+                        <tr>
+                            <td>zhao</td><!-- Name -->
+                            <td>【编程随想】整理的《太子党关系网络》，专门揭露赵国的权贵</td><!-- Summary -->
+                            <td>programthink/zhao</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>ZoomScrollView</td><!-- Name -->
+                            <td>下拉放大图片的ScrollView</td><!-- Summary -->
+                            <td>RayeWang/ZoomScrollView</td><!-- URL -->
+                        </tr>
+                        <tr>
+                            <td>zxing</td><!-- Name -->
+                            <td>二维码编解码</td><!-- Summary -->
+                            <td>zxing/zxing</td><!-- URL -->
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <link rel="stylesheet" href="../../resource/css/toolbox.reset.css"><!-- CSS reset -->
+    <link rel="stylesheet" href="../../resource/css/toolbox.style.css"><!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../../resource/js/data-table.js"></script>
+<script>
+    // AZ: for lists of GPD(GitHub Desirable Project) page.
+    $("#table-github-list").bootgrid({
+        ajax: false,
+        //url: "json/essay.json", // AZ:Set true to use json data
+        //post: function () {
+        /* To accumulate custom parameter with the request object */
+        /*
+         return {
+         id: "b0df282a-0d67-40e5-8558-c9e93b7befed"
+         };
+         */
+        // },
+        selection: false, // AZ:Show Select Icon
+        multiSelect: true,
+        rowSelect: true,
+        keepSelection: true,
+        rowCount: 50, // AZ: -1 mains show all
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "title": function (column, row) {
+                return "<a  href=\"https://www.github.com/" + row.url + "\" target='_blank'>" + row.title + " </a>";
+            }
+        }
+    }).on("selected.rs.jquery.bootgrid", function (e, rows) {
+        var rowIds = [];
+        for (let i = 0; i < rows.length; i++) {
+            rowIds.push(rows[i].id);
+        }
+        //alert("Select: " + rowIds.join(","));
+    }).on("deselected.rs.jquery.bootgrid", function (e, rows) {
+        var rowIds = [];
+        for (let i = 0; i < rows.length; i++) {
+            rowIds.push(rows[i].id);
+        }
+        //alert("Deselect: " + rowIds.join(","));
+    });
+</script>
+
+<!-- Site Functions & Actions -->
+<script src="../../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../../resource/js/canvas-nest.min.js"></script>
+
+<!-- Toolbox -->
+<script src="../../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 2;</script>
+<script src="../../resource/js/zms.page.pattern.js"></script>
+</body>
+</html>

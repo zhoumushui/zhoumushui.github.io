@@ -1,0 +1,3310 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet"><!-- Animate CSS -->
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet"><!-- Malihu Scrollbar -->
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../resource/css/app-1.min.css" rel="stylesheet">
+    <link href="../../resource/css/az.css" rel="stylesheet">
+
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../resource/css/essay.material.floating.button.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <div class="card">
+            <div class="action-header">
+                <span class="actions essay-back-arrow">
+                   <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title">Keep Moving <i class="zmdi zmdi-xbox"></i></span>
+                <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-mood"></i>&nbsp;<span class="essay-type">Fun</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2013-11-29 23:29</span>
+                </span>
+
+                <!--
+                AZ Share: Material Floating Button;
+                Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+                Position:mfb-component--br,bl,tr,tl;
+                Action:hover,click
+                -->
+                <script>
+                    document.title = 'Keep Moving';
+                    let essayTitle = document.title;
+                    let essaySummary = document.title;//'随便写点什么';
+                    let essayUrl = window.location.href;
+                    //  let essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                    let essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+
+                    <!-- AZ: Month Line -->
+                    let data2013 = [[1,], [2,], [3,], [4,], [5,], [6,],
+                        [7,], [8,], [9,], [10,], [11, 3], [12, 14]];
+                    let data2014 = [[1, 22], [2, 20], [3, 4], [4, 0], [5, 34], [6, 21],
+                        [7, 17], [8, 16], [9, 18], [10, 20], [11, 17], [12, 16]];
+                    let data2015 = [[1, 8], [2, 22], [3, 12], [4, 10], [5, 14], [6, 12],
+                        [7, 12], [8, 11], [9, 12], [10, 12], [11, 12], [12, 14]];
+                    let data2016 = [[1, 15], [2, 9], [3, 13], [4, 12], [5, 13], [6, 15],
+                        [7, 14], [8, 9], [9, 13], [10, 11], [11, 12], [12, 13]];
+                    let data2017 = [[1, 9], [2, 13], [3, 13], [4, 18], [5, 10], [6, 12],
+                        [7, 11], [8, 10], [9, 11], [10, 9], [11, 9], [12, 10]];
+                    let data2018 = [[1, 6], [2, 3], [3, 10], [4, 12], [5, 6], [6, 5],
+                        [7, 6], [8, 7], [9, 3], [10, 1], [11, 0], [12, 0]];
+                    let data2019 = [[1, 0], [2, 0], [3, 5], [4, 4], [5, 2], [6, 5],
+                        [7, 7], [8, 3], [9, 11], [10, 8], [11, 9], [12, 8]];
+                    let data2020 = [[1, 6], [2,], [3,], [4,], [5,], [6,],
+                        [7,], [8,], [9,], [10,], [11,], [12,]];
+                </script>
+                <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card__header">
+                        <h2>合计 <span id="amountTotal" style="color: #00a1d8"></span></h2>
+                        <br>
+                        2013 <span id="amount2013" style="color: #00a1d8"></span>
+                        2014 <span id="amount2014" style="color: #00a1d8"></span>
+                        2015 <span id="amount2015" style="color: #00a1d8"></span>
+                        2016 <span id="amount2016" style="color: #00a1d8"></span>
+                        2017 <span id="amount2017" style="color: #00a1d8"></span>
+                        2018 <span id="amount2018" style="color: #00a1d8"></span>
+                        2019 <span id="amount2019" style="color: #00a1d8"></span>
+                        2020 <span id="amount2020" style="color: #00a1d8"></span>
+                    </div>
+
+                    <div class="card__body">
+                        <div id="chart-month-line" class="flot-chart"></div>
+                        <div class="flot-chart-legend flot-chart-legend--line"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card__body">
+                        <div id="chart-with-donut" class="flot-chart flot-chart--lg"></div>
+                        <div class="flot-chart-legend flot-chart-legend--donut"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__header">
+                    <h2>场次 <span id="list-row-count" style="color: #00a1d8"></span>&nbsp;
+                        场均 <span id="amountAverage" style="color: #00a1d8"></span>
+                    </h2>
+                </div>
+
+                <div class="card__body">
+                    <div id="chart-trend-dynamic" class="flot-chart"></div>
+                </div>
+            </div>
+
+            <div class="card__body" style="display: none"><!-- HIDE -->
+                <div class="table-responsive">
+                    <!-- id="data-table-basic,data-table-selection,data-table-command" -->
+                    <table id="table-main-list" class="table table-striped"
+                           style="font-family: 'Microsoft YaHei', sans-serif">
+                        <thead>
+                        <tr>
+                            <th data-column-id="number" data-formatter="number" data-type="numeric">+</th>
+                            <!--<th data-column-id="id"  data-identifier="true">编号</th>-->
+                            <th data-column-id="with" data-formatter="with" data-visible="false">x</th>
+                            <th data-column-id="date" data-formatter="date" data-order="desc">-</th>
+                            <!-- data-order="desc,asc" -->
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2020-02-23</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2020-02-20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2020-02-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2020-01-20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2020-01-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2020-01-11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2020-01-05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2020-01-03</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2020-01-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-12-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-12-29</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-12-24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-12-21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-12-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-12-15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-12-07</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-12-03</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-11-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-11-26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-11-22</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2019-11-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-11-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-11-08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-11-03</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-11-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-10-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-10-25</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-10-20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-10-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-10-15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-10-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-10-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-10-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-09-29</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-09-26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-09-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-09-20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-09-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-09-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-09-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-09-13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-09-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-09-07</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-09-06</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-08-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-08-13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-08-04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-07-27</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-07-24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-07-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-07-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-07-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-07-07</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-07-06</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-06-26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-06-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-06-15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-06-11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-06-09</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-05-26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-05-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-04-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-04-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-04-13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-04-06</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-03-31</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-03-26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-03-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-03-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2019-03-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-10-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-09-25</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-09-22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-09-08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-08-31</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-08-24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-08-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-08-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-08-14</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2018-08-10</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2018-07-29</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-07-28</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-07-22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-07-15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-07-08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-06-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-06-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-06-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-06-10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-06-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-05-26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-05-21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-05-13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-05-10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-05-09</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-05-06</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-04-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-04-29</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-04-25</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-04-23</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2018-04-22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-04-11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-04-07</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2018-04-05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-04-04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-04-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-03-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-03-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-03-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-03-15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-03-11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-03-09</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-03-07</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2018-03-04</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2018-02-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-02-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-01-27</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-01-22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-01-20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-01-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-01-06</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2018-01-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-12-29</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-12-28</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-12-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-12-21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-12-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-12-10</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2017-12-07</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-12-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-12-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-11-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-11-25</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2017-11-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-11-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-11-11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-11-09</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-11-07</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-11-04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-10-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-10-28</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-10-27</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-10-21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-10-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-10-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-10-09</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-10-04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-10-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-09-29</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-09-24</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2017-09-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-09-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-09-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-09-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-09-15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-09-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-09-05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-09-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-08-27</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-08-24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-08-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-08-22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-08-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-08-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-08-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-08-13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-08-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-08-05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-07-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-07-28</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-07-25</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-07-24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-07-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-07-21</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2017-07-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-07-13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-07-06</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-07-04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-06-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-06-28</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-06-25</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-06-21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-06-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-06-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-06-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-06-12</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2017-06-04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-06-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-05-29</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-05-28</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-05-25</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-05-22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-05-20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-05-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-05-14</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2017-05-13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-05-08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-04-27</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-04-26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-04-24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-04-23</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2017-04-21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-04-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-04-18</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2017-04-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-04-15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-04-13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-04-11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-04-09</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-04-08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-04-07</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-04-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-04-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-03-25</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-03-24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-03-21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-03-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-03-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-03-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-03-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-03-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-03-13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-03-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-03-11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-03-09</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-03-08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-02-26</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2017-02-24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-02-21</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2017-02-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-02-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-02-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-02-10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-02-07</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-02-06</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-02-04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-02-03</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2017-01-22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-01-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-01-17</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2017-01-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-01-10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-01-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2017-01-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-12-31</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-12-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-12-27</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-12-24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-12-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-12-20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-12-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-12-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-12-11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-12-10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-12-08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-12-07</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-11-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-11-29</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2016-11-27</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-11-20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-11-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-11-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-11-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-11-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-11-08</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2016-11-06</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-10-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-10-27</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-10-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-10-22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-10-21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-10-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-10-15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-10-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-10-11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-10-09</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-10-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-09-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-09-26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-09-24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-09-21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-09-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-09-16</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2016-09-15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-09-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-09-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-09-09</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-09-08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-09-07</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-08-26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-08-20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-08-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-08-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-08-13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-08-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-08-07</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-08-05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-08-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-07-28</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-07-26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-07-24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-07-22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-07-20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-07-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-07-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-07-15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-07-13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-07-10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-07-07</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-07-05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-07-03</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-07-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-06-26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-06-25</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-06-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-06-21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-06-20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-06-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-06-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-06-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-06-10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-06-09</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2016-06-05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-06-04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-06-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-06-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-05-31</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-05-24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-05-22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-05-21</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2016-05-15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-05-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-05-10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-05-08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-05-07</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2016-05-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-04-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-04-28</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-04-22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-04-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-04-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-04-13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-04-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-04-09</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-04-07</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2016-04-03</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-03-28</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-03-27</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-03-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-03-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-03-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-03-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-03-11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-03-08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-03-06</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-03-05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-03-04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-03-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-03-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-02-29</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-02-28</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-02-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-02-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-02-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-02-15</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2016-02-14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-02-03</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-01-31</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-01-28</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-01-27</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-01-26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-01-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-01-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-01-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-01-14</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2016-01-11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-01-09</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-01-07</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-01-05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-01-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2016-01-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-12-30</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-12-26</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2015-12-19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-12-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-12-15</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-12-12</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-12-05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-12-03</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-12-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-11-29</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-11-28</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-11-22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-11-20</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-11-15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-11-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-11-09</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-11-08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-11-07</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-11-06</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-11-04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-10-31</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-10-30</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-10-29</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-10-27</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-10-26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-10-25</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-10-24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-10-16</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-10-15</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-10-06</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-09-26</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-09-25</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2015-09-04</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-09-03</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2015-09-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-08-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-08-22</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-08-21</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-08-09</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-08-08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-08-02</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-08-01</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2015-07-31</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-07-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-07-12</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-07-11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-07-10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-07-05</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-07-04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-07-02</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-06-28</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-06-27</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-06-20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-06-19</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2015-06-13</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2015-06-06</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2015-05-31</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2015-05-23</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-05-22</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-05-20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-05-10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-05-02</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-05-01</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-04-30</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-04-25</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2015-04-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-04-04</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-04-03</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2015-03-28</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A</td>
+                            <td>2015-03-22</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-03-15</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2015-03-05</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-02-24</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-02-23</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-02-22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-02-21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-02-20</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-02-19</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-02-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-02-17</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-02-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-02-15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-02-11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-02-10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-02-08</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-02-07</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2015-02-01</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2015-01-25</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2015-01-17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-01-16</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-01-11</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2015-01-01</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-12-31</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-12-27</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2014-12-23</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-12-21</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2014-12-13</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-12-07</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-12-04</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-11-28</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2014-11-22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-11-21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-11-20</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2014-11-15</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-11-14</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-11-09</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-11-02</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2014-11-01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-10-26</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-10-25</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2014-10-24</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-10-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-10-21</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-10-19</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-10-18</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-10-15</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-10-05</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>A</td>
+                            <td>2014-10-04</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-10-02</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-10-01</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2014-09-30</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-09-29</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A</td>
+                            <td>2014-09-23</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-09-14</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2014-09-07</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>A</td>
+                            <td>2014-09-06</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A</td>
+                            <td>2014-08-30</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-08-23</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2014-08-16</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A</td>
+                            <td>2014-08-10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-08-09</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-08-03</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>2014-07-31</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2014-07-26</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-07-19</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-07-14</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-07-13</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-07-06</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>A</td>
+                            <td>2014-07-01</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>A</td>
+                            <td>2014-06-25</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A</td>
+                            <td>2014-06-20</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A</td>
+                            <td>2014-06-17</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A</td>
+                            <td>2014-06-14</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2014-06-13</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2014-06-10</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A</td>
+                            <td>2014-05-31</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A</td>
+                            <td>2014-05-25</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2014-05-24</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>A</td>
+                            <td>2014-05-20</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>A</td>
+                            <td>2014-05-15</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>A</td>
+                            <td>2014-05-06</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>A</td>
+                            <td>2014-05-02</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A</td>
+                            <td>2014-03-01</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>A</td>
+                            <td>2014-02-27</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>A</td>
+                            <td>2014-02-23</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>A</td>
+                            <td>2014-02-09</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>A</td>
+                            <td>2014-01-20</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A</td>
+                            <td>2014-01-18</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A</td>
+                            <td>2014-01-17</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>A</td>
+                            <td>2014-01-14</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2014-01-07</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>A</td>
+                            <td>2013-12-24</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>A</td>
+                            <td>2013-12-21</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A</td>
+                            <td>2013-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A</td>
+                            <td>2013-11-29</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <link rel="stylesheet" href="../../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<script src="../../resource/js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../../resource/js/canvas-nest.min.js"></script>
+
+<script src="../../resource/js/essay.material.floating.button.js"></script>
+<script type="text/javascript">
+    var panel = document.getElementById('panel'),
+        menu = document.getElementById('menu'),
+        showcode = document.getElementById('showcode'),
+        selectFx = document.getElementById('selections-fx'),
+        selectPos = document.getElementById('selections-pos'),
+        // demo defaults
+        effect = 'mfb-zoomin',
+        pos = 'mfb-component--br';
+
+    showcode.addEventListener('click', _toggleCode);
+    selectFx.addEventListener('change', switchEffect);
+    selectPos.addEventListener('change', switchPos);
+
+    function _toggleCode() {
+        panel.classList.toggle('viewCode');
+    }
+
+    function switchEffect(e) {
+        effect = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function switchPos(e) {
+        pos = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function renderMenu() {
+        menu.style.display = 'none';
+        // ?:-)
+        setTimeout(function () {
+            menu.style.display = 'block';
+            menu.className = pos + effect;
+        }, 1);
+    }
+</script>
+
+<!-- Flot Charts -->
+<script src="../../resource/js/flot-charts/curved-line.js"></script>
+<script src="../../resource/js/sparkline-charts.js"></script>
+<script src="../../vendors/bower_components/flot/jquery.flot.js"></script>
+<script src="../../vendors/bower_components/flot/jquery.flot.pie.js"></script>
+<script src="../../vendors/bower_components/flot/jquery.flot.resize.js"></script>
+<script src="../../vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+<!-- Sparkline Charts -->
+<script src="../../vendors/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+<script type="text/javascript">
+    var dataArray = [];
+    var numA = 0, numB = 0, numC = 0, numD = 0, numE = 0;
+    var calculateChart = function (table) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
+        var trs = table.getElementsByTagName('tr');
+        var start = 1, // 开始计算的行号，忽略第一行的表头
+            end = trs.length; // 结束计算的行号，忽略最后合计的一行
+        var total = 0;
+        let num2013 = 0, num2014 = 0, num2015 = 0, num2016 = 0, num2017 = 0;
+        let num2018 = 0, num2019 = 0, num2020 = 0;
+
+        for (var i = start; i < end; i++) {
+            let tdNumber = trs[i].getElementsByTagName('td')[0];
+            let tdWith = trs[i].getElementsByTagName('td')[1];
+            let tdDate = trs[i].getElementsByTagName('td')[2];
+            let number = parseFloat(tdNumber.innerHTML);
+            dataArray.push([end - i - 1, number]); // for Dynamic Array
+
+            if (number) {
+                total += number; // Total
+                if (tdWith.innerHTML.indexOf('A') == 0) numA += number;
+                else if (tdWith.innerHTML.indexOf('B') == 0) numB += number;
+                else if (tdWith.innerHTML.indexOf('C') == 0) numC += number;
+                else if (tdWith.innerHTML.indexOf('D') == 0) numD += number;
+                else if (tdWith.innerHTML.indexOf('E') == 0) numE += number;
+
+                if (tdDate.innerHTML.indexOf('2013') == 0) num2013 += number;
+                else if (tdDate.innerHTML.indexOf('2014') == 0) num2014 += number;
+                else if (tdDate.innerHTML.indexOf('2015') == 0) num2015 += number;
+                else if (tdDate.innerHTML.indexOf('2016') == 0) num2016 += number;
+                else if (tdDate.innerHTML.indexOf('2017') == 0) num2017 += number;
+                else if (tdDate.innerHTML.indexOf('2018') == 0) num2018 += number;
+                else if (tdDate.innerHTML.indexOf('2019') == 0) num2019 += number;
+                else if (tdDate.innerHTML.indexOf('2020') == 0) num2020 += number;
+
+            }
+        }
+        document.getElementById("amountTotal").innerHTML = total; // Total
+        document.getElementById("amountAverage").innerHTML = Math.round((total / (trs.length - 1)) * 100) / 100;
+        document.getElementById("list-row-count").innerHTML = trs.length - 1;
+        // document.getElementById("aTotal").innerHTML = numA;
+        // document.getElementById("bTotal").innerHTML = numB;
+        document.getElementById("amount2013").innerHTML = num2013;
+        document.getElementById("amount2014").innerHTML = num2014;
+        document.getElementById("amount2015").innerHTML = num2015;
+        document.getElementById("amount2016").innerHTML = num2016;
+        document.getElementById("amount2017").innerHTML = num2017;
+        document.getElementById("amount2018").innerHTML = num2018;
+        document.getElementById("amount2019").innerHTML = num2019;
+        document.getElementById("amount2020").innerHTML = num2020;
+    };
+    calculateChart(document.getElementById('table-main-list'));
+
+    'use strict';
+    $(document).ready(function () {
+        let barData = [
+            {label: '2013', data: data2013, color: '#3F51B5'},
+            {label: '2014', data: data2014, color: '#2196F3'},
+            {label: '2015', data: data2015, color: '#009688'},
+            {label: '2016', data: data2016, color: '#4CAF50'},
+            {label: '2017', data: data2017, color: '#9C27B0'},
+            {label: '2018', data: data2018, color: '#E91E63'},
+            {label: '2019', data: data2019, color: '#FFEB3B'},
+            {label: '2020', data: data2020, color: '#FFFFFF'}
+        ]
+        if ($('#chart-month-line')[0]) {
+            $.plot($("#chart-month-line"), barData, {
+                series: {shadowSize: 0},
+                grid: {
+                    borderWidth: 1,
+                    borderColor: '#31424b',
+                    show: true,
+                    hoverable: true
+                },
+                yaxis: {
+                    min: 0,
+                    max: 35, // AZ:axis-Y
+                    tickColor: '#31424b',
+                    tickDecimals: 0,
+                    font: {
+                        lineHeight: 13,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    shadowSize: 0
+                },
+                xaxis: {
+                    tickColor: '#31424b',
+                    tickDecimals: 0,
+                    font: {
+                        lineHeight: 13,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    shadowSize: 0
+                },
+                legend: {
+                    container: '.flot-chart-legend--line',
+                    noColumns: 5
+                }
+            });
+        }
+        // Tooltips for Flot Charts
+        if ($('.chart-month-line')[0]) {
+            $('.chart-month-line').bind('plothover', function (event, pos, item) {
+                if (item) {
+                    let x = item.datapoint[0].toFixed(2),
+                        y = item.datapoint[1].toFixed(2);
+                    $('.flot-tooltip').html(item.series.label + ' of ' + x + ' = ' + y).css({
+                        top: item.pageY + 5,
+                        left: item.pageX + 5
+                    }).show();
+                } else {
+                    $(".flot-tooltip").hide();
+                }
+            });
+
+            $("<div class='flot-tooltip'></div>").appendTo("body");
+        }
+
+        // AZ:Donut Pie
+        let pieData = [
+            {data: numA, color: '#009688', label: numA},
+            {data: numB, color: '#E91E63', label: numB},
+            {data: numC, color: '#2196F3', label: numC},
+            {data: numD, color: '#FFEB3B', label: numD},
+            {data: numE, color: '#673AB7', label: numE}
+        ]
+        // Donut Chart
+        if ($('#chart-with-donut')[0]) {
+            $.plot('#chart-with-donut', pieData, {
+                series: {
+                    pie: {
+                        innerRadius: 0.5, show: true, stroke: {width: 0, color: '#2b3942'}
+                    }
+                },
+                legend: {
+                    container: '.flot-chart-legend--donut',
+                    noColumns: 5
+                }
+            });
+        }
+
+        // Dynamic Line
+        'use strict';
+        let data = [];
+        let totalPoints = 300;
+        let updateInterval = 30;
+
+        function getRandomData() {
+            if (data.length > 0)
+                data = data.slice(1);
+            while (data.length < totalPoints) {
+                let prev = data.length > 0 ? data[data.length - 1] : 50,
+                    y = prev + Math.random() * 10 - 5;
+                if (y < 0) y = 0;
+                else if (y > 90) y = 90;
+                data.push(y);
+            }
+            let res = [];
+            for (let i = 0; i < data.length; ++i) {
+                res.push([i, data[i]])
+            }
+            return res;
+        }
+
+        /* Update chart */
+        function update() {
+            plot.setData([dataArray]); // plot.setData([getRandomData()]);
+            // Since the axes don't change, we don't need to call plot.setupGrid()
+            plot.draw();
+            // setTimeout(update, updateInterval); AZ: Do not update
+        }
+
+        /* Create Chart */
+        if ($('#chart-trend-dynamic')[0]) {
+            let plot = $.plot("#chart-trend-dynamic", [dataArray], {
+                series: {
+                    label: " 趋势",
+                    lines: {
+                        show: true,
+                        lineWidth: 0.2,
+                        fill: 0.8
+                    },
+                    color: '#00BCD4', // '#009688', //'#2196F3',//'#edeff0',
+                    shadowSize: 0
+                },
+                yaxis: {
+                    min: 0,
+                    max: 10, // AZ:axis-Y
+                    tickColor: '#31424b',
+                    show: true,
+                    font: {
+                        lineHeight: 13,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    position: 'left',
+                    shadowSize: 0
+                },
+                xaxis: {
+                    tickColor: '#31424b',
+                    show: true,
+                    font: {
+                        lineHeight: 10,
+                        style: "normal",
+                        color: "#98a7ac"
+                    },
+                    shadowSize: 0,
+                    min: 0,
+                    max: dataArray.length - 1 // AZ:axis-X
+                },
+                grid: {
+                    borderWidth: 1,
+                    borderColor: '#31424b',
+                    labelMargin: 10,
+                    aboveData: false, // AZ:adjust z-index
+                    mouseActiveRadius: 6
+                },
+                legend: {
+                    show: false // AZ:Show Label?
+                }
+            });
+            update();
+        }
+
+    });
+
+    $("#table-main-list").bootgrid({
+        ajax: false,
+        selection: false, // AZ:Show Select Icon
+        //Override default icon classes
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "number": function (column, row) {
+                let result = '';
+                switch (row.with) {
+                    case 'A': // Anne Zhang
+                        result = "<span class=\"make-with-a\">";
+                        break;
+                    case 'B':
+                        result = "<span class=\"make-with-b\">";
+                        break;
+                    case 'C':
+                        result = "<span class=\"make-with-c\">";
+                        break;
+                    case 'D':
+                        result = "<span class=\"make-with-d\">";
+                        break;
+                    case 'E':
+                        result = "<span class=\"make-with-e\">";
+                        break;
+                    default:
+                        result = "<span class=\"make-with-default\">";
+                        break;
+                }
+                for (let i = 0; i < row.number; i++) {
+                    result = result + "<i class=\"zmdi zmdi-circle\"></i> ";
+                }
+                result = result + "</span>";
+                return result;
+            },
+            "with": function (column, row) {
+                switch (row.with) {
+                    case 'A':
+                        return "<i class=\"zmdi zmdi-flower-alt make-with-a\"></i>";
+                    case 'B':
+                        return "<i class=\"zmdi zmdi-flower-alt make-with-b\"></i>";
+                    case 'C':
+                        return "<i class=\"zmdi zmdi-flower-alt make-with-c\"></i>";
+                    case 'D':
+                        return "<i class=\"zmdi zmdi-flower-alt make-with-d\"></i>";
+                    case 'E':
+                        return "<i class=\"zmdi zmdi-flower-alt make-with-e\"></i>";
+                    default:
+                        return "<i class=\"zmdi zmdi-flower-alt make-with-default\"></i>";
+                }
+            }
+        }
+    });
+</script>
+
+<!-- Toolbox -->
+<script src="../../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 2;</script>
+<script src="../../resource/js/zms.page.pattern.js"></script>
+</body>
+</html>

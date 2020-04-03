@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>年鉴</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../resource/css/az.css" rel="stylesheet">
+
+    <!-- Yearbook Timeline -->
+    <link href="../../resource/css/zms.yearbook.css" rel="stylesheet">
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../resource/css/essay.material.floating.button.css" rel="stylesheet">
+
+
+    <!-- New Style Anim Timeline -->
+    <link href="../../resource/css/timeline.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../resource/js/timeline.modernizr.js"></script>
+    <!-- jQuery -->
+    <script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">年</a>
+            <a href="" data-toggle="tab">鉴</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <script>
+            var essayTitle = '年鉴';
+            var essaySummary = '往事并不如烟';
+            var essayUrl = 'http://www.zhoumushui.com/timeline.html';
+            //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+            var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+        </script>
+        <!--
+        AZ Share: Material Floating Button;
+        Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+        Position:mfb-component--br,bl,tr,tl;
+        Action:hover,click
+        -->
+        <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+
+        <div class="card">
+            <div class="action-header">
+                <span class="actions essay-back-arrow">
+                    <a href="../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title">时间轴</span>
+                <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-time-countdown"></i>&nbsp;<span class="essay-type">time</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">1991-09-23 06:00</span>
+                </span>
+            </div>
+
+            <div class="card__body">
+                <blockquote>
+                    <i class="zmdi zmdi-time"></i> 写在前面：<br>
+                    其实主题叫年鉴（Yearbook）是不合适的，妥帖的说法是时间轴(Timeline)，一时又想不起合适的措辞，先这样吧。<br>
+                    内容中心为里程碑(Milestone)，有些大事记的意味。标注生命中的那些第一次，以及重要时刻(Once in a Lifetime)。
+                </blockquote>
+                <section id="cd-timeline" class="cd-container">
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #607D8B">
+                            <i class="zmdi zmdi-cake timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>出生</h2>
+                            <p>生于秋分时节</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">1991-09-23</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #00BCD4">
+                            <i class="zmdi zmdi-edit timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>小学入学</h2>
+                            <p>魏庄小学</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">1997-09</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #009688">
+                            <i class="zmdi zmdi-font timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>更换小学</h2>
+                            <p>西华县华龙学校</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2002-09</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #9E9E9E">
+                            <i class="zmdi zmdi-book timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>日记</h2>
+                            <p>第一次写日记</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2002-11-19</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #795548">
+                            <i class="zmdi zmdi-library timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>初中入学</h2>
+                            <p>郑集乡第二初级中学</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2004-09</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #E91E63">
+                            <i class="zmdi zmdi-fire timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>高中入学</h2>
+                            <p>淮阳县第一高级中学</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2007-09</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #00BCD4">
+                            <i class="zmdi zmdi-shopping-cart timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>网购</h2>
+                            <p>首次网购</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2009-04-02</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #CDDC39">
+                            <i class="zmdi zmdi-money timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>彩票</h2>
+                            <p>买一次彩票，手攥两块钱，胸怀五百万。</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2009-09-23</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #00695C">
+                            <i class="zmdi zmdi-compass timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>高考</h2>
+                            <p>
+                                考点：淮阳县淮阳一高前楼，考场：184，考号：30，班级：1226<br>
+                                考生号：10411419152998 报名序号：141912153413<br>
+                                语文（107）、数学（106）、理综（188）、外语（123）成绩证书编号：0196900
+                            </p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2010-06-07,06-08</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #ef5350">
+                            <i class="zmdi zmdi-railway timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>火车</h2>
+                            <p>第一次乘火车，K21，漯河-桂林</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2010-09-10</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #673AB7">
+                            <i class="zmdi zmdi-balance timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>大学入学</h2>
+                            <p>桂林理工大学，学习计算机科学与技术专业</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2010-09-14</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #795548">
+                            <i class="zmdi zmdi-laptop timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>笔记本电脑</h2>
+                            <p>
+                                第一台笔记本电脑，2011-08-23大巴车上被盗。<i class="zmdi zmdi-mood-bad"></i>
+                            </p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2010-11-21</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #607D8B">
+                            <i class="zmdi zmdi-n-4-square timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>英语四级</h2>
+                            <p>
+                                考点:GUT,06612,Room 116,No 28<br>
+                                准考证号:No:451111112111628<br>
+                                成绩:498，编号:112145111005892
+                            </p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2011-12-17</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #009688">
+                            <i class="zmdi zmdi-eye timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>阳朔</h2>
+                            <p>
+                                桂林山水甲天下，阳朔山水甲桂林。
+                            </p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2012-08-21</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #FF5722">
+                            <i class="zmdi zmdi-money-box timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>奖学金</h2>
+                            <p>
+                                第一次获得大学奖学金，三等¥200
+                            </p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2012-11-12</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #00BCD4">
+                            <i class="zmdi zmdi-n-6-square timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>英语六级</h2>
+                            <p>
+                                成绩:489
+                            </p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2012-12-14</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #8E24AA">
+                            <i class="zmdi zmdi-receipt timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>Offer</h2>
+                            <p>第一份全职Offer，天启</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2013-10-10</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #f44336">
+                            <i class="zmdi zmdi-favorite timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>表白成功</h2>
+                            <p>嘿嘿嘿。<i class="zmdi zmdi-mood"></i></p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2013-11-01</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #2196F3">
+                            <i class="zmdi zmdi-money-box timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>奖学金</h2>
+                            <p>一等奖学金：¥1000</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2013-11-05</span>
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #3F51B5">
+                            <i class="zmdi zmdi-mood timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>寿司</h2>
+                            <p>第一次吃寿司</p>
+                            <span class="cd-date">2013-11-22</span>
+                        </div>
+                    </div>
+                    -->
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #3F51B5">
+                            <i class="zmdi zmdi-money-box timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>国家励志奖学金</h2>
+                            <p>¥5000</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2013-11-22</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #795548">
+                            <i class="zmdi zmdi-city timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>凤凰古城</h2>
+                            <p>湘西凤凰城</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2014-01-17</span>
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #FFC107">
+                            <i class="zmdi zmdi-mood-bad timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>榴莲</h2>
+                            <p>第一次吃榴莲</p>
+                            <span class="cd-date">2014-02-28</span>
+                        </div>
+                    </div>
+                    -->
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #FFC107">
+                            <i class="zmdi zmdi-money-box timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>周大福奖学金</h2>
+                            <p>获得周大福校园菁英称号，¥5000.</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2014-05-24</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #009688">
+                            <i class="zmdi zmdi-brightness-3 timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>海盗船</h2>
+                            <p>
+                                第一次玩海盗船，轰天雷，旋转木马<br>
+                                桂林乐满地主题公园
+                            </p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2014-06-15</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #00a2ff">
+                            <i class="zmdi zmdi-graduation-cap timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>大学毕业</h2>
+                            <p>获得工科学士学位</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2014-06</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #9E9E9E">
+                            <i class="zmdi zmdi-railway timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>地铁</h2>
+                            <p>第一次乘地铁:郑州</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2014-07-01</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #795548">
+                            <i class="zmdi zmdi-railway timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>高铁</h2>
+                            <p>第一次乘高铁:</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2014-07-05</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #009688">
+                            <i class="zmdi zmdi-android-alt timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>入职</h2>
+                            <p>中山市天启电子科技有限公司，从事Android开发</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2014-07</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #9C27B0">
+                            <i class="zmdi zmdi-android timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>App</h2>
+                            <p>第一个Android应用：天启便签</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2014-07</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #f44336">
+                            <i class="zmdi zmdi-money timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>工资</h2>
+                            <p>第一份工资，中山市天启电子科技有限公司</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2014-08-15</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #2196F3">
+                            <i class="zmdi zmdi-eye timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>大海</h2>
+                            <p>第一次见到海，珠海</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2014-08-24</span>
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #4CAF50">
+                            <i class="zmdi zmdi-local-cafe timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>星巴克</h2>
+                            <p>第一次喝星巴克，中山利和广场</p>
+                            <span class="cd-date">2014-12-13</span>
+                        </div>
+                    </div>
+                    -->
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #f44336">
+                            <i class="zmdi zmdi-car timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>车展</h2>
+                            <p>第一次看车展，中山博览中心</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2015-05-01</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #03A9F4">
+                            <i class="zmdi zmdi-balance timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>海洋馆</h2>
+                            <p>广州海洋馆</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2015-06-13</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #9C27B0">
+                            <i class="zmdi zmdi-file-text timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>博客专家</h2>
+                            <p>获得CSDN博客专家称号</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2015-06-21</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #3F51B5">
+                            <i class="zmdi zmdi-android-alt timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>调往深圳</h2>
+                            <p>深圳市天启电子科技有限公司，从事Android开发</p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2015-08</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #00BCD4">
+                            <i class="zmdi zmdi-hotel timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>租房</h2>
+                            <p>
+                                第一次租房<br>
+                                深圳市宝安区西乡街道华侨新村西堤二巷2号 1007 [单房]<br>
+                                [4403060010211200142000171]
+                            </p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2015-08-15</span>
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #E91E63">
+                            <i class="zmdi zmdi-hotel timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>搬家</h2>
+                            <p>
+                                深圳市宝安区西乡街道华侨新村西堤二巷20号 309 [单房]<br>
+                                [4403060010211200160000024]
+                            </p>
+                            <span class="cd-date">2016-05-01</span>
+                        </div>
+                    </div>
+                    -->
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #673AB7">
+                            <i class="zmdi zmdi-desktop-windows timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>台式电脑</h2>
+                            <p>
+                                自选配置，动手组装台式电脑。<br>
+                                CPU:i7-6700K GPU:GTX1060-6G MB:Z170M RAM:16G<br>
+                                电源:Leadex G550
+                            </p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2016-10-01</span>
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #009688">
+                            <i class="zmdi zmdi-hotel timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>搬家</h2>
+                            <p>
+                                深圳市宝安区西乡街道盐田新一村五巷20号 201 [一室一厅]<br>
+                                [4403060010280400215000005]
+                            </p>
+                            <span class="cd-date">2016-11-01</span>
+                        </div>
+                    </div>
+                    -->
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #607D8B">
+                            <i class="zmdi zmdi-globe-alt timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>域名</h2>
+                            <p>
+                                注册zhoumushui.com域名，开始制作个人网站。
+                            </p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2017-04-05</span>
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #E91E63">
+                            <i class="zmdi zmdi-hotel timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>搬家</h2>
+                            <p>
+                                深圳市宝安区西乡街道海城新村三区15号 203 [一室一厅]<br>
+                                [4403060010171600116000008]
+                            </p>
+                            <span class="cd-date">2018-01-01</span>
+                        </div>
+                    </div>
+                    -->
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #E91E63">
+                            <i class="zmdi zmdi-favorite timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>结婚</h2>
+                            <p>
+                                开封通许登记。
+                            </p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2018-08-08</span>
+                        </div>
+                    </div>
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img" style="text-align: center;background-color: #E91E63">
+                            <i class="zmdi zmdi-favorite timeline-icon"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                            <h2>女儿出生</h2>
+                            <p>
+                                宝安妇幼保健院。
+                            </p>
+                            <!--<a href="" class="cd-read-more">详情</a>-->
+                            <span class="cd-date">2019-01-21</span>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+    </section>
+
+    <link rel="stylesheet" href="../../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<!--
+<script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>-->
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../../resource/js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../../resource/js/canvas-nest.min.js"></script>
+
+<script>
+    $(function () {
+        var $timeline_block = $('.cd-timeline-block');
+        //hide timeline blocks which are outside the viewport
+        $timeline_block.each(function () {
+            if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
+                $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+            }
+        });
+        //on scolling, show/animate timeline blocks when enter the viewport
+        $(window).on('scroll', function () {
+            $timeline_block.each(function () {
+                if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden')) {
+                    $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+                }
+            });
+        });
+    });
+</script>
+
+<!-- Toolbox -->
+<script src="../../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 2;</script>
+<script src="../../resource/js/zms.page.pattern.js"></script>
+</body>
+</html>

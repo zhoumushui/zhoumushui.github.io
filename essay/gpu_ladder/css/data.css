@@ -1,0 +1,701 @@
+/*
+* @Author: Marte
+* @Date:   2017-05-22 10:14:00
+* @Last Modified by:   Marte
+* @Last Modified time: 2017-06-16 21:01:18
+*/
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body, p, div, span, a, h1, h2, h3, h4, dl, dt, dd, ul, li, ol, img, input, textarea, strong {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style: none;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: "微软雅黑";
+    color: #fff;
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+    background: #344b58;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+/*----------nav-------*/
+nav {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    /*background: url("navbg.png") repeat-x; */
+    position: relative;
+    z-index: 9999;
+
+}
+
+nav .container {
+    height: 100%;
+}
+
+.addclass {
+    width: 1500px;
+}
+
+/*nav结束*/
+
+/*复选框*/
+.onlabel {
+    height: 15px;
+    margin-bottom: 0;
+    position: absolute;
+    z-index: 999;
+    padding-left: 19px;
+    font-weight: normal;
+    line-height: 11px;
+    font-size: 0.12rem;
+    left: 15%;
+    top: 55px;
+}
+
+.onlabel input {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -10px;
+    display: block;
+}
+
+/*end*/
+
+/* 下拉菜单 */
+.xknx {
+    position: absolute;
+    left: 15%;
+    top: 82px;
+    z-index: 999;
+    font-weight: normal;
+    line-height: 20px;
+    font-size: 0.12rem;
+}
+
+.xknx > * {
+    float: left;
+}
+
+.xknx > p {
+    margin-right: 4px;
+}
+
+/*end*/
+
+/*标题 start*/
+.bigtle {
+    width: 40%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    margin-left: -20%;
+    top: 55px;
+    z-index: 1;
+    text-align: center;
+    font-size: 1.3vw;
+}
+
+.back-to-essay {
+    height: auto;
+    position: absolute;
+    left: 15%;
+    z-index: 999;
+    text-align: center;
+    font-size: 16px;
+    color: #00a1d8;
+    top: 15px;
+}
+
+/*end*/
+
+/*button滑块按钮 */
+.div {
+    position: absolute;
+    z-index: 999;
+}
+
+.div #bqjh {
+    font-size: 0.1rem;
+    color: #fff;
+    position: absolute;
+    left: 4px;
+    top: 24px;
+    width: 20px;
+}
+
+#inpt1 {
+    left: 10px;
+}
+
+/* end */
+
+.animenu {
+    height: 100%;
+}
+
+.animenu > ul:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.animenu {
+    font-size: 14px;
+}
+
+.animenu * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.animenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.animenu li {
+    position: relative;
+}
+
+.animenu li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    margin: 0;
+}
+
+.animenu li:hover > a {
+    color: #333;
+}
+
+.animenu input[type=checkbox] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+.animenu label {
+    display: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.animenu > ul {
+    z-index: 999;
+    margin-top: 1px;
+    height: 100%;
+}
+
+.animenu > ul > li {
+    float: left;
+    width: 122px;
+    height: 100%;
+    text-align: center;
+    transition: all 1.5s;
+
+}
+
+.animenu > ul > li:hover {
+    background: #040c23;
+}
+
+.animenu > ul > li:hover a {
+    color: #fff;
+}
+
+.animenu > ul .webmeun:hover ul {
+    background: #fefefe;
+}
+
+.animenu > ul .webmeun:hover ul a {
+    color: #999;
+}
+
+.animenu > ul .webmeun:hover li:hover a {
+    color: #333;
+}
+
+.animenu > ul .webmeun:hover li > a:hover {
+    color: red;
+}
+
+.animenu > ul .webmeun h3 {
+    color: #999;
+    text-align: left;
+    font-size: 0.16rem;
+}
+
+.animenu > ul > li.webmeun {
+    text-align: center;
+    width: 140px;
+
+}
+
+
+@media (min-width: 1250px) {
+
+    .animenu > ul > li.webmeun {
+        width: 140px;
+    }
+
+    .div {
+        top: 5rem;
+        left: 15rem;
+    }
+
+}
+
+@media (min-width: 1600px) {
+    .onlabel, .xknx {
+        left: 22%;
+    }
+
+    .back-to-essay{
+        left: 22%;
+    }
+}
+
+@media (width: 768px) {
+    .onlabel {
+        left: 7%;
+        top: 54px;
+    }
+
+    .back-to-essay{
+        left: 7%;
+    }
+
+    .xknx {
+        left: 7%;
+        top: 60px;
+    }
+
+    .bigtle {
+        /*font-size: 20px;*/
+        top: 52px;
+    }
+
+    #expindex {
+        top: -50px;
+    }
+}
+
+@media (max-width: 1249px) {
+    .animenu > ul > li {
+        width: 11%;
+    }
+
+    .onlabel {
+        left: 6%;
+        top: 66px;
+    }
+
+    .back-to-essay{
+        left: 6%;
+    }
+
+    .xknx {
+        left: 6%;
+
+    }
+
+    .div {
+        top: 5rem;
+        left: 3.8rem;
+    }
+
+    .bigtle { /*font-size: 22px;*/
+    }
+
+    .animenu > ul > li.webmeun {
+        display: none;
+    }
+}
+
+.animenu > ul > li > a {
+    background: transparent;
+    float: left;
+    line-height: 50px;
+    width: 100%;
+    height: 100%;
+    font-size: 0.14rem;
+    color: #777;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    -mos-transition: color 0.3s ease;
+}
+
+.animenu > ul a {
+    color: #999999;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.animenu > ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    margin: 0;
+    width: 350px;
+    height: 214px;
+    box-shadow: 0px 1px 5px #ccc;
+    border-bottom: 2px solid #cc102c;
+    background-color: #fefefe;
+    background-image: none;
+    -webkit-transition-property: margin, opacity;
+    -moz-transition-property: margin, opacity;
+    -o-transition-property: margin, opacity;
+    transition-property: margin, opacity;
+    -webkit-transition-duration: .15s;
+    -moz-transition-duration: .15s;
+    -o-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+
+.animenu > ul ul li {
+    display: block;
+    margin: 0;
+    padding: 0 20px 10px 20px;
+}
+
+.animenu > ul ul li:first-child {
+    height: 100px;
+    padding-top: 10px;
+}
+
+.animenu > ul ul li:last-child {
+    height: 120px;
+}
+
+.animenu > ul ul li.drive {
+    height: 2px;
+    margin: 0 0 10px 0;
+    padding: 0;
+    border-top: 1px #ccc dotted;
+}
+
+.animenu > ul ul li:last-child {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.animenu > ul ul li:last-child > a {
+}
+
+.animenu > ul ul a {
+    font-size: 14px;
+    padding: 2px 10px;
+    display: block;
+    border-color: #373737;
+    float: left;
+}
+
+.animenu > ul ul a:hover {
+    color: #cc102c;
+}
+
+@media screen and (max-width: 768px) {
+    #expindex {
+        margin: -2px auto !important;
+    }
+
+    nav .container {
+        width: 100%;
+    }
+
+    nav .container li:first-child {
+        margin-right: 10px;
+    }
+
+    .animenu > ul > li.webmenu {
+        width: 80px;
+    }
+
+    .onlabel {
+        left: 5%;
+        padding-left: 16px;
+        font-size: 12px;
+        line-height: 20px;
+        top: 40px;
+    }
+
+    .back-to-essay{
+        left: 5%;
+        padding-left: 16px;
+    }
+
+    .xknx {
+        left: 5%;
+
+        font-size: 12px;
+        line-height: 20px;
+        top: 66px;
+    }
+
+    .onlabel input {
+        width: 12px;
+        height: 12px;
+        margin-top: -6px;
+    }
+
+    #footer {
+        margin-top: 0 !important;
+    }
+
+    .div {
+        top: 2.8rem;
+        left: 0.4rem;
+    }
+
+    .animenu > ul, .animenu > ul ul {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+    }
+
+    .container > .animenu > ul > li.meunactive a {
+        color: #f30;
+        border: none;
+        line-height: 21px;
+    }
+
+    .animenu input[type=checkbox]:checked ~ label,
+    .animenu input[type=checkbox] ~ label:hover {
+        color: #000;
+        font-family: "Microsoft Yahei";
+    }
+
+    .animenu label {
+        height: 100%;
+        margin-bottom: 0 !important;
+        color: #999 !important;
+        text-shadow: none;
+        text-transform: uppercase;
+        position: relative;
+        display: none;
+        padding: 0px 30px;
+        padding-top: 2px;
+        font-weight: 100 !important;
+        font-size: 14px;
+        line-height: 30px;
+    }
+
+    .animenu label:before {
+        position: absolute;
+        left: 0px;
+        top: 1px;
+        content: "\2261";
+        font-size: 26px;
+    }
+
+    .animenu > ul {
+        position: relative;
+        margin: 0 !important;
+        padding: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        /*background-color:#CCC;*/
+        background-image: none;
+        /*  border-bottom:1px #d6d6d6 solid;*/
+        /*border-left:1px #d6d6d6 solid;*/
+        /*border-right:1px #d6d6d6 solid;
+*/
+    }
+
+    .animenu > ul:after {
+        content: '';
+        position: absolute;
+        left: 2em;
+        top: -12px;
+        border: none;
+        border-bottom-color: inherit;
+    }
+
+    .animenu > ul li {
+        display: block;
+    }
+
+    .animenu > ul > li {
+        width: 90px;
+        float: left;
+        border: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        background: url("http://www.expreview.com/exp_new/static/exp4/img/minmeunbg.png") repeat-x;
+    }
+
+    .animenu > ul > li > a {
+        float: none;
+        display: block;
+        padding: 0 15px;
+        line-height: 30px;
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .animenu > ul ul {
+        position: static;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+        background-color: #2b2b2b;
+        background-image: none;
+        margin: 0;
+        -webkit-transition-property: none;
+        -moz-transition-property: none;
+        -o-transition-property: none;
+        transition-property: none;
+    }
+
+    .animenu > ul ul li:first-child > a {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+    }
+
+    .animenu > ul ul li:first-child > a:after {
+        content: none;
+    }
+
+    .animenu > ul ul li:last-child > a {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+    }
+
+    .animenu > ul ul a {
+        padding-left: 2em;
+        display: block;
+        width: auto;
+    }
+
+    .animenu input[type=checkbox]:checked ~ ul {
+        display: block;
+        width: 80px;
+    }
+
+    .animenu input[type=checkbox]:checked ~ ul ul {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 800px) { /*600*/
+    .animenu > ul > li > a {
+        padding: 0;
+    }
+
+    .bigtle {
+        font-size: 16px;
+        top: 38px;
+    }
+
+    .onlabel {
+        left: 3.6%;
+        padding-left: 16px;
+        font-size: 12px;
+        top: 40px;
+        line-height: 20px;
+    }
+
+    .back-to-essay{
+        left: 3.6%;
+        padding-left: 16px;
+    }
+
+    .xknx {
+        left: 3.6%;
+        font-size: 12px;
+        top: 62px;
+        line-height: 20px;
+    }
+
+    .onlabel input {
+        width: 12px;
+        height: 12px;
+        margin-top: -6px;
+    }
+
+    .animenu label {
+        padding: 1px 32px;
+        display: none;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .bigtle {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .bigtle {
+        /* font-size: 32px !important;*/
+    }
+}
+
+@media screen and (width: 1366px) {
+    .bigtle {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Book</title>
+
+    <!-- Vendors -->
+    <!-- Animate CSS -->
+    <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Light Gallery -->
+    <link href="../vendors/bower_components/lightgallery/dist/css/lightgallery.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../resource/css/app-1.min.css" rel="stylesheet">
+
+    <!-- AZ CSS -->
+    <link href="../resource/css/az.css" rel="stylesheet">
+
+    <!-- Page loader -->
+    <!--<script src="js/page-loader.min.js"></script>-->
+
+    <link type="image/x-icon" href="../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../resource/css/essay.material.floating.button.css" rel="stylesheet">
+    <style>
+        .book-rate-star {
+            color: #00A1D8;
+            font-size: 18px
+        }
+
+        .book-name {
+            color: #00A1D8;
+            font-size: 16px;
+            font-family: 微软雅黑, 仿宋;
+        }
+    </style>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e3a97a0eee3cb03b5caf792f58032743";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+<section id="main">
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">书</a>
+            <a href="" data-toggle="tab">籍</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+    <section id="content">
+
+        <script>
+            var essayTitle = '我读过的书';
+            var essaySummary = '读书好，多读书，读好书';
+            var essayUrl = 'http://www.zhoumushui.com/book.html';
+            //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+            var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+        </script>
+        <!--
+        AZ Share: Material Floating Button;
+        Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+        Position:mfb-component--br,bl,tr,tl;
+        Action:hover,click
+        -->
+        <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+
+        <div class="card">
+            <div class="action-header" style="font-family: 'Microsoft YaHei', sans-serif">
+                <div style="margin-left: 25px">
+                    读过 <span id="bookCount" style="color: #00a1d8"></span> 本书，
+                    共计 <span id="wordCount" style="color: #00a1d8"></span> 千字。
+                </div>
+                <div class="actions">
+                    <a class="action-header__toggle  action-header__actions-az">
+                        <i class="zmdi zmdi-eye"></i>
+                    </a>
+
+                    <a href="#footer" class="hidden-xs action-header__actions">
+                        <i class="zmdi zmdi-caret-down-circle" title="页面底部"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card__body widget-recent-signups__list" style="font-family: 'Microsoft YaHei', sans-serif">
+                <a class="avatar-char" href="#book_a">A</a>
+                <a class="avatar-char" href="#book_b">B</a>
+                <a class="avatar-char" href="#book_c">C</a>
+                <a class="avatar-char" href="#book_d">D</a>
+                <a class="avatar-char" href="#book_e">E</a>
+                <a class="avatar-char" href="#book_f">F</a>
+                <a class="avatar-char" href="#book_g">G</a>
+                <a class="avatar-char" href="#book_h">H</a>
+                <!--<a class="avatar-char" href="#">I</a>-->
+                <a class="avatar-char" href="#book_j">J</a>
+                <a class="avatar-char" href="#book_k">K</a>
+                <a class="avatar-char" href="#book_l">L</a>
+                <a class="avatar-char" href="#book_m">M</a>
+                <a class="avatar-char" href="#book_n">N</a>
+                <!--<a class="avatar-char" href="#">O</a>-->
+                <a class="avatar-char" href="#book_p">P</a>
+                <a class="avatar-char" href="#book_q">Q</a>
+                <a class="avatar-char" href="#book_r">R</a>
+                <a class="avatar-char" href="#book_s">S</a>
+                <a class="avatar-char" href="#book_t">T</a>
+                <!--<a class="avatar-char" href="#">U</a>-->
+                <!--<a class="avatar-char" href="#">V</a>-->
+                <a class="avatar-char" href="#book_w">W</a>
+                <a class="avatar-char" href="#book_x">X</a>
+                <a class="avatar-char" href="#book_y">Y</a>
+                <a class="avatar-char" href="#book_z">Z</a>
+                <a class="avatar-char" href="#">#</a>
+            </div>
+
+            <div class="card__body">
+                <div class="table-responsive">
+                    <table id="table-book-list" class="table table-hover"
+                           style="font-family: 'Microsoft YaHei', sans-serif">
+                        <thead>
+                        <tr>
+                            <th>书名</th>
+                            <th>作者（译者）</th>
+                            <th>字数（K）</th>
+                            <th>评分</th><!-- 0-5 -->
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <!-- A -->
+                        <tr id="book_a">
+                            <td>阿狸·梦之城堡</td>
+                            <td>Hans</td>
+                            <td>6</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>阿狸·永远站</td>
+                            <td>Hans</td>
+                            <td>11</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>阿Q正传</td>
+                            <td>鲁迅</td>
+                            <td>21</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+
+                        <!-- B -->
+                        <tr id="book_b">
+                            <td>白鹿原</td>
+                            <td>陈忠实</td>
+                            <td>496</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>保姆</td>
+                            <td>霍达</td>
+                            <td>0</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>八十天环游世界</td>
+                            <td>儒勒·凡尔纳</td>
+                            <td>132</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>百家姓</td>
+                            <td>佚名</td>
+                            <td>2</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>白夜行</td>
+                            <td>东野圭吾</td>
+                            <td>304</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>罢宴</td>
+                            <td>霍达</td>
+                            <td>0</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>变身</td>
+                            <td>东野圭吾</td>
+                            <td>126</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+
+                        <!-- C -->
+                        <tr id="book_c">
+                            <td>蔡康永的说话之道</td>
+                            <td>蔡康永</td>
+                            <td>81</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>茶花女</td>
+                            <td>小仲马</td>
+                            <td>135</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>长安乱</td>
+                            <td>韩寒</td>
+                            <td>98</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>沉睡的人鱼之家</td>
+                            <td>东野圭吾</td>
+                            <td>157</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+
+                        <!-- D -->
+                        <tr id="book_d">
+                            <td>盗墓笔记</td>
+                            <td>南派三叔</td>
+                            <td>1428</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>动物农场</td>
+                            <td>乔治·奥威尔（李元莘）</td>
+                            <td>190</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+
+                        <!-- E -->
+                        <tr id="book_e">
+                            <td>恶意</td>
+                            <td>东野圭吾</td>
+                            <td>111</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+
+                        <!-- F -->
+                        <tr id="book_f">
+                            <td>繁星·春水</td>
+                            <td>冰心</td>
+                            <td>66</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>房·地·产：写在安家的途中</td>
+                            <td>王璞</td>
+                            <td>24</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>分身</td>
+                            <td>东野圭吾</td>
+                            <td>173</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>富爸爸，穷爸爸</td>
+                            <td>罗伯特·清崎</td>
+                            <td>350</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+
+                        <!-- G -->
+                        <tr id="book_g">
+                            <td>钢琴入门100问</td>
+                            <td>姚艺</td>
+                            <td>46</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>钢铁是怎样炼成的</td>
+                            <td>尼·奥斯特洛夫斯基</td>
+                            <td>245</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>高山下的花环</td>
+                            <td>李存葆</td>
+                            <td>90</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>格列佛游记</td>
+                            <td>乔纳森·斯威夫特</td>
+                            <td>216</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>革面</td>
+                            <td>霍达</td>
+                            <td>0</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>怪诞行为学：可预测的非理性</td>
+                            <td>丹·艾瑞里</td>
+                            <td>184</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+                        <!-- 怪诞行为学2：非理性的积极力量 -->
+                        <!-- 怪诞行为学3：非理性的你 -->
+                        <tr>
+                            <td>光荣日</td>
+                            <td>韩寒</td>
+                            <td>70</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>鬼吹灯</td>
+                            <td>天下霸唱</td>
+                            <td>939</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+
+                        <!-- H -->
+                        <tr id="book_h">
+                            <td>哈利波特与魔法石</td>
+                            <td>J.K.罗琳</td>
+                            <td>228</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>哈利波特与阿兹卡班的囚徒</td>
+                            <td>J.K.罗琳</td>
+                            <td>220</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>哈姆雷特</td>
+                            <td>威廉·莎士比亚</td>
+                            <td>154</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>好兵帅克</td>
+                            <td>哈谢克</td>
+                            <td>649</td><!-- K -->
+                            <td>43</td>
+                        </tr>
+                        <tr>
+                            <td>黄叶在秋风中飘落</td>
+                            <td>路遥</td>
+                            <td>177</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>呼兰河传</td>
+                            <td>萧红</td>
+                            <td>101</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>活着</td>
+                            <td>余华</td>
+                            <td>90</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>红楼梦</td>
+                            <td>曹雪芹 高鹗</td>
+                            <td>845</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>红与黑</td>
+                            <td>司汤达</td>
+                            <td>502</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <!--
+                        <tr>
+                            <td>候补圣女</td>
+                            <td>月下小羊</td>
+                            <td>5141</td>
+                            <td>3</td>
+                        </tr>
+                        -->
+
+                        <!-- I -->
+
+                        <!-- J -->
+                        <tr id="book_j">
+                            <td>假面饭店</td>
+                            <td>东野圭吾</td>
+                            <td>230</td><!-- K -->
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>简·爱</td>
+                            <td>夏洛蒂·勃朗特</td>
+                            <td>264</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>解忧杂货店</td>
+                            <td>东野圭吾</td>
+                            <td>148</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>禁忌之地（浙大夜惊魂）</td>
+                            <td>紫金陈</td>
+                            <td>811</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>金锁记</td>
+                            <td>张爱玲</td>
+                            <td>135</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>就这么漂来漂去</td>
+                            <td>韩寒</td>
+                            <td>73</td><!-- K -->
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>巨人传</td>
+                            <td>拉伯雷</td>
+                            <td>483</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+
+                        <!-- K -->
+                        <tr id="book_k">
+                            <td>看见</td>
+                            <td>柴静</td>
+                            <td>230</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>狂人日记</td>
+                            <td>鲁迅</td>
+                            <td>107</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+
+                        <!-- L -->
+                        <tr id="book_l">
+                            <td>老人与海</td>
+                            <td>欧内斯特·海明威</td>
+                            <td>105</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>恋爱的贡多拉</td>
+                            <td>东野圭吾</td>
+                            <td>89</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>历史的天空</td>
+                            <td>徐贵祥</td>
+                            <td>381</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>鲁滨逊漂流记</td>
+                            <td>丹尼尔·笛福</td>
+                            <td>176</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>罗密欧与朱丽叶</td>
+                            <td>威廉·莎士比亚</td>
+                            <td>53</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>骆驼祥子</td>
+                            <td>老舍</td>
+                            <td>257</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+
+                        <!-- M -->
+                        <tr id="book_m">
+                            <td>明朝那些事儿</td>
+                            <td>当年明月</td>
+                            <td>1472</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>穆斯林的葬礼</td>
+                            <td>霍达</td>
+                            <td>527</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+
+                        <!-- N -->
+                        <tr id="book_n">
+                            <td>你今天真好看</td>
+                            <td>莉兹·克里莫</td>
+                            <td>2</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>你说你哪儿都敏感</td>
+                            <td>西门大官人</td>
+                            <td>420</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>牛虻</td>
+                            <td>艾捷尔·丽莲·伏尼契</td>
+                            <td>161</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+
+                        <!-- O -->
+
+                        <!-- P -->
+                        <tr id="book_p">
+                            <td>平凡的世界</td>
+                            <td>路遥</td>
+                            <td>2486</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+
+                        <!-- Q -->
+                        <tr id="book_q">
+                            <td>恰到好处的幸福</td>
+                            <td>毕淑敏</td>
+                            <td>180</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>千字文</td>
+                            <td>周兴嗣</td>
+                            <td>3</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>起风了</td>
+                            <td>崛辰雄</td>
+                            <td>73</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>倾城之恋</td>
+                            <td>张爱玲</td>
+                            <td>56</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>倾恋</td>
+                            <td>银翼恋羽</td>
+                            <td>0</td><!-- K -->
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>秦台夜月</td>
+                            <td>霍达</td>
+                            <td>36</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>七堂极简物理课</td>
+                            <td>卡洛·罗韦利（文铮/陶慧慧）</td>
+                            <td>27</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+
+                        <!-- R -->
+                        <tr id="book_r">
+                            <td>人类简史：从动物到上帝</td>
+                            <td>尤瓦尔·赫拉利（林俊宏）</td>
+                            <td>307</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>人生</td>
+                            <td>路遥</td>
+                            <td>144</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>人生若只如初见</td>
+                            <td>安意如</td>
+                            <td>307</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+
+                        <!-- S -->
+                        <tr id="book_s">
+                            <td>三重门</td>
+                            <td>韩寒</td>
+                            <td>163</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>三个火枪手</td>
+                            <td>大仲马</td>
+                            <td>316</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>三字经</td>
+                            <td>王应麟 </td>
+                            <td>6</td><!-- K -->
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>神探伽利略</td>
+                            <td>东野圭吾</td>
+                            <td>98</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>十八春</td>
+                            <td>张爱玲</td>
+                            <td>707</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>时生</td>
+                            <td>东野圭吾</td>
+                            <td>152</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>石述思说中国：中国各阶层矛盾分析</td>
+                            <td>石述思</td>
+                            <td>156</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+
+                        <!-- T -->
+                        <tr id="book_t">
+                            <td>他的国</td>
+                            <td>韩寒</td>
+                            <td>96</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>苔丝</td>
+                            <td>托马斯·哈代</td>
+                            <td>239</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>汤姆·索亚历险记</td>
+                            <td>马克·吐温</td>
+                            <td>172</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>通稿2003</td>
+                            <td>韩寒</td>
+                            <td>38</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>童年</td>
+                            <td>高尔基</td>
+                            <td>227</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>图解汽车原理与构造</td>
+                            <td>张金柱</td>
+                            <td>39</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>菟丝花</td>
+                            <td>琼瑶</td>
+                            <td>135</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+
+                        <!-- U -->
+                        <!-- V -->
+                        <!-- W -->
+                        <tr>
+                            <td id="book_w">我的大学</td>
+                            <td>高尔基</td>
+                            <td>1085</td><!-- K -->
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>我的晃荡的青春</td>
+                            <td>东野圭吾</td>
+                            <td>105</td><!-- K -->
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>我可以咬一口吗</td>
+                            <td>莉兹·克里莫</td>
+                            <td>1</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>我与五叔的六次相遇</td>
+                            <td>路遥</td>
+                            <td>78</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>围城</td>
+                            <td>钱钟书</td>
+                            <td>253</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>雾都孤儿</td>
+                            <td>查尔斯·狄更斯</td>
+                            <td>338</td>
+                            <td>4</td>
+                        </tr>
+
+                        <!-- X -->
+                        <tr id="book_x">
+                            <td>嫌疑人X的献身</td>
+                            <td>东野圭吾</td>
+                            <td>120</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>像少年啦飞驰</td>
+                            <td>韩寒</td>
+                            <td>95</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>小公主</td>
+                            <td>伯内特</td>
+                            <td>120</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>小王子</td>
+                            <td>安托万·德·圣埃克苏佩里</td>
+                            <td>36</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>肖申克的救赎</td>
+                            <td>斯蒂芬·金</td>
+                            <td>85</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>新参者</td>
+                            <td>东野圭吾</td>
+                            <td>112</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>许三观卖血记</td>
+                            <td>余华</td>
+                            <td>117</td>
+                            <td>5</td>
+                        </tr>
+
+                        <!-- Y -->
+                        <tr id="book_y">
+                            <td>一座城池</td>
+                            <td>韩寒</td>
+                            <td>104</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>隐形人</td>
+                            <td>赫伯特·乔治·威尔斯</td>
+                            <td>103</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>远离尘嚣</td>
+                            <td>托马斯·哈代</td>
+                            <td>360</td>
+                            <td>3</td>
+                        </tr>
+
+                        <!-- Z -->
+                        <tr id="book_z">
+                            <td>杂的文</td>
+                            <td>韩寒</td>
+                            <td>67</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>在困难的日子里</td>
+                            <td>路遥</td>
+                            <td>130</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>战争与和平</td>
+                            <td>列夫·托尔斯泰</td>
+                            <td>1094</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>朝花夕拾</td>
+                            <td>鲁迅</td>
+                            <td>129</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>这世界既残酷也温柔</td>
+                            <td>孙宇晨</td>
+                            <td>92</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>真幌站前多田便利屋</td>
+                            <td>三浦紫苑</td>
+                            <td>122</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>诛仙</td>
+                            <td>萧鼎</td>
+                            <td>1531</td>
+                            <td>4</td>
+                        </tr>
+
+                        <!-- # -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- AZ: Add for book count -->
+    <script type="text/javascript">
+        /**
+         * 计算表格的行数
+         * @param table 要计算的表格
+         * @param displayTarget 结果显示到的目标
+         */
+        calculateTableCount = function (table, displayTarget) {
+            displayTarget.innerHTML = table.getElementsByTagName('tr').length - 1; // AZ:Minus head of table
+        };
+        calculateTableCount(document.getElementById('table-book-list'), document.getElementById("bookCount"));
+
+        /**
+         * 将评分替换为星级, 计算总字数，给书名添加样式
+         * @param table 要计算的表格
+         * @param tdIndex 评分td的下标
+         * @param tdWordIndex 字数下标
+         * @param tdNameIndex 书名下标
+         */
+        replaceSomething = function (table, tdRateIndex, tdWordIndex, tdNameIndex) {
+            let trs = table.getElementsByTagName('tr');
+            let start = 1, // 开始计算的行号，忽略第一行的表头
+                end = trs.length; // 结束计算的行号，忽略最后合计的一行
+
+            let totalWordCount = 0;
+
+            for (let i = start; i < end; i++) {
+                // Replace rate by star
+                let tdRate = trs[i].getElementsByTagName('td')[tdRateIndex];
+                if (tdRate.innerHTML.indexOf('5') == 0) {
+                    tdRate.innerHTML = '<span class="book-rate-star">★★★★★</span>';
+                } else if (tdRate.innerHTML.indexOf('4') == 0) {
+                    tdRate.innerHTML = '<span class="book-rate-star">★★★★</span>';
+                } else if (tdRate.innerHTML.indexOf('3') == 0) {
+                    tdRate.innerHTML = '<span class="book-rate-star">★★★</span>';
+                } else if (tdRate.innerHTML.indexOf('2') == 0) {
+                    tdRate.innerHTML = '<span class="book-rate-star">★★</span>';
+                } else if (tdRate.innerHTML.indexOf('1') == 0) {
+                    tdRate.innerHTML = '<span class="book-rate-star">★</span>';
+                } else {
+                    tdRate.innerHTML = '';
+                }
+
+                // 计算字数
+                let tdWord = trs[i].getElementsByTagName('td')[tdWordIndex];
+                let singleBookWordCount = 0;
+                if (tdWord.innerHTML != "") {
+                    singleBookWordCount = parseFloat(tdWord.innerHTML);
+                }
+                totalWordCount += singleBookWordCount;
+
+                // 给书名添加样式
+                let tdName = trs[i].getElementsByTagName('td')[tdNameIndex];
+                tdName.innerHTML = "<span class='book-name'>"
+                    + tdName.innerHTML + "</span>";
+            }
+            document.getElementById("wordCount").innerHTML = totalWordCount;
+        };
+
+        replaceSomething(document.getElementById('table-book-list'), 3, 2, 0);
+    </script>
+
+    <link rel="stylesheet" href="../resource/css/toolbox.reset.css"><!-- CSS reset -->
+    <link rel="stylesheet" href="../resource/css/toolbox.style.css"><!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- jQuery -->
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify:FullScreen -->
+<script src="../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+
+<!-- Site Functions & Actions -->
+<script src="../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../resource/js/canvas-nest.min.js"></script>
+
+<!-- Toolbox -->
+<script src="../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 1;</script>
+<script src="../resource/js/zms.page.pattern.js"></script>
+</body>
+</html>

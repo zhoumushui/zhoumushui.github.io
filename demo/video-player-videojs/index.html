@@ -1,0 +1,34 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTML5视频播放器Video.Js演示地址</title>
+
+    <!-- Chang URLs to wherever Video.js files will be hosted -->
+    <link href="css/video-js.css" rel="stylesheet" type="text/css">
+    <!-- video.js must be in the <head> for older IEs to work. -->
+    <script src="js/video.js"></script>
+
+    <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+    <script>
+        videojs.options.flash.swf = "video-js.swf";
+    </script>
+
+
+</head>
+<body>
+
+<div style="width:640px;margin:30px auto">
+    <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264" poster="oceans-clip.png" data-setup="{}">
+        <source src="http://www.17sucai.com/preview/35799/2014-06-27/video-js1/oceans-clip.mp4" type='video/mp4' />
+        <source src="http://www.17sucai.com/preview/35799/2014-06-27/video-js1/oceans-clip.webm" type='video/webm' />
+        <source src="http://www.17sucai.com/preview/35799/2014-06-27/video-js1/oceans-clip.ogv" type='video/ogg' />
+        <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+        <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+    </video>
+</div>
+
+
+</body>
+</html>

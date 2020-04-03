@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>犬类智商排行</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Light Gallery -->
+    <link href="../../vendors/bower_components/lightgallery/dist/css/lightgallery.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../resource/css/app-1.min.css" rel="stylesheet">
+
+    <!-- AZ CSS -->
+    <link href="../../resource/css/az.css" rel="stylesheet">
+
+    <!-- Page loader -->
+    <!--<script src="js/page-loader.min.js"></script>-->
+
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../resource/css/essay.material.floating.button.css" rel="stylesheet">
+    <style>
+        /* AZ:show flash light when hover movie image */
+        dog {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        dog a {
+            display: inline-block
+        }
+
+        dog a:before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            margin-top: 0px;
+            margin-left: -120px;
+            overflow: hidden;
+            z-index: 6;
+            background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.4)), color-stop(100%, rgba(255, 255, 255, 0)));
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+            background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+            -webkit-transform: skewX(-25deg);
+            transform: skewX(-25deg)
+        }
+
+        dog:hover a:before {
+            -webkit-animation: aniBlink120 .3s ease-out forwards;
+            -moz-animation: aniBlink120 .3s ease-out forwards;
+            -o-animation: aniBlink120 .3s ease-out forwards;
+            animation: aniBlink120 .3s ease-out forwards
+        }
+
+        .dog-name {
+            position: absolute;
+            z-index: 100;
+            width: 100px;
+            height: 20px;
+            top: 80px;
+            text-align: center;
+            color: #ffff00;
+            /* text-shadow: 1px 1px 0 black,-1px 1px 0 black,1px -1px 0 black,-1px -1px 0 black; */
+            /*text-shadow: 2px 2px 5px #000;*/
+            text-shadow: 0 0 5px black, 0 0 10px #ffff00;
+        }
+
+        .label-rank {
+            position: absolute;
+            width: 60px;
+            height: 18px;
+            line-height: 18px;
+            /*background-image: url('img/movie_label_hot.png');*/
+            background-color: #FFEB3B; /* ff0000,009688 */
+            color: #000000; /* ffffff */
+            font-size: xx-small;
+            font-family: 'Microsoft YaHei', sans-serif;
+            font-weight: normal; /* normal,bold,bolder */
+            text-align: center;
+            /* padding: 1px; */
+            /* border: red 1px solid; */
+            top: 0;
+            right: -22px;
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg); /* Internet Explorer */
+            -moz-transform: rotate(45deg); /* Firefox */
+            -webkit-transform: rotate(45deg); /* Safari 和 Chrome */
+            -o-transform: rotate(45deg); /* Opera */
+        }
+
+        .dog-image { /* Thumbnail Image */
+            height: 100px;
+            width: 100px;
+            align: center;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -o-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        .photos-timeline {
+            position: relative;
+            margin-bottom: 10px
+        }
+
+        .photos-timeline [data-src] { /* Movie Timeline Frame */
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin: 0 20px 5px 0
+        }
+
+        .photos-timeline:last-child .photos-timeline__date:before {
+            height: 100%
+        }
+
+        .photos-timeline__date > span {
+            display: block
+        }
+
+    </style>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e3a97a0eee3cb03b5caf792f58032743";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+<section id="main">
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+    <section id="content">
+
+        <script>
+            var essayTitle = '犬类智商排行';
+            var essaySummary = essayTitle;
+            document.title = essayTitle;
+            var essayUrl = document.location;
+            //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+            var essayPic = 'http://www.zhoumushui.com/essay/dog_intelligence/img/边境牧羊犬.jpg'; // This
+        </script>
+        <!--
+        AZ Share: Material Floating Button;
+        Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+        Position:mfb-component--br,bl,tr,tl;
+        Action:hover,click
+        -->
+        <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+
+        <div class="card">
+
+            <div class="action-header">
+                <span id="essay_arrow_back" class="actions essay-back-arrow">
+                    <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title">
+                    犬类智商排行
+                </span>
+
+                <span align="right" style="float: right;">
+                    <!--<i class="zmdi zmdi-car"></i>&nbsp;<span class="essay-type">Car</span>&nbsp;&nbsp;-->
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2019-09-05</span>
+                </span>
+            </div>
+
+            <div id="div-dog-list" class="card__body" style="font-family: 'Microsoft YaHei', sans-serif">
+
+                <div class="photos-timeline">
+                    <div class="lightbox">
+
+                        <dog data-src="img/边境牧羊犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="边境牧羊犬">
+                                <img class="dog-image" src="img/边境牧羊犬.jpg"/>
+                                <div class="dog-name">边境牧羊犬</div>
+                                <span class="label-rank">1</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/贵宾犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="贵宾犬">
+                                <img class="dog-image" src="img/贵宾犬.jpg"/>
+                                <div class="dog-name">贵宾犬</div>
+                                <span class="label-rank">2</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/德国牧羊犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="德国牧羊犬">
+                                <img class="dog-image" src="img/德国牧羊犬.jpg"/>
+                                <div class="dog-name">德国牧羊犬</div>
+                                <span class="label-rank">3</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/金毛寻回犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="金毛寻回犬">
+                                <img class="dog-image" src="img/金毛寻回犬.jpg"/>
+                                <div class="dog-name">金毛寻回犬</div>
+                                <span class="label-rank">4</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/杜宾犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="杜宾犬">
+                                <img class="dog-image" src="img/杜宾犬.jpg"/>
+                                <div class="dog-name">杜宾犬</div>
+                                <span class="label-rank">5</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/喜乐蒂牧羊犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="喜乐蒂牧羊犬">
+                                <img class="dog-image" src="img/喜乐蒂牧羊犬.jpg"/>
+                                <div class="dog-name">喜乐蒂牧羊犬</div>
+                                <span class="label-rank">6</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/拉布拉多寻回犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="拉布拉多寻回犬">
+                                <img class="dog-image" src="img/拉布拉多寻回犬.jpg"/>
+                                <div class="dog-name">拉布拉多寻回犬</div>
+                                <span class="label-rank">7</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/蝴蝶犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="蝴蝶犬">
+                                <img class="dog-image" src="img/蝴蝶犬.jpg"/>
+                                <div class="dog-name">蝴蝶犬</div>
+                                <span class="label-rank">8</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/罗威纳犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="罗威纳犬">
+                                <img class="dog-image" src="img/罗威纳犬.jpg"/>
+                                <div class="dog-name">罗威纳犬</div>
+                                <span class="label-rank">9</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/澳大利亚牧牛犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="澳大利亚牧牛犬">
+                                <img class="dog-image" src="img/澳大利亚牧牛犬.jpg"/>
+                                <div class="dog-name">澳大利亚牧牛犬</div>
+                                <span class="label-rank">10</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/彭布罗克威尔士柯基犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="彭布罗克威尔士柯基犬">
+                                <img class="dog-image" src="img/彭布罗克威尔士柯基犬.jpg"/>
+                                <div class="dog-name">彭布罗克威尔士柯基犬</div>
+                                <span class="label-rank">11</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/小型雪纳瑞犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="小型雪纳瑞犬">
+                                <img class="dog-image" src="img/小型雪纳瑞犬.jpg"/>
+                                <div class="dog-name">小型雪纳瑞犬</div>
+                                <span class="label-rank">12</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/英国跳猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="英国跳猎犬">
+                                <img class="dog-image" src="img/英国跳猎犬.jpg"/>
+                                <div class="dog-name">英国跳猎犬</div>
+                                <span class="label-rank">13</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/比利时特伏丹犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="比利时特伏丹犬">
+                                <img class="dog-image" src="img/比利时特伏丹犬.jpg"/>
+                                <div class="dog-name">比利时特伏丹犬</div>
+                                <span class="label-rank">14</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/比利时牧羊犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="比利时牧羊犬">
+                                <img class="dog-image" src="img/比利时牧羊犬.jpg"/>
+                                <div class="dog-name">比利时牧羊犬</div>
+                                <span class="label-rank">15</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/西帕基犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="西帕基犬">
+                                <img class="dog-image" src="img/西帕基犬.jpg"/>
+                                <div class="dog-name">西帕基犬</div>
+                                <span class="label-rank">16</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/柯利犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="柯利犬">
+                                <img class="dog-image" src="img/柯利犬.jpg"/>
+                                <div class="dog-name">柯利犬</div>
+                                <span class="label-rank">17</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/荷兰毛狮犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="荷兰毛狮犬">
+                                <img class="dog-image" src="img/荷兰毛狮犬.jpg"/>
+                                <div class="dog-name">荷兰毛狮犬</div>
+                                <span class="label-rank">18</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/德国短毛波音达.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="德国短毛波音达">
+                                <img class="dog-image" src="img/德国短毛波音达.jpg"/>
+                                <div class="dog-name">德国短毛波音达</div>
+                                <span class="label-rank">19</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/英国可卡犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="英国可卡犬">
+                                <img class="dog-image" src="img/英国可卡犬.jpg"/>
+                                <div class="dog-name">英国可卡犬</div>
+                                <span class="label-rank">20</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/标准型雪纳瑞犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="标准型雪纳瑞犬">
+                                <img class="dog-image" src="img/标准型雪纳瑞犬.jpg"/>
+                                <div class="dog-name">标准型雪纳瑞犬</div>
+                                <span class="label-rank">21</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/弗莱特寻回犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="弗莱特寻回犬">
+                                <img class="dog-image" src="img/弗莱特寻回犬.jpg"/>
+                                <div class="dog-name">弗莱特寻回犬</div>
+                                <span class="label-rank">22</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/布列塔尼犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="布列塔尼犬">
+                                <img class="dog-image" src="img/布列塔尼犬.jpg"/>
+                                <div class="dog-name">布列塔尼犬</div>
+                                <span class="label-rank">23</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/美国可卡犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="美国可卡犬">
+                                <img class="dog-image" src="img/美国可卡犬.jpg"/>
+                                <div class="dog-name">美国可卡犬</div>
+                                <span class="label-rank">24</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/威玛犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="威玛犬">
+                                <img class="dog-image" src="img/威玛犬.jpg"/>
+                                <div class="dog-name">威玛犬</div>
+                                <span class="label-rank">25</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/伯恩山犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="伯恩山犬">
+                                <img class="dog-image" src="img/伯恩山犬.jpg"/>
+                                <div class="dog-name">伯恩山犬</div>
+                                <span class="label-rank">26</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/比利时马林诺斯犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="比利时马林诺斯犬">
+                                <img class="dog-image" src="img/比利时马林诺斯犬.jpg"/>
+                                <div class="dog-name">比利时马林诺斯犬</div>
+                                <span class="label-rank">27</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/博美犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="博美犬">
+                                <img class="dog-image" src="img/博美犬.jpg"/>
+                                <div class="dog-name">博美犬</div>
+                                <span class="label-rank">28</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/爱尔兰水猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="爱尔兰水猎犬">
+                                <img class="dog-image" src="img/爱尔兰水猎犬.jpg"/>
+                                <div class="dog-name">爱尔兰水猎犬</div>
+                                <span class="label-rank">29</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/维希拉猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="维希拉猎犬">
+                                <img class="dog-image" src="img/维希拉猎犬.jpg"/>
+                                <div class="dog-name">维希拉猎犬</div>
+                                <span class="label-rank">30</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/卡迪根威尔士柯基犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="卡迪根威尔士柯基犬">
+                                <img class="dog-image" src="img/卡迪根威尔士柯基犬.jpg"/>
+                                <div class="dog-name">卡迪根威尔士柯基犬</div>
+                                <span class="label-rank">31</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/波利犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="波利犬">
+                                <img class="dog-image" src="img/波利犬.jpg"/>
+                                <div class="dog-name">波利犬</div>
+                                <span class="label-rank">32</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/约克夏梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="约克夏梗">
+                                <img class="dog-image" src="img/约克夏梗.jpg"/>
+                                <div class="dog-name">约克夏梗</div>
+                                <span class="label-rank">33</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/切萨皮克海湾寻回犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="切萨皮克海湾寻回犬">
+                                <img class="dog-image" src="img/切萨皮克海湾寻回犬.jpg"/>
+                                <div class="dog-name">切萨皮克海湾寻回犬</div>
+                                <span class="label-rank">34</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/巨型雪纳瑞犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="巨型雪纳瑞犬">
+                                <img class="dog-image" src="img/巨型雪纳瑞犬.jpg"/>
+                                <div class="dog-name">巨型雪纳瑞犬</div>
+                                <span class="label-rank">35</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/万能梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="万能梗">
+                                <img class="dog-image" src="img/万能梗.jpg"/>
+                                <div class="dog-name">万能梗</div>
+                                <span class="label-rank">36</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/波兰德斯布比野犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="波兰德斯布比野犬">
+                                <img class="dog-image" src="img/波兰德斯布比野犬.jpg"/>
+                                <div class="dog-name">波兰德斯布比野犬</div>
+                                <span class="label-rank">37</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/博得猎狐犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="博得猎狐犬">
+                                <img class="dog-image" src="img/博得猎狐犬.jpg"/>
+                                <div class="dog-name">博得猎狐犬</div>
+                                <span class="label-rank">38</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/布雷猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="布雷猎犬">
+                                <img class="dog-image" src="img/布雷猎犬.jpg"/>
+                                <div class="dog-name">布雷猎犬</div>
+                                <span class="label-rank">39</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/威尔士跳猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="威尔士跳猎犬">
+                                <img class="dog-image" src="img/威尔士跳猎犬.jpg"/>
+                                <div class="dog-name">威尔士跳猎犬</div>
+                                <span class="label-rank">40</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/玩具曼彻斯特犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="玩具曼彻斯特犬">
+                                <img class="dog-image" src="img/玩具曼彻斯特犬.jpg"/>
+                                <div class="dog-name">玩具曼彻斯特犬</div>
+                                <span class="label-rank">41</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/萨摩耶犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="萨摩耶犬">
+                                <img class="dog-image" src="img/萨摩耶犬.jpg"/>
+                                <div class="dog-name">萨摩耶犬</div>
+                                <span class="label-rank">42</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/纽芬兰犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="纽芬兰犬">
+                                <img class="dog-image" src="img/纽芬兰犬.jpg"/>
+                                <div class="dog-name">纽芬兰犬</div>
+                                <span class="label-rank">43</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/澳大利亚梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="澳大利亚梗">
+                                <img class="dog-image" src="img/澳大利亚梗.jpg"/>
+                                <div class="dog-name">澳大利亚梗</div>
+                                <span class="label-rank">44</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/戈登雪达犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="戈登雪达犬">
+                                <img class="dog-image" src="img/戈登雪达犬.jpg"/>
+                                <div class="dog-name">戈登雪达犬</div>
+                                <span class="label-rank">45</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/田野小猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="田野小猎犬">
+                                <img class="dog-image" src="img/田野小猎犬.jpg"/>
+                                <div class="dog-name">田野小猎犬</div>
+                                <span class="label-rank">46</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/粗毛柯利犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="粗毛柯利犬">
+                                <img class="dog-image" src="img/粗毛柯利犬.jpg"/>
+                                <div class="dog-name">粗毛柯利犬</div>
+                                <span class="label-rank">47</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/美国斯塔福郡梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="美国斯塔福郡梗">
+                                <img class="dog-image" src="img/美国斯塔福郡梗.jpg"/>
+                                <div class="dog-name">美国斯塔福郡梗</div>
+                                <span class="label-rank">48</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/凯利蓝梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="凯利蓝梗">
+                                <img class="dog-image" src="img/凯利蓝梗.jpg"/>
+                                <div class="dog-name">凯利蓝梗</div>
+                                <span class="label-rank">49</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/爱尔兰雪达犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="爱尔兰雪达犬">
+                                <img class="dog-image" src="img/爱尔兰雪达犬.jpg"/>
+                                <div class="dog-name">爱尔兰雪达犬</div>
+                                <span class="label-rank">50</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/凯恩梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="凯恩梗">
+                                <img class="dog-image" src="img/凯恩梗.jpg"/>
+                                <div class="dog-name">凯恩梗</div>
+                                <span class="label-rank">51</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/挪威猎鹿犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="挪威猎鹿犬">
+                                <img class="dog-image" src="img/挪威猎鹿犬.jpg"/>
+                                <div class="dog-name">挪威猎鹿犬</div>
+                                <span class="label-rank">52</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/法老王猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="法老王猎犬">
+                                <img class="dog-image" src="img/法老王猎犬.jpg"/>
+                                <div class="dog-name">法老王猎犬</div>
+                                <span class="label-rank">53</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/迷你杜宾.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="迷你杜宾">
+                                <img class="dog-image" src="img/迷你杜宾.jpg"/>
+                                <div class="dog-name">迷你杜宾</div>
+                                <span class="label-rank">54</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/西班牙小猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="西班牙小猎犬">
+                                <img class="dog-image" src="img/西班牙小猎犬.jpg"/>
+                                <div class="dog-name">西班牙小猎犬</div>
+                                <span class="label-rank">55</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/英格兰雪达犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="英格兰雪达犬">
+                                <img class="dog-image" src="img/英格兰雪达犬.jpg"/>
+                                <div class="dog-name">英格兰雪达犬</div>
+                                <span class="label-rank">56</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/猴头梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="猴头梗">
+                                <img class="dog-image" src="img/猴头梗.jpg"/>
+                                <div class="dog-name">猴头梗</div>
+                                <span class="label-rank">57</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/挪威梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="挪威梗">
+                                <img class="dog-image" src="img/挪威梗.jpg"/>
+                                <div class="dog-name">挪威梗</div>
+                                <span class="label-rank">58</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/大麦町犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="大麦町犬">
+                                <img class="dog-image" src="img/大麦町犬.jpg"/>
+                                <div class="dog-name">大麦町犬</div>
+                                <span class="label-rank">59</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/贝灵顿梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="贝灵顿梗">
+                                <img class="dog-image" src="img/贝灵顿梗.jpg"/>
+                                <div class="dog-name">贝灵顿梗</div>
+                                <span class="label-rank">60</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/短毛猎狐梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="短毛猎狐梗">
+                                <img class="dog-image" src="img/短毛猎狐梗.jpg"/>
+                                <div class="dog-name">短毛猎狐梗</div>
+                                <span class="label-rank">61</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/爱尔兰软毛梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="爱尔兰软毛梗">
+                                <img class="dog-image" src="img/爱尔兰软毛梗.jpg"/>
+                                <div class="dog-name">爱尔兰软毛梗</div>
+                                <span class="label-rank">62</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/爱尔兰猎狼犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="爱尔兰猎狼犬">
+                                <img class="dog-image" src="img/爱尔兰猎狼犬.jpg"/>
+                                <div class="dog-name">爱尔兰猎狼犬</div>
+                                <span class="label-rank">63</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/卷毛寻回犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="卷毛寻回犬">
+                                <img class="dog-image" src="img/卷毛寻回犬.jpg"/>
+                                <div class="dog-name">卷毛寻回犬</div>
+                                <span class="label-rank">64</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/澳大利亚牧羊犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="澳大利亚牧羊犬">
+                                <img class="dog-image" src="img/澳大利亚牧羊犬.jpg"/>
+                                <div class="dog-name">澳大利亚牧羊犬</div>
+                                <span class="label-rank">65</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/库瓦兹犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="库瓦兹犬">
+                                <img class="dog-image" src="img/库瓦兹犬.jpg"/>
+                                <div class="dog-name">库瓦兹犬</div>
+                                <span class="label-rank">66</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/波音达.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="波音达">
+                                <img class="dog-image" src="img/波音达.jpg"/>
+                                <div class="dog-name">波音达</div>
+                                <span class="label-rank">67</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/萨路基猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="萨路基猎犬">
+                                <img class="dog-image" src="img/萨路基猎犬.jpg"/>
+                                <div class="dog-name">萨路基猎犬</div>
+                                <span class="label-rank">68</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/芬兰波美拉尼亚丝毛狗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="芬兰波美拉尼亚丝毛狗">
+                                <img class="dog-image" src="img/芬兰波美拉尼亚丝毛狗.jpg"/>
+                                <div class="dog-name">芬兰波美拉尼亚丝毛狗</div>
+                                <span class="label-rank">69</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/美国水猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="美国水猎犬">
+                                <img class="dog-image" src="img/美国水猎犬.jpg"/>
+                                <div class="dog-name">美国水猎犬</div>
+                                <span class="label-rank">70</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/骑士查理王小猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="骑士查理王小猎犬">
+                                <img class="dog-image" src="img/骑士查理王小猎犬.jpg"/>
+                                <div class="dog-name">骑士查理王小猎犬</div>
+                                <span class="label-rank">71</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/德国硬毛波音达.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="德国硬毛波音达">
+                                <img class="dog-image" src="img/德国硬毛波音达.jpg"/>
+                                <div class="dog-name">德国硬毛波音达</div>
+                                <span class="label-rank">72</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/黑褐猎浣熊犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="黑褐猎浣熊犬">
+                                <img class="dog-image" src="img/黑褐猎浣熊犬.jpg"/>
+                                <div class="dog-name">黑褐猎浣熊犬</div>
+                                <span class="label-rank">73</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/哈士奇.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="哈士奇">
+                                <img class="dog-image" src="img/哈士奇.jpg"/>
+                                <div class="dog-name">哈士奇</div>
+                                <span class="label-rank">74</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/卷毛比雄犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="卷毛比雄犬">
+                                <img class="dog-image" src="img/卷毛比雄犬.jpg"/>
+                                <div class="dog-name">卷毛比雄犬</div>
+                                <span class="label-rank">75</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/西藏猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="西藏猎犬">
+                                <img class="dog-image" src="img/西藏猎犬.jpg"/>
+                                <div class="dog-name">西藏猎犬</div>
+                                <span class="label-rank">76</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/英国猎狐犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="英国猎狐犬">
+                                <img class="dog-image" src="img/英国猎狐犬.jpg"/>
+                                <div class="dog-name">英国猎狐犬</div>
+                                <span class="label-rank">77</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/美国猎狐犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="美国猎狐犬">
+                                <img class="dog-image" src="img/美国猎狐犬.jpg"/>
+                                <div class="dog-name">美国猎狐犬</div>
+                                <span class="label-rank">78</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/格雷伊猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="格雷伊猎犬">
+                                <img class="dog-image" src="img/格雷伊猎犬.jpg"/>
+                                <div class="dog-name">格雷伊猎犬</div>
+                                <span class="label-rank">79</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/猎水獭犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="猎水獭犬">
+                                <img class="dog-image" src="img/猎水獭犬.jpg"/>
+                                <div class="dog-name">猎水獭犬</div>
+                                <span class="label-rank">80</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/硬毛指示格里芬犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="硬毛指示格里芬犬">
+                                <img class="dog-image" src="img/硬毛指示格里芬犬.jpg"/>
+                                <div class="dog-name">硬毛指示格里芬犬</div>
+                                <span class="label-rank">81</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/西高地白梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="西高地白梗">
+                                <img class="dog-image" src="img/西高地白梗.jpg"/>
+                                <div class="dog-name">西高地白梗</div>
+                                <span class="label-rank">82</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/苏格兰猎鹿犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="苏格兰猎鹿犬">
+                                <img class="dog-image" src="img/苏格兰猎鹿犬.jpg"/>
+                                <div class="dog-name">苏格兰猎鹿犬</div>
+                                <span class="label-rank">83</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/大丹犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="大丹犬">
+                                <img class="dog-image" src="img/大丹犬.jpg"/>
+                                <div class="dog-name">大丹犬</div>
+                                <span class="label-rank">84</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/拳狮犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="">
+                                <img class="dog-image" src="img/拳狮犬.jpg"/>
+                                <div class="dog-name">拳狮犬</div>
+                                <span class="label-rank">85</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/腊肠犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="腊肠犬">
+                                <img class="dog-image" src="img/腊肠犬.jpg"/>
+                                <div class="dog-name">腊肠犬</div>
+                                <span class="label-rank">86</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/斯塔福郡斗牛梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="斯塔福郡斗牛梗">
+                                <img class="dog-image" src="img/斯塔福郡斗牛梗.jpg"/>
+                                <div class="dog-name">斯塔福郡斗牛梗</div>
+                                <span class="label-rank">87</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/阿拉斯加雪橇犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="阿拉斯加雪橇犬">
+                                <img class="dog-image" src="img/阿拉斯加雪橇犬.jpg"/>
+                                <div class="dog-name">阿拉斯加雪橇犬</div>
+                                <span class="label-rank">88</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/惠比特犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="惠比特犬">
+                                <img class="dog-image" src="img/惠比特犬.jpg"/>
+                                <div class="dog-name">惠比特犬</div>
+                                <span class="label-rank">89</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/刚毛猎狐梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="刚毛猎狐梗">
+                                <img class="dog-image" src="img/刚毛猎狐梗.jpg"/>
+                                <div class="dog-name">刚毛猎狐梗</div>
+                                <span class="label-rank">90</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/中国沙皮犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="中国沙皮犬">
+                                <img class="dog-image" src="img/中国沙皮犬.jpg"/>
+                                <div class="dog-name">中国沙皮犬</div>
+                                <span class="label-rank">91</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/罗得西亚脊背犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="罗得西亚脊背犬">
+                                <img class="dog-image" src="img/罗得西亚脊背犬.jpg"/>
+                                <div class="dog-name">罗得西亚脊背犬</div>
+                                <span class="label-rank">92</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/爱尔兰梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="爱尔兰梗">
+                                <img class="dog-image" src="img/爱尔兰梗.jpg"/>
+                                <div class="dog-name">爱尔兰梗</div>
+                                <span class="label-rank">93</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/威尔士梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="威尔士梗">
+                                <img class="dog-image" src="img/威尔士梗.jpg"/>
+                                <div class="dog-name">威尔士梗</div>
+                                <span class="label-rank">94</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/伊比赞猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="伊比赞猎犬">
+                                <img class="dog-image" src="img/伊比赞猎犬.jpg"/>
+                                <div class="dog-name">伊比赞猎犬</div>
+                                <span class="label-rank">95</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/秋田犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="秋田犬">
+                                <img class="dog-image" src="img/秋田犬.jpg"/>
+                                <div class="dog-name">秋田犬</div>
+                                <span class="label-rank">96</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/波士顿梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="波士顿梗">
+                                <img class="dog-image" src="img/波士顿梗.jpg"/>
+                                <div class="dog-name">波士顿梗</div>
+                                <span class="label-rank">97</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/凯斯梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="凯斯梗">
+                                <img class="dog-image" src="img/凯斯梗.jpg"/>
+                                <div class="dog-name">凯斯梗</div>
+                                <span class="label-rank">98</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/诺福克梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="诺福克梗">
+                                <img class="dog-image" src="img/诺福克梗.jpg"/>
+                                <div class="dog-name">诺福克梗</div>
+                                <span class="label-rank">99</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/锡利哈姆梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="锡利哈姆梗">
+                                <img class="dog-image" src="img/锡利哈姆梗.jpg"/>
+                                <div class="dog-name">锡利哈姆梗</div>
+                                <span class="label-rank">100</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/巴哥犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="巴哥犬">
+                                <img class="dog-image" src="img/巴哥犬.jpg"/>
+                                <div class="dog-name">巴哥犬</div>
+                                <span class="label-rank">101</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/法国斗牛犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="法国斗牛犬">
+                                <img class="dog-image" src="img/法国斗牛犬.jpg"/>
+                                <div class="dog-name">法国斗牛犬</div>
+                                <span class="label-rank">102</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/马尔济斯犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="马尔济斯犬">
+                                <img class="dog-image" src="img/马尔济斯犬.jpg"/>
+                                <div class="dog-name">马尔济斯犬</div>
+                                <span class="label-rank">103</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/意大利灰狗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="意大利灰狗">
+                                <img class="dog-image" src="img/意大利灰狗.jpg"/>
+                                <div class="dog-name">意大利灰狗</div>
+                                <span class="label-rank">104</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/中国冠毛犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="中国冠毛犬">
+                                <img class="dog-image" src="img/中国冠毛犬.jpg"/>
+                                <div class="dog-name">中国冠毛犬</div>
+                                <span class="label-rank">105</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/西藏梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="西藏梗">
+                                <img class="dog-image" src="img/西藏梗.jpg"/>
+                                <div class="dog-name">西藏梗</div>
+                                <span class="label-rank">106</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/湖畔梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="湖畔梗">
+                                <img class="dog-image" src="img/湖畔梗.jpg"/>
+                                <div class="dog-name">湖畔梗</div>
+                                <span class="label-rank">107</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/迷你贝吉格里芬凡丁犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="迷你贝吉格里芬凡丁犬">
+                                <img class="dog-image" src="img/迷你贝吉格里芬凡丁犬.jpg"/>
+                                <div class="dog-name">迷你贝吉格里芬凡丁犬</div>
+                                <span class="label-rank">108</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/日本忡.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="日本忡">
+                                <img class="dog-image" src="img/日本忡.jpg"/>
+                                <div class="dog-name">日本忡</div>
+                                <span class="label-rank">109</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/短脚长身梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="短脚长身梗">
+                                <img class="dog-image" src="img/短脚长身梗.jpg"/>
+                                <div class="dog-name">短脚长身梗</div>
+                                <span class="label-rank">110</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/古代英国牧羊犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="古代英国牧羊犬">
+                                <img class="dog-image" src="img/古代英国牧羊犬.jpg"/>
+                                <div class="dog-name">古代英国牧羊犬</div>
+                                <span class="label-rank">111</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/大白熊犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="大白熊犬">
+                                <img class="dog-image" src="img/大白熊犬.jpg"/>
+                                <div class="dog-name">大白熊犬</div>
+                                <span class="label-rank">112</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/圣伯纳犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="圣伯纳犬">
+                                <img class="dog-image" src="img/圣伯纳犬.jpg"/>
+                                <div class="dog-name">圣伯纳犬</div>
+                                <span class="label-rank">113</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/苏格兰梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="苏格兰梗">
+                                <img class="dog-image" src="img/苏格兰梗.jpg"/>
+                                <div class="dog-name">苏格兰梗</div>
+                                <span class="label-rank">114</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/斗牛梗.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="斗牛梗">
+                                <img class="dog-image" src="img/斗牛梗.jpg"/>
+                                <div class="dog-name">斗牛梗</div>
+                                <span class="label-rank">115</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/吉娃娃.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="吉娃娃">
+                                <img class="dog-image" src="img/吉娃娃.jpg"/>
+                                <div class="dog-name">吉娃娃</div>
+                                <span class="label-rank">116</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/拉萨犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="拉萨犬">
+                                <img class="dog-image" src="img/拉萨犬.jpg"/>
+                                <div class="dog-name">拉萨犬</div>
+                                <span class="label-rank">117</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/斗牛獒犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="斗牛獒犬">
+                                <img class="dog-image" src="img/斗牛獒犬.jpg"/>
+                                <div class="dog-name">斗牛獒犬</div>
+                                <span class="label-rank">118</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/西施犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="西施犬">
+                                <img class="dog-image" src="img/西施犬.jpg"/>
+                                <div class="dog-name">西施犬</div>
+                                <span class="label-rank">119</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/巴吉度犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="巴吉度犬">
+                                <img class="dog-image" src="img/巴吉度犬.jpg"/>
+                                <div class="dog-name">巴吉度犬</div>
+                                <span class="label-rank">120</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/比格猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="比格猎犬">
+                                <img class="dog-image" src="img/比格猎犬.jpg"/>
+                                <div class="dog-name">比格猎犬</div>
+                                <span class="label-rank">121</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/北京犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="北京犬">
+                                <img class="dog-image" src="img/北京犬.jpg"/>
+                                <div class="dog-name">北京犬</div>
+                                <span class="label-rank">122</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/寻血猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="寻血猎犬">
+                                <img class="dog-image" src="img/寻血猎犬.jpg"/>
+                                <div class="dog-name">寻血猎犬</div>
+                                <span class="label-rank">123</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/苏俄猎狼犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="苏俄猎狼犬">
+                                <img class="dog-image" src="img/苏俄猎狼犬.jpg"/>
+                                <div class="dog-name">苏俄猎狼犬</div>
+                                <span class="label-rank">124</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/松狮.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="松狮">
+                                <img class="dog-image" src="img/松狮.jpg"/>
+                                <div class="dog-name">松狮</div>
+                                <span class="label-rank">125</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/英国斗牛犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="英国斗牛犬">
+                                <img class="dog-image" src="img/英国斗牛犬.jpg"/>
+                                <div class="dog-name">英国斗牛犬</div>
+                                <span class="label-rank">126</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/巴仙吉犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="巴仙吉犬">
+                                <img class="dog-image" src="img/巴仙吉犬.jpg"/>
+                                <div class="dog-name">巴仙吉犬</div>
+                                <span class="label-rank">127</span>
+                            </a>
+                        </dog>
+                        <dog data-src="img/阿富汗猎犬.jpg">
+                            <a href="https://www.zhoumushui.com/pet/" target="_blank" title="阿富汗猎犬">
+                                <img class="dog-image" src="img/阿富汗猎犬.jpg"/>
+                                <div class="dog-name">阿富汗猎犬</div>
+                                <span class="label-rank">128</span>
+                            </a>
+                        </dog>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <link rel="stylesheet" href="../../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- jQuery -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Light Gallery -->
+<script src="../../vendors/bower_components/lightgallery/dist/js/lightgallery.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-fullscreen.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-thumbnail.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-zoom.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-video.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+
+<!-- Site Functions & Actions -->
+<script src="../../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../../resource/js/canvas-nest.min.js"></script>
+
+<!-- Toolbox -->
+<script src="../../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 2;</script>
+<script src="../../resource/js/zms.page.pattern.js"></script>
+</body>
+</html>

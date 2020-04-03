@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>404</title>
+
+    <!-- Site CSS -->
+    <link href="/resource/css/zms.min.css" rel="stylesheet">
+
+    <link href="/resource/css/az.css" rel="stylesheet">
+
+    <link type="image/x-icon" href="/resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="/resource/img/favicon.ico" rel="shortcut icon"/>
+</head>
+
+<body>
+
+<div class="page-error">
+    <canvas id="canvasParticle" height="100%" width="100%" style="position: fixed; top: 0px; left: 0px; z-index: 0;">
+        Canvas is not supported in your browser.
+    </canvas>
+    <div class="page-error__inner">
+        <h2>404!</h2>
+        <p><span id="time" class="count-down-404">5</span>秒后<a href="index.html">返回主页</a></p>
+    </div>
+</div>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers
+        to access this website.</p>
+    <div class="ie-warning__container">
+        <ul class="ie-warning__download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="/resource/img/browsers/chrome.png" alt="">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="/resource/img/browsers/firefox.png" alt="">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="/resource/img/browsers/opera.png" alt="">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="/resource/img/browsers/safari.png" alt="">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="/resource/img/browsers/ie.png" alt="">
+                    <div>IE (New)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+
+<script src="/resource/js/zms.particle.spread.js"></script>
+
+<!-- Auto backprofile.htmlhtml -->
+<script type="text/javascript">
+    let time = document.getElementById('time');
+
+    function count() {
+        if (+time.innerHTML > 0) {
+            time.innerHTML = time.innerHTML - 1;
+        } else {
+            location.href = '/index.html';
+        }
+    }
+
+    setInterval(count, 1000);
+</script>
+
+</body>
+</html>

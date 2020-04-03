@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>使用CSS3制作动态3D柱状图</title>
+
+    <!--主要样式-->
+    <link rel="stylesheet" type="text/css" href="css/city.3d.graph.css"/>
+    <style>
+        body {
+            font-family: 'Open Sans Condensed', 'Arial Narrow', serif;
+            background: #fff url("../../resource/img/bg/e.png") repeat top left;
+            font-weight: 400;
+            font-size: 15px;
+            color: #333;
+            overflow-y: scroll;
+        }
+
+        a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .main {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.03);
+            padding: 30px 50px 50px 50px;
+            margin: 0 auto 30px auto;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+</head>
+<body>
+
+
+<header>
+    <h2 style="width:100%;text-align:center;">城市对比</h2>
+</header>
+
+
+<section class="main">
+
+    <span class="button-label">尺寸:</span>
+    <input type="radio" name="resize-graph" id="graph-small"/><label for="graph-small">小</label>
+    <input type="radio" name="resize-graph" id="graph-normal" checked="checked"/><label for="graph-normal">中</label>
+    <input type="radio" name="resize-graph" id="graph-large"/><label for="graph-large">大</label>
+
+    <span class="button-label">颜色:</span>
+    <input type="radio" name="paint-graph" id="graph-blue" /><label for="graph-blue">蓝色</label>
+    <input type="radio" name="paint-graph" id="graph-green"/><label for="graph-green">绿色</label>
+    <input type="radio" name="paint-graph" id="graph-rainbow" checked="checked"/><label for="graph-rainbow">彩虹效果</label>
+    <span class="button-label">产品:</span>
+    <input type="radio" name="fill-graph" id="f-none"/><label for="f-none">无</label>
+    <input type="radio" name="fill-graph" id="f-product1" checked="checked"/><label for="f-product1">产品1</label>
+    <input type="radio" name="fill-graph" id="f-product2"/><label for="f-product2">产品2</label>
+    <input type="radio" name="fill-graph" id="f-product3"/><label for="f-product3">产品3</label>
+
+    <ul class="graph-container">
+
+        <li>
+            <span>深圳</span>
+            <div class="bar-wrapper">
+                <div class="bar-container">
+                    <div class="bar-background"></div>
+                    <div class="bar-inner">25</div>
+                    <div class="bar-foreground"></div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <span>广州</span>
+            <div class="bar-wrapper">
+                <div class="bar-container">
+                    <div class="bar-background"></div>
+                    <div class="bar-inner">50</div>
+                    <div class="bar-foreground"></div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <span>中山</span>
+            <div class="bar-wrapper">
+                <div class="bar-container">
+                    <div class="bar-background"></div>
+                    <div class="bar-inner">75</div>
+                    <div class="bar-foreground"></div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <span>杭州</span>
+            <div class="bar-wrapper">
+                <div class="bar-container">
+                    <div class="bar-background"></div>
+                    <div class="bar-inner">100</div>
+                    <div class="bar-foreground"></div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <span>苏州</span>
+            <div class="bar-wrapper">
+                <div class="bar-container">
+                    <div class="bar-background"></div>
+                    <div class="bar-inner">50</div>
+                    <div class="bar-foreground"></div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <span>郑州</span>
+            <div class="bar-wrapper">
+                <div class="bar-container">
+                    <div class="bar-background"></div>
+                    <div class="bar-inner">100</div>
+                    <div class="bar-foreground"></div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <span>西安</span>
+            <div class="bar-wrapper">
+                <div class="bar-container">
+                    <div class="bar-background"></div>
+                    <div class="bar-inner">50</div>
+                    <div class="bar-foreground"></div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <ul class="graph-marker-container">
+                <li style="bottom:25%;"><span>25%</span></li>
+                <li style="bottom:50%;"><span>50%</span></li>
+                <li style="bottom:75%;"><span>75%</span></li>
+                <li style="bottom:100%;"><span>100%</span></li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+
+</body>
+</html>

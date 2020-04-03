@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- META -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Color</title>
+
+    <link href='css/color.google.roboto.css' rel='stylesheet' type='text/css'>
+    <link media="all" type="text/css" rel="stylesheet" href="css/color.materialui.css">
+    <style>
+        .input-rgb {
+            height: 35px;
+            width: 55px;
+            text-align: center;
+            line-height: 35px
+        }
+    </style>
+
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
+
+</head>
+<body class="clear header_fixed ">
+<div class="clear wrap">
+
+    <div class="container">
+        <div class="content">
+            <div id="colorPicker"></div>
+            <div class="color_bar">
+                <ul class="ul_reset cb_list">
+                    <li>
+                        <label>10进制</label>
+
+                        <input type="text" class="input-rgb" id="color_r" value="255" oninput="switchRGB(event)"
+                               onporpertychange="switchRGB(event)" style="color:#000000;background-color:#ff0000">
+                        <input type="text" class="input-rgb" id="color_g" value="255" oninput="switchRGB(event)"
+                               onporpertychange="switchRGB(event)" style="color:#000000;background-color:#00ff00">
+                        <input type="text" class="input-rgb" id="color_b" value="255" oninput="switchRGB(event)"
+                               onporpertychange="switchRGB(event)" style="color:#ffffff;background-color:#0000ff ">
+                    </li>
+                    <li>
+                        <label>16进制</label>
+                        <input type="text" id="color_hex" class="textbox jscolor {onFineChange:'cbUpdate16(this)'}">
+                    </li>
+                    <li>
+                        <label>点击复制</label>
+                        <div class="cb_button_set">
+                            <button type="button" class="cb_button cb_hex click2copy" data-copy="#ffffff">HEX :
+                                #ffffff
+                            </button>
+                            <button type="button" class="cb_button cb_rgb click2copy" data-copy="rgb(255,255,255)">RGB :
+                                rgb(255,255,255)
+                            </button>
+                            <button type="button" class="cb_button cb_hsb click2copy" data-copy="0°, 0%, 100%">HSB : 0°,
+                                0%, 100%
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="overlay"></div>
+<div class="popup_overlay"></div>
+<div class="progress">
+    <div class="indeterminate"></div>
+</div>
+<div class="no_c2c">
+    <p class="nc_title">使用 'Cmd+C' 复制颜色代码</p>
+    <p class="nc_suggestion">你的浏览器不支持点击复制功能.<br/>推荐你使用Chrome.</p>
+</div>
+
+<!-- JS -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="js/color.app.js" type="text/javascript"></script>
+
+<script src="js/color.jscolor.min.js" type="text/javascript"></script>
+<script>
+    function cbUpdate16(picker) {
+        var hsbColor = Math.round(picker.hsv[0]) + '°, ' + Math.round(picker.hsv[1]) + '%, ' + Math.round(picker.hsv[2]) + '%';
+        $('.cb_button.cb_hex').text('HEX : ' + picker.toHEXString());
+        $('.cb_button.cb_hex').data('copy', picker.toHEXString());
+        $('.cb_button.cb_rgb').text('RGB : ' + picker.toRGBString());
+        $('.cb_button.cb_rgb').data('copy', picker.toRGBString());
+        $('.cb_button.cb_hsb').text('HSB : ' + hsbColor);
+        $('.cb_button.cb_hsb').data('copy', hsbColor);
+    }
+
+    function switchRGB() {
+        document.getElementById("color_hex").value = switchColor("color_r", "result_r")
+            + switchColor("color_g", "result_g")
+            + switchColor("color_b", "result_b");
+    }
+
+    function switchColor(raw) {
+        var tmp = parseInt(document.getElementById(raw).value, 10);
+        if (isNaN(tmp)) {
+            tmp = 0;
+        }
+        if (tmp > 255) {
+            tmp = 255;
+        } else if (tmp < 0) {
+            tmp = 0;
+        }
+        var hex = tmp.toString(16); // .toUpperCase()
+        if (hex.length < 2) {
+            hex = "0" + hex;
+        }
+        return hex.toString();
+    }
+</script>
+</body>
+</html>

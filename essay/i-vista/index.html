@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>中国智能汽车指数汇总</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../resource/css/az.css" rel="stylesheet">
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../resource/css/essay.material.floating.button.css" rel="stylesheet">
+    <style>
+        .country-flag {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+        }
+
+        .car-logo {
+            width: 24px; /* 30px;3 */
+            height: 16px; /* 20px;2 */
+            margin-right: 15px; /* 18px */
+        }
+
+        .ciasi-logo {
+            height: 20px;
+            padding: 2px;
+            margin-right: 5px;
+            background-color: #ffffff;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+        .grade {
+            font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+            font-weight: bolder;
+            color: #000000;
+            padding: 5px 0px;
+            text-align: center;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -o-border-radius: 3px;
+            border-radius: 3px;
+            width: 55px;
+            height: 28px;
+            display: block
+        }
+
+        .not-official {
+            text-decoration: underline;
+        }
+
+        .btn-save-image {
+            font-size: small;
+            margin-left: 20px;
+            padding: 4px 5px;
+            cursor: pointer;
+            color: #ffffff;
+            background-color: #009688;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+        .btn-save-image:hover {
+            color: #FFEB3B;
+            background-color: #607D8B;
+        }
+
+        .btn-detail-link {
+            font-size: x-large;
+            color: #9E9E9E;
+        }
+
+        .btn-detail-link:hover {
+            font-size: x-large;
+            color: #2196F3;
+        }
+
+        .btn-detail-nolink {
+            font-size: x-large;
+            color: #9E9E9E;
+        }
+
+        .section {
+            width: 100%;
+        }
+
+        .score-detail {
+            width: 100%;
+            height: 600px;
+        }
+
+        .car-make {
+            color: #ffffff;
+        }
+
+        .car-model {
+            color: #ffffff;
+        }
+
+        .car-year {
+            font-size: x-small;
+        }
+
+        .car-price {
+            color: #ffffff;
+        }
+
+    </style>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e3a97a0eee3cb03b5caf792f58032743";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<!--
+<header id="header" style="display: none"></header>
+-->
+
+<section id="main" style="margin:auto;padding:0;width: 990px;">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <!--
+        <script>
+            var essayTitle = document.title;
+            var essaySummary = document.title;//'随便写点什么';
+            var essayUrl = window.location.href;
+            //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+            var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+        </script>
+        -->
+        <!--
+        AZ Share: Material Floating Button;
+        Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+        Position:mfb-component--br,bl,tr,tl;
+        Action:hover,click
+        -->
+        <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+
+        <!--
+        <div class="content__header">
+            <h2 class="font-yahei"><i class="zmdi zmdi-flag"></i> 随笔</h2>
+            <div class="actions">
+                <a href=""><i class="zmdi zmdi-check-all"></i></a>
+                <a href=""><i class="zmdi zmdi-trending-up"></i></a>
+                <div class="dropdown">
+                    <a href="" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="">Change Date Range</a></li>
+                        <li><a href="">Change Graph Type</a></li>
+                        <li><a href="">Other Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        -->
+        <div class="card" style="margin-top: 15px">
+
+            <div class="action-header">
+                <!--
+                <span id="essay_arrow_back" class="actions essay-back-arrow">
+                    <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                -->
+                <span class="essay-title" style="font-size: larger;font-weight: bold;">
+                    中国智能汽车指数
+                    <span style="color: #2196F3;font-size: small;">
+                        <a href="http://www.i-vista.org/About/index/id/277.html" target="_blank">
+                            i-VISTA
+                        </a>
+                    </span>
+                    <!--
+                    <i class="zmdi zmdi-car green"></i>
+                    <i class="zmdi zmdi-car yellow"></i>
+                    <i class="zmdi zmdi-car orange"></i>
+                    <i class="zmdi zmdi-car red"></i>
+                    -->
+                </span>
+
+                <span id="btnSaveImage" class="btn-save-image">
+                    <i class="zmdi zmdi-download"></i> 下载图片
+                </span>
+
+                <span align="right" style="float: right;">
+                    <!--<i class="zmdi zmdi-car"></i>&nbsp;<span class="essay-type">Car</span>&nbsp;&nbsp;-->
+                    <i class="zmdi zmdi-time"></i> 2019.10.09
+                </span>
+            </div>
+
+            <div id="card_body" class="card__body" style="padding-top: 0;margin-left: -20px;margin-right: -20px">
+                <div class="table-responsive">
+                    <!-- id="data-table-basic,data-table-selection,data-table-command" -->
+                    <table id="table-carsafe-list" class="table table-striped table--vmiddle"
+                           style="font-family: 'Microsoft YaHei', sans-serif">
+                        <thead>
+                        <tr>
+                            <!-- data-type="numeric"-->
+                            <th data-column-id="make" data-formatter="make"> 品牌</th>
+                            <th data-column-id="model" data-formatter="model" data-sortable="false">型号</th>
+                            <th data-column-id="year" data-formatter="year" data-sortable="false">款式</th>
+                            <th data-column-id="acc" data-formatter="acc">自适巡航</th>
+                            <th data-column-id="aeb" data-formatter="aeb">紧急制动</th>
+                            <th data-column-id="ldw" data-formatter="ldw">车道偏离</th>
+                            <th data-column-id="bsd" data-formatter="bsd">盲区监测</th>
+                            <th data-column-id="aps" data-formatter="aps">自动泊车</th>
+                            <th data-column-id="total" data-formatter="total">总分</th><!--  data-order="desc" -->
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>长安</td><!-- MAKE -->
+                            <td>CS75</td><!-- MODEL -->
+                            <td>2018款 280T 自动领智型</td><!-- YEAR -->
+                            <td>8.2</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>9.6</td><!-- AEB 自动紧急制动系统 -->
+                            <td>6.5</td><!-- LDW 车道偏离报警系统 -->
+                            <td>10.0</td><!-- BSD 盲区监测系统 -->
+                            <td>8.4</td><!-- APS 自动泊车辅助系统 -->
+                            <td>42.7</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>北京奔驰</td><!-- MAKE -->
+                            <td>C级</td><!-- MODEL -->
+                            <td>2019款 C260 运动版</td><!-- YEAR -->
+                            <td>8.7</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>10.0</td><!-- AEB 自动紧急制动系统 -->
+                            <td>8.5</td><!-- LDW 车道偏离报警系统 -->
+                            <td>8.8</td><!-- BSD 盲区监测系统 -->
+                            <td>5.8</td><!-- APS 自动泊车辅助系统 -->
+                            <td>41.8</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>长安福特</td><!-- MAKE -->
+                            <td>蒙迪欧</td><!-- MODEL -->
+                            <td>2017款 EcoBoost 245 旗舰版</td><!-- YEAR -->
+                            <td>9.2</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>8.1</td><!-- AEB 自动紧急制动系统 -->
+                            <td>10.0</td><!-- LDW 车道偏离报警系统 -->
+                            <td>5.6</td><!-- BSD 盲区监测系统 -->
+                            <td>5.4</td><!-- APS 自动泊车辅助系统 -->
+                            <td>38.3</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>广汽吉普</td><!-- MAKE -->
+                            <td>指南者</td><!-- MODEL -->
+                            <td>2017款 200TS 高性能四驱版</td><!-- YEAR -->
+                            <td>6.7</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>9.6</td><!-- AEB 自动紧急制动系统 -->
+                            <td>9.6</td><!-- LDW 车道偏离报警系统 -->
+                            <td>5.6</td><!-- BSD 盲区监测系统 -->
+                            <td>6.8</td><!-- APS 自动泊车辅助系统 -->
+                            <td>38.3</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>长城魏派</td><!-- MAKE -->
+                            <td>VV5</td><!-- MODEL -->
+                            <td>2017款 旗舰型</td><!-- YEAR -->
+                            <td>5.2</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>9.6</td><!-- AEB 自动紧急制动系统 -->
+                            <td>8.1</td><!-- LDW 车道偏离报警系统 -->
+                            <td>10.0</td><!-- BSD 盲区监测系统 -->
+                            <td>6.8</td><!-- APS 自动泊车辅助系统 -->
+                            <td>39.7</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>一汽大众</td><!-- MAKE -->
+                            <td>迈腾</td><!-- MODEL -->
+                            <td>2018款 380TSI DSG旗舰型</td><!-- YEAR -->
+                            <td>5.3</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>10.0</td><!-- AEB 自动紧急制动系统 -->
+                            <td>8.8</td><!-- LDW 车道偏离报警系统 -->
+                            <td>8.8</td><!-- BSD 盲区监测系统 -->
+                            <td>6.8</td><!-- APS 自动泊车辅助系统 -->
+                            <td>39.7</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>一汽红旗</td><!-- MAKE -->
+                            <td>H5</td><!-- MODEL -->
+                            <td>2018款 智联御动版</td><!-- YEAR -->
+                            <td>7.0</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>9.2</td><!-- AEB 自动紧急制动系统 -->
+                            <td>8.1</td><!-- LDW 车道偏离报警系统 -->
+                            <td>6.9</td><!-- BSD 盲区监测系统 -->
+                            <td>7.2</td><!-- APS 自动泊车辅助系统 -->
+                            <td>38.4</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>上汽大众</td><!-- MAKE -->
+                            <td>途观L</td><!-- MODEL -->
+                            <td>2018款 380TSI自动四驱至尊旗舰版</td><!-- YEAR -->
+                            <td>6.5</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>10.0</td><!-- AEB 自动紧急制动系统 -->
+                            <td>8.8</td><!-- LDW 车道偏离报警系统 -->
+                            <td>5.6</td><!-- BSD 盲区监测系统 -->
+                            <td>7.0</td><!-- APS 自动泊车辅助系统 -->
+                            <td>37.9</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>沃尔沃</td><!-- MAKE -->
+                            <td>XC60</td><!-- MODEL -->
+                            <td>2019款 T5 四驱智雅豪华版</td><!-- YEAR -->
+                            <td>8.5</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>10.0</td><!-- AEB 自动紧急制动系统 -->
+                            <td>9.2</td><!-- LDW 车道偏离报警系统 -->
+                            <td>9.4</td><!-- BSD 盲区监测系统 -->
+                            <td>-</td><!-- APS 自动泊车辅助系统 -->
+                            <td>37.1</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>北京现代</td><!-- MAKE -->
+                            <td>菲斯塔</td><!-- MODEL -->
+                            <td>2019款 280TGDi 智尊版</td><!-- YEAR -->
+                            <td>8.5</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>9.2</td><!-- AEB 自动紧急制动系统 -->
+                            <td>9.6</td><!-- LDW 车道偏离报警系统 -->
+                            <td>8.1</td><!-- BSD 盲区监测系统 -->
+                            <td>-</td><!-- APS 自动泊车辅助系统 -->
+                            <td>35.4</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>长城哈弗</td><!-- MAKE -->
+                            <td>F7</td><!-- MODEL -->
+                            <td>2019款 1.5T 两驱i潮</td><!-- YEAR -->
+                            <td>9.3</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>9.6</td><!-- AEB 自动紧急制动系统 -->
+                            <td>6.5</td><!-- LDW 车道偏离报警系统 -->
+                            <td>10.0</td><!-- BSD 盲区监测系统 -->
+                            <td>-</td><!-- APS 自动泊车辅助系统 -->
+                            <td>35.4</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>上汽别克</td><!-- MAKE -->
+                            <td>昂科威</td><!-- MODEL -->
+                            <td>2018款 28T 四驱豪华版</td><!-- YEAR -->
+                            <td>7.2</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>9.6</td><!-- AEB 自动紧急制动系统 -->
+                            <td>-</td><!-- LDW 车道偏离报警系统 -->
+                            <td>8.1</td><!-- BSD 盲区监测系统 -->
+                            <td>8.4</td><!-- APS 自动泊车辅助系统 -->
+                            <td>33.3</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>吉利</td><!-- MAKE -->
+                            <td>博瑞GE</td><!-- MODEL -->
+                            <td>2018款 MHEV轻混耀尊版</td><!-- YEAR -->
+                            <td>6.3</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>9.2</td><!-- AEB 自动紧急制动系统 -->
+                            <td>8.1</td><!-- LDW 车道偏离报警系统 -->
+                            <td>0.6</td><!-- BSD 盲区监测系统 -->
+                            <td>8.5</td><!-- APS 自动泊车辅助系统 -->
+                            <td>32.7</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>华晨宝马</td><!-- MAKE -->
+                            <td>3系</td><!-- MODEL -->
+                            <td>2018款 330Li M运动耀夜版</td><!-- YEAR -->
+                            <td>4.7</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>6.2</td><!-- AEB 自动紧急制动系统 -->
+                            <td>8.1</td><!-- LDW 车道偏离报警系统 -->
+                            <td>6.3</td><!-- BSD 盲区监测系统 -->
+                            <td>7.3</td><!-- APS 自动泊车辅助系统 -->
+                            <td>32.6</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>斯巴鲁</td><!-- MAKE -->
+                            <td>森林人</td><!-- MODEL -->
+                            <td>2019款 2.0i 智擎旗舰版EyeSight</td><!-- YEAR -->
+                            <td>4.2</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>9.6</td><!-- AEB 自动紧急制动系统 -->
+                            <td>8.1</td><!-- LDW 车道偏离报警系统 -->
+                            <td>9.4</td><!-- BSD 盲区监测系统 -->
+                            <td>-</td><!-- APS 自动泊车辅助系统 -->
+                            <td>31.3</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>特斯拉</td><!-- MAKE -->
+                            <td>Model S</td><!-- MODEL -->
+                            <td>2016款 75D</td><!-- YEAR -->
+                            <td>8.7</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>9.2</td><!-- AEB 自动紧急制动系统 -->
+                            <td>9.2</td><!-- LDW 车道偏离报警系统 -->
+                            <td>-</td><!-- BSD 盲区监测系统 -->
+                            <td>4.1</td><!-- APS 自动泊车辅助系统 -->
+                            <td>31.2</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>广汽本田</td><!-- MAKE -->
+                            <td>雅阁</td><!-- MODEL -->
+                            <td>2018款 260TURBO 旗舰版</td><!-- YEAR -->
+                            <td>8.2</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>9.6</td><!-- AEB 自动紧急制动系统 -->
+                            <td>8.7</td><!-- LDW 车道偏离报警系统 -->
+                            <td>-</td><!-- BSD 盲区监测系统 -->
+                            <td>3.7</td><!-- APS 自动泊车辅助系统 -->
+                            <td>30.2</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>上汽别克</td><!-- MAKE -->
+                            <td>GL8</td><!-- MODEL -->
+                            <td>2017款 28T 旗舰型</td><!-- YEAR -->
+                            <td>8.2</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>8.8</td><!-- AEB 自动紧急制动系统 -->
+                            <td>-</td><!-- LDW 车道偏离报警系统 -->
+                            <td>5.0</td><!-- BSD 盲区监测系统 -->
+                            <td>7.2</td><!-- APS 自动泊车辅助系统 -->
+                            <td>29.2</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>上汽斯柯达</td><!-- MAKE -->
+                            <td>柯迪亚克</td><!-- MODEL -->
+                            <td>2018款 TSI380 7座四驱旗舰版</td><!-- YEAR -->
+                            <td>6.2</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>8.5</td><!-- AEB 自动紧急制动系统 -->
+                            <td>-</td><!-- LDW 车道偏离报警系统 -->
+                            <td>5.6</td><!-- BSD 盲区监测系统 -->
+                            <td>8.1</td><!-- APS 自动泊车辅助系统 -->
+                            <td>28.4</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>东风日产</td><!-- MAKE -->
+                            <td>奇骏</td><!-- MODEL -->
+                            <td>2017款 2.5L CVT至尊版 4WD</td><!-- YEAR -->
+                            <td>4.5</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>8.5</td><!-- AEB 自动紧急制动系统 -->
+                            <td>9.4</td><!-- LDW 车道偏离报警系统 -->
+                            <td>4.4</td><!-- BSD 盲区监测系统 -->
+                            <td>-</td><!-- APS 自动泊车辅助系统 -->
+                            <td>26.8</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>上汽凯迪拉克</td><!-- MAKE -->
+                            <td>XT4</td><!-- MODEL -->
+                            <td>2018款 28T 四驱铂金版</td><!-- YEAR -->
+                            <td>8.5</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>8.8</td><!-- AEB 自动紧急制动系统 -->
+                            <td>-</td><!-- LDW 车道偏离报警系统 -->
+                            <td>9.4</td><!-- BSD 盲区监测系统 -->
+                            <td>-</td><!-- APS 自动泊车辅助系统 -->
+                            <td>26.7</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>北京现代</td><!-- MAKE -->
+                            <td>领动</td><!-- MODEL -->
+                            <td>2016款 自动智炫旗舰型</td><!-- YEAR -->
+                            <td>-</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>9.2</td><!-- AEB 自动紧急制动系统 -->
+                            <td>7.5</td><!-- LDW 车道偏离报警系统 -->
+                            <td>6.9</td><!-- BSD 盲区监测系统 -->
+                            <td>-</td><!-- APS 自动泊车辅助系统 -->
+                            <td>23.6</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>广汽丰田</td><!-- MAKE -->
+                            <td>凯美瑞</td><!-- MODEL -->
+                            <td>2018款 2.5Q旗舰版</td><!-- YEAR -->
+                            <td>0.2</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>8.1</td><!-- AEB 自动紧急制动系统 -->
+                            <td>9.6</td><!-- LDW 车道偏离报警系统 -->
+                            <td>5.6</td><!-- BSD 盲区监测系统 -->
+                            <td>-</td><!-- APS 自动泊车辅助系统 -->
+                            <td>23.5</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>吉利领克</td><!-- MAKE -->
+                            <td>01</td><!-- MODEL -->
+                            <td>2017款 劲Pro版</td><!-- YEAR -->
+                            <td>0.2</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>8.1</td><!-- AEB 自动紧急制动系统 -->
+                            <td>9.6</td><!-- LDW 车道偏离报警系统 -->
+                            <td>5.6</td><!-- BSD 盲区监测系统 -->
+                            <td>-</td><!-- APS 自动泊车辅助系统 -->
+                            <td>23.5</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>众泰</td><!-- MAKE -->
+                            <td>T500</td><!-- MODEL -->
+                            <td>2018款 1.5T自动智能互联旗舰型</td><!-- YEAR -->
+                            <td>5.8</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>5.8</td><!-- AEB 自动紧急制动系统 -->
+                            <td>5.0</td><!-- LDW 车道偏离报警系统 -->
+                            <td>-</td><!-- BSD 盲区监测系统 -->
+                            <td>6.4</td><!-- APS 自动泊车辅助系统 -->
+                            <td>23.0</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>上汽荣威</td><!-- MAKE -->
+                            <td>RX8</td><!-- MODEL -->
+                            <td>2018款 30T智联网两驱至尊版</td><!-- YEAR -->
+                            <td>4.3</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>9.2</td><!-- AEB 自动紧急制动系统 -->
+                            <td>8.1</td><!-- LDW 车道偏离报警系统 -->
+                            <td>-</td><!-- BSD 盲区监测系统 -->
+                            <td>-</td><!-- APS 自动泊车辅助系统 -->
+                            <td>21.6</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>东风雷诺</td><!-- MAKE -->
+                            <td>科雷傲</td><!-- MODEL -->
+                            <td>2018款 2.5L 四驱旗舰版</td><!-- YEAR -->
+                            <td>-</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>1.5</td><!-- AEB 自动紧急制动系统 -->
+                            <td>7.3</td><!-- LDW 车道偏离报警系统 -->
+                            <td>3.8</td><!-- BSD 盲区监测系统 -->
+                            <td>7.4</td><!-- APS 自动泊车辅助系统 -->
+                            <td>20.0</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>广汽传祺</td><!-- MAKE -->
+                            <td>GS8</td><!-- MODEL -->
+                            <td>2017款 i-4WD至尊版</td><!-- YEAR -->
+                            <td>6.2</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>6.9</td><!-- AEB 自动紧急制动系统 -->
+                            <td>6.5</td><!-- LDW 车道偏离报警系统 -->
+                            <td>-</td><!-- BSD 盲区监测系统 -->
+                            <td>-</td><!-- APS 自动泊车辅助系统 -->
+                            <td>19.6</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>上汽雪佛兰</td><!-- MAKE -->
+                            <td>迈锐宝XL</td><!-- MODEL -->
+                            <td>2017款 535 锐尊版</td><!-- YEAR -->
+                            <td>8.2</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>6.5</td><!-- AEB 自动紧急制动系统 -->
+                            <td>-</td><!-- LDW 车道偏离报警系统 -->
+                            <td>-</td><!-- BSD 盲区监测系统 -->
+                            <td>4.3</td><!-- APS 自动泊车辅助系统 -->
+                            <td>19.0</td><!-- 总分 -->
+                        </tr>
+                        <tr>
+                            <td>东风本田</td><!-- MAKE -->
+                            <td>思域</td><!-- MODEL -->
+                            <td>2016款 220TURBO 自动尊耀版</td><!-- YEAR -->
+                            <td>1.7</td><!-- ACC 自适应巡航控制系统 -->
+                            <td>8.1</td><!-- AEB 自动紧急制动系统 -->
+                            <td>8.5</td><!-- LDW 车道偏离报警系统 -->
+                            <td>-</td><!-- BSD 盲区监测系统 -->
+                            <td>-</td><!-- APS 自动泊车辅助系统 -->
+                            <td>18.3</td><!-- 总分 -->
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="content3">
+        <div class="card">
+            <div id="card_body3" class="card__body" style="padding-top: 10px">
+                <div class="table-responsive">
+                    <div class="section bg-info">
+                        <div id="detailACC" class="score-detail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="content4">
+        <div class="card">
+            <div id="card_body4" class="card__body" style="padding-top: 10px">
+                <div class="table-responsive">
+                    <div class="section bg-info">
+                        <div id="detailAEB" class="score-detail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="content5">
+        <div class="card">
+            <div id="card_body5" class="card__body" style="padding-top: 10px">
+                <div class="table-responsive">
+                    <div class="section bg-info">
+                        <div id="detailLDW" class="score-detail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="content6">
+        <div class="card">
+            <div id="card_body6" class="card__body" style="padding-top: 10px">
+                <div class="table-responsive">
+                    <div class="section bg-info">
+                        <div id="detailBSD" class="score-detail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="content7">
+        <div class="card">
+            <div id="card_body7" class="card__body" style="padding-top: 10px">
+                <div class="table-responsive">
+                    <div class="section bg-info">
+                        <div id="detailAPS" class="score-detail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <link rel="stylesheet" href="../../resource/css/toolbox.reset.css"><!-- CSS reset -->
+    <link rel="stylesheet" href="../../resource/css/toolbox.style.css"><!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../../resource/js/data-table.js"></script>
+
+<script>
+    function convertScore(score) {
+        if (score.indexOf("-") != -1) {
+            return "<span class=\"grade grey-bg\">-</span>";
+        } else {
+            if (score >= 8.0)
+                return "<span class=\"grade green-bg\">++++</span>";
+            else if (score >= 6.0)
+                return "<span class=\"grade yellow-bg\">+++</span>";
+            else if (score >= 4.0)
+                return "<span class=\"grade orange-bg\">++</span>";
+            else if (score >= 0)
+                return "<span class=\"grade red-bg\">+</span>";
+            else
+                return "<span class=\"grade grey-bg\">" + word + "</span>";
+        }
+    }
+
+    // AZ: for lists of C-IASI page.
+    $("#table-carsafe-list").bootgrid({
+        //Override default icon classes
+        rowCount: -1, // AZ: -1 mains show all
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "", // "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "", // "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "" //"<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "make": function (column, row) {
+                return getLogoByMake(row.make, 2) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
+            },
+            "model": function (column, row) {
+                return "<span class='car-model'>" + row.model + "</span>";
+            },
+            "year": function (column, row) {
+                return "<span class='car-year'>" + row.year + "</span>";
+            },
+            "acc": function (column, row) {
+                return "<a title='自适应巡航控制系统'>" + convertScore(row.acc) + "</a>";
+            },
+            "aeb": function (column, row) {
+                return "<a title='自动紧急制动系统'>" + convertScore(row.aeb) + "</a>";
+            },
+            "ldw": function (column, row) {
+                return "<a title='车道偏离报警系统'>" + convertScore(row.ldw) + "</a>";
+            },
+            "bsd": function (column, row) {
+                return "<a title='盲区监测系统'>" + convertScore(row.bsd) + "</a>";
+            },
+            "aps": function (column, row) {
+                return "<a title='自动泊车辅助系统'>" + convertScore(row.aps) + "</a>";
+            },
+            "link": function (column, row) {
+                if (row.link) {
+                    let linkPrefix = 'http://ciasi.org.cn/home/safety/pageone/id/';
+                    return "<span style='font-size: 15px' >" +
+                        "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
+                        + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
+                        + "</a>" +
+                        "</span>";
+                } else {
+                    return "<i class=\"btn-detail-nolink zmdi zmdi-more\"></i>";
+                }
+            }
+        }
+    });
+</script>
+
+
+<!-- Site Functions & Actions -->
+<script src="../../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<!--
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../../js/canvas-nest.min.js"></script>
+-->
+
+<!-- Toolbox -->
+<!--<script src="../../js/toolbox.main.js"></script>-->
+
+<script>
+    var directoryDepth = 2;
+</script>
+<script src="../../resource/js/zms.page.pattern.js"></script>
+
+<script src="js/html2canvas.min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="js/canvas2image.js" type="text/javascript" charset="utf-8" async defer></script>
+<script>
+    $('#btnSaveImage').click(function (e) {
+        document.getElementById("btnSaveImage").style.display = "none";
+        html2canvas(document.getElementById("content")).then(function (canvas) {
+            let contentW = canvas.width;
+            let contentH = canvas.height;
+            Canvas2Image.saveAsImageToName(canvas, contentW, contentH, 'jpeg', 'car.jpg', 10);
+        });
+
+        document.getElementById("btnSaveImage").style.display = "";
+    });
+</script>
+
+
+<script src="js/echarts.min.js"></script>
+
+<script>
+    $(function () {
+        initDataACC();
+        initDataAEB();
+        initDataLDW();
+        initDataBSD();
+        initDataAPS();
+    });
+
+    //生成数据
+    function initDataACC() {
+        // G-0 A-2 M-6 P-
+        let legendData = ['ACC自适应巡航控制系统'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
+        }
+
+        addData('丰田凯美瑞', 0.2);
+        addData('本田思域', 1.7);
+        addData('斯巴鲁森林人', 4.2);
+        addData('荣威RX8', 4.3);
+        addData('日产奇骏', 4.5);
+        addData('宝马330Li', 4.7);
+        addData('魏派VV5', 5.2);
+        addData('大众迈腾', 5.3);
+        addData('众泰T500', 5.8);
+        addData('斯柯达柯迪亚克', 6.2);
+        addData('传祺GS8', 6.2);
+        addData('博瑞GE', 6.3);
+        addData('大众途观L', 6.5);
+        addData('吉普指南者', 6.7);
+        addData('红旗H5', 7.0);
+        addData('别克昂科威', 7.2);
+        addData('雪佛兰迈锐宝XL', 8.2);
+        addData('别克GL8', 8.2);
+        addData('长安CS75', 8.2);
+        addData('本田雅阁', 8.2);
+        addData('凯迪拉克XT4', 8.5);
+        addData('现代菲斯塔', 8.5);
+        addData('沃尔沃XC60', 8.5);
+        addData('奔驰C260', 8.7);
+        addData('特斯拉Model S', 8.7);
+        addData('福特蒙迪欧', 9.2);
+        addData('哈弗F7', 9.3);
+
+        for (var i = 0; i < legendData.length; i++) {
+            var seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10,//柱状条宽度
+                //name: '正面25%偏置碰撞',
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true,//鼠标悬停时显示label数据
+                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: function (params) {
+                            if (params.value >= 8.0) {
+                                return "#4CAF50";
+                            } else if (params.value >= 6.0) {
+                                return "#FFEB3B";
+                            } else if (params.value >= 4.0) {
+                                return "#FF9800";
+                            } else
+                                return "#f44336";
+                        }
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true, //显示数据
+                        position: 'right'//显示数据位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
+                    }
+                },
+                data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailACC', "ACC自适应巡航控制系统（越高越好）", legendData, arrayCar, seriesValue);
+    }
+
+    function initDataAEB() {
+        let legendData = ['AEB自动紧急制动系统'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
+        }
+
+        addData('雷诺科雷傲', 1.5);
+        addData('众泰T500', 5.8);
+        addData('宝马330Li', 6.2);
+        addData('雪佛兰迈锐宝XL', 6.5);
+        addData('传祺GS8', 6.9);
+        addData('本田思域', 8.1);
+        addData('福特蒙迪欧', 8.1);
+        addData('丰田凯美瑞', 8.1);
+        addData('斯柯达柯迪亚克', 8.5);
+        addData('日产奇骏', 8.5);
+        addData('别克GL8', 8.8);
+        addData('凯迪拉克XT4', 8.8);
+        addData('荣威RX8', 9.2);
+        addData('现代菲斯塔', 9.2);
+        addData('博瑞GE', 9.2);
+        addData('红旗H5', 9.2);
+        addData('特斯拉Model S', 9.2);
+        addData('现代领动', 9.2);
+        addData('别克昂科威', 9.6);
+        addData('斯巴鲁森林人', 9.6);
+        addData('长安CS75', 9.6);
+        addData('哈弗F7', 9.6);
+        addData('魏派VV5', 9.6);
+        addData('本田雅阁', 9.6);
+        addData('吉普指南者', 9.6);
+        addData('大众途观L', 10.0);
+        addData('大众迈腾', 10.0);
+        addData('沃尔沃XC60', 10.0);
+        addData('奔驰C260', 10.0);
+
+        for (let i = 0; i < legendData.length; i++) {
+            let seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10,//柱状条宽度
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true,//鼠标悬停时显示label数据
+                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: function (params) {
+                            if (params.value >= 8.0) {
+                                return "#4CAF50";
+                            } else if (params.value >= 6.0) {
+                                return "#FFEB3B";
+                            } else if (params.value >= 4.0) {
+                                return "#FF9800";
+                            } else
+                                return "#f44336";
+                        }
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true, //显示数据
+                        position: 'right'//显示数据位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
+                    }
+                },
+                data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailAEB', "AEB自动紧急制动系统（越高越好）", legendData, arrayCar, seriesValue);
+    }
+
+    function initDataLDW() {
+        let legendData = ['LDW车道偏离报警系统'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
+        }
+
+        addData('众泰T500', 5.0);
+        addData('哈弗F7', 6.5);
+        addData('传祺GS8', 6.5);
+        addData('长安CS75', 6.5);
+        addData('雷诺科雷傲', 7.3);
+        addData('现代领动', 7.5);
+        addData('荣威RX8', 8.1);
+        addData('博瑞GE', 8.1);
+        addData('魏派VV5', 8.1);
+        addData('红旗H5', 8.1);
+        addData('斯巴鲁森林人', 8.1);
+        addData('宝马330Li', 8.1);
+        addData('本田思域', 8.5);
+        addData('奔驰C260', 8.5);
+        addData('本田雅阁', 8.7);
+        addData('大众途观L', 8.8);
+        addData('大众迈腾', 8.8);
+        addData('特斯拉Model S', 9.2);
+        addData('沃尔沃XC60', 9.2);
+        addData('日产奇骏', 9.4);
+        addData('现代菲斯塔', 9.6);
+        addData('丰田凯美瑞', 9.6);
+        addData('吉普指南者', 9.6);
+        addData('福特蒙迪欧', 10.0);
+
+        for (var i = 0; i < legendData.length; i++) {
+            var seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10,//柱状条宽度
+                //name: '正面25%偏置碰撞',
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true,//鼠标悬停时显示label数据
+                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: function (params) {
+                            if (params.value >= 8.0) {
+                                return "#4CAF50";
+                            } else if (params.value >= 6.0) {
+                                return "#FFEB3B";
+                            } else if (params.value >= 4.0) {
+                                return "#FF9800";
+                            } else
+                                return "#f44336";
+                        }
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true, //显示数据
+                        position: 'right'//显示数据位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
+                    }
+                },
+                data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailLDW', "LDW车道偏离报警系统（越高越好）", legendData, arrayCar, seriesValue);
+    }
+
+    function initDataBSD() {
+        let legendData = ['BSD盲区监测系统'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
+        }
+
+        addData('博瑞GE', 0.6);
+        addData('雷诺科雷傲', 3.8);
+        addData('日产奇骏', 4.4);
+        addData('别克GL8', 5.0);
+        addData('福特蒙迪欧', 5.6);
+        addData('斯柯达柯迪亚克', 5.6);
+        addData('大众途观L', 5.6);
+        addData('吉普指南者', 5.6);
+        addData('丰田凯美瑞', 5.6);
+        addData('宝马330Li', 6.3);
+        addData('众泰T500', 6.4);
+        addData('现代领动', 6.9);
+        addData('红旗H5', 6.9);
+        addData('别克昂科威', 8.1);
+        addData('现代菲斯塔', 8.1);
+        addData('大众迈腾', 8.8);
+        addData('奔驰C260', 8.8);
+        addData('凯迪拉克XT4', 9.4);
+        addData('斯巴鲁森林人', 9.4);
+        addData('沃尔沃XC60', 9.4);
+        addData('长安CS75', 10.0);
+        addData('哈弗F7', 10.0);
+        addData('魏派VV5', 10.0);
+
+        for (let i = 0; i < legendData.length; i++) {
+            let seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10,//柱状条宽度
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true,//鼠标悬停时显示label数据
+                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: function (params) {
+                            if (params.value >= 8.0) {
+                                return "#4CAF50";
+                            } else if (params.value >= 6.0) {
+                                return "#FFEB3B";
+                            } else if (params.value >= 4.0) {
+                                return "#FF9800";
+                            } else
+                                return "#f44336";
+                        }
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true, //显示数据
+                        position: 'right'//显示数据位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
+                    }
+                },
+                data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailBSD', "BSD盲区监测系统（越高越好）", legendData, arrayCar, seriesValue);
+    }
+
+    function initDataAPS() {
+        let legendData = ['APS自动泊车辅助系统'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
+        }
+
+        addData('本田雅阁', 3.7);
+        addData('特斯拉Model S', 4.1);
+        addData('福特蒙迪欧', 5.4);
+        addData('奔驰C260', 5.8);
+        addData('雪佛兰迈锐宝XL', 6.3);
+        addData('众泰T500', 6.4);
+        addData('大众迈腾', 6.8);
+        addData('吉普指南者', 6.8);
+        addData('魏派VV5', 6.8);
+        addData('大众途观L', 7.0);
+        addData('别克GL8', 7.2);
+        addData('红旗H5', 7.2);
+        addData('宝马330Li', 7.3);
+        addData('雷诺科雷傲', 7.4);
+        addData('斯柯达柯迪亚克', 8.1);
+        addData('别克昂科威', 8.4);
+        addData('长安CS75', 8.4);
+        addData('博瑞GE', 8.5);
+
+        for (let i = 0; i < legendData.length; i++) {
+            let seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10,//柱状条宽度
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true,//鼠标悬停时显示label数据
+                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: function (params) {
+                            if (params.value >= 8.0) {
+                                return "#4CAF50";
+                            } else if (params.value >= 6.0) {
+                                return "#FFEB3B";
+                            } else if (params.value >= 4.0) {
+                                return "#FF9800";
+                            } else
+                                return "#f44336";
+                        }
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true, //显示数据
+                        position: 'right'//显示数据位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
+                    }
+                },
+                data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailAPS', "APS自动泊车辅助系统（越高越好）", legendData, arrayCar, seriesValue);
+    }
+
+    //生成Echarts图形
+    function buildChart(chartId, title, legendData, arrayCar, seriesValue) {
+        var chart = document.getElementById(chartId);
+        var echart = echarts.init(chart);
+        var option = {
+            title: {
+                text: title,//正标题
+                x: "center", //标题水平方向位置
+                y: "0", //标题竖直方向位置
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold',//'normal',
+                    color: '#DDDDDD' //'#BDBDBD'
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'//阴影，若需要为直线，则值为'line';'shadow'
+                }
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    saveAsImage: {show: true}
+                }
+            },
+            legend: {
+                x: 'left',
+                y: 'top',//图例说明文字设置
+                padding: [15, 0, 0, 10],
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '5%',
+                top: '5%',
+                containLabel: true
+            },
+            yAxis: [{
+                min: 0,
+                type: 'category', //纵向柱状图，若需要为横向，则此处值为'value'， 下面 yAxis 的type值为'category'
+                data: arrayCar,
+                axisLabel: {
+                    color: '#DDDDDD' //"#BDBDBD" //刻度线标签颜色
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#DDDDDD' //'#BDBDBD' //更改坐标轴颜色
+                    }
+                }
+            }],
+            xAxis: [{
+                min: 0,
+                type: 'value',
+                splitArea: {show: false},
+                axisLabel: {
+                    color: '#DDDDDD' //"#BDBDBD" //刻度线标签颜色
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#DDDDDD' //'#BDBDBD' //更改坐标轴颜色
+                    }
+                }
+            }],
+            label: {
+                normal: { //显示bar数据
+                    show: true,
+                    position: 'top'
+                }
+            },
+            series: seriesValue,
+            backgroundColor: '#2b3942'
+        };
+
+        echart.setOption(option);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../resource/css/az.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <script src="../resource/js/google.prettify.js"></script>
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../resource/css/essay.material.floating.button.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <div class="card">
+            <div class="action-header">
+                <span class="actions essay-back-arrow">
+                    <a href="../index.html"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title">Kotlin基础知识</span>
+                <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-android"></i>&nbsp;<span class="essay-type">Android</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2017-05-17 18:30</span>
+                </span>
+
+                <!--
+                AZ Share: Material Floating Button;
+                Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+                Position:mfb-component--br,bl,tr,tl;
+                Action:hover,click
+                -->
+                <script>
+                    var essayTitle = 'Kotlin基础知识';
+                    var essaySummary = 'Kotlin是一个基于 JVM 的新的编程语言';
+                    var essayUrl = 'http://www.zhoumushui.com/essay/1.html';
+                    //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                    var essayPic = 'http://www.zhoumushui.com/img/essay/1.1.png'; // This
+                </script>
+                <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+            </div>
+
+            <div class="card__body">
+                <div class="card__header card__header--img"
+                     style="background-image: url(1.1.png); height: 200px;"></div>
+                <br>
+
+                <blockquote>
+                    <li><a target="_blank" href="https://kotlinlang.org">Kotlin</a>是一个基于 JVM 的新的编程语言，由 <a
+                            target="_blank" href="https://www.jetbrains.com">JetBrains</a> 开发。
+                    </li>
+                    <li>Kotlin可以编译成Java字节码，也可以编译成JavaScript，方便在没有JVM的设备上运行。</li>
+                    <li>JetBrains，作为目前广受欢迎的Java IDE IntelliJ 的提供商，在 Apache 许可下已经开源其Kotlin 编程语言。</li>
+                    <li>在 2017 年 Google I/O 中，Android 团队宣布将Kotlin作为Android平台的官方编程语言。</li>
+                    <li><a target="_blank"
+                           href="https://android-developers.googleblog.com/2017/05/android-announces-support-for-kotlin.html">
+                        Android Announces Support for Kotlin,</a> 17 May 2017, Mike Cleron, Director, Android Platform.
+                    </li>
+                </blockquote>
+                <br>
+
+                <h3>1.Hello World!</h3>
+                <pre class="prettyprint">
+package helloWorld
+
+fun main(args: Array) {
+println("Hello World!")
+}</pre>
+                <br>
+                <h3>2.数据类型</h3>
+                <table class="table table-striped">
+                    <tbody>
+                    <tr>
+                        <td>类型</td>
+                        <td>Byte</td>
+                        <td>Short</td>
+                        <td>Int</td>
+                        <td>Long</td>
+                        <td>Float</td>
+                        <td>Double</td>
+                    </tr>
+                    <tr>
+                        <td>大小(bit)</td>
+                        <td>8</td>
+                        <td>16</td>
+                        <td>32</td>
+                        <td>64</td>
+                        <td>32</td>
+                        <td>64</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <pre class="prettyprint">
+/*
+ * You can use underscores to make number constants more readable:
+ * 使用下划线使数字可读性更高
+ */
+val oneMillion = 1_000_000
+val creditCardNumber = 1234_5678_9012_3456L
+val socialSecurityNumber = 999_99_9999L
+val hexBytes = 0xFF_EC_DE_5E
+val bytes = 0b11010010_01101001_10010100_10010010</pre>
+
+                <pre class="prettyprint">
+/*
+ * Note that boxing of numbers does not necessarily preserve identity
+ */
+val a: Int = 10000
+print(a === a) // Prints 'true'
+val boxedA: Int? = a
+val anotherBoxedA: Int? = a
+print(boxedA === anotherBoxedA) // !!!Prints 'false'!!!
+
+/*
+ * On the other hand, it preserves equality:
+ */
+val a: Int = 10000
+print(a == a) // Prints 'true'
+val boxedA: Int? = a
+val anotherBoxedA: Int? = a
+print(boxedA == anotherBoxedA) // Prints 'true'</pre>
+
+                <br>
+                <h3>3.Java VS Kotlin</h3>同一个类的代码量对比<br><br>
+                <pre class="prettyprint">
+/*
+ * Java
+ */
+public class Customer {
+   private String name;
+   private String email;
+   private String company;
+
+   public Customer(String name) {
+       this(name, "", "");
+   }
+
+   public Customer(String name, String email) {
+       this(name, email, "");
+
+   }
+
+   public Customer(String name, String email, String company) {
+       this.name = name;
+       this.email = email;
+       this.company = company;
+   }
+
+   public String getName() {
+       return name;
+   }
+
+   public void setName(String name) {
+       this.name = name;
+   }
+
+   public String getEmail() {
+       return email;
+   }
+
+   public void setEmail(String email) {
+       this.email = email;
+   }
+
+   public String getCompany() {
+       return company;
+   }
+
+   public void setCompany(String company) {
+       this.company = company;
+   }
+
+   @Override
+   public boolean equals(Object o) {
+       if (this == o) return true;
+       if (o == null || getClass() != o.getClass()) return false;
+
+       Customer customer = (Customer) o;
+
+       if (name != null ? !name.equals(customer.name) : customer.name != null) return false;
+       if (email != null ? !email.equals(customer.email) : customer.email != null) return false;
+       return company != null ? company.equals(customer.company) : customer.company == null;
+   }
+
+   @Override
+   public int hashCode() {
+       int result = name != null ? name.hashCode() : 0;
+       result = 31 * result + (email != null ? email.hashCode() : 0);
+       result = 31 * result + (company != null ? company.hashCode() : 0);
+       return result;
+   }
+
+   @Override
+   public String toString() {
+       return "Customer{" +
+               "name='" + name + '\'' +
+               ", email='" + email + '\'' +
+               ", company='" + company + '\'' +
+               '}';
+   }
+}</pre>
+                <pre class="prettyprint">
+/*
+ * Kotlin
+ */
+data class Customer(var name: String, var email: String = "",
+                    var company: String = "")</pre>
+
+            </div>
+        </div>
+
+    </section>
+
+    <link rel="stylesheet" href="../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../resource/js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../resource/js/canvas-nest.min.js"></script>
+
+<script src="../resource/js/essay.material.floating.button.js"></script>
+<script type="text/javascript">
+    let panel = document.getElementById('panel'),
+        menu = document.getElementById('menu'),
+        showcode = document.getElementById('showcode'),
+        selectFx = document.getElementById('selections-fx'),
+        selectPos = document.getElementById('selections-pos'),
+        // demo defaults
+        effect = 'mfb-zoomin',
+        pos = 'mfb-component--br';
+
+    showcode.addEventListener('click', _toggleCode);
+    selectFx.addEventListener('change', switchEffect);
+    selectPos.addEventListener('change', switchPos);
+
+    function _toggleCode() {
+        panel.classList.toggle('viewCode');
+    }
+
+    function switchEffect(e) {
+        effect = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function switchPos(e) {
+        pos = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function renderMenu() {
+        menu.style.display = 'none';
+        // ?:-)
+        setTimeout(function () {
+            menu.style.display = 'block';
+            menu.className = pos + effect;
+        }, 1);
+    }
+</script>
+
+<!-- Toolbox -->
+<script src="../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 1;</script>
+<script src="../resource/js/zms.page.pattern.js"></script>
+</body>
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Light Gallery -->
+    <link href="../../vendors/bower_components/lightgallery/dist/css/lightgallery.min.css" rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../resource/css/az.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <script src="../../resource/js/google.prettify.js"></script>
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../resource/css/essay.material.floating.button.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <div class="card">
+            <div class="action-header">
+                <span id="essay_arrow_back" class="actions essay-back-arrow">
+                    <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title"><i class="zmdi zmdi-home"></i> 云水居</span>
+                <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-home"></i>&nbsp;<span class="essay-type">House</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2018-02-26 18:02</span>
+                </span>
+
+                <!--
+                AZ Share: Material Floating Button;
+                Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+                Position:mfb-component--br,bl,tr,tl;
+                Action:hover,click
+                -->
+                <script>
+                    var essayTitle = document.title;
+                    var essaySummary = 'House';
+                    var essayUrl = window.location.href;
+                    // var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                    var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+                </script>
+                <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+            </div>
+
+            <div class="card">
+                <div class="card__header">
+                    <h1><span style="color: #00a1d8">概要</span>
+                        <small></small>
+                    </h1>
+                </div>
+                <div class="card__body">
+                    <table class="table table-bordered">
+
+                        <tbody>
+                        <tr>
+                            <td style="text-align: center">层高</td>
+                            <td style="text-align: center">2.9</td>
+                            <td style="text-align: center">容积率</td>
+                            <td style="text-align: center">4.49（建筑面积：272613㎡，占地面积：45168.9㎡）</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center">电梯</td>
+                            <td style="text-align: center">两梯四户</td>
+                            <td style="text-align: center">总户数</td>
+                            <td style="text-align: center">1717</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center">面积</td>
+                            <td style="text-align: center">建筑:102.28（+7.90）套内:77.88（+6.90）</td>
+                            <td style="text-align: center">公摊面积</td>
+                            <td style="text-align: center">24.40（17.50）,23.85%（17.11%）</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center">车位</td>
+                            <td style="text-align: center">1627（地下1477，地上150）</td>
+                            <td style="text-align: center">绿化率</td>
+                            <td style="text-align: center">30.35%</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center">物业</td>
+                            <td style="text-align: center">河南省盛世物业管理有限责任公司</td>
+                            <td style="text-align: center">开发商</td>
+                            <td style="text-align: center">河南亚星置业集团有限公司</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center">供水</td>
+                            <td style="text-align: center">市政供水</td>
+                            <td style="text-align: center">供电</td>
+                            <td style="text-align: center">市政供电</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center">供暖</td>
+                            <td style="text-align: center">市政供暖</td>
+                            <td style="text-align: center">供气</td>
+                            <td style="text-align: center">天然气、暖气</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center">预售证</td>
+                            <td style="text-align: center">【2017】郑房预售字（4171）号（2017-12-06）</td><!-- 绑定1# 2# 7# 8# 9# -->
+                            <td style="text-align: center">其他</td>
+                            <td style="text-align: center">地暖系统、新风系统、雾森系统</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__header">
+                    <h1><span style="color: #00a1d8">效果图</span>
+                        <small>（点击图片进入看图模式）</small>
+                    </h1>
+                </div>
+
+                <div class="card__body">
+                    <span class="lightbox">
+                   <span data-src="img/1.jpg">
+                      <a href="" target="_blank">
+                          <img style="width: 100%" src="img/1.jpg"/>
+                      </a>
+                   </span>
+                </span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__header">
+                    <h1><span style="color: #00a1d8">规划总平面图</span>
+                        <small>（点击图片进入看图模式）</small>
+                    </h1>
+                </div>
+
+                <div class="card__body">
+                    <span class="lightbox">
+                   <span data-src="img/2.jpg">
+                      <a href="" target="_blank">
+                          <img style="width: 100%" src="img/2.jpg"/>
+                      </a>
+                   </span>
+                </span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__header">
+                    <h1><span style="color: #00a1d8">3号楼4-32F平面图（1号楼为左半部分）</span>
+                        <small>（点击图片进入看图模式）</small>
+                    </h1>
+                </div>
+
+                <div class="card__body">
+                    <span class="lightbox">
+                   <span data-src="img/3.jpg">
+                      <a href="" target="_blank">
+                          <img style="width: 100%" src="img/3.jpg"/>
+                      </a>
+                   </span>
+                </span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__header">
+                    <h1><span style="color: #00a1d8">海绵城市总平面图</span>
+                        <small>（点击图片进入看图模式）</small>
+                    </h1>
+                </div>
+
+                <div class="card__body">
+                    <span class="lightbox">
+                   <span data-src="img/4.jpg">
+                      <a href="" target="_blank">
+                          <img style="width: 100%" src="img/4.jpg"/>
+                      </a>
+                   </span>
+                </span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__header">
+                    <h1><span style="color: #00a1d8">拟建后日照分析平面图</span>
+                        <small>（点击图片进入看图模式）</small>
+                    </h1>
+                </div>
+
+                <div class="card__body">
+                    <span class="lightbox">
+                   <span data-src="img/5.jpg">
+                      <a href="" target="_blank">
+                          <img style="width: 100%" src="img/5.jpg"/>
+                      </a>
+                   </span>
+                </span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__header">
+                    <h1><span style="color: #00a1d8">剖面图</span>
+                        <small>（点击图片进入看图模式）</small>
+                    </h1>
+                </div>
+
+                <div class="card__body">
+                    <span class="lightbox">
+                   <span data-src="img/6.jpg">
+                      <a href="" target="_blank">
+                          <img style="width: 100%" src="img/6.jpg"/>
+                      </a>
+                   </span>
+                </span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__header">
+                    <h1><span style="color: #00a1d8">周边规划</span>
+                        <small>（点击图片进入看图模式）</small>
+                    </h1>
+                </div>
+
+                <div class="card__body">
+                    <span class="lightbox">
+                        <span data-src="img/7.jpg">
+                            <a href="" target="_blank">
+                                <img style="width: 100%" src="img/7.jpg"/>
+                            </a>
+                        </span>
+                    </span>
+
+                    <br>
+                    <span class="lightbox">
+                        <span data-src="img/8.jpg">
+                            <a href="" target="_blank">
+                                <img style="width: 100%" src="img/8.jpg"/>
+                            </a>
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <!--
+                102.28
+
+                总额：1398285              1398285              1398285
+                贷款： 970000               830000               870000
+                首付： 428285-30%           568285-40%           528285-37%
+                首期： 218285               288285               268285
+                二期：  70000-18.08.20      100000                90000
+                三期：  70000-18.12.20       90000                90000
+                四期：  70000-19.06.20       90000                80000
+                月供：   5741                 4912                 5149
+                -->
+            <!--
+            <div class="card">
+
+                <div class="card__header">
+                    <h2><span style="color: #00a1d8">明细</span>
+                        <small>当前花费：<span id="house_cost_now" style="color: #E91E63"></span></small>
+                    </h2>
+                </div>
+
+                <div class="card__body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="table_house_all_cost">
+
+                            <thead>
+                            <tr>
+                                <th style="text-align: center">日期</th>
+                                <th style="text-align: center">金额</th>
+                                <th style="text-align: center">备注</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td style="text-align: center">2018-02-25</td>
+                                <td style="text-align: right">10000.00</td>
+                                <td style="text-align: center">定金</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">2018-02-25</td>
+                                <td style="text-align: right">25000.00</td>
+                                <td style="text-align: center">优惠：2.5万减5万</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">2018-02-26</td>
+                                <td style="text-align: right">880.00</td>
+                                <td style="text-align: center">银行中介费</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">2018-02-26</td>
+                                <td style="text-align: right">80.00</td>
+                                <td style="text-align: center">制证费</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">2018-02-26</td>
+                                <td style="text-align: right">6648.00</td>
+                                <td style="text-align: center">维修基金</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">2018-02-26</td>
+                                <td style="text-align: right">218285.00</td>
+                                <td style="text-align: center">首付首期</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">2018-02-26</td>
+                                <td style="text-align: right">3000.00</td>
+                                <td style="text-align: center">兴业银行开户</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+-->
+
+        </div>
+
+        <table id="loan_detail"></table>
+
+
+        <script>
+            let calculateLoan = function (table, rowId) { // 合计，表格对象，对哪一列进行合计，第一列从0开始
+                let trs = table.getElementsByTagName('tr');
+                let start = 1, // 开始计算的行号，忽略第一行的表头
+                    end = trs.length; // 结束计算的行号，忽略最后合计的一行
+                let total = 0;
+                for (let i = start; i < end; i++) {
+                    let tdSelect = trs[i].getElementsByTagName('td')[rowId];
+                    let number = parseFloat(tdSelect.innerHTML);
+                    if (number)
+                        total += number; // Total Interest
+                }
+                return total.toFixed(2); // Total
+            };
+
+            document.getElementById("house_cost_now").innerHTML = calculateLoan(document.getElementById('table_house_all_cost'), 1); // 支付利息
+
+        </script>
+
+
+    </section>
+
+    <link rel="stylesheet" href="../../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Light Gallery -->
+<script src="../../vendors/bower_components/lightgallery/dist/js/lightgallery.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-fullscreen.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-thumbnail.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-zoom.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-video.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<script src="../../resource/js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../../resource/js/canvas-nest.min.js"></script>
+
+<script src="../../resource/js/essay.material.floating.button.js"></script>
+<script type="text/javascript">
+    let panel = document.getElementById('panel'),
+        menu = document.getElementById('menu'),
+        showcode = document.getElementById('showcode'),
+        selectFx = document.getElementById('selections-fx'),
+        selectPos = document.getElementById('selections-pos'),
+        // demo defaults
+        effect = 'mfb-zoomin',
+        pos = 'mfb-component--br';
+
+    showcode.addEventListener('click', _toggleCode);
+    selectFx.addEventListener('change', switchEffect);
+    selectPos.addEventListener('change', switchPos);
+
+    function _toggleCode() {
+        panel.classList.toggle('viewCode');
+    }
+
+    function switchEffect(e) {
+        effect = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function switchPos(e) {
+        pos = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function renderMenu() {
+        menu.style.display = 'none';
+        // ?:-)
+        setTimeout(function () {
+            menu.style.display = 'block';
+            menu.className = pos + effect;
+        }, 1);
+    }
+</script>
+
+<!-- Flot Charts -->
+<script src="../../resource/js/flot-charts/curved-line.js"></script>
+<script src="../../resource/js/sparkline-charts.js"></script>
+<script src="../../vendors/bower_components/flot/jquery.flot.js"></script>
+<script src="../../vendors/bower_components/flot/jquery.flot.pie.js"></script>
+<script src="../../vendors/bower_components/flot/jquery.flot.resize.js"></script>
+<script src="../../vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+<!-- Sparkline Charts -->
+<script src="../../vendors/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+
+<!-- Toolbox -->
+<script src="../../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 2;</script>
+<script src="../../resource/js/zms.page.pattern.js"></script>
+</body>
+</html>

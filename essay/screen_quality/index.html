@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../resource/css/az.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <script src="../../resource/js/google.prettify.js"></script>
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../resource/css/essay.material.floating.button.css" rel="stylesheet">
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e3a97a0eee3cb03b5caf792f58032743";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <div class="card">
+            <div class="action-header">
+                <span class="actions essay-back-arrow">
+                    <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title">Display</span>
+                <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-coffee"></i>&nbsp;<span class="essay-type">fun</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2016-10-01 10:01</span>
+                </span>
+
+                <!--
+                AZ Share: Material Floating Button;
+                Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+                Position:mfb-component--br,bl,tr,tl;
+                Action:hover,click
+                -->
+                <script>
+                    var essayTitle = document.title;
+                    var essaySummary = 'Display';
+                    var essayUrl = window.location.href;
+                    //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                    var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+                </script>
+                <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+            </div>
+
+            <div class="card__body" style="font-size: 15px">
+                <h3>分辨率 Resolution</h3>
+                <canvas id="canvas_resolution" width="768" height="432"></canvas>
+
+                <h3>尺寸 Size</h3>
+                <canvas id="canvas_size" width="768" height="432"></canvas>
+
+                <h3>色域 Color Space</h3>
+                马蹄形(horseshoe)的背景图是人类可见的颜色，多边形是各种色域标准所涵盖的颜色：
+                <img src="img/20.2.svg" width="80%"/>
+                <h4>NTSC(National Television Standards Committee)</h4>
+                <p>
+                    NTSC色域是美国电视标准委员会制订的一个色域空间标准，它比sRGB色域空间广的多，它们之间的换算公式为“100%SRGB=72%NTSC”，这并不是指100%SRGB与72%NTSC的色域空间能够完全重合，它们只是面积相同而已。</p>
+                <p>AdobeRGB = 95% NTSC</p>
+                <p>sRGB = 72% NTSC</p>
+
+                <h4>常用的色域标准对比</h4>
+                <table class="table" border="1" style="border:1px solid #2196F3;text-align: center;">
+                    <thead>
+                    <tr>
+                        <th style="text-align: center">-</th>
+                        <th style="text-align: center">sRGB</th>
+                        <th style="text-align: center">AdobeRGB</th>
+                        <th style="text-align: center">NTSC</th>
+                        <th style="text-align: center">ProPhoto RGB</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>色温</td>
+                        <td>6507K</td>
+                        <td>6507K</td>
+                        <td>6766K</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="color: #000000" bgcolor="#FFFFFF">白位</td>
+                        <td>(0.3127,0.3290)</td>
+                        <td>(0.3127,0.3290)</td>
+                        <td>(0.3101,0.3162)</td>
+                        <td>(0.3457,0.3585)</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #FFFFFF" bgcolor="#FF0000">R</td>
+                        <td>(0.6400,0.3300)</td>
+                        <td>(0.6400,0.3300)</td>
+                        <td>(0.6700,0.3300)</td>
+                        <td>(0.7347,0.2653)</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #000000" bgcolor="#00FF00">G</td>
+                        <td>(0.3000,0.6000)</td>
+                        <td>(0.2100,0.7100)</td>
+                        <td>(0.2100,0.7100)</td>
+                        <td>(0.1596,0.8404)</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #FFFFFF" bgcolor="#0000FF">B</td>
+                        <td>(0.1500,0.0600)</td>
+                        <td>(0.1500,0.0600)</td>
+                        <td>(0.1400,0.0800)</td>
+                        <td>(0.0366,0.0001)</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <h3>色深 Color Depth</h3>
+                <p>色位深度，是用 bit 数来表示数码影像色彩数目的单位。</p>
+                <table class="table" border="1" style="border:1px solid #2196F3;text-align: center;">
+                    <thead>
+                    <tr>
+                        <th style="text-align: center">色深</th>
+                        <th style="text-align: center">计算</th>
+                        <th style="text-align: center">单个通道范围</th>
+                        <th style="text-align: center">RGB通道颜色范围</th>
+                        <th style="text-align: center">说明</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2<sup>1</sup></td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>黑白</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2<sup>2</sup></td>
+                        <td>4</td>
+                        <td>64</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>2<sup>4</sup></td>
+                        <td>16</td>
+                        <td>4096</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>2<sup>8</sup></td>
+                        <td>256</td>
+                        <td>16777216</td>
+                        <td>真彩色(True Color)</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>2<sup>10</sup></td>
+                        <td>1024</td>
+                        <td>1073741824</td>
+                        <td></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </section>
+
+    <link rel="stylesheet" href="../../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<script>
+
+    // Draw resolution canvas
+    let canvasResolution = document.getElementById("canvas_resolution");
+    let context = canvasResolution.getContext("2d");
+    context.font = "15px Arial";
+
+    // 8K 7680x4320
+    context.fillStyle = "#FFC107";
+    context.strokeStyle = "#FFC107";
+    context.strokeRect(0, 0, 768, 432); // 7680*4320-8K
+    context.fillText("8K", 746, 15);
+    context.fillText("7680x4320", 690, 427);
+
+    /*
+    // 5K 5120x2880
+    context.fillStyle = "#4CAF50";
+    context.strokeStyle = "#4CAF50";
+    context.strokeRect(0, 0, 512, 288); // 5120*2880-5K
+    context.fillText("5K", 491, 15);
+    context.fillText("5120x2880", 435, 284);
+    */
+
+    // 4K 3840x2160
+    context.fillStyle = "#E91E63";
+    context.strokeStyle = "#E91E63";
+    context.strokeRect(0, 0, 384, 216); // 3840*2160-4K
+    context.fillText("4K", 363, 15);
+    context.fillText("3840x2160", 308, 213);
+
+    // 2K 2560x1440
+    context.fillStyle = "#009688";
+    context.strokeStyle = "#009688";
+    context.strokeRect(0, 0, 256, 144); // 2560*1440-2K
+    context.fillText("2K", 236, 15);
+    context.fillText("2560x1440", 180, 140);
+
+    // 1080P 1920x1080
+    context.fillStyle = "#2196F3";
+    context.strokeStyle = "#2196F3";
+    context.strokeRect(0, 0, 192, 108); // 1920*1080-1080P
+    context.fillText("1080P", 147, 15);
+    context.fillText("1920x1080", 116, 104);
+
+    // 720P 1280x720
+    context.fillStyle = "#9E9E9E";
+    context.strokeStyle = "#9E9E9E";
+    context.strokeRect(0, 0, 128, 72); // 1280*720-720P
+    context.fillText("720P", 91, 15);
+    context.fillText("1280x720", 61, 69);
+
+    /*
+    // 480P 640x480
+    context.fillStyle = "#FFFFFF";
+    context.strokeStyle = "#FFFFFF";
+    context.strokeRect(0, 0, 64, 48); // 640*480-480P
+    context.fillText("480P", 27, 15);
+    context.fillText("640x480", 4, 45);
+    */
+
+    // Copyright
+    context.fillStyle = "#2B3942";
+    context.fillText("©zhoumushui.com", 325, 428);
+
+    <!-- Draw size canvas:786x432 X4-->
+    let canvasSize = document.getElementById("canvas_size");
+    let ctxSize = canvasSize.getContext("2d");
+    let TIMES = 4.06; // fit for canvas size
+    ctxSize.font = "15px Arial";
+
+    // Count inch
+    function drawRectangleByInch(size, color) {
+        let diagonal = 2.54 * size;
+        let x = Math.sqrt((diagonal * diagonal) / 337);
+        console.log("[" + size + "]" + 16 * x + " x " + 9 * x);
+        ctxSize.fillStyle = color;
+        ctxSize.strokeStyle = color;
+        ctxSize.strokeRect(0, 0, x * 16 * TIMES, x * 9 * TIMES);
+        ctxSize.fillText(size + "'", x * 16 * TIMES - 23, 15);
+    }
+
+    drawRectangleByInch(85, "#4CAF50");
+    drawRectangleByInch(75, "#2196F3");
+    drawRectangleByInch(65, "#E91E63");
+    drawRectangleByInch(55, "#FFEB3B");
+    //drawRectangleByInch(45, "#4CAF50");
+    //drawRectangleByInch(35, "#FF9800");
+    //drawRectangleByInch(25, "#9C27B0");
+</script>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../../resource/js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../../resource/js/canvas-nest.min.js"></script>
+
+<script src="../../resource/js/essay.material.floating.button.js"></script>
+<script type="text/javascript">
+    let panel = document.getElementById('panel'),
+        menu = document.getElementById('menu'),
+        showcode = document.getElementById('showcode'),
+        selectFx = document.getElementById('selections-fx'),
+        selectPos = document.getElementById('selections-pos'),
+        // demo defaults
+        effect = 'mfb-zoomin',
+        pos = 'mfb-component--br';
+
+    showcode.addEventListener('click', _toggleCode);
+    selectFx.addEventListener('change', switchEffect);
+    selectPos.addEventListener('change', switchPos);
+
+    function _toggleCode() {
+        panel.classList.toggle('viewCode');
+    }
+
+    function switchEffect(e) {
+        effect = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function switchPos(e) {
+        pos = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function renderMenu() {
+        menu.style.display = 'none';
+        // ?:-)
+        setTimeout(function () {
+            menu.style.display = 'block';
+            menu.className = pos + effect;
+        }, 1);
+    }
+</script>
+
+<!-- Toolbox -->
+<script src="../../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 2;</script>
+<script src="../../resource/js/zms.page.pattern.js"></script>
+</body>
+</html>

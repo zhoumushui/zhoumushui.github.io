@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../resource/css/az.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <script src="../../resource/js/google.prettify.js"></script>
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- jQuery -->
+    <script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../resource/js/city.highcharts.js"></script>
+    <script type="text/javascript" src="../../resource/js/city.exporting.js"></script>
+    <script type="text/javascript">
+        // 默认是否显示
+        var showSZ = false; // 深圳
+        var showGZ = false; // 广州
+        var showZS = true; // 中山
+        var showHZ = false; // 杭州
+        var showSU = false; // 苏州
+        var showZZ = true; // 郑州
+        var showXA = true; // 西安
+        var showKF = true; // 开封
+        var showLH = true; // 漯河
+        var showCQ = true; // 重庆
+
+        //  var barColors = "#2196F3,#607D8B,#009688,#f7a35c,#673AB7,#E91E63,#FFC107,#3F51B5,#795548,#91e8e1".split(",");
+        var barColors = [ // 条目颜色
+            "#000000",
+            "#607D8B",
+            "#FFC107",
+            "#f7a35c",
+            "#673AB7",
+            "#E91E63",
+            "#009688",
+            "#3F51B5",
+            "#795548",
+            "#2196F3"
+        ];
+
+        var hoverTooltip = { // 鼠标悬浮框样式
+            formatter: function () {
+                var s;
+                if (this.point.name) { // the pie chart
+                    s = '' + this.point.name + ': ' + this.y + ' fruits';
+                } else {
+                    s = '' + this.x + ': ' + this.y;
+                }
+                return s;
+            }
+        };
+
+        var labelDefault = {
+            items: [{
+                html: '',
+                style: {left: '40px', top: '8px', color: 'black'}
+            }]
+        };
+
+        var watermark = { // 网址注脚
+            enabled: 1,// 0,1
+            text: "zhoumushui.com",
+            href: "http://www.zhoumushui.com",
+            position: {align: "right", x: -10, verticalAlign: "bottom", y: -5},
+            style: {cursor: "pointer", color: "#909090", fontSize: "9px"}
+        };
+
+        $(function () {
+            $('#containerHouse').highcharts({
+                chart: {},
+                title: {text: '安居客房价'},
+                xAxis: {categories: ['16.06', '16.09', '16.12', '17.03', '17.06', '17.09']}, //x轴
+                tooltip: hoverTooltip,
+                labels: labelDefault,
+                colors: barColors,
+                series: [ // type: column-条形 spline-折线 pie-饼状
+                    {type: 'column', visible: showSZ, name: '深圳', data: [44978, 45661, 44060, 44941, 46296, 47462]},
+                    {type: 'column', visible: showGZ, name: '广州', data: [21144, 21720, 22926, 25052, 26915, 28508]},
+                    {type: 'column', visible: showZS, name: '中山', data: [7207, 7313, 8148, 9128, 10712, 10782]},
+                    {type: 'column', visible: showHZ, name: '杭州', data: [16948, 16981, 19553, 22434, 22722, 23356]},
+                    {type: 'column', visible: showSU, name: '苏州', data: [16147, 15575, 16181, 16158, 15664, 15344]},
+                    {type: 'column', visible: showZZ, name: '郑州', data: [9297, 10048, 12091, 12429, 12912, 12985]},
+                    {type: 'column', visible: showXA, name: '西安', data: [6361, 6308, 6514, 6639, 7464, 7957]},
+                    {type: 'column', visible: showKF, name: '开封', data: [4564, 4471, 4496, 5270, 6581, 5734]},
+                    {type: 'column', visible: showLH, name: '漯河', data: [3880, 3932, 3890, 4142, 4254, 4116]},
+                    {type: 'column', visible: showCQ, name: '重庆', data: [6450, 6350, 6401, 6562, 7002, 7166]},
+                ],
+                credits: watermark
+            });
+
+            $('#containerSalary').highcharts({
+                chart: {},
+                title: {text: '平均工资'},
+                xAxis: {categories: ['2016']},//x轴
+                tooltip: hoverTooltip,
+                labels: labelDefault,
+                colors: barColors,
+                series: [// type: column-条形 spline-折线 pie-饼状
+                    {type: 'column', visible: showSZ, name: '深圳', data: [8141]},
+                    {type: 'column', visible: showGZ, name: '广州', data: [7178]},
+                    {type: 'column', visible: showZS, name: '中山', data: [6650]},
+                    {type: 'column', visible: showHZ, name: '杭州', data: [7267]},
+                    {type: 'column', visible: showSU, name: '苏州', data: [6620]},
+                    {type: 'column', visible: showZZ, name: '郑州', data: [5884]},
+                    {type: 'column', visible: showXA, name: '西安', data: [5872]},
+                    {type: 'column', visible: showKF, name: '开封', data: [4860]},
+                    {type: 'column', visible: showLH, name: '漯河', data: [4430]},
+                    {type: 'column', visible: showCQ, name: '重庆', data: [6362]}
+                ],
+                credits: watermark
+            });
+
+            $('#containerPopulation').highcharts({
+                chart: {},
+                title: {text: '常住人口（万人）'},
+                xAxis: {categories: ['2016']},//x轴
+                tooltip: hoverTooltip,
+                labels: labelDefault,
+                colors: barColors,
+                series: [// type: column-条形 spline-折线 pie-饼状
+                    {type: 'column', visible: showSZ, name: '深圳', data: [1190.84]},
+                    {type: 'column', visible: showGZ, name: '广州', data: [1404.35]},
+                    {type: 'column', visible: showZS, name: '中山', data: [312.09]},
+                    {type: 'column', visible: showHZ, name: '杭州', data: [901.8]},
+                    {type: 'column', visible: showSU, name: '苏州', data: [1062.57]},
+                    {type: 'column', visible: showZZ, name: '郑州', data: [956.9]},
+                    {type: 'column', visible: showXA, name: '西安', data: [870.56]},
+                    {type: 'column', visible: showKF, name: '开封', data: [454]},
+                    {type: 'column', visible: showLH, name: '漯河', data: [300]},
+                    {type: 'column', visible: showCQ, name: '重庆', data: [3048.43]}
+                ],
+                credits: watermark
+            });
+
+            $('#containerArea').highcharts({
+                chart: {},
+                title: {text: '面积（平方公里）'},
+                xAxis: {categories: ['']}, //x轴
+                tooltip: hoverTooltip,
+                labels: labelDefault,
+                colors: barColors,
+                series: [// type: column-条形 spline-折线 pie-饼状
+                    {type: 'column', visible: showSZ, name: '深圳', data: [1996]},
+                    {type: 'column', visible: showGZ, name: '广州', data: [7434]},
+                    {type: 'column', visible: showZS, name: '中山', data: [1783]},
+                    {type: 'column', visible: showHZ, name: '杭州', data: [16596]},
+                    {type: 'column', visible: showSU, name: '苏州', data: [8488]},
+                    {type: 'column', visible: showZZ, name: '郑州', data: [7446]},
+                    {type: 'column', visible: showXA, name: '西安', data: [10108]},
+                    {type: 'column', visible: showKF, name: '开封', data: [6247]},
+                    {type: 'column', visible: showLH, name: '漯河', data: [2617]},
+                    {type: 'column', visible: showCQ, name: '重庆', data: [82402]}
+                ],
+                credits: watermark
+            });
+
+            $('#containerUniversity').highcharts({
+                chart: {},
+                title: {text: '省内985,211高校'},
+                xAxis: {categories: ['985', '211']}, //x轴
+                tooltip: hoverTooltip,
+                labels: labelDefault,
+                colors: barColors,
+                series: [// type: column-条形 spline-折线 pie-饼状
+                    {type: 'column', visible: showSZ, name: '深圳', data: [2, 4]},
+                    {type: 'column', visible: showGZ, name: '广州', data: [2, 4]},
+                    {type: 'column', visible: showZS, name: '中山', data: [2, 4]},
+                    {type: 'column', visible: showHZ, name: '杭州', data: [1, 1]},
+                    {type: 'column', visible: showSU, name: '苏州', data: [2, 11]},
+                    {type: 'column', visible: showZZ, name: '郑州', data: [0, 1]},
+                    {type: 'column', visible: showXA, name: '西安', data: [3, 8]},
+                    {type: 'column', visible: showKF, name: '开封', data: [0, 1]},
+                    {type: 'column', visible: showLH, name: '漯河', data: [0, 1]},
+                    {type: 'column', visible: showCQ, name: '重庆', data: [2, 2]}
+                ],
+                credits: watermark
+            });
+
+            $('#containerExam').highcharts({
+                chart: {},
+                title: {text: '省高考报名人数（万人）'},
+                xAxis: {categories: ['2017']}, //x轴
+                tooltip: hoverTooltip,
+                labels: labelDefault,
+                colors: barColors,
+                series: [ // type: column-条形 spline-折线 pie-饼状
+                    {type: 'column', visible: showSZ, name: '深圳', data: [75.7]},
+                    {type: 'column', visible: showGZ, name: '广州', data: [75.7]},
+                    {type: 'column', visible: showZS, name: '中山', data: [75.7]},
+                    {type: 'column', visible: showHZ, name: '杭州', data: [29.13]},
+                    {type: 'column', visible: showSU, name: '苏州', data: [33.01]},
+                    {type: 'column', visible: showZZ, name: '郑州', data: [86.58]},
+                    {type: 'column', visible: showXA, name: '西安', data: [31.9]},
+                    {type: 'column', visible: showKF, name: '开封', data: [86.58]},
+                    {type: 'column', visible: showLH, name: '漯河', data: [86.58]},
+                    {type: 'column', visible: showCQ, name: '重庆', data: [24.7]}
+                ],
+                credits: watermark
+            });
+
+            $('#containerSubway').highcharts({
+                chart: {},
+                title: {text: '地铁里程'},
+                xAxis: {categories: ['2016']}, //x轴
+                tooltip: hoverTooltip,
+                labels: labelDefault,
+                colors: barColors,
+                series: [// type: column-条形 spline-折线 pie-饼状
+                    {type: 'column', visible: showSZ, name: '深圳', data: [178.9]},
+                    {type: 'column', visible: showGZ, name: '广州', data: [260.5]},
+                    {type: 'column', visible: showZS, name: '中山', data: [0]},
+                    {type: 'column', visible: showHZ, name: '杭州', data: [47.97]},
+                    {type: 'column', visible: showSU, name: '苏州', data: [52.3]},
+                    {type: 'column', visible: showZZ, name: '郑州', data: [26.34]},
+                    {type: 'column', visible: showXA, name: '西安', data: [51.9]},
+                    {type: 'column', visible: showKF, name: '开封', data: [0]},
+                    {type: 'column', visible: showLH, name: '漯河', data: [0]},
+                    {type: 'column', visible: showCQ, name: '重庆', data: [213.3]}
+                ],
+                credits: watermark
+            });
+
+            $('#containerMotorway').highcharts({
+                chart: {},
+                title: {text: '省内高速里程（公里）'},
+                xAxis: {categories: ['2016']}, //x轴
+                tooltip: hoverTooltip,
+                labels: labelDefault,
+                colors: barColors,
+                series: [// type: column-条形 spline-折线 pie-饼状
+                    {type: 'column', visible: showSZ, name: '深圳', data: [7673]},
+                    {type: 'column', visible: showGZ, name: '广州', data: [7673]},
+                    {type: 'column', visible: showZS, name: '中山', data: [7673]},
+                    {type: 'column', visible: showHZ, name: '杭州', data: [4062]},
+                    {type: 'column', visible: showSU, name: '苏州', data: [4546]},
+                    {type: 'column', visible: showZZ, name: '郑州', data: [6448]},
+                    {type: 'column', visible: showXA, name: '西安', data: [5181]},
+                    {type: 'column', visible: showKF, name: '开封', data: [6448]},
+                    {type: 'column', visible: showLH, name: '漯河', data: [6448]},
+                    {type: 'column', visible: showCQ, name: '重庆', data: [2525]}
+                ],
+                credits: watermark
+            });
+
+            $('#containerAirQuality').highcharts({
+                chart: {},
+                title: {text: 'PM2.5年均值(微克/m³)'},
+                xAxis: {categories: ['']}, //x轴
+                tooltip: hoverTooltip,
+                labels: labelDefault,
+                colors: barColors,
+                series: [ // type: column-条形 spline-折线 pie-饼状
+                    {type: 'column', visible: showSZ, name: '深圳', data: [32.5]},
+                    {type: 'column', visible: showGZ, name: '广州', data: [47.4]},
+                    {type: 'column', visible: showZS, name: '中山', data: [37.6]},
+                    {type: 'column', visible: showHZ, name: '杭州', data: [60.9]},
+                    {type: 'column', visible: showSU, name: '苏州', data: [64.1]},
+                    {type: 'column', visible: showZZ, name: '郑州', data: [87.6]},
+                    {type: 'column', visible: showXA, name: '西安', data: [75.7]},
+                    {type: 'column', visible: showKF, name: '开封', data: [82.2]},
+                    {type: 'column', visible: showLH, name: '漯河', data: [85.0]},
+                    {type: 'column', visible: showCQ, name: '重庆', data: [62.8]}
+                ],
+                credits: watermark
+            });
+
+            $('#containerRain').highcharts({
+                chart: {},
+                title: {text: '年均降水量（mm）'},
+                xAxis: {categories: ['']},//x轴
+                tooltip: hoverTooltip,
+                labels: labelDefault,
+                colors: barColors,
+                series: [// type: column-条形 spline-折线 pie-饼状
+                    {type: 'column', visible: showSZ, name: '深圳', data: [1933]},
+                    {type: 'column', visible: showGZ, name: '广州', data: [1720]},
+                    {type: 'column', visible: showZS, name: '中山', data: [1738]},
+                    {type: 'column', visible: showHZ, name: '杭州', data: [1454]},
+                    {type: 'column', visible: showSU, name: '苏州', data: [1100]},
+                    {type: 'column', visible: showZZ, name: '郑州', data: [542]},
+                    {type: 'column', visible: showXA, name: '西安', data: [620]},
+                    {type: 'column', visible: showKF, name: '开封', data: [627.5]},
+                    {type: 'column', visible: showLH, name: '漯河', data: [786]},
+                    {type: 'column', visible: showCQ, name: '重庆', data: [1175]}
+                ],
+                credits: watermark
+            });
+
+            $('#containerHospital').highcharts({
+                chart: {},
+                title: {text: '三甲医院数量'},
+                xAxis: {categories: ['']}, //x轴
+                tooltip: hoverTooltip,
+                labels: labelDefault,
+                colors: barColors,
+                series: [// type: column-条形 spline-折线 pie-饼状
+                    {type: 'column', visible: showSZ, name: '深圳', data: [5]},
+                    {type: 'column', visible: showGZ, name: '广州', data: [62]},
+                    {type: 'column', visible: showZS, name: '中山', data: [3]},
+                    {type: 'column', visible: showHZ, name: '杭州', data: [20]},
+                    {type: 'column', visible: showSU, name: '苏州', data: [8]},
+                    {type: 'column', visible: showZZ, name: '郑州', data: [34]},
+                    {type: 'column', visible: showXA, name: '西安', data: [41]},
+                    {type: 'column', visible: showKF, name: '开封', data: [6]},
+                    {type: 'column', visible: showLH, name: '漯河', data: [1]},
+                    {type: 'column', visible: showCQ, name: '重庆', data: [27]}
+                ],
+                credits: watermark
+            });
+
+        });
+
+    </script>
+    <style>
+        .city-table {
+            width: 100%;
+            height: 500px;
+            margin: 0 auto
+        }
+    </style>
+
+    <!-- Material Floating Button -->
+    <link href="../../resource/css/essay.material.floating.button.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <div class="card">
+            <div class="action-header">
+                <span class="actions essay-back-arrow">
+                    <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title">择城</span>
+                <span align="right" style="float: right;">
+                     <i class="zmdi zmdi-home"></i>&nbsp;<span class="essay-type">Live</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2017-04-09 21:33</span>
+                </span>
+
+                <!--
+                AZ Share: Material Floating Button;
+                Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+                Position:mfb-component--br,bl,tr,tl;
+                Action:hover,click
+                -->
+                <script>
+                    document.title = '择城';
+                    var essayTitle = document.title;
+                    var essaySummary = '房价，工资，人口，高校，地铁，环境，医院数据对比';
+                    var essayUrl = window.location.href;
+                    //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                    var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+                </script>
+                <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+            </div>
+
+            <div class="card__body">
+                <a href="#containerHouse" class="btn btn-default btn-primary btn--icon-text">
+                    <i class="zmdi zmdi-home"></i> 房价</a>
+                <a href="#containerSalary" class="btn btn-default btn-info btn--icon-text">
+                    <i class="zmdi zmdi-money"></i> 工资</a>
+                <a href="#containerArea" class="btn btn-default btn-success btn--icon-text">
+                    <i class="zmdi zmdi-map"></i> 面积</a>
+                <a href="#containerPopulation" class="btn btn-default btn-danger btn--icon-text">
+                    <i class="zmdi zmdi-account"></i> 人口</a>
+                <a href="#containerUniversity" class="btn btn-default btn-warning btn--icon-text">
+                    <i class="zmdi zmdi-graduation-cap"></i> 高校</a>
+                <a href="#containerUniversity" class="btn btn-default btn-info btn--icon-text">
+                    <i class="zmdi zmdi-edit"></i> 高考</a>
+                <a href="#containerSubway" class="btn btn-default btn-primary btn--icon-text">
+                    <i class="zmdi zmdi-railway"></i> 地铁</a>
+                <a href="#containerMotorway" class="btn btn-default btn-danger btn--icon-text">
+                    <i class="zmdi zmdi-directions-car"></i> 高速</a>
+                <a href="#containerAirQuality" class="btn btn-default btn-success btn--icon-text">
+                    <i class="zmdi zmdi-sun"></i> 环境</a>
+                <a href="#containerRain" class="btn btn-default btn-warning btn--icon-text">
+                    <i class="zmdi zmdi-flash"></i> 降水</a>
+                <a href="#containerHospital" class="btn btn-default btn-danger btn--icon-text">
+                    <i class="zmdi zmdi-hospital"></i> 医院</a>
+
+                <br/><br/>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div id="containerHouse" class="city-table"></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div id="containerSalary" class="city-table"></div>
+                    </div>
+                </div>
+                <br/><br/>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div id="containerArea" class="city-table"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div id="containerPopulation" class="city-table"></div>
+                    </div>
+                </div>
+                <br/><br/>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div id="containerUniversity" class="city-table"></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div id="containerExam" class="city-table"></div>
+                    </div>
+                </div>
+                <br/><br/>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div id="containerSubway" class="city-table"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div id="containerMotorway" class="city-table"></div>
+                    </div>
+                </div>
+                <br/><br/>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div id="containerAirQuality" class="city-table"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div id="containerRain" class="city-table"></div>
+                    </div>
+                </div>
+                <br/><br/>
+                <div id="containerHospital" class="city-table"></div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <link rel="stylesheet" href="../../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+
+<!-- Javascript Libraries -->
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../../resource/js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../../resource/js/canvas-nest.min.js"></script>
+
+<!-- Toolbox -->
+<script src="../../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 2;</script>
+<script src="../../resource/js/zms.page.pattern.js"></script>
+</body>
+</html>

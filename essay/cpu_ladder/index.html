@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" lang="en" class="hb-loaded">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>CPU天梯榜</title>
+    <link rel="stylesheet" type="text/css" href="../gpu_ladder/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../gpu_ladder/css/checked.min.css">
+    <link rel="stylesheet" type="text/css" href="../gpu_ladder/css/data.css">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/ark.js"></script>
+    <script type="text/javascript" src="js/cpu_data_amd.js"></script>
+    <script type="text/javascript" src="js/cpu_data_intel.js"></script>
+
+    <script src="../gpu_ladder/js/chart.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        function checkhtml5() {
+            if (typeof(Worker) == "undefined") alert("您的浏览器可能不支持HTML5，请使用Chrome等内核浏览器。");
+        }
+        checkhtml5();
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 640) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <style id="style-1-cropbar-clipper">
+        .en-markup-crop-options {
+            top: 18px !important;
+            left: 50% !important;
+            margin-left: -100px !important;
+            width: 200px !important;
+            border: 2px rgba(255, 255, 255, .38) solid !important;
+            border-radius: 4px !important;
+        }
+
+        .en-markup-crop-options div div:first-of-type {
+            margin-left: 0px !important;
+        }
+    </style>
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e3a97a0eee3cb03b5caf792f58032743";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+<a href="../../" class="back-to-essay"><i class="zmdi zmdi-arrow-left" title="返回列表"></i> 返回列表</a>
+
+<!--复选框 start  -->
+<label class="onlabel">
+    <input onchange="setlabel()" type="checkbox" name="x" class="checked-focus" id="xsbq" checked="checked"/>显示标签
+</label>
+
+<!-- 下拉菜单 -->
+<div class="xknx">
+    <p>年限</p>
+    <select name="" id="xlcd" value="年限" onchange="selectTest(this)">
+        <option value="1">1</option>
+        <option value="5" selected="selected">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+    </select>
+</div>
+<!-- end -->
+<script type="text/javascript">
+    function selectTest(obj) {
+        Whenago = obj.options[obj.selectedIndex].value;
+        setop();
+    }
+    //修改其中的一些样式
+    jQuery(document).ready(function ($) {
+        $('#xcld>*').css('background', 'skyblue');
+    });
+</script>
+<!-- end -->
+
+<!-- 数据表格 -->
+<div id="expindex" style="height: 100%;margin:0 auto;"></div>
+
+<script type="text/javascript">
+
+    function setlabel() {
+        if (document.getElementById("xsbq").checked) enlabel = true;
+        else enlabel = false;
+        setop();
+    }
+
+    var dom = document.getElementById("expindex");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+
+    //****************开始
+
+    var colorList = ['#9F1417', '#ffff00', '#0075C5', '#ffff00', '#8ec31e', '#00B200'];
+    var moon = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var enlabel = true;
+    var enlenged = true;
+    var Whenago = 5; // 年限
+    var clicktime = new Date().getTime();
+    var tline = [];
+    var CPUSI = [];
+    var IntelCPU = [];
+    var AMDCPU = [];
+
+    function setop() {
+        InitData();
+        getwidth();
+        CPUSI.sort(function (a, b) {
+            return a.MultiIndex - b.MultiIndex;
+        });
+        MultiIndex = CPUSI.concat();
+        var MMax = MultiIndex[MultiIndex.length - 1].MultiIndex / 100;
+        CPUSI.sort(function (a, b) {
+            return a.SingleIndex - b.SingleIndex;
+        });
+        SingleIndex = CPUSI.concat();
+        var SMax = SingleIndex[SingleIndex.length - 1].SingleIndex / 100;
+
+        CPUSI.sort(function (a, b) {
+            return a.MultiIndex / a.TDP - b.MultiIndex / b.TDP;
+        });
+        MultiPower = CPUSI.slice(0);
+        CPUSI.sort(function (a, b) {
+            return a.SingleIndex / a.TDP - b.SingleIndex / b.TDP;
+        });
+        SinglePower = CPUSI.slice(0);
+
+        CPUSI.map(function (user) {
+            user.MultiIndex = (user.MultiIndex / MMax).toFixed(1);
+            user.SingleIndex = (user.SingleIndex / SMax).toFixed(1);
+            return user
+        })
+
+        IntelCPU.sort(function (a, b) {
+            return a.MultiIndex - b.MultiIndex;
+        });
+        IntelMulti = IntelCPU.slice(0);
+        IntelCPU.sort(function (a, b) {
+            return a.SingleIndex - b.SingleIndex;
+        });
+        IntelSingle = IntelCPU.slice(0);
+
+        AMDCPU.sort(function (a, b) {
+            return a.MultiIndex - b.MultiIndex;
+        });
+        AMDMulti = AMDCPU.slice(0);
+        AMDCPU.sort(function (a, b) {
+            return a.SingleIndex - b.SingleIndex;
+        });
+        AMDSingle = AMDCPU.slice(0);
+
+        LaunchData = getlanuchdata(CPUSI);
+        Intellaunch = getlanuchdata(IntelCPU);
+        AMDlaunch = getlanuchdata(AMDCPU);
+
+        myChart.setOption({
+            baseOption: {
+                timeline: {
+                    axisType: 'category',
+                    //orient: 'vertical',
+                    autoPlay: false,
+                    //inverse: true,
+                    playInterval: 3000,
+                    padding: 10,
+                    left: getwidth().tll, //           right: 10,
+                    bottom: getwidth().tlb,
+                    width: getwidth().tlw,
+                    // height: '70%',
+                    symbolSize: 14,
+                    currentIndex: 1,
+                    tooltip: {
+                        show: false
+                    },
+                    label: {
+                        normal: {
+                            textStyle: {
+                                color: '#eee',
+                                //fontSize:14
+                            }
+                        },
+                        interval: 0,
+                        emphasis: {
+                            textStyle: {
+                                color: '#cc0000'
+                            }
+                        }
+                    },
+                    //symbol: 'none',
+                    lineStyle: {
+                        color: 'rgba(155,155,155,0.9)'
+                    },
+                    checkpointStyle: {
+                        color: '#cc0000',
+                        borderColor: '#cc0000',
+                        borderWidth: 6
+                    },
+                    controlStyle: {
+                        showNextBtn: false,
+                        showPrevBtn: false,
+                        showPlayBtn: false,
+                        normal: {
+                            color: '#666',
+                            borderColor: '#666'
+                        },
+                        emphasis: {
+                            color: '#aaa',
+                            borderColor: '#aaa'
+                        }
+                    },
+                    data: tline
+                },
+
+                backgroundColor: "#344b58",
+                title: {
+                    show: enlenged,
+                    text: "超能指数全排行",
+                    subtext: "ver 0.01 By 超能网",
+                    textStyle: {
+                        color: '#fff',
+                        fontSize: '18'
+                    },
+                    subtextStyle: {
+                        color: '#90979c',
+                        fontSize: '12',
+                    },
+                    bottom: '19%',
+                    left: getwidth().ls
+                },
+                tooltip: {
+                    //trigger: "axis",
+                    padding: 10,
+                    /*position:  function (point, params, dom, rect, size) {
+                     if(getwidth().winWidth<555) {
+                     var x=10;
+                     if (point[0]<getwidth().winWidth/2)  x=getwidth().winWidth/2;
+                     return [x,'30%'];
+                     }
+                     else return null;
+                     },*/
+                    extraCssText: 'box-shadow: 0 0 3px rgba(255, 255, 255, 0.3);',
+                    textStyle: {
+                        // fontSize:12//function(){if(getwidth().winWidth<555) return 12;  else return 14;},
+                        // fontWeight:'lighter'
+                    },
+                    confine: true,
+                    backgroundColor: 'rgba(50,50,50,0.8)',
+                    axisPointer: {
+                        type: 'cross',
+                        crossStyle: {
+                            //color: '#376df4',
+                            width: 1,
+                            opacity: 1
+                        },
+
+                        label: {
+                            precision: 1,
+                            textStyle: {
+                                color: '#000'
+                            },
+                            formatter: function (params) {
+                                //alert(params.value);
+                                if (params.value == 'undefined') return '';
+                                if (typeof(params.value) == 'undefined') return '';
+                                else if (typeof(params.value) == 'number') return params.value.toFixed(1);
+                                else return params.value;
+                            },
+                            //show:false,
+                            //borderWidth :1,
+                            borderColor: '#ddd',
+                            shadowBlur: 0,
+                            backgroundColor: colorList[1]
+                        }
+                    }
+                },
+                toolbox: {
+                    show: true,
+                    right: getwidth().dz,
+                    itemSize: 12,
+                    top: '2%',
+                    //z:11,
+                    //itemGap:4,
+                    iconStyle: {
+                        normal: {
+                            borderWidth: 1,
+                            borderColor: '#ccc',
+                            // shadowBlur:5,
+                            // shadowColor:'#cc0000'
+                            //color:'#000'
+
+                        }
+                    },
+                    feature: {
+                        restore: {
+                            show: true
+                        },
+                        magicType: {
+                            show: true,
+                            type: ['line', 'bar']
+                        },
+                        saveAsImage: {
+                            show: true
+                        }
+                    }
+                },
+                calculable: true,
+
+            },
+
+            xAxis: [{}, {}, {}],
+            yAxis: [{
+                type: "value"
+            }, {
+                type: "value"
+            }, {
+                type: "value",
+            }],
+            dataZoom: [{}, {
+                type: "inside"
+            }],
+
+            options: [
+
+                ////////////Search ----0
+                {
+                    title: {
+                        text: '',
+                        subtext: "",
+                    },
+                    legend: {
+                        show: true, //enlenged,
+                        top: getwidth().lengtop,
+                        right: 'center',
+                        itemHeight: 0,
+                        itemWidth: 0,
+                        itemGap: myChart.getWidth() / 10,
+                        //borderWidth:1,
+                        data: ['综合性能', '单核性能'],
+                        textStyle: {
+                            fontSize: 15,
+                            color: '#fff',
+                            fontFamily: '黑体',
+                            fontWeight: 'bold'
+                        },
+                        //orient:'vertical',
+                        selected: {
+                            '能耗比': false,
+                            'TDP功耗|W': false,
+                            'TDP功耗': false,
+                            '晶体管数|亿': false
+                        }
+                        //'TDP功耗.W': false,'GPU频率.MHz': false,                    //'制程.nm': false,'晶体管数.亿': false,'核心面积.mm2': false                }
+                    },
+                    dataZoom: [{
+                        show: true,
+                        width: getwidth().dzw,
+
+                        orient: 'vertical',
+                        right: getwidth().dz,
+                        yAxisIndex: [0, 2],
+                        start: getwidth().start0,
+                        end: 100,
+                        //zoomLock:true,
+                        handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+                        handleSize: '110%',
+                        handleStyle: {
+                            color: "#d3dee5",
+                        },
+                        textStyle: {
+                            color: "#fff"
+                        },
+                        borderColor: "#888"
+                    }, {
+                        type: "inside",
+                        show: true,
+                        //zoomLock:true,
+                        orient: 'vertical',
+                        yAxisIndex: [0, 2],
+                    },],
+
+                    grid: [{
+                        show: false,
+                        left: getwidth().ls,
+                        top: getwidth().ts,
+                        bottom: getwidth().bs,
+                        width: getwidth().ws3 - 20,
+
+                    }, {
+                        show: false,
+                        right: getwidth().ls,
+                        bottom: getwidth().bs,
+                        top: getwidth().ts,
+                        width: getwidth().ws3 - 20,
+                    },],
+
+                    tooltip: {
+                        formatter: function (params) {
+                            if (MultiIndex[params.dataIndex].Name == params.name) {
+                                return gettip(MultiIndex[params.dataIndex]);
+                            } else {
+                                return gettip(SingleIndex[params.dataIndex]);
+                            }
+                        },
+                    },
+                    xAxis: [{
+                        type: 'value',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: colorList[1] //'#90979c'
+                            }
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+
+                        inverse: true,
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '00b200',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#fff',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }, {
+                        show: false
+                    }, {
+                        gridIndex: 1,
+                        xAxisIndex: 2,
+                        type: 'value',
+
+                        axisTick: {
+                            show: false,
+                        },
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: colorList[0] // '#90979c'
+                            }
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#B2B2B2',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#cc0000',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }],
+                    yAxis: [{
+                        //type: 'value',
+                        position: 'right',
+                        //inverse: true,
+                        axisLine: {
+                            lineStyle: {
+                                color: '#90979c'
+                            },
+                            show: false
+                        },
+                        axisTick: {
+                            show: true
+                        },
+                        show: true,
+                        xAxisIndex: 0,
+                        axisLabel: {
+                            show: true,
+                            // margin: 8,
+                            textStyle: {
+                                color: '#ddd', //'#9D9EA0',
+                                fontSize: 10,
+                            },
+                        },
+                        data: MultiIndex.map(function (user) {
+                            return user.Name
+                        }) //.slice(NVData.length - AMDCPU.length)
+                    }, {
+                        yAxisIndex: 1,
+                        show: false,
+                    }, {
+                        gridIndex: 1,
+                        yAxisIndex: 2,
+                        show: true,
+                        //inverse: true,
+                        //type: 'value',
+                        //inverse: true,
+                        position: 'left',
+                        axisLine: {
+                            lineStyle: {
+                                color: '#90979c'
+                            },
+                            show: false
+                        },
+                        axisTick: {
+                            show: true
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: MultiIndex.map(function (user) {
+                            return user.Name
+                        })
+                    }],
+
+                    series: [{
+                        name: '综合性能',
+                        type: "bar",
+                        barWidth: null,
+                        barCategoryGap: 0.01,
+                        z: 0,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(MultiIndex, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'insideRight',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: function (params) {
+                                        var paramsname = params.name;
+                                        if (!enlenged) paramsname = paramsname.replace('Intel ', '').replace('AMD ', '').replace('intel ', '');
+                                        if (enlabel) return params.data + "% ";
+                                        else return '';
+
+                                    }
+                                },
+                                shadowBlur: 52,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 4,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: MultiIndex.map(function (user) {
+                            return user.MultiIndex
+                        }) //.slice(NVData.length - AMDCPU.length)
+                    },
+
+                        {
+                            type: "bar",
+                            name: '单核性能',
+                            xAxisIndex: 2,
+                            yAxisIndex: 2,
+                            barWidth: null,
+                            barCategoryGap: 0.01,
+                            z: 0,
+                            itemStyle: {
+                                normal: {
+                                    color: function (params) {
+                                        return getcolor(MultiIndex, params.dataIndex)
+                                    },
+                                    label: {
+                                        show: true,
+                                        position: 'insideLeft',
+                                        textStyle: {
+                                            color: '#eee',
+                                            fontSize: 10
+                                        },
+                                        formatter: function (params) {
+                                            var paramsname = params.name;
+                                            if (!enlenged) paramsname = paramsname.replace('Intel ', '').replace('AMD ', '').replace('intel ', '');
+                                            if (enlabel) return ' ' + params.data + '%';
+                                            else return '';
+                                        }
+                                    },
+                                    shadowBlur: 20,
+                                    shadowColor: 'rgba(20, 20, 20, 0.5)'
+                                },
+                                emphasis: {
+                                    borderWidth: 4,
+                                    borderColor: colorList[3]
+                                }
+                            },
+
+                            data: MultiIndex.map(function (user) {
+                                return user.SingleIndex
+                            })
+                        }
+                    ]
+                },
+                ///////////华山论剑 ----1
+                {
+                    title: {
+                        text: 'CPU天梯榜',
+                        subtext: "倚天在手，唯屠龙宝刀能敌",
+                    },
+                    legend: {
+                        show: true, //enlenged,
+                        top: getwidth().lengtop,
+                        right: 'center',
+                        itemHeight: 0,
+                        itemWidth: 0,
+                        itemGap: myChart.getWidth() / 10,
+
+                        //borderWidth:1,
+                        data: ['综合性能', '单核性能'],
+                        textStyle: {
+                            fontSize: 14,
+                            color: '#fff',
+                            fontFamily: '黑体',
+                            fontWeight: 'bold'
+                        },
+                        inactiveColor: '#aaa',
+                        //orient:'vertical',
+                        selected: {
+                            '能耗比': false,
+                            'TDP功耗': false,
+                            '晶体管数|亿': false
+                        }
+                        //'TDP功耗.W': false,'GPU频率.MHz': false,                    //'制程.nm': false,'晶体管数.亿': false,'核心面积.mm2': false                }
+                    },
+                    dataZoom: [{
+                        show: true,
+                        width: getwidth().dzw,
+
+                        orient: 'vertical',
+                        right: getwidth().dz,
+                        yAxisIndex: [0, 2],
+                        start: getwidth().start0,
+                        end: 100,
+                        //zoomLock:true,
+                        handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+                        handleSize: '110%',
+                        handleStyle: {
+                            color: "#d3dee5",
+                        },
+                        textStyle: {
+                            color: "#fff"
+                        },
+                        borderColor: "#888"
+                    }, {
+                        type: "inside",
+                        show: true,
+                        //zoomLock:true,
+                        orient: 'vertical',
+                        yAxisIndex: [0, 2],
+                    },],
+
+                    grid: [{
+                        show: false,
+                        left: getwidth().ls,
+                        top: getwidth().ts,
+                        bottom: getwidth().bs,
+                        width: getwidth().ws,
+
+                    }, {
+                        show: false,
+                        left: getwidth().ls2,
+                        bottom: getwidth().bs,
+                        top: getwidth().ts,
+                        width: getwidth().ws,
+                    },],
+
+                    tooltip: {
+                        formatter: function (params) {
+                            if (MultiIndex[params.dataIndex].Name == params.name) {
+                                return gettip(MultiIndex[params.dataIndex]);
+                            } else {
+                                return gettip(SingleIndex[params.dataIndex]);
+                            }
+                        },
+                    },
+                    xAxis: [{
+                        type: 'value',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: colorList[1] //'#90979c'
+                            }
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+
+                        inverse: true,
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '00b200',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#fff',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }, {
+                        show: false
+                    }, {
+                        gridIndex: 1,
+                        xAxisIndex: 2,
+                        type: 'value',
+
+                        axisTick: {
+                            show: false,
+                        },
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: colorList[0] // '#90979c'
+                            }
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#B2B2B2',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#cc0000',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }],
+                    yAxis: [{
+                        //type: 'value',
+                        position: 'right',
+                        //inverse: true,
+                        axisLine: {
+                            lineStyle: {
+                                color: colorList[1] //'#90979c'
+                            },
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        show: true,
+                        xAxisIndex: 0,
+                        axisLabel: {
+                            show: false,
+                            // margin: 8,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: MultiIndex.map(function (user) {
+                            return user.Name
+                        }) //.slice(NVData.length - AMDCPU.length)
+                    }, {
+                        yAxisIndex: 1,
+                        show: false,
+                    }, {
+                        gridIndex: 1,
+                        yAxisIndex: 2,
+                        show: false,
+                        //inverse: true,
+                        //type: 'value',
+                        //inverse: true,
+                        position: 'left',
+                        axisLine: {
+                            lineStyle: {
+                                color: colorList[0] //'#90979c'
+                            },
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: SingleIndex.map(function (user) {
+                            return user.Name
+                        })
+                    }],
+
+                    series: [
+
+                        {
+                            name: '综合性能',
+                            type: "bar",
+                            barWidth: null,
+                            barCategoryGap: 0.01,
+                            z: 0,
+                            itemStyle: {
+                                normal: {
+                                    color: function (params) {
+                                        return getcolor(MultiIndex, params.dataIndex)
+                                    },
+                                    label: {
+                                        show: true,
+                                        position: 'insideRight',
+                                        textStyle: {
+                                            color: '#fff',
+                                            fontSize: 10
+                                        },
+                                        formatter: function (params) {
+                                            var paramsname = params.name;
+                                            if (!enlenged) paramsname = paramsname.replace('Intel ', '').replace('AMD ', '').replace('intel ', '');
+                                            if (enlabel) return paramsname + ' / ' + params.data + "%";
+                                            else return '';
+                                        }
+                                    },
+                                    shadowBlur: 52,
+                                    shadowColor: 'rgba(20, 20, 20, 0.5)'
+                                },
+                                emphasis: {
+                                    borderWidth: 2,
+                                    borderColor: colorList[3]
+                                }
+                            },
+                            data: MultiIndex.map(function (user) {
+                                return user.MultiIndex
+                            }) //.slice(NVData.length - AMDCPU.length)
+                        },
+
+                        {
+                            type: "bar",
+                            name: '单核性能',
+                            xAxisIndex: 2,
+                            yAxisIndex: 2,
+                            barWidth: null,
+                            barCategoryGap: 0.01,
+                            z: 0,
+                            itemStyle: {
+                                normal: {
+                                    color: function (params) {
+                                        return getcolor(SingleIndex, params.dataIndex)
+                                    },
+                                    label: {
+                                        show: true,
+                                        position: 'insideLeft',
+                                        textStyle: {
+                                            color: '#eee',
+                                            fontSize: 10
+                                        },
+                                        formatter: function (params) {
+                                            var paramsname = params.name;
+                                            if (!enlenged) paramsname = paramsname.replace('Intel ', '').replace('AMD ', '').replace('intel ', '');
+                                            if (enlabel) return ' ' + params.data + '% / ' + paramsname;
+                                            else return '';
+                                        }
+                                    },
+                                    shadowBlur: 20,
+                                    shadowColor: 'rgba(20, 20, 20, 0.5)'
+                                },
+                                emphasis: {
+                                    borderWidth: 2,
+                                    borderColor: colorList[3]
+                                }
+                            },
+                            data: SingleIndex.map(function (user) {
+                                return user.SingleIndex
+                            })
+                        }
+                    ]
+                },
+
+                ///////////能耗比----2
+
+
+                {
+                    title: {
+                        text: '能耗比',
+                        subtext: "",
+                    },
+                    legend: {
+                        //show: enlenged,
+                        data: ['综合能耗比', '单核能耗比'],
+                        //textStyle: {color: '#bbb'   },
+                        selected: {
+                            '能耗比': false,
+                            'TDP功耗': true,
+                            'NVIDIA': false,
+                            'AMD': false,
+                            'TDP功耗|W': false,
+                            '晶体管数|亿': false
+                        }
+                    },
+                    dataZoom: [{
+                        //yAxisIndex: [0,2],
+                        start: getwidth().start0,
+                        end: 100,
+                    }, { //    yAxisIndex: [0,2],
+                    }],
+
+                    grid: [{
+                        show: false,
+                        left: getwidth().ls,
+                        top: getwidth().ts,
+                        bottom: getwidth().bs,
+                        width: getwidth().ws,
+
+                    }, {
+                        show: false,
+                        left: getwidth().ls2,
+                        bottom: getwidth().bs,
+                        top: getwidth().ts,
+                        width: getwidth().ws2,
+                    },],
+
+
+                    tooltip: {
+                        formatter: function (params) {
+                            if (MultiPower[params.dataIndex].Name == params.name) {
+                                return gettip(MultiPower[params.dataIndex]);
+                            } else {
+                                return gettip(SinglePower[params.dataIndex]);
+                            }
+                        },
+                    },
+                    xAxis: [{
+                        type: 'value',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#90979c'
+                            }
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                        inverse: true,
+
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '00b200',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#fff',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }, {
+                        show: false
+                    }, {
+                        gridIndex: 1,
+                        xAxisIndex: 2,
+                        type: 'value',
+
+                        axisTick: {
+                            show: false,
+                        },
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#90979c'
+                            }
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#B2B2B2',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#cc0000',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }],
+                    yAxis: [{
+                        //type: 'value',
+                        position: 'right',
+
+                        //inverse: true,
+                        //axisLine: { show: false    },
+                        //axisTick: {    show: false    },
+                        show: false,
+                        xAxisIndex: 0,
+                        axisLabel: {
+                            show: enlabel, //function(){if(enlabel) return 'true';else return 'false'},
+                            // margin: 8,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: MultiPower.map(function (user) {
+                            return user.Name
+                        }) //.slice(NVData.length - AMDCPU.length)
+                    }, {
+                        yAxisIndex: 1,
+                        show: false,
+                    }, {
+                        gridIndex: 1,
+                        yAxisIndex: 2,
+
+                        show: false,
+                        //inverse: true,
+                        //type: 'value',
+                        position: 'left',
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: SinglePower.map(function (user) {
+                            return user.Name
+                        })
+                    }],
+
+                    series: [{
+                        name: '综合能耗比',
+                        type: "bar",
+                        barCategoryGap: 0.01,
+                        z: 0,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(MultiPower, params.dataIndex)
+                                },
+                                //opacity:0.6,
+                                //shadowColor: 'rgba(120, 120, 120, 0.85)',
+                                label: {
+                                    show: true,
+                                    position: 'insideRight',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: function (params) {
+                                        var paramsname = params.name;
+                                        if (!enlenged) paramsname = paramsname.replace('Intel ', '').replace('AMD ', '').replace('intel ', '');
+                                        if (enlabel) return paramsname + ' / ' + params.data;
+                                        else return '';
+                                    }
+                                },
+                                shadowBlur: 52,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: MultiPower.map(function (user) {
+                            return (99 * user.MultiIndex / user.TDP).toFixed(0)
+                        }) //.slice(NVData.length - AMDCPU.length)
+                    },
+
+                        {
+                            type: "bar",
+                            name: '单核能耗比',
+                            xAxisIndex: 2,
+                            yAxisIndex: 2,
+                            barCategoryGap: 0.01,
+                            z: 0,
+                            itemStyle: {
+                                normal: {
+                                    color: function (params) {
+                                        return getcolor(SinglePower, params.dataIndex)
+                                    },
+                                    // opacity:0.6,
+                                    label: {
+                                        show: true,
+                                        position: 'insideLeft',
+                                        textStyle: {
+                                            color: '#eee',
+                                            fontSize: 10
+                                        },
+                                        formatter: function (params) {
+                                            var paramsname = params.name;
+                                            if (!enlenged) paramsname = paramsname.replace('Intel ', '').replace('AMD ', '').replace('intel ', '');
+                                            if (enlabel) return ' ' + params.data + ' / ' + paramsname;
+                                            else return '';
+                                        }
+                                    },
+                                    shadowBlur: 20,
+                                    shadowColor: 'rgba(20, 20, 20, 0.5)'
+                                },
+                                emphasis: {
+                                    borderWidth: 2,
+                                    borderColor: colorList[3]
+                                }
+                            },
+                            data: SinglePower.map(function (user) {
+                                return (33 * user.SingleIndex / user.TDP).toFixed(0)
+                            })
+                        }
+                    ]
+                },
+
+
+                ///////////Intel全家福----3
+                {
+                    title: {
+                        text: 'Intel CPU',
+                        subtext: "",
+                    },
+                    legend: {
+                        //show: enlenged,
+                        data: ['综合性能', '单核性能'],
+                        //textStyle: {color: '#bbb'   },
+                        selected: {
+                            '能耗比': false,
+                            'TDP功耗': true,
+                            'NVIDIA': false,
+                            'AMD': false,
+                            'TDP功耗|W': false,
+                            '晶体管数|亿': false
+                        }
+                    },
+                    dataZoom: [{
+                        //yAxisIndex: [0,2],
+                        start: getwidth().start1,
+                        end: 100,
+                    }, { //    yAxisIndex: [0,2],
+                    }],
+
+                    grid: [{
+                        show: false,
+                        left: getwidth().ls,
+                        top: getwidth().ts,
+                        bottom: getwidth().bs,
+                        width: getwidth().ws,
+
+                    }, {
+                        show: false,
+                        left: getwidth().ls2,
+                        bottom: getwidth().bs,
+                        top: getwidth().ts,
+                        width: getwidth().ws2,
+                    },],
+
+
+                    tooltip: {
+                        formatter: function (params) {
+                            if (IntelMulti[params.dataIndex].Name == params.name) {
+                                return gettip(IntelMulti[params.dataIndex]);
+                            } else {
+                                return gettip(IntelSingle[params.dataIndex]);
+                            }
+                        },
+                    },
+                    xAxis: [{
+                        type: 'value',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#90979c'
+                            }
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                        inverse: true,
+
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '00b200',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#fff',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }, {
+                        show: false
+                    }, {
+                        gridIndex: 1,
+                        xAxisIndex: 2,
+                        type: 'value',
+
+                        axisTick: {
+                            show: false,
+                        },
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#90979c'
+                            }
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#B2B2B2',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#cc0000',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }],
+                    yAxis: [{
+                        //type: 'value',
+                        position: 'right',
+
+                        //inverse: true,
+                        //axisLine: { show: false    },
+                        //axisTick: {    show: false    },
+                        show: false,
+                        xAxisIndex: 0,
+                        axisLabel: {
+                            show: enlabel, //function(){if(enlabel) return 'true';else return 'false'},
+                            // margin: 8,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: IntelMulti.map(function (user) {
+                            return user.Name
+                        }) //.slice(NVData.length - AMDCPU.length)
+                    }, {
+                        yAxisIndex: 1,
+                        show: false,
+                    }, {
+                        gridIndex: 1,
+                        yAxisIndex: 2,
+
+                        show: false,
+                        //inverse: true,
+                        //type: 'value',
+                        position: 'left',
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: IntelSingle.map(function (user) {
+                            return user.Name
+                        })
+                    }],
+
+                    series: [{
+                        name: '综合性能',
+                        type: "bar",
+                        symbol: 'circle',
+                        symbolSize: 20,
+                        barCategoryGap: 0.01,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(IntelMulti, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'insideRight',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: function (params) {
+                                        var paramsname = params.name;
+                                        if (!enlenged) paramsname = paramsname.replace('Intel ', '').replace('AMD ', '').replace('intel ', '');
+                                        if (enlabel) return paramsname + ' / ' + params.data + "% ";
+                                        else return '';
+                                    } //'{c}'
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: IntelMulti.map(function (user) {
+                            return user.MultiIndex
+                        }) //.slice(NVData.length - AMDCPU.length)
+                    },
+
+
+                        {
+                            type: "bar",
+                            name: '单核性能',
+                            symbol: 'circle',
+                            symbolSize: 20,
+                            barCategoryGap: 0.01,
+                            itemStyle: {
+                                normal: {
+                                    color: function (params) {
+                                        return getcolor(IntelSingle, params.dataIndex)
+                                    },
+                                    label: {
+                                        show: true,
+                                        position: 'insideLeft',
+                                        textStyle: {
+                                            color: '#fff',
+                                            fontSize: 10
+                                        },
+                                        formatter: function (params) {
+                                            var paramsname = params.name;
+                                            if (!enlenged) paramsname = paramsname.replace('Intel ', '').replace('AMD ', '').replace('intel ', '');
+                                            if (enlabel) return params.data + "%" + ' / ' + paramsname;
+                                            else return '';
+                                        } //'{c}'
+                                    },
+                                    shadowBlur: 20,
+                                    shadowColor: 'rgba(20, 20, 20, 0.5)'
+                                },
+                                emphasis: {
+                                    borderWidth: 2,
+                                    borderColor: colorList[3]
+                                }
+                            },
+                            data: IntelSingle.map(function (user) {
+                                return user.SingleIndex
+                            }) //.slice(NVData.length - AMDCPU.length)
+                        },
+                    ]
+                },
+
+
+                ///////////AMD全家福----4
+                {
+                    title: {
+                        text: 'AMD CPU',
+                        subtext: "",
+                    },
+                    legend: {
+                        //show: enlenged,
+                        data: ['综合性能', '单核性能'],
+                        //textStyle: {color: '#bbb'   },
+                        selected: {
+                            '能耗比': false,
+                            'TDP功耗': true,
+                            'NVIDIA': false,
+                            'AMD': false,
+                            'TDP功耗|W': false,
+                            '晶体管数|亿': false
+                        }
+                    },
+                    dataZoom: [{
+                        //yAxisIndex: [0,2],
+                        start: getwidth().start2,
+                        end: 100,
+                    }, { //    yAxisIndex: [0,2],
+                    }],
+
+                    grid: [{
+                        show: false,
+                        left: getwidth().ls,
+                        top: getwidth().ts,
+                        bottom: getwidth().bs,
+                        width: getwidth().ws,
+
+                    }, {
+                        show: false,
+                        left: getwidth().ls2,
+                        bottom: getwidth().bs,
+                        top: getwidth().ts,
+                        width: getwidth().ws2,
+                    },],
+
+
+                    tooltip: {
+                        formatter: function (params) {
+                            if (AMDMulti[params.dataIndex].Name == params.name) {
+                                return gettip(AMDMulti[params.dataIndex]);
+                            } else {
+                                return gettip(AMDSingle[params.dataIndex]);
+                            }
+                        }
+                    },
+                    xAxis: [{
+                        type: 'value',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#90979c'
+                            }
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                        inverse: true,
+
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '00b200',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#fff',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }, {
+                        show: false
+                    }, {
+                        gridIndex: 1,
+                        xAxisIndex: 2,
+                        type: 'value',
+
+                        axisTick: {
+                            show: false,
+                        },
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#90979c'
+                            }
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#B2B2B2',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#cc0000',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }],
+                    yAxis: [{
+                        //type: 'value',
+                        position: 'right',
+
+                        //inverse: true,
+                        //axisLine: { show: false    },
+                        //axisTick: {    show: false    },
+                        show: false,
+                        xAxisIndex: 0,
+                        axisLabel: {
+                            show: enlabel, //function(){if(enlabel) return 'true';else return 'false'},
+                            // margin: 8,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: AMDMulti.map(function (user) {
+                            return user.Name
+                        }) //.slice(NVData.length - AMDCPU.length)
+                    }, {
+                        yAxisIndex: 1,
+                        show: false,
+                    }, {
+                        gridIndex: 1,
+                        yAxisIndex: 2,
+
+                        show: false,
+                        //inverse: true,
+                        //type: 'value',
+                        position: 'left',
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: AMDSingle.map(function (user) {
+                            return user.Name
+                        })
+                    }],
+
+                    series: [{
+                        name: '综合性能',
+                        type: "bar",
+                        symbol: 'circle',
+                        symbolSize: 20,
+                        barCategoryGap: 0.01,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(AMDMulti, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'insideRight',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: function (params) {
+                                        var paramsname = params.name;
+                                        if (!enlenged) paramsname = paramsname.replace('Intel ', '').replace('AMD ', '').replace('intel ', '');
+                                        if (enlabel) return paramsname + ' / ' + params.data + "% ";
+                                        else return '';
+                                    } //'{c}'
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: AMDMulti.map(function (user) {
+                            return user.MultiIndex
+                        }) //.slice(NVData.length - AMDCPU.length)
+                    },
+
+
+                        {
+                            type: "bar",
+                            name: '单核性能',
+                            symbol: 'circle',
+                            symbolSize: 20,
+                            barCategoryGap: 0.01,
+                            itemStyle: {
+                                normal: {
+                                    color: function (params) {
+                                        return getcolor(AMDSingle, params.dataIndex)
+                                    },
+                                    label: {
+                                        show: true,
+                                        position: 'insideLeft',
+                                        textStyle: {
+                                            color: '#fff',
+                                            fontSize: 10
+                                        },
+                                        formatter: function (params) {
+                                            var paramsname = params.name;
+                                            if (!enlenged) paramsname = paramsname.replace('Intel ', '').replace('AMD ', '').replace('intel ', '');
+                                            if (enlabel) return params.data + "%" + ' / ' + paramsname;
+                                            else return '';
+                                        } //'{c}'
+                                    },
+                                    shadowBlur: 20,
+                                    shadowColor: 'rgba(20, 20, 20, 0.5)'
+                                },
+                                emphasis: {
+                                    borderWidth: 2,
+                                    borderColor: colorList[3]
+                                }
+                            },
+                            data: AMDSingle.map(function (user) {
+                                return user.SingleIndex
+                            }) //.slice(NVData.length - AMDCPU.length)
+                        },
+                    ]
+                },
+
+
+                ///////////编年史----5
+                {
+                    title: {
+                        text: '编年史',
+                        subtext: "你仰望奇迹，我创造神奇",
+                    },
+                    legend: {
+                        //show: enlenged,
+                        data: ['Intel篇', 'AMD篇'],
+                        itemGap: myChart.getWidth() / 10,
+                        //textStyle: {color: '#bbb'   },
+                        selected: {
+                            '能耗比': false,
+                            'TDP功耗': true,
+                            'NVIDIA': false,
+                            'AMD': false,
+                            'TDP功耗|W': false,
+                            '晶体管数|亿': false
+                        }
+                    },
+                    dataZoom: [{
+                        //yAxisIndex: [0,2],
+                        start: getwidth().start2,
+                        end: 100,
+                    }, { //    yAxisIndex: [0,2],
+                    }],
+
+                    grid: [{
+                        show: false,
+                        left: getwidth().ls,
+                        top: getwidth().ts,
+                        bottom: getwidth().bs,
+                        width: getwidth().ws3,
+
+                    }, {
+                        show: false,
+                        right: getwidth().ls,
+                        bottom: getwidth().bs,
+                        top: getwidth().ts,
+                        width: getwidth().ws3,
+                    },],
+
+
+                    tooltip: {
+                        formatter: function (params) {
+                            if (params.color == colorList[2]) {
+                                return gettip(Intellaunch[params.dataIndex]);
+                            } else {
+                                return gettip(AMDlaunch[params.dataIndex]);
+                            }
+                        }
+                    },
+                    xAxis: [{
+                        type: 'value',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#90979c'
+                            }
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                        inverse: true,
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '00b200',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#fff',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }, {
+                        show: false
+                    }, {
+                        gridIndex: 1,
+                        xAxisIndex: 2,
+                        axisTick: {
+                            show: false,
+                        },
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#90979c'
+                            }
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#B2B2B2',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#cc0000',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }],
+                    yAxis: [{
+                        //type: 'value',
+                        //inverse: true,
+                        //axisLine: { show: false    },
+                        axisTick: {
+                            show: false
+                        },
+                        show: true,
+                        xAxisIndex: 0,
+                        axisLabel: {
+                            show: enlabel, //function(){if(enlabel) return 'true';else return 'false'},
+                            // margin: 8,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: Intellaunch.map(function (user) {
+                            return user.Released
+                        }) //.slice(NVData.length - AMDCPU.length)
+                    }, {
+                        yAxisIndex: 1,
+                        show: false,
+                    }, {
+                        gridIndex: 1,
+                        yAxisIndex: 2,
+
+                        show: true,
+                        //inverse: true,
+                        //type: 'value',
+                        position: 'left',
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: AMDlaunch.map(function (user) {
+                            return user.Released
+                        })
+                    }],
+
+                    series: [{
+                        name: 'Intel篇',
+                        type: "bar",
+                        symbol: 'circle',
+                        //stack:null,
+                        symbolSize: 20,
+                        barCategoryGap: 0.01,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(Intellaunch, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'insideRight',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: function (params) {
+                                        var paramsname = Intellaunch[params.dataIndex].Name;
+                                        if (!enlenged) paramsname = paramsname.replace('Intel ', '').replace('AMD ', '').replace('intel ', '');
+                                        if (enlabel) return paramsname + ' / ' + params.data + "% ";
+                                        else return '';
+                                    } //'{c}'
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: Intellaunch.map(function (user) {
+                            return user.MultiIndex
+                        }) //.slice(NVData.length - AMDCPU.length)
+                    },
+
+
+                        {
+                            type: "bar",
+                            name: 'AMD篇',
+                            symbol: 'circle',
+                            symbolSize: 20,
+                            barCategoryGap: 0.01,
+                            itemStyle: {
+                                normal: {
+                                    color: function (params) {
+                                        return getcolor(AMDlaunch, params.dataIndex)
+                                    },
+                                    label: {
+                                        show: true,
+                                        position: 'insideLeft',
+                                        textStyle: {
+                                            color: '#fff',
+                                            fontSize: 10
+                                        },
+                                        formatter: function (params) {
+                                            var paramsname = AMDlaunch[params.dataIndex].Name;
+                                            if (!enlenged) paramsname = paramsname.replace('Intel ', '').replace('AMD ', '').replace('intel ', '');
+                                            if (enlabel) return params.data + "%" + ' / ' + paramsname;
+                                            else return '';
+                                        } //'{c}'
+                                    },
+                                    shadowBlur: 20,
+                                    shadowColor: 'rgba(20, 20, 20, 0.5)'
+                                },
+                                emphasis: {
+                                    borderWidth: 2,
+                                    borderColor: colorList[3]
+                                }
+                            },
+                            data: AMDlaunch.map(function (user) {
+                                return user.MultiIndex
+                            }) //.slice(NVData.length - AMDCPU.length)
+                        },
+                    ]
+                },
+
+
+            ]
+        });
+
+    }
+
+
+    function getwidth() {
+        var winWidth = 0;
+        var ls = 0;
+        var ws = 0;
+        var tll = 0;
+        var tlw = 0;
+        var dz = 0;
+        var ts = 0;
+        var bs = 0;
+        var tlb = 0;
+        var ls2 = 0;
+        var ws2 = 0;
+        var ls3 = 0;
+        var ws3 = 0;
+        var winHeight = 0;
+        var datap = 0.8;
+        var lengtop = '7.25%';
+        var lenggap = 8;
+        tline = [{
+            value: '搜索',
+            tooltip: {
+                formatter: function (params) {
+                    return '快速搜索CPU信息';
+                }
+            },
+            symbol: 'arrow',//'diamond',
+            symbolOffset: [0, '-110%'],
+            itemStyle: {normal: {color: '#ffff00'}},
+            symbolSize: 22
+        }, '天梯榜', '能耗比', 'Intel', 'AMD', '编年史'];
+        winWidth = myChart.getWidth();
+        winHeight = myChart.getHeight();
+        if (winWidth < 800) enlenged = false;
+        if (winWidth > winHeight * 1.25) {
+            ls = 100 * (winWidth - 1.1 * winHeight) / 2 / winWidth;
+            ws = 49.7 - ls;
+            ws3 = (50 - ls) * winWidth / 100 - 60; //ws3=ws3+'%';
+            ws2 = ws / 1.1;
+            ws2 = ws2 + '%';
+            ls2 = ls + ws + 0.6;
+            dz = 96 - ls - ws * 2;
+            if (dz < 1) dz = 1;
+            ls2 = ls2 + '%';
+            dz = dz + '%';
+            ws = ws + "%";
+            ls = ls + "%";
+            tll = (winWidth - 0.9 * winHeight) / 2;
+            tlw = 0.9 * winHeight;
+            lenggap = winWidth / 10;
+        }
+        else {
+            ls = '4%';
+            ws = '45.8%';
+            ls2 = '50.4%';
+            tll = '8%';
+            tlw = '84%';
+            dz = '1%';
+            ws2 = '45%', ws3 = 46 * winWidth / 100 - 58;
+        }
+        //ls='22%';ws='28%';
+        ts = '10%';
+        bs = '8%';
+        tlb = 1;
+        datap = 0.82;
+        if (winWidth > winHeight && winHeight < 1380) {
+            ts = '11%';
+            bs = '9%';
+            tlb = 1;
+            datap = 0.80;
+        }
+        ;
+        if (winWidth > winHeight && winHeight < 1140) {
+            ts = '12.5%';
+            bs = '11%';
+            tlb = 2;
+            datap = 0.765;
+        }
+        ;
+        if (winWidth > winHeight && winHeight < 990) {
+            ts = '12.5%';
+            bs = '12%';
+            tlb = 2;
+            datap = 0.755;
+        }
+        ;
+        if (winWidth > winHeight && winHeight < 840) {
+            ts = '13%';
+            bs = '12.5%';
+            tlb = 2;
+            datap = 0.745;
+        }
+        ;
+        if (winWidth > winHeight && winHeight < 708) {
+            ts = '13%';
+            bs = '18%';
+            tlb = 15;
+            datap = 0.69;
+        }
+        ;
+        if (winWidth < winHeight && winHeight < 800) {
+            enlenged = false;
+            ts = '13%';
+            bs = '12%';
+            tlb = 2;
+            datap = 0.75;
+            //tline = [ 'CPU天梯榜','全排行','NVIDIA显卡', 'AMD显卡', '编年史' ]; //'华山论剑',
+            if (winHeight < 500) {
+                ts = '14%';
+                bs = '15%';
+                tlb = 5;
+                datap = 0.71;
+            }
+            ;
+        }
+
+        var dzw = 7 + winWidth / 100;
+        var start0 = 100 - winHeight * datap / 35 * 100 / CPUSI.length / Math.sqrt(winHeight / 900);
+        var start1 = 100 - winHeight * datap / 40 * 200 / CPUSI.length / Math.sqrt(winHeight / 900);
+        var start2 = 100 - winHeight * datap / 30 * 200 / CPUSI.length / Math.sqrt(winHeight / 900);
+        //alert(winWidth+" "+winHeight+" "+bs);
+
+        return {
+            ls,
+            ws,
+            tll,
+            tlw,
+            dz,
+            ts,
+            bs,
+            tlb,
+            winWidth,
+            dzw,
+            winHeight,
+            start0,
+            start1,
+            start2,
+            lengtop,
+            ls2,
+            ws2,
+            ls3,
+            ws3
+        };
+    }
+
+
+    function gettip(tip) {
+        var n = getpost(tip.Name);
+        var v1 = '<font color=#ffff00>' + tip.Name + '</font><br />综合性能：' + tip.MultiIndex + ' * 排名：' + getmultirank(tip.MultiIndex) +
+            //'　击败' + ((MultiIndex.length- getmultirank(tip.MultiIndex)+1)/MultiIndex.length*100).toFixed(1)+ '%对手' +
+            '<br />单核性能：' + tip.SingleIndex + ' * 排名：' + getsinglerank(tip.SingleIndex) + '<br /><font color=#999>—————————————</font>';
+        //'　击败' + ((SingleIndex.length- getsinglerank(tip.SingleIndex)+1)/SingleIndex.length*100).toFixed(1)+ '%对手'  +
+        var v2 = '<br />核心代号：' + tip.Codename +
+            '<br />基础频率：' + tip.Clock + setboost(n, tip.BoostClock) +
+            '<br />核心线程：' + getct(tip.Cores, tip.Name, tip.Codename) +
+            '<br />缓存大小：' + setcache(tip.Cache, n);
+        var v3 = '<br />制程工艺：' + tip.Process + ' nm' +
+            '<br />散热功耗：' + tip.TDP + ' W<br />接口插槽：' + tip.Socket +
+            '<br />发布时间：' + tip.Released + '<br />发布价格：' + tip.Price.replace('*', '');
+        /* if(n>=0){
+         var v2 = '<br />核心代号：' + ARK[n].Codename + '<br />基础频率：' + ARK[n].Clock + ' GHz<br />最大睿频：' + ARK[n].BoostClock +
+         ' GHz<br />核心 / 线程：' + ARK[n].Cores +' / '+ARK[n].Threads+'<br />缓存：' + ARK[n].Cache + '<br />制程：' + ARK[n].Process+
+         ' nm<br />TDP：' + ARK[n].TDP + '<br />Socket：' + ARK[n].Socket + '<br />发布时间：' + ARK[n].Released + '<br />发布价格：' + ARK[n].Price;
+         var v3 = '<br />核显：' + ARK[n].Display + '<br />核显频率：' + ARK[n].Videoclock +'MHz - '+ ARK[n].Videomaxclock +'GHz<br />PCIe通道数：' + ARK[n].PCIlens + '<br />晶体管数：' + ARK[n].Tcount;
+         }*/
+        var dc = '';
+        if (tip.Review > 0) dc = '';
+
+        return v1 + v2 + setdisp(n) + v3 + dc;
+    }
+
+    function setcache(s, n) {
+        if (n >= 0) {
+            if (typeof(ARK[n].Cache) != 'undefined') return ARK[n].Cache;
+        }
+        return s;
+    }
+
+    function setboost(n, s) {
+        if (typeof(s) != 'undefined') return ' MHz<br />最大睿频：' + s + ' MHz';
+        if (n >= 0) {
+            if (typeof(ARK[n].BoostClock) != 'undefined') return ' MHz<br />最大睿频：' + ARK[n].BoostClock * 1000 + ' MHz';
+        }
+        return ' MHz';
+    }
+
+    function setdisp(n) {
+        var d1 = '';
+        var d2 = '';
+        var d3 = '';
+        var d4 = '';
+        if (n >= 0) {
+            if (typeof(ARK[n].Display) != 'undefined') d1 = '<br />核显：' + ARK[n].Display;
+            if (typeof(ARK[n].Videoclock) != 'undefined') d2 = '<br />核显频率：' + ARK[n].Videoclock + ' MHz';
+            if (typeof(ARK[n].PCIlens) != 'undefined') d3 = '<br />PCIe通道数：' + ARK[n].PCIlens;
+            if (typeof(ARK[n].Tcount) != 'undefined') d4 = '<br />晶体管数：' + ARK[n].Tcount + ' M';
+        }
+        return d1 + d2 + d3 + d4;
+    }
+
+
+    function getct(c, n, code) {
+        var tn = 1;
+        var cn = c.replace('C', '');
+        if (n.indexOf('i9-') > 0 || n.indexOf('Threadripper') > 0 || n.indexOf('i7-') > 0 || n.indexOf('Xeon') > 0 || n.indexOf('i3-') > 0 || n.indexOf('Ryzen 5') > 0 || n.indexOf('Ryzen 7') > 0 || n.indexOf('G4560') > 0 || n.indexOf('G4600') > 0 || n.indexOf('G4620') > 0) tn = 2;
+        if (n.indexOf('i5-') > 0 && code.indexOf('Clarkdale') >= 0) tn = 2;
+        if (n.indexOf('i3-8') > 0 || n.indexOf('i7-9700') > 0) tn = 1;
+        return c + ' / ' + cn * tn + 'T'
+    }
+
+    function getmultirank(p) {
+        for (var i = 0; i < MultiIndex.length; i++) {
+            if (MultiIndex[i].MultiIndex == p) return MultiIndex.length - i;
+        }
+    }
+
+    function getsinglerank(p) {
+        for (var i = 0; i < SingleIndex.length; i++) {
+            if (SingleIndex[i].SingleIndex == p) return SingleIndex.length - i;
+        }
+    }
+
+    function getcolor(arr, i) {
+        var Cts = arr[i].Name;
+        var setcolor = 0;
+        if (Cts.indexOf('AMD') >= 0) setcolor = 0;
+        if (Cts.indexOf('VIA') >= 0) setcolor = 4;
+        if (Cts.indexOf('Intel') >= 0) setcolor = 2;
+        return colorList[setcolor];
+    }
+
+
+    function getlanuchdata(arr) {
+        var ldata = arr.concat();
+        return ldata.sort(function (a, b) {
+            return a.Released - b.Released;
+        });
+    }
+
+    function getbrand(s) {
+        var compdata = CPUSI.concat();
+        for (var i = CPUSI.length - 1; i >= 0; i--) {
+            //if(!enlenged) compdata[i].Name=compdata[i].Name.replace('Intel ','').replace('AMD ','').replace('intel ','');
+            if (CPUSI[i].Name.indexOf(s) < 0) {
+                compdata.splice(i, 1);
+            }
+        }
+        return compdata.sort(function (a, b) {
+            return a.MultiIndex - b.MultiIndex;
+        });
+    }
+
+    function InitData() {
+        ARK.map(function (user) {
+            var name = user.Name.split(' (');
+            user.Name = name[0];
+            return user
+        });
+
+        CPUSI = [];
+        IntelCPU = [];
+        AMDCPU = [];
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        month = (month < 10 ? "0" + month : month);
+        var curdate = year + '.' + month;
+
+        for (var i = 0; i < intelData.length; i++) {
+            if (typeof(intelData[i].MultiIndex) == 'undefined' || typeof(intelData[i].SingleIndex) == 'undefined' || typeof(intelData[i].Released) == 'undefined' || typeof(intelData[i].TDP) == 'undefined') intelData[i].Released = 1;
+            if (curdate - intelData[i].Released <= Whenago) IntelCPU.push(intelData[i]);
+        }
+        for (var i = 0; i < amdData.length; i++) {
+            if (typeof(amdData[i].MultiIndex) == 'undefined' || typeof(amdData[i].SingleIndex) == 'undefined' || typeof(amdData[i].Released) == 'undefined' || typeof(amdData[i].TDP) == 'undefined') amdData[i].Released = 1;
+            if (curdate - amdData[i].Released <= Whenago) AMDCPU.push(amdData[i]);
+        }
+        CPUSI = IntelCPU.concat(AMDCPU);
+    }
+
+    function getpost(s) {
+        if (s.indexOf('Intel') < 0) return -1;
+        var sn = s.replace('Intel ', '').replace('AMD ', '').replace(/ /g, '').toLowerCase();
+        for (var i = 0; i < ARK.length; i++) {
+            if (ARK[i].Name.replace(/ /g, '').toLowerCase() == sn) return i;
+        }
+        return -1;
+    }
+
+    function getpost2(s) {
+        for (var i = 0; i < CPUSI.length; i++) {
+            if (CPUSI[i].Name == s) return i;
+        }
+        return -1;
+    }
+
+    function mysearch() {
+        var name = prompt("请输入关键字(如i7-7700K，尽量准确)", "");
+        if (name) {
+            var sn = name.toLowerCase().replace('intel', '').replace('amd', '').replace('-', '').replace(/ /g, '');
+            var i = -1;
+            var nl = 1000;
+            var t = [];
+            for (var j = MultiIndex.length - 1; j >= 0; j--) {
+                var cpuname = MultiIndex[j].Name.replace('Intel', '').replace('AMD', '').replace('-', '').replace(/ /g, '').toLowerCase().replace(sn + 'mhz', '');
+                if (cpuname.indexOf(sn) >= 0) {
+                    if (cpuname.length < nl) {
+                        nl = cpuname.length;
+                        i = j
+                    }
+                    t.push(MultiIndex[j].Name.replace('Intel', '').replace('AMD', ''));
+                }
+            }
+            if (i >= 0) {
+                var pos = Math.ceil(myChart.getHeight() * 0.75 / 266);
+                if (t.length > 1) alert('共找到' + t.length + '个CPU：' + t + '，将显示匹配度较高的一个。');
+                var yx = MultiIndex.map(function (user) {
+                    return user.Name
+                });
+                myChart.dispatchAction({
+                    type: 'dataZoom',
+                    startValue: yx[Math.max(i - 3 * pos, 0)],
+                    endValue: yx[Math.min(i + pos, yx.length - 1)],
+                });
+
+                myChart.dispatchAction({
+                    type: 'highlight',
+                    // 可选，系列 index，可以是一个数组指定多个系列
+                    //seriesIndex?: number|Array,
+                    // 可选，系列名称，可以是一个数组指定多个系列
+                    //seriesName?: string|Array,
+                    // 可选，数据的 index
+                    dataIndex: i,
+                    // 可选，数据的 名称
+                    //name: MultiIndex[j].Name
+                });
+                return;
+            } else {
+                alert('抱歉，没有找到！');
+                setop();
+            }
+        }
+        else setop();
+    }
+
+    myChart.on('click', function (params) { // ecConfig.EVENT.CLICK
+        if (params.name == '搜索') mysearch();
+        var curtime = new Date().getTime();
+        if (curtime - clicktime > 500) {
+            clicktime = new Date().getTime();
+            return;
+        }
+        ;
+        if (params.componentType == 'timeline') {
+            return;
+        }
+
+        var pname = params.name;
+        if (pname.length < 11 && pname.indexOf('.') > 0) {
+            if (pname == Intellaunch[params.dataIndex].Released) {
+                pname = Intellaunch[params.dataIndex].Name;
+            } else if (pname == AMDlaunch[params.dataIndex].Released) {
+                pname = AMDlaunch[params.dataIndex].Name;
+            }
+
+        }
+        var i = getpost2(pname);
+        //alert(i+" "+pname+' '+SPEC[i].Review);
+        if (i >= 0 && typeof(CPUSI[i].Review) != 'undefined') window.open('http://www.expreview.com/' + CPUSI[i].Review.replace(/ /g, '') + '.html');
+        else window.open('https://www.baidu.com/s?ie=UTF-8&wd=' + encodeURIComponent(pname));
+        //window.open('https://www.baidu.com/s?ie=UTF-8&wd=site%3Awww.expreview.com+'+ encodeURIComponent(pname));
+    });
+
+    setop();
+    if (option && typeof option === "object") {
+        //myChart.setOption(option, true);
+    }
+    window.onresize = myChart.resize;
+    //********************结束
+</script>
+
+</body>
+</html>

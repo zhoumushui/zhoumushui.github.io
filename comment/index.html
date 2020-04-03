@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Message</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../resource/css/app-1.min.css" rel="stylesheet">
+
+    <!-- AZ CSS -->
+    <link href="../resource/css/az.css" rel="stylesheet">
+
+    <!-- Android Background -->
+    <link href="../resource/css/zms.android.css" rel="stylesheet">
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../resource/css/essay.material.floating.button.css" rel="stylesheet">
+
+    <style>
+        .gc-comments {
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">留</a>
+            <a href="" data-toggle="tab">言</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <div class="card">
+
+            <!--
+            AZ Share: Material Floating Button;
+            Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+            Position:mfb-component--br,bl,tr,tl;
+            Action:hover,click
+            -->
+            <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+
+            <script>
+                var essayTitle = '留言';
+                var essaySummary = '欢迎留言~';
+                var essayUrl = 'http://www.zhoumushui.com/message.html';
+                //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+            </script>
+
+            <script src="js/nimojs.github.comments.js"></script>
+            <div class="gc-comments essay-comment" data-repos="zhoumushui/zhoumushui.github.io" data-issues="1">
+                <div class="gc-comments-title">
+                    <i class="zmdi zmdi-comment-text"></i> 留言
+                </div>
+                <div class="gc-comments-info">
+                    想在此留言，请访问 <a href="{{issues_link}}">GitHub</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <link rel="stylesheet" href="../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Hide notify message when page loaded. -->
+<!--<script src="js/misc.js"></script>-->
+
+<!-- Site Functions & Actions -->
+<script src="../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../resource/js/canvas-nest.min.js"></script>
+
+<!-- Toolbox -->
+<script src="../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 1;</script>
+<script src="../resource/js/zms.page.pattern.js"></script>
+</body>
+</html>

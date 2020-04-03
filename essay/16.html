@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../resource/css/az.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <script src="../resource/js/google.prettify.js"></script>
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../resource/css/essay.material.floating.button.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <div class="card">
+            <div class="action-header">
+                <span class="actions essay-back-arrow">
+                    <a href="../essay.html"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title"><i class="zmdi zmdi-select-all"></i> GPU</span>
+                <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-select-all"></i>&nbsp;<span class="essay-type">GPU.list</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2017-10-30 16:30</span>
+                </span>
+
+                <!--
+                AZ Share: Material Floating Button;
+                Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+                Position:mfb-component--br,bl,tr,tl;
+                Action:hover,click
+                -->
+                <script>
+                    var essayTitle = 'GPU';
+                    var essaySummary = 'GPU List';
+                    var essayUrl = 'http://www.zhoumushui.com/essay/16.html';
+                    // var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                    var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+                </script>
+                <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+            </div>
+
+
+            <div class="card__body"><!-- HIDE style="display: none" -->
+                <div class="table-responsive">
+                    <!-- id="data-table-basic,data-table-selection,data-table-command" -->
+                    <table id="table-gpu-list" class="table table-striped"
+                           style="font-family: 'Microsoft YaHei', sans-serif">
+                        <thead>
+                        <tr>
+                            <th data-column-id="brand" data-formatter="brand">Brand</th>
+                            <th data-column-id="name" data-formatter="name">Name</th>
+                            <th data-column-id="sp" data-type="numeric">SP</th><!-- Stream Processor -->
+                            <th data-column-id="texture" data-type="numeric">Texture</th>
+                            <th data-column-id="rops" data-type="numeric">ROPs</th>
+                            <th data-column-id="clock_base" data-formatter="clock_base" data-type="numeric">Base</th>
+                            <th data-column-id="clock_boost" data-formatter="clock_boost" data-type="numeric">Boost</th>
+                            <th data-column-id="memory">Memory</th>
+                            <th data-column-id="memory_bandwidth" data-type="numeric">bit</th><!-- Bandwidth -->
+                            <th data-column-id="lithography" data-type="numeric">nm</th>
+                            <th data-column-id="architecture">Code</th><!-- Architecture -->
+                            <th data-column-id="directX" data-visible="false">DX</th>
+                            <th data-column-id="tdp" data-formatter="tdp" data-type="numeric">TDP</th>
+                            <th data-column-id="date">Date</th>
+                            <th data-column-id="precision-half" data-formatter="precision-half" data-type="numeric"
+                                data-visible="false">Half
+                            </th>
+                            <th data-column-id="precision-single" data-formatter="precision-single" data-type="numeric"
+                                data-visible="false">Single
+                            </th>
+                            <th data-column-id="precision-double" data-formatter="precision-double" data-type="numeric"
+                                data-visible="false">Double
+                            </th>
+                            <!-- data-order="desc,asc" -->
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>nVIDIA</td><!-- Brand -->
+                            <td>Titan V</td><!-- Name -->
+                            <td>5120</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>426</td><!-- Texture Units 纹理单元 -->
+                            <td>96</td><!-- ROPs光栅单元 -->
+                            <td>1200</td><!-- Base Clock(MHz) -->
+                            <td>1455</td><!-- Boost Clock(MHz) -->
+                            <td>12GB HBM2</td><!-- Memory:Frame Buffer -->
+                            <td>3072</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>12</td><!-- Lithography(nm) -->
+                            <td>Volta</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>250</td><!-- TDP -->
+                            <td>2017.12</td><!-- Launch Date -->
+                            <td>30.0</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>15.0</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>7.5</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>nVIDIA</td><!-- Brand -->
+                            <td>GTX 1080Ti</td><!-- Name -->
+                            <td>3584</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>224</td><!-- Texture Units 纹理单元 -->
+                            <td>88</td><!-- ROPs光栅单元 -->
+                            <td>1480</td><!-- Base Clock(MHz) -->
+                            <td>1582</td><!-- Boost Clock(MHz) -->
+                            <td>11GB GDDR5X</td><!-- Memory:Frame Buffer -->
+                            <td>352</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>16</td><!-- Lithography(nm) -->
+                            <td>Pascal</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>250</td><!-- TDP -->
+                            <td>2017.03</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>11.5</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>nVIDIA</td><!-- Brand -->
+                            <td>Titan X</td><!-- Name -->
+                            <td>3584</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>224</td><!-- Texture Units 纹理单元 -->
+                            <td>96</td><!-- ROPs光栅单元 -->
+                            <td>1418</td><!-- Base Clock(MHz) -->
+                            <td>1531</td><!-- Boost Clock(MHz) -->
+                            <td>12GB GDDR5X</td><!-- Memory:Frame Buffer -->
+                            <td>384</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>16</td><!-- Lithography(nm) -->
+                            <td>Pascal</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>250</td><!-- TDP -->
+                            <td>2016.04</td><!-- Launch Date -->
+                            <td>0.19</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>11.0</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>0.38</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>VEGA 64(Liquid)</td><!-- Name -->
+                            <td>4096</td><!-- SP:Stream Processor 流处理器,着色器 -->
+                            <td>256</td><!-- Texture Units 纹理单元 -->
+                            <td>64</td><!-- ROPs光栅单元 -->
+                            <td>1406</td><!-- Base Clock(MHz) -->
+                            <td>1677</td><!-- Boost Clock(MHz) -->
+                            <td>8GB HBM2</td><!-- Memory:Frame Buffer -->
+                            <td>2048</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>Polaris</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>345</td><!-- TDP -->
+                            <td>2017.07</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>12.7</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>VEGA 64(Air)</td><!-- Name -->
+                            <td>4096</td><!-- SP:Stream Processor 流处理器,着色器 -->
+                            <td>256</td><!-- Texture Units 纹理单元 -->
+                            <td>64</td><!-- ROPs光栅单元 -->
+                            <td>1247</td><!-- Base Clock(MHz) -->
+                            <td>1546</td><!-- Boost Clock(MHz) -->
+                            <td>8GB HBM2</td><!-- Memory:Frame Buffer -->
+                            <td>2048</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>Polaris</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>295</td><!-- TDP -->
+                            <td>2017.07</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>12.7</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>nVIDIA</td><!-- Brand -->
+                            <td>GTX 1080</td><!-- Name -->
+                            <td>2560</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>160</td><!-- Texture Units 纹理单元 -->
+                            <td>64</td><!-- ROPs光栅单元 -->
+                            <td>1607</td><!-- Base Clock(MHz) -->
+                            <td>1733</td><!-- Boost Clock(MHz) -->
+                            <td>8GB GDDR5X</td><!-- Memory:Frame Buffer -->
+                            <td>256</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>16</td><!-- Lithography(nm) -->
+                            <td>Pascal</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>180</td><!-- TDP -->
+                            <td>2016.07</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>9</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>nVIDIA</td><!-- Brand -->
+                            <td>GTX 1070Ti</td><!-- Name -->
+                            <td>2432</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>152</td><!-- Texture Units 纹理单元 -->
+                            <td>64</td><!-- ROPs光栅单元 -->
+                            <td>1607</td><!-- Base Clock(MHz) -->
+                            <td>1683</td><!-- Boost Clock(MHz) -->
+                            <td>8GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>256</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>16</td><!-- Lithography(nm) -->
+                            <td>Pascal</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>180</td><!-- TDP -->
+                            <td>2017.10</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>VEGA 56</td><!-- Name -->
+                            <td>3584</td><!-- SP:Stream Processor 流处理器,着色器 -->
+                            <td>256</td><!-- Texture Units 纹理单元 -->
+                            <td>56</td><!-- ROPs光栅单元 -->
+                            <td>1156</td><!-- Base Clock(MHz) -->
+                            <td>1471</td><!-- Boost Clock(MHz) -->
+                            <td>8GB HBM2</td><!-- Memory:Frame Buffer -->
+                            <td>2048</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>Polaris</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>210</td><!-- TDP -->
+                            <td>2017.07</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>10.5</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>nVIDIA</td><!-- Brand -->
+                            <td>GTX 1070</td><!-- Name -->
+                            <td>1920</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>120</td><!-- Texture Units 纹理单元 -->
+                            <td>64</td><!-- ROPs光栅单元 -->
+                            <td>1506</td><!-- Base Clock(MHz) -->
+                            <td>1683</td><!-- Boost Clock(MHz) -->
+                            <td>8GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>256</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>16</td><!-- Lithography(nm) -->
+                            <td>Pascal</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>150</td><!-- TDP -->
+                            <td>2016.07</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>6.5</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RX 580</td><!-- Name -->
+                            <td>2304</td><!-- SP:Stream Processor 流处理器,着色器 -->
+                            <td>144</td><!-- Texture Units 纹理单元 -->
+                            <td>32</td><!-- ROPs光栅单元 -->
+                            <td>1257</td><!-- Base Clock(MHz) -->
+                            <td>1304</td><!-- Boost Clock(MHz) -->
+                            <td>8GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>256</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>Polaris</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>185</td><!-- TDP -->
+                            <td>2017.04</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>6.2</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>nVIDIA</td><!-- Brand -->
+                            <td>GTX 1060(6G)</td><!-- Name -->
+                            <td>1280</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>80</td><!-- Texture Units 纹理单元 -->
+                            <td>48</td><!-- ROPs光栅单元 -->
+                            <td>1506</td><!-- Base Clock(MHz) -->
+                            <td>1708</td><!-- Boost Clock(MHz) -->
+                            <td>6GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>192</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>16</td><!-- Lithography(nm) -->
+                            <td>Pascal</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>120</td><!-- TDP -->
+                            <td>2016.07</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>4.4</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RX 480</td><!-- Name -->
+                            <td>2304</td><!-- SP:Stream Processor 流处理器,着色器 -->
+                            <td>144</td><!-- Texture Units 纹理单元 -->
+                            <td>32</td><!-- ROPs光栅单元 -->
+                            <td>1120</td><!-- Base Clock(MHz) -->
+                            <td>1266</td><!-- Boost Clock(MHz) -->
+                            <td>8GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>256</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>Polaris</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>150</td><!-- TDP -->
+                            <td>2016.06</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>5.8</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>nVIDIA</td><!-- Brand -->
+                            <td>GTX 1060(3G)</td><!-- Name -->
+                            <td>1152</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>72</td><!-- Texture Units 纹理单元 -->
+                            <td>48</td><!-- ROPs光栅单元 -->
+                            <td>1506</td><!-- Base Clock(MHz) -->
+                            <td>1708</td><!-- Boost Clock(MHz) -->
+                            <td>3GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>192</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>16</td><!-- Lithography(nm) -->
+                            <td>Pascal</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>120</td><!-- TDP -->
+                            <td>2016.07</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>4</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RX 570</td><!-- Name -->
+                            <td>2048</td><!-- SP:Stream Processor 流处理器,着色器 -->
+                            <td>128</td><!-- Texture Units 纹理单元 -->
+                            <td>32</td><!-- ROPs光栅单元 -->
+                            <td>1168</td><!-- Base Clock(MHz) -->
+                            <td>1244</td><!-- Boost Clock(MHz) -->
+                            <td>4GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>256</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>Polaris</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>150</td><!-- TDP -->
+                            <td>2017.04</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>5.1</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RX 470</td><!-- Name -->
+                            <td>2048</td><!-- SP:Stream Processor 流处理器,着色器 -->
+                            <td>128</td><!-- Texture Units 纹理单元 -->
+                            <td>32</td><!-- ROPs光栅单元 -->
+                            <td>926</td><!-- Base Clock(MHz) -->
+                            <td>926</td><!-- Boost Clock(MHz) -->
+                            <td>8GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>256</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>Polaris</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>150</td><!-- TDP -->
+                            <td>2016.08</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>4.9</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RX 470D</td><!-- Name -->
+                            <td>1792</td><!-- SP:Stream Processor 流处理器,着色器 -->
+                            <td>112</td><!-- Texture Units 纹理单元 -->
+                            <td>32</td><!-- ROPs光栅单元 -->
+                            <td>1226</td><!-- Base Clock(MHz) -->
+                            <td>1226</td><!-- Boost Clock(MHz) -->
+                            <td>4GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>256</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>Polaris</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>150</td><!-- TDP -->
+                            <td>2016.08</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>4.9</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>nVIDIA</td><!-- Brand -->
+                            <td>GTX 1050Ti</td><!-- Name -->
+                            <td>768</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>64</td><!-- Texture Units 纹理单元 -->
+                            <td>32</td><!-- ROPs光栅单元 -->
+                            <td>1290</td><!-- Base Clock(MHz) -->
+                            <td>1392</td><!-- Boost Clock(MHz) -->
+                            <td>4GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>128</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>Pascal</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>75</td><!-- TDP -->
+                            <td>2016.10</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>nVIDIA</td><!-- Brand -->
+                            <td>GTX 1050</td><!-- Name -->
+                            <td>640</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>40</td><!-- Texture Units 纹理单元 -->
+                            <td>32</td><!-- ROPs光栅单元 -->
+                            <td>1354</td><!-- Base Clock(MHz) -->
+                            <td>1455</td><!-- Boost Clock(MHz) -->
+                            <td>2GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>128</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>Pascal</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>75</td><!-- TDP -->
+                            <td>2016.10</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RX 560</td><!-- Name -->
+                            <td>1024</td><!-- SP:Stream Processor 流处理器,着色器 -->
+                            <td>64</td><!-- Texture Units 纹理单元 -->
+                            <td>16</td><!-- ROPs光栅单元 -->
+                            <td>1175</td><!-- Base Clock(MHz) -->
+                            <td>1275</td><!-- Boost Clock(MHz) -->
+                            <td>4GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>128</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>Polaris</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>75</td><!-- TDP -->
+                            <td>2017.05</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>2.6</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RX 460</td><!-- Name -->
+                            <td>896</td><!-- SP:Stream Processor 流处理器,着色器 -->
+                            <td>56</td><!-- Texture Units 纹理单元 -->
+                            <td>16</td><!-- ROPs光栅单元 -->
+                            <td>1090</td><!-- Base Clock(MHz) -->
+                            <td>1200</td><!-- Boost Clock(MHz) -->
+                            <td>4GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>128</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>Polaris</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>75</td><!-- TDP -->
+                            <td>2016.08</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>2.2</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RX 550</td><!-- Name -->
+                            <td>512</td><!-- SP:Stream Processor 流处理器,着色器 -->
+                            <td>32</td><!-- Texture Units 纹理单元 -->
+                            <td>16</td><!-- ROPs光栅单元 -->
+                            <td>1183</td><!-- Base Clock(MHz) -->
+                            <td>1183</td><!-- Boost Clock(MHz) -->
+                            <td>2GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>128</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>Polaris</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>50</td><!-- TDP -->
+                            <td>2017.04</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>nVIDIA</td><!-- Brand -->
+                            <td>GT 1030</td><!-- Name -->
+                            <td>384</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>32</td><!-- Texture Units 纹理单元 -->
+                            <td>16</td><!-- ROPs光栅单元 -->
+                            <td>1228</td><!-- Base Clock(MHz) -->
+                            <td>1468</td><!-- Boost Clock(MHz) -->
+                            <td>2GB GDDR5</td><!-- Memory:Frame Buffer -->
+                            <td>64</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>Pascal</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>30</td><!-- TDP -->
+                            <td>2017.05</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>Iris Pro 6200</td><!-- Name -->
+                            <td>48</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>16</td><!-- Texture Units 纹理单元 -->
+                            <td>8</td><!-- ROPs光栅单元 -->
+                            <td>300</td><!-- Base Clock(MHz) -->
+                            <td>1150</td><!-- Boost Clock(MHz) -->
+                            <td>-</td><!-- Memory:Frame Buffer -->
+                            <td>128</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>i7-5775C</td><!-- Architecture -->
+                            <td>12</td><!-- DirectX -->
+                            <td>-</td><!-- TDP -->
+                            <td>2014.06</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>HD530</td><!-- Name -->
+                            <td>24</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>16</td><!-- Texture Units 纹理单元 -->
+                            <td>8</td><!-- ROPs光栅单元 -->
+                            <td>300</td><!-- Base Clock(MHz) -->
+                            <td>1150</td><!-- Boost Clock(MHz) -->
+                            <td>-</td><!-- Memory:Frame Buffer -->
+                            <td>128</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>i7-6700K</td><!-- Architecture -->
+                            <td>11</td><!-- DirectX -->
+                            <td>-</td><!-- TDP -->
+                            <td>2015.08</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>nVIDIA</td><!-- Brand -->
+                            <td>GT555M</td><!-- Name -->
+                            <td>144</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>-</td><!-- Texture Units 纹理单元 -->
+                            <td>16</td><!-- ROPs光栅单元 -->
+                            <td>590</td><!-- Base Clock(MHz) -->
+                            <td>590</td><!-- Boost Clock(MHz) -->
+                            <td>2GB DDR3</td><!-- Memory:Frame Buffer -->
+                            <td>128</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>40</td><!-- Lithography(nm) -->
+                            <td>GF106</td><!-- Architecture -->
+                            <td>11</td><!-- DirectX -->
+                            <td>-</td><!-- TDP -->
+                            <td>2011.01</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>nVIDIA</td><!-- Brand -->
+                            <td>GT720M</td><!-- Name -->
+                            <td>96</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>16</td><!-- Texture Units 纹理单元 -->
+                            <td>8</td><!-- ROPs光栅单元 -->
+                            <td>625</td><!-- Base Clock(MHz) -->
+                            <td>938</td><!-- Boost Clock(MHz) -->
+                            <td>1GB DDR3</td><!-- Memory:Frame Buffer -->
+                            <td>64</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>28</td><!-- Lithography(nm) -->
+                            <td>GF117</td><!-- Architecture -->
+                            <td>11</td><!-- DirectX -->
+                            <td>-</td><!-- TDP -->
+                            <td>-</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        <tr>
+                            <td>nVIDIA</td><!-- Brand -->
+                            <td>GF210</td><!-- Name -->
+                            <td>16</td><!-- SP:Stream Processor 流处理器,着色器-->
+                            <td>8</td><!-- Texture Units 纹理单元 -->
+                            <td>4</td><!-- ROPs光栅单元 -->
+                            <td>589</td><!-- Base Clock(MHz) -->
+                            <td>589</td><!-- Boost Clock(MHz) -->
+                            <td>128MB</td><!-- Memory:Frame Buffer -->
+                            <td>64</td><!-- Memory Bandwidth(bit)显存位宽 -->
+                            <td>40</td><!-- Lithography(nm) -->
+                            <td>GT218</td><!-- Architecture -->
+                            <td>10</td><!-- DirectX -->
+                            <td>30</td><!-- TDP -->
+                            <td>2009.09</td><!-- Launch Date -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Half Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Single Precision) -->
+                            <td>-</td><!-- TFLOPS每秒浮点运算次数(Double Precision) -->
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <link rel="stylesheet" href="../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<script src="../resource/js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../resource/js/canvas-nest.min.js"></script>
+
+<script src="../resource/js/essay.material.floating.button.js"></script>
+<script type="text/javascript">
+    var panel = document.getElementById('panel'),
+        menu = document.getElementById('menu'),
+        showcode = document.getElementById('showcode'),
+        selectFx = document.getElementById('selections-fx'),
+        selectPos = document.getElementById('selections-pos'),
+        // demo defaults
+        effect = 'mfb-zoomin',
+        pos = 'mfb-component--br';
+
+    showcode.addEventListener('click', _toggleCode);
+    selectFx.addEventListener('change', switchEffect);
+    selectPos.addEventListener('change', switchPos);
+
+    function _toggleCode() {
+        panel.classList.toggle('viewCode');
+    }
+
+    function switchEffect(e) {
+        effect = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function switchPos(e) {
+        pos = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function renderMenu() {
+        menu.style.display = 'none';
+        // ?:-)
+        setTimeout(function () {
+            menu.style.display = 'block';
+            menu.className = pos + effect;
+        }, 1);
+    }
+</script>
+
+<!-- Flot Charts -->
+<script src="../resource/js/flot-charts/curved-line.js"></script>
+<script src="../resource/js/sparkline-charts.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.pie.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.resize.js"></script>
+<script src="../vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+<!-- Sparkline Charts -->
+<script src="../vendors/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+
+<!-- Toolbox -->
+<script src="../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 1;</script>
+<script src="../resource/js/zms.page.pattern.js"></script>
+<script>
+    // AZ: for lists of GPU page.
+    $("#table-gpu-list").bootgrid({
+        ajax: false,
+        selection: false, // AZ:Show Select Icon
+        rowCount: 1000, // AZ: -1 mains show all
+        //Override default icon classes
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "brand": function (column, row) {
+                switch (row.brand) {
+                    case 'nVIDIA':
+                        return "<span class=\"gpu-brand-nvidia\">" + row.brand + "</span>";
+                    case 'AMD':
+                        return "<span class=\"cpu-brand-amd\">" + row.brand + "</span>";
+                    case 'Intel':
+                        return "<span class=\"cpu-brand-intel\">" + row.brand + "</span>";
+                    default:
+                        return row.brand;
+                }
+            },
+            "name": function (column, row) {
+                switch (row.name) {
+                    case 'GTX 1060(6G)':
+                    case 'GT555M':
+                    case 'GT720M':
+                    case 'GF210':
+                    case 'HD530':
+                        return "<span class=\"cpu-used\">" + row.name + "</span>";
+                    default:
+                        return row.name;
+                }
+            },
+            "clock_base": function (column, row) {
+                return row.clock_base;
+            },
+            "clock_boost": function (column, row) {
+                return row.clock_boost;
+            },
+            "tdp": function (column, row) {
+                var tdp = row.tdp;
+                if (tdp < 0) {
+                    return tdp;
+                } else if (tdp < 100) {
+                    return "<span class=\"cpu-tdp-low\">" + tdp + "</span>";
+                } else if (tdp < 200) {
+                    return "<span class=\"cpu-tdp-middle\">" + tdp + "</span>";
+                } else {
+                    return "<span class=\"cpu-tdp-high\">" + tdp + "</span>";
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

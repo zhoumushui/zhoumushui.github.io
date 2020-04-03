@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>中保研测试汇总</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../css/az.css" rel="stylesheet">
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../css/essay.material.floating.button.css" rel="stylesheet">
+    <style>
+        .country-flag {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+        }
+
+        .car-logo {
+            width: 24px; /* 30px;3 */
+            height: 16px; /* 20px;2 */
+            margin-right: 15px; /* 18px */
+        }
+
+        .ciasi-logo {
+            height: 20px;
+            padding: 2px;
+            margin-right: 5px;
+            background-color: #ffffff;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+        .grade {
+            font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+            font-weight: bold;
+            color: #000000;
+            padding: 5px 0px;
+            text-align: center;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -o-border-radius: 3px;
+            border-radius: 3px;
+            width: 55px;
+            height: 28px;
+            display: block
+        }
+
+        .not-official {
+            text-decoration: underline;
+        }
+
+        .btn-save-image {
+            font-size: small;
+            margin-left: 20px;
+            padding: 4px 5px;
+            cursor: pointer;
+            color: #ffffff;
+            background-color: #009688;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+        .btn-save-image:hover {
+            color: #FFEB3B;
+            background-color: #607D8B;
+        }
+
+        .btn-detail-link {
+            font-size: x-large;
+            color: #9E9E9E;
+        }
+
+        .btn-detail-link:hover {
+            font-size: x-large;
+            color: #2196F3;
+        }
+
+        .btn-detail-nolink {
+            font-size: x-large;
+            color: #9E9E9E;
+        }
+
+        .section {
+            width: 100%;
+        }
+
+        .score-detail {
+            width: 100%;
+            height: 800px;
+        }
+
+        .car-make {
+            color: #ffffff;
+        }
+
+        .car-model {
+            color: #ffffff;
+        }
+
+        .car-year {
+            font-size: x-small;
+        }
+
+        .car-price {
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<!--
+<header id="header" style="display: none"></header>
+-->
+
+<section id="main" style="margin:auto;padding:0;width: 990px;">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <!--
+        <script>
+            var essayTitle = document.title;
+            var essaySummary = document.title;//'随便写点什么';
+            var essayUrl = window.location.href;
+            //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+            var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+        </script>
+        -->
+        <!--
+        AZ Share: Material Floating Button;
+        Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+        Position:mfb-component--br,bl,tr,tl;
+        Action:hover,click
+        -->
+        <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+
+        <!--
+        <div class="content__header">
+            <h2 class="font-yahei"><i class="zmdi zmdi-flag"></i> 随笔</h2>
+            <div class="actions">
+                <a href=""><i class="zmdi zmdi-check-all"></i></a>
+                <a href=""><i class="zmdi zmdi-trending-up"></i></a>
+                <div class="dropdown">
+                    <a href="" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="">Change Date Range</a></li>
+                        <li><a href="">Change Graph Type</a></li>
+                        <li><a href="">Other Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        -->
+        <div class="card" style="margin-top: 15px">
+
+            <div class="action-header">
+                <!--
+                <span id="essay_arrow_back" class="actions essay-back-arrow">
+                    <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                -->
+                <span class="essay-title" style="font-size: larger;font-weight: bold;">
+                    中保研碰撞测试汇总
+                    <!--
+                    <span style="color: #2196F3;font-size: large;display: none">
+                        <a href="http://ciasi.org.cn" target="_blank">
+                            <img src="img/C-IASI.png" class="ciasi-logo"/>
+                        </a>
+                    </span>
+                    <i class="zmdi zmdi-car green"></i>
+                    <i class="zmdi zmdi-car yellow"></i>
+                    <i class="zmdi zmdi-car orange"></i>
+                    <i class="zmdi zmdi-car red"></i>
+                    -->
+                </span>
+
+                <span id="btnSaveImage" class="btn-save-image">
+                    <i class="zmdi zmdi-download"></i> 下载图片
+                </span>
+
+                <span align="right" style="float: right;">
+                    <!--<i class="zmdi zmdi-car"></i>&nbsp;<span class="essay-type">Car</span>&nbsp;&nbsp;-->
+                    <i class="zmdi zmdi-time"></i> 2019.10.09
+                </span>
+            </div>
+
+            <div id="card_body" class="card__body" style="padding-top: 0;margin-left: -20px;margin-right: -20px">
+                <div class="table-responsive">
+                    <!-- id="data-table-basic,data-table-selection,data-table-command" -->
+                    <table id="table-carsafe-list" class="table table-striped table--vmiddle"
+                           style="font-family: 'Microsoft YaHei', sans-serif">
+                        <thead>
+                        <tr>
+                            <!-- data-type="numeric"-->
+                            <th data-column-id="make" data-formatter="make"> 品牌</th>
+                            <th data-column-id="model" data-formatter="model" data-sortable="false">型号</th>
+                            <th data-column-id="year" data-formatter="year" data-sortable="false">款式</th>
+                            <th data-column-id="price" data-formatter="price" data-visible="false">价格</th>
+                            <th data-column-id="front_offset" data-formatter="front_offset">正面偏置</th><!--25%-->
+                            <th data-column-id="side" data-formatter="side">侧面碰撞</th>
+                            <th data-column-id="top" data-formatter="top">车顶强度</th>
+                            <th data-column-id="seat" data-formatter="seat">座椅头枕</th>
+                            <th data-column-id="assist" data-formatter="assist">辅助安全</th>
+                            <th data-column-id="road_user" data-formatter="road_user">行人保护</th>
+                            <th data-column-id="fix" data-formatter="fix" data-visible="true">耐撞维修</th>
+                            <th data-column-id="test_time" data-formatter="test_time" data-visible="false">测试批次</th>
+                            <th data-column-id="link" data-formatter="link" data-sortable="false"
+                                data-visible="true">
+                                详情
+                            </th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>一汽丰田</td><!-- MAKE -->
+                            <td>奕泽</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>15.88</td><!-- PRICE -->
+                            <td>00</td><!-- FRONT 25% OFFSET -->
+                            <td>00</td><!-- SIDE -->
+                            <td>5.75</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>B</td><!-- FIX -->
+                            <td>18B</td><!-- TEST TIME -->
+                            <td>26</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>广汽丰田</td><!-- MAKE -->
+                            <td>雷凌</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>11.58</td><!-- PRICE -->
+                            <td>00</td><!-- FRONT 25% OFFSET -->
+                            <td>00</td><!-- SIDE -->
+                            <td>5.66</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>C</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>43</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>豪情沃尔沃</td><!-- MAKE -->
+                            <td>XC60</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>39.19</td><!-- PRICE -->
+                            <td>00</td><!-- FRONT 25% OFFSET -->
+                            <td>00</td><!-- SIDE -->
+                            <td>5.06</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>40</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>一汽丰田</td><!-- MAKE -->
+                            <td>亚洲龙</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>20.88</td><!-- PRICE -->
+                            <td>0</td><!-- FRONT 25% OFFSET -->
+                            <td>0</td><!-- SIDE -->
+                            <td>6.03</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>44</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>广汽丰田</td><!-- MAKE -->
+                            <td>凯美瑞</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>17.98</td><!-- PRICE -->
+                            <td>02</td><!-- FRONT 25% OFFSET -->
+                            <td>00</td><!-- SIDE -->
+                            <td>5.98</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>C*</td><!-- FIX -->
+                            <td>18A</td><!-- TEST TIME -->
+                            <td>15</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>豪情领克</td><!-- MAKE -->
+                            <td>01</td><!-- MODEL -->
+                            <td>2017</td><!-- YEAR -->
+                            <td>16.88</td><!-- PRICE -->
+                            <td>02</td><!-- FRONT 25% OFFSET -->
+                            <td>00</td><!-- SIDE -->
+                            <td>5.21</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>C*</td><!-- FIX -->
+                            <td>18A</td><!-- TEST TIME -->
+                            <td>16</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>东风日产</td><!-- MAKE -->
+                            <td>天籁</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>18.68</td><!-- PRICE -->
+                            <td>00</td><!-- FRONT 25% OFFSET -->
+                            <td>06</td><!-- SIDE -->
+                            <td>4.73</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>C</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>39</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>比亚迪</td><!-- MAKE -->
+                            <td>唐</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>13.99</td><!-- PRICE -->
+                            <td>02</td><!-- FRONT 25% OFFSET -->
+                            <td>08</td><!-- SIDE -->
+                            <td>4.04</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>C</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>41</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>长安福特</td><!-- MAKE -->
+                            <td>福克斯</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>12.08</td><!-- PRICE -->
+                            <td>05</td><!-- FRONT 25% OFFSET -->
+                            <td>04</td><!-- SIDE -->
+                            <td>5.61</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>B</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>42</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>上汽凯迪拉克</td><!-- MAKE -->
+                            <td>XT4</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>25.97</td><!-- PRICE -->
+                            <td>06</td><!-- FRONT 25% OFFSET -->
+                            <td>00</td><!-- SIDE -->
+                            <td>4.59</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>33</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>长城魏派</td><!-- MAKE -->
+                            <td>VV5</td><!-- MODEL -->
+                            <td>2017</td><!-- YEAR -->
+                            <td>15.00</td><!-- PRICE -->
+                            <td>02</td><!-- FRONT 25% OFFSET -->
+                            <td>10</td><!-- SIDE -->
+                            <td>3.60</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D*</td><!-- FIX -->
+                            <td>18A</td><!-- TEST TIME -->
+                            <td>18</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>广汽本田</td><!-- MAKE -->
+                            <td>雅阁</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>17.98</td><!-- PRICE -->
+                            <td>06</td><!-- FRONT 25% OFFSET -->
+                            <td>14</td><!-- SIDE -->
+                            <td>4.15</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D*</td><!-- FIX -->
+                            <td>18A</td><!-- TEST TIME -->
+                            <td>8</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>北京奔驰</td><!-- MAKE -->
+                            <td>C200</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>31.28</td><!-- PRICE -->
+                            <td>06</td><!-- FRONT 25% OFFSET -->
+                            <td>10</td><!-- SIDE -->
+                            <td>6.06</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>B</td><!-- ROAD_USER -->
+                            <td>D*</td><!-- FIX -->
+                            <td>18A</td><!-- TEST TIME -->
+                            <td>20</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>众泰</td><!-- MAKE -->
+                            <td>T600</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>10.18</td><!-- PRICE -->
+                            <td>08</td><!-- FRONT 25% OFFSET -->
+                            <td>00</td><!-- SIDE -->
+                            <td>3.79</td><!-- TOP -->
+                            <td>B</td><!-- SEAT -->
+                            <td>-</td><!-- ASSIST -->
+                            <td>B</td><!-- ROAD_USER -->
+                            <td>C</td><!-- FIX -->
+                            <td>18B</td><!-- TEST TIME -->
+                            <td>27</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>广汽传祺</td><!-- MAKE -->
+                            <td>GS7</td><!-- MODEL -->
+                            <td>2017</td><!-- YEAR -->
+                            <td>14.98</td><!-- PRICE -->
+                            <td>09</td><!-- FRONT 25% OFFSET -->
+                            <td>08</td><!-- SIDE -->
+                            <td>3.75</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>-</td><!-- ASSIST -->
+                            <td>C</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>18B</td><!-- TEST TIME -->
+                            <td>23</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>东风雷诺</td><!-- MAKE -->
+                            <td>科雷傲</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>17.98</td><!-- PRICE -->
+                            <td>08</td><!-- FRONT 25% OFFSET -->
+                            <td>06</td><!-- SIDE -->
+                            <td>2.70</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>D</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>C*</td><!-- FIX -->
+                            <td>18A</td><!-- TEST TIME -->
+                            <td>7</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>广汽三菱</td><!-- MAKE -->
+                            <td>欧蓝德</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>17.28</td><!-- PRICE -->
+                            <td>04</td><!-- FRONT 25% OFFSET -->
+                            <td>12</td><!-- SIDE -->
+                            <td>2.89</td><!-- TOP -->
+                            <td>B</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>34</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>长城哈弗</td><!-- MAKE -->
+                            <td>F5</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>10.80</td><!-- PRICE -->
+                            <td>04</td><!-- FRONT 25% OFFSET -->
+                            <td>32</td><!-- SIDE -->
+                            <td>4.51</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>-</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>37</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>华晨宝马</td><!-- MAKE -->
+                            <td>318i</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>28.68</td><!-- PRICE -->
+                            <td>14</td><!-- FRONT 25% OFFSET -->
+                            <td>02</td><!-- SIDE -->
+                            <td>4.89</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>-</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D*</td><!-- FIX -->
+                            <td>18A</td><!-- TEST TIME -->
+                            <td>4</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>东风日产</td><!-- MAKE -->
+                            <td>西玛</td><!-- MODEL -->
+                            <td>2016</td><!-- YEAR -->
+                            <td>24.98</td><!-- PRICE -->
+                            <td>16</td><!-- FRONT 25% OFFSET -->
+                            <td>02</td><!-- SIDE -->
+                            <td>3.57</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>B</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>C</td><!-- FIX -->
+                            <td>18B</td><!-- TEST TIME -->
+                            <td>31</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>上汽别克</td><!-- MAKE -->
+                            <td>昂科威</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>21.99</td><!-- PRICE -->
+                            <td>12</td><!-- FRONT 25% OFFSET -->
+                            <td>10</td><!-- SIDE -->
+                            <td>4.36</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D*</td><!-- FIX -->
+                            <td>18A</td><!-- TEST TIME -->
+                            <td>9</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>一汽大众</td><!-- MAKE -->
+                            <td>迈腾</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>18.99</td><!-- PRICE -->
+                            <td>12</td><!-- FRONT 25% OFFSET -->
+                            <td>10</td><!-- SIDE -->
+                            <td>5.12</td><!-- TOP -->
+                            <td>B</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>A*</td><!-- FIX -->
+                            <td>18A</td><!-- TEST TIME -->
+                            <td>14</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>广汽本田</td><!-- MAKE -->
+                            <td>凌派</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>10.98</td><!-- PRICE -->
+                            <td>12</td><!-- FRONT 25% OFFSET -->
+                            <td>24</td><!-- SIDE -->
+                            <td>4.49</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>32</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>北京现代</td><!-- MAKE -->
+                            <td>菲斯塔</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>12.98</td><!-- PRICE -->
+                            <td>18</td><!-- FRONT 25% OFFSET -->
+                            <td>28</td><!-- SIDE -->
+                            <td>4.17</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>B</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>36</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>北京现代</td><!-- MAKE -->
+                            <td>领动</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>12.48</td><!-- PRICE -->
+                            <td>02</td><!-- FRONT 25% OFFSET -->
+                            <td>44</td><!-- SIDE -->
+                            <td>5.32</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>B</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>18B</td><!-- TEST TIME -->
+                            <td>22</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>上汽斯柯达</td><!-- MAKE -->
+                            <td>柯迪亚克</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>18.98</td><!-- PRICE -->
+                            <td>09</td><!-- FRONT 25% OFFSET -->
+                            <td>34</td><!-- SIDE -->
+                            <td>4.55</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>A</td><!-- FIX -->
+                            <td>18B</td><!-- TEST TIME -->
+                            <td>25</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>东风本田</td><!-- MAKE -->
+                            <td>思域</td><!-- MODEL -->
+                            <td>2016</td><!-- YEAR -->
+                            <td>12.79</td><!-- PRICE -->
+                            <td>09</td><!-- FRONT 25% OFFSET -->
+                            <td>84</td><!-- SIDE -->
+                            <td>5.34</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D*</td><!-- FIX -->
+                            <td>18A</td><!-- TEST TIME -->
+                            <td>19</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>奇瑞</td><!-- MAKE -->
+                            <td>艾瑞泽5</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>07.09</td><!-- PRICE -->
+                            <td>18</td><!-- FRONT 25% OFFSET -->
+                            <td>58</td><!-- SIDE -->
+                            <td>4.53</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>-</td><!-- ASSIST -->
+                            <td>B</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>18B</td><!-- TEST TIME -->
+                            <td>21</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>江淮</td><!-- MAKE -->
+                            <td>瑞风S3</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>08.38</td><!-- PRICE -->
+                            <td>16</td><!-- FRONT 25% OFFSET -->
+                            <td>56</td><!-- SIDE -->
+                            <td>3.90</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>-</td><!-- ASSIST -->
+                            <td>B</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>18B</td><!-- TEST TIME -->
+                            <td>28</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>北京汽车</td><!-- MAKE -->
+                            <td>绅宝D50</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>08.69</td><!-- PRICE -->
+                            <td>17</td><!-- FRONT 25% OFFSET -->
+                            <td>38</td><!-- SIDE -->
+                            <td>3.31</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>-</td><!-- ASSIST -->
+                            <td>B</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>38</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>上汽大众</td><!-- MAKE -->
+                            <td>途观L</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>22.38</td><!-- PRICE -->
+                            <td>24</td><!-- FRONT 25% OFFSET -->
+                            <td>08</td><!-- SIDE -->
+                            <td>4.44</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>B</td><!-- ROAD_USER -->
+                            <td>B*</td><!-- FIX -->
+                            <td>18A</td><!-- TEST TIME -->
+                            <td>12</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>东风悦达起亚</td><!-- MAKE -->
+                            <td>智跑</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>13.99</td><!-- PRICE -->
+                            <td>24</td><!-- FRONT 25% OFFSET -->
+                            <td>10</td><!-- SIDE -->
+                            <td>3.70</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>-</td><!-- ASSIST -->
+                            <td>B</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>18B</td><!-- TEST TIME -->
+                            <td>24</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>东风汽车</td><!-- MAKE -->
+                            <td>风神AX7</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>11.99</td><!-- PRICE -->
+                            <td>23</td><!-- FRONT 25% OFFSET -->
+                            <td>08</td><!-- SIDE -->
+                            <td>3.42</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>C</td><!-- ASSIST -->
+                            <td>D</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>35</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>上汽别克</td><!-- MAKE -->
+                            <td>GL8</td><!-- MODEL -->
+                            <td>2017</td><!-- YEAR -->
+                            <td>28.99</td><!-- PRICE -->
+                            <td>24</td><!-- FRONT 25% OFFSET -->
+                            <td>26</td><!-- SIDE -->
+                            <td>3.51</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>A</td><!-- ASSIST -->
+                            <td>B</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>18B</td><!-- TEST TIME -->
+                            <td>29</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>比亚迪</td><!-- MAKE -->
+                            <td>宋MAX</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>09.99</td><!-- PRICE -->
+                            <td>24</td><!-- FRONT 25% OFFSET -->
+                            <td>60</td><!-- SIDE -->
+                            <td>3.85</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>-</td><!-- ASSIST -->
+                            <td>A</td><!-- ROAD_USER -->
+                            <td>D</td><!-- FIX -->
+                            <td>18B</td><!-- TEST TIME -->
+                            <td>30</td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>上汽五菱宝骏</td><!-- MAKE -->
+                            <td>510</td><!-- MODEL -->
+                            <td>2017</td><!-- YEAR -->
+                            <td>05.48</td><!-- PRICE -->
+                            <td>22</td><!-- FRONT 25% OFFSET -->
+                            <td>80</td><!-- SIDE -->
+                            <td>2.86</td><!-- TOP -->
+                            <td>A</td><!-- SEAT -->
+                            <td>-</td><!-- ASSIST -->
+                            <td>B</td><!-- ROAD_USER -->
+                            <td>D*</td><!-- FIX -->
+                            <td>18A</td><!-- TEST TIME -->
+                            <td>17</td><!-- C-IASI ID -->
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="content3">
+        <div class="card">
+            <div id="card_body3" class="card__body" style="padding-top: 10px">
+                <div class="table-responsive">
+                    <div class="section bg-info">
+                        <div id="detailFront" class="score-detail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="content4">
+        <div class="card">
+            <div id="card_body4" class="card__body" style="padding-top: 10px">
+                <div class="table-responsive">
+                    <div class="section bg-info">
+                        <div id="detailSide" class="score-detail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="content5">
+        <div class="card">
+            <div id="card_body5" class="card__body" style="padding-top: 10px">
+                <div class="table-responsive">
+                    <div class="section bg-info">
+                        <div id="detailTop" class="score-detail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="content6">
+        <div class="card">
+            <div id="card_body6" class="card__body" style="padding-top: 10px">
+                <div class="table-responsive">
+                    <div class="section bg-info">
+                        <div id="detailRoadUser" class="score-detail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="content2">
+
+        <div class="card">
+
+            <div id="card_body2" class="card__body" style="padding-top: 10px">
+                <h4 style="font-weight: bold">即将测试车型</h4><br>
+                <div class="table-responsive">
+                    <!-- id="data-table-basic,data-table-selection,data-table-command" -->
+                    <table id="table-carsafe-list-todo" class="table table-striped table--vmiddle"
+                           style="font-family: 'Microsoft YaHei', sans-serif">
+                        <thead>
+                        <tr>
+                            <!-- data-type="numeric"-->
+                            <th data-column-id="make" data-formatter="make">厂商</th>
+                            <th data-column-id="model" data-formatter="model" data-sortable="false">型号</th>
+                            <th data-column-id="year" data-formatter="year" data-sortable="false">款式</th>
+                            <th data-column-id="price" data-formatter="price" data-visible="false">价格</th>
+                            <th data-column-id="front_offset" data-formatter="front_offset" data-visible="false">
+                                正面偏置
+                            </th><!--25%-->
+                            <th data-column-id="side" data-formatter="side" data-visible="false">侧面碰撞</th>
+                            <th data-column-id="top" data-formatter="top" data-visible="false">车顶强度</th>
+                            <th data-column-id="seat" data-formatter="seat" data-visible="false">座椅头枕</th>
+                            <th data-column-id="assist" data-formatter="assist" data-visible="false">辅助安全</th>
+                            <th data-column-id="road_user" data-formatter="road_user" data-visible="false">行人保护</th>
+                            <th data-column-id="fix" data-formatter="fix" data-visible="false">耐撞维修</th>
+                            <th data-column-id="test_time" data-formatter="test_time" data-visible="true">测试批次</th>
+                            <th data-column-id="link" data-formatter="link" data-sortable="false"
+                                data-visible="false">
+                                详情
+                            </th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td>吉利</td><!-- MAKE -->
+                            <td>星越</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>00.00</td><!-- PRICE -->
+                            <td>T</td><!-- FRONT 25% OFFSET -->
+                            <td>T</td><!-- SIDE -->
+                            <td>T</td><!-- TOP -->
+                            <td>T</td><!-- SEAT -->
+                            <td>T</td><!-- ASSIST -->
+                            <td>T</td><!-- ROAD_USER -->
+                            <td>T</td><!-- FIX -->
+                            <td>19A</td><!-- TEST TIME -->
+                            <td>45</td><!-- C-IASI ID -->
+                        </tr>
+
+                        <tr>
+                            <td>上汽雪佛兰</td><!-- MAKE -->
+                            <td>科鲁泽</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>00.00</td><!-- PRICE -->
+                            <td>T</td><!-- FRONT 25% OFFSET -->
+                            <td>T</td><!-- SIDE -->
+                            <td>T</td><!-- TOP -->
+                            <td>T</td><!-- SEAT -->
+                            <td>T</td><!-- ASSIST -->
+                            <td>T</td><!-- ROAD_USER -->
+                            <td>T</td><!-- FIX -->
+                            <td>19B</td><!-- TEST TIME -->
+                            <td></td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>长安马自达</td><!-- MAKE -->
+                            <td>3</td><!-- MODEL -->
+                            <td></td><!-- YEAR -->
+                            <td>00.00</td><!-- PRICE -->
+                            <td>T</td><!-- FRONT 25% OFFSET -->
+                            <td>T</td><!-- SIDE -->
+                            <td>T</td><!-- TOP -->
+                            <td>T</td><!-- SEAT -->
+                            <td>T</td><!-- ASSIST -->
+                            <td>T</td><!-- ROAD_USER -->
+                            <td>T</td><!-- FIX -->
+                            <td>19B</td><!-- TEST TIME -->
+                            <td></td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>东风本田</td><!-- MAKE -->
+                            <td>INSPIRE</td><!-- MODEL -->
+                            <td></td><!-- YEAR -->
+                            <td>00.00</td><!-- PRICE -->
+                            <td>T</td><!-- FRONT 25% OFFSET -->
+                            <td>T</td><!-- SIDE -->
+                            <td>T</td><!-- TOP -->
+                            <td>T</td><!-- SEAT -->
+                            <td>T</td><!-- ASSIST -->
+                            <td>T</td><!-- ROAD_USER -->
+                            <td>T</td><!-- FIX -->
+                            <td>19B</td><!-- TEST TIME -->
+                            <td></td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>上汽大众</td><!-- MAKE -->
+                            <td>帕萨特</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>00.00</td><!-- PRICE -->
+                            <td>T</td><!-- FRONT 25% OFFSET -->
+                            <td>T</td><!-- SIDE -->
+                            <td>T</td><!-- TOP -->
+                            <td>T</td><!-- SEAT -->
+                            <td>T</td><!-- ASSIST -->
+                            <td>T</td><!-- ROAD_USER -->
+                            <td>T</td><!-- FIX -->
+                            <td>19B</td><!-- TEST TIME -->
+                            <td></td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>长安</td><!-- MAKE -->
+                            <td>CS75Plus</td><!-- MODEL -->
+                            <td></td><!-- YEAR -->
+                            <td>00.00</td><!-- PRICE -->
+                            <td>T</td><!-- FRONT 25% OFFSET -->
+                            <td>T</td><!-- SIDE -->
+                            <td>T</td><!-- TOP -->
+                            <td>T</td><!-- SEAT -->
+                            <td>T</td><!-- ASSIST -->
+                            <td>T</td><!-- ROAD_USER -->
+                            <td>T</td><!-- FIX -->
+                            <td>19B</td><!-- TEST TIME -->
+                            <td></td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>一汽奔腾</td><!-- MAKE -->
+                            <td>T77</td><!-- MODEL -->
+                            <td>2019</td><!-- YEAR -->
+                            <td>00.00</td><!-- PRICE -->
+                            <td>T</td><!-- FRONT 25% OFFSET -->
+                            <td>T</td><!-- SIDE -->
+                            <td>T</td><!-- TOP -->
+                            <td>T</td><!-- SEAT -->
+                            <td>T</td><!-- ASSIST -->
+                            <td>T</td><!-- ROAD_USER -->
+                            <td>T</td><!-- FIX -->
+                            <td>19B</td><!-- TEST TIME -->
+                            <td></td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>海马小鹏</td><!-- MAKE -->
+                            <td>G3</td><!-- MODEL -->
+                            <td></td><!-- YEAR -->
+                            <td>00.00</td><!-- PRICE -->
+                            <td>T</td><!-- FRONT 25% OFFSET -->
+                            <td>T</td><!-- SIDE -->
+                            <td>T</td><!-- TOP -->
+                            <td>T</td><!-- SEAT -->
+                            <td>T</td><!-- ASSIST -->
+                            <td>T</td><!-- ROAD_USER -->
+                            <td>T</td><!-- FIX -->
+                            <td>19B</td><!-- TEST TIME -->
+                            <td></td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>北京奔驰</td><!-- MAKE -->
+                            <td>GLC-L</td><!-- MODEL -->
+                            <td></td><!-- YEAR -->
+                            <td>00.00</td><!-- PRICE -->
+                            <td>T</td><!-- FRONT 25% OFFSET -->
+                            <td>T</td><!-- SIDE -->
+                            <td>T</td><!-- TOP -->
+                            <td>T</td><!-- SEAT -->
+                            <td>T</td><!-- ASSIST -->
+                            <td>T</td><!-- ROAD_USER -->
+                            <td>T</td><!-- FIX -->
+                            <td>19B</td><!-- TEST TIME -->
+                            <td></td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>奇瑞</td><!-- MAKE -->
+                            <td>捷途X70</td><!-- MODEL -->
+                            <td></td><!-- YEAR -->
+                            <td>00.00</td><!-- PRICE -->
+                            <td>T</td><!-- FRONT 25% OFFSET -->
+                            <td>T</td><!-- SIDE -->
+                            <td>T</td><!-- TOP -->
+                            <td>T</td><!-- SEAT -->
+                            <td>T</td><!-- ASSIST -->
+                            <td>T</td><!-- ROAD_USER -->
+                            <td>T</td><!-- FIX -->
+                            <td>19B</td><!-- TEST TIME -->
+                            <td></td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>广汽菲克Jeep</td><!-- MAKE -->
+                            <td>大指挥官</td><!-- MODEL -->
+                            <td>2018</td><!-- YEAR -->
+                            <td>00.00</td><!-- PRICE -->
+                            <td>T</td><!-- FRONT 25% OFFSET -->
+                            <td>T</td><!-- SIDE -->
+                            <td>T</td><!-- TOP -->
+                            <td>T</td><!-- SEAT -->
+                            <td>T</td><!-- ASSIST -->
+                            <td>T</td><!-- ROAD_USER -->
+                            <td>T</td><!-- FIX -->
+                            <td>19B</td><!-- TEST TIME -->
+                            <td></td><!-- C-IASI ID -->
+                        </tr>
+                        <tr>
+                            <td>华晨宝马</td><!-- MAKE -->
+                            <td>325Li</td><!-- MODEL -->
+                            <td>2020</td><!-- YEAR -->
+                            <td>00.00</td><!-- PRICE -->
+                            <td>T</td><!-- FRONT 25% OFFSET -->
+                            <td>T</td><!-- SIDE -->
+                            <td>T</td><!-- TOP -->
+                            <td>T</td><!-- SEAT -->
+                            <td>T</td><!-- ASSIST -->
+                            <td>T</td><!-- ROAD_USER -->
+                            <td>T</td><!-- FIX -->
+                            <td>19B</td><!-- TEST TIME -->
+                            <td></td><!-- C-IASI ID -->
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="content7">
+        <div class="card">
+            <div id="card_body7" class="card__body" style="padding-top: 10px">
+                <br>
+                <div class="table-responsive" style="text-align: center;">
+                    <span style="font-size: large;font-weight: bold"><a href="rule.html" target="_blank">中保研碰撞测试评分标准</a></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <link rel="stylesheet" href="../../css/toolbox.reset.css"><!-- CSS reset -->
+    <link rel="stylesheet" href="../../css/toolbox.style.css"><!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../../js/data-table.js"></script>
+
+<script>
+    function getCarSafeDescriptionByWord(word) {
+        let SHOW_NON_OFFICIAL = false; // 显示非官方数据
+        switch (word) {
+            case 'A': // Good
+                return "<span class=\"grade green-bg\">G 优秀</span>";
+            case 'A*': // Good
+                return SHOW_NON_OFFICIAL ? "<span class=\"grade green-bg not-official\">G 优秀*</span>" : "<span class=\"grade grey-bg\"></span>";
+            case 'B': // Adequate
+                return "<span class=\"grade yellow-bg\">A 良好</span>";
+            case 'B*': // Adequate
+                return SHOW_NON_OFFICIAL ? "<span class=\"grade yellow-bg not-official\">A 良好*</span>" : "<span class=\"grade grey-bg\"></span>";
+            case 'C': // Marginal
+                return "<span class=\"grade orange-bg\">M 一般</span>";
+            case 'C*': // Marginal
+                return SHOW_NON_OFFICIAL ? "<span class=\"grade orange-bg not-official\">M 一般*</span>" : "<span class=\"grade grey-bg\"></span>";
+            case 'D': // Poor
+                return "<span class=\"grade red-bg\">P 较差</span>";
+            case 'D*': // Poor
+                return SHOW_NON_OFFICIAL ? "<span class=\"grade red-bg not-official\">P 较差*</span>" : "<span class=\"grade grey-bg\"></span>";
+            case '-': // None
+                return "<span class=\"grade grey-bg\">未配置</span>";
+            case 'T': // T0D0
+                return "<span class=\"grade grey-bg\">...</span>";
+            default:
+                return "<span class=\"grade grey-bg\">" + word + "</span>";
+        }
+    }
+
+    function getTopDescription(top) {
+        if (top >= 4.0) {
+            return getCarSafeDescriptionByWord('A');
+        } else if (top >= 3.25) {
+            return getCarSafeDescriptionByWord('B');
+        } else if (top >= 2.50) {
+            return getCarSafeDescriptionByWord('C');
+        } else
+            return getCarSafeDescriptionByWord('D');
+    }
+
+    function getFrontDescription(front) {
+        if (front < 4) {
+            return getCarSafeDescriptionByWord('A');
+        } else if (front < 10) {
+            return getCarSafeDescriptionByWord('B');
+        } else if (front < 20) {
+            return getCarSafeDescriptionByWord('C');
+        } else
+            return getCarSafeDescriptionByWord('D');
+    }
+
+    function getSideDescription(side) {
+        if (side < 7) {
+            return getCarSafeDescriptionByWord('A');
+        } else if (side < 21) {
+            return getCarSafeDescriptionByWord('B');
+        } else if (side < 33) {
+            return getCarSafeDescriptionByWord('C');
+        } else
+            return getCarSafeDescriptionByWord('D');
+    }
+
+    // AZ: for lists of C-IASI page.
+    $("#table-carsafe-list").bootgrid({
+        //Override default icon classes
+        rowCount: -1, // AZ: -1 mains show all
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "", // "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "", // "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "" //"<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "make": function (column, row) {
+                return getLogoByMake(row.make, 2) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
+            },
+            "model": function (column, row) {
+                return "<span class='car-model'>" + row.model + "</span>";
+            },
+            "year": function (column, row) {
+                return "<span class='car-year'>" + row.year + "</span>";
+            },
+            "price": function (column, row) {
+                return "<span class='car-price'>" + row.price + "</span>";
+            },
+            "front_offset": function (column, row) {
+                return "<a title='正面偏置'>" + getFrontDescription(row.front_offset) + "</a>";
+            },
+            "side": function (column, row) {
+                return "<a title='侧面碰撞'>" + getSideDescription(row.side) + "</a>";
+            },
+            "top": function (column, row) {
+                return "<a title='车顶强度'>" + getTopDescription(row.top) + "</a>";
+            },
+            "seat": function (column, row) {
+                return "<a title='座椅头枕'>" + getCarSafeDescriptionByWord(row.seat) + "</a>";
+            },
+            "assist": function (column, row) {
+                return "<a title='辅助安全'>" + getCarSafeDescriptionByWord(row.assist) + "</a>";
+            },
+            "road_user": function (column, row) {
+                return "<a title='行人保护'>" + getCarSafeDescriptionByWord(row.road_user) + "</a>";
+            },
+            "fix": function (column, row) {
+                return "<a title='耐撞维修'>" + getCarSafeDescriptionByWord(row.fix) + "</a>";
+            },
+            "link": function (column, row) {
+                if (row.link) {
+                    let linkPrefix = 'http://ciasi.org.cn/home/safety/pageone/id/';
+                    return "<span style='font-size: 15px' >" +
+                        "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
+                        + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
+                        + "</a>" +
+                        "</span>";
+                } else {
+                    return "<i class=\"btn-detail-nolink zmdi zmdi-more\"></i>";
+                }
+            }
+        }
+    });
+    $("#table-carsafe-list-todo").bootgrid({
+        //Override default icon classes
+        rowCount: -1, // AZ: -1 mains show all
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "", // "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "", // "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "" // "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "make": function (column, row) {
+                return getLogoByMake(row.make, 2) + "<span class='car-make'>" + row.make + "</span>"/* + getCountryByMake(row.make) */;
+            },
+            "model": function (column, row) {
+                return "<span class='car-model'>" + row.model + "</span>";
+            },
+            "year": function (column, row) {
+                return "<span class='car-year'>" + row.year + "</span>";
+            },
+            "price": function (column, row) {
+                return "<span class='car-price'>" + row.price + "</span>";
+            },
+            "front_offset": function (column, row) {
+                return getCarSafeDescriptionByWord(row.front_offset);
+            },
+            "side": function (column, row) {
+                return getCarSafeDescriptionByWord(row.side);
+            },
+            "top": function (column, row) {
+                return getCarSafeDescriptionByWord(row.top);
+            },
+            "seat": function (column, row) {
+                return getCarSafeDescriptionByWord(row.seat);
+            },
+            "assist": function (column, row) {
+                return getCarSafeDescriptionByWord(row.assist);
+            },
+            "road_user": function (column, row) {
+                return getCarSafeDescriptionByWord(row.road_user);
+            },
+            "fix": function (column, row) {
+                return getCarSafeDescriptionByWord(row.fix);
+            },
+            "test_time": function (column, row) {
+                return "20" + row.test_time.replace('A', ' 第一批').replace('B', ' 第二批');
+            },
+            "link": function (column, row) {
+                if (row.link) {
+                    let linkPrefix = 'http://c-iasi.com/home/safety/pageone/id/';
+                    return "<span style='font-size: 15px' >" +
+                        "<a target='_blank' href=\"" + linkPrefix + row.link + ".html\">"
+                        + "<i class=\"btn-detail-link zmdi zmdi-link\"></i>"
+                        + "</a>" +
+                        "</span>";
+                } else {
+                    return "<i class=\"btn-detail-nolink zmdi zmdi-more\"></i>";
+                }
+            }
+        }
+    });
+</script>
+
+
+<!-- Site Functions & Actions -->
+<script src="../../js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<!--
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../../js/canvas-nest.min.js"></script>
+-->
+
+<!-- Toolbox -->
+<!--<script src="../../js/toolbox.main.js"></script>-->
+
+<script>
+    var directoryDepth = 2;
+</script>
+<script src="../../js/zms.page.pattern.js"></script>
+
+<script src="js/html2canvas.min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="js/canvas2image.js" type="text/javascript" charset="utf-8" async defer></script>
+<script>
+    $('#btnSaveImage').click(function (e) {
+        document.getElementById("btnSaveImage").style.display = "none";
+        html2canvas(document.getElementById("content")).then(function (canvas) {
+            let contentW = canvas.width;
+            let contentH = canvas.height;
+            Canvas2Image.saveAsImageToName(canvas, contentW, contentH, 'jpeg', 'car.jpg', 10);
+        });
+
+        document.getElementById("btnSaveImage").style.display = "";
+    });
+</script>
+
+
+<script src="js/echarts.min.js"></script>
+
+<script>
+    // 正面25%偏置： 0~3分G，4~9A，10~19M，20+P
+    $(function () {
+        initDataFront();
+        initDataSide();
+        initDataTop();
+        initDataRoadUser();
+    });
+
+    //生成数据
+    function initDataFront() {
+        // G-0 A-2 M-6 P-
+        let legendData = ['正面25%偏置'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
+        }
+
+        addData('大众途观L', 24);
+        addData('比亚迪宋MAX', 24);
+        addData('别克GL8', 24);
+        addData('起亚智跑', 24);
+        addData('东风AX7', 23);
+        addData('宝骏510', 22);
+        addData('奇瑞艾瑞泽5', 18);
+        addData('现代菲斯塔', 18);
+        addData('绅宝D50', 17);
+        addData('江淮瑞风S3', 16);
+        addData('日产西玛', 16);
+        addData('宝马318i', 14);
+        addData('大众迈腾', 12);
+        addData('本田凌派', 12);
+        addData('别克昂科威', 12);
+        addData('斯柯达柯迪亚克', 9);
+        addData('本田思域', 9);
+        addData('传祺GS7', 9);
+        addData('众泰T600', 8);
+        addData('雷诺科雷傲', 8);
+        addData('本田雅阁', 6);
+        addData('凯迪拉克XT4', 6);
+        addData('奔驰C200', 6);
+        addData('福特福克斯', 5);
+        addData('哈弗F5', 4);
+        addData('三菱欧蓝德', 4);
+        addData('现代领动', 2);
+        addData('魏派VV5', 2);
+        addData('比亚迪唐', 2);
+        addData('领克01', 2);
+        addData('丰田凯美瑞', 2);
+        addData('日产天籁', 0);
+        addData('沃尔沃XC60', 0);
+        addData('丰田亚洲龙', 0);
+        addData('丰田雷凌', 0);
+        addData('丰田奕泽', 0);
+
+        for (var i = 0; i < legendData.length; i++) {
+            var seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10,//柱状条宽度
+                //name: '正面25%偏置碰撞',
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true,//鼠标悬停时显示label数据
+                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: function (params) {
+                            if (params.value < 4) {
+                                return "#4CAF50";
+                            } else if (params.value < 10) {
+                                return "#FFEB3B";
+                            } else if (params.value < 20) {
+                                return "#FF9800";
+                            } else
+                                return "#f44336";
+                        }
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true, //显示数据
+                        position: 'right'//显示数据位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
+                    }
+                },
+                data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailFront', "正面25%偏置碰撞（越低越好）", legendData, arrayCar, seriesValue);
+    }
+
+    function initDataSide() {
+        let legendData = ['侧面碰撞'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
+        }
+
+        addData('本田思域', 84); // 8.0
+        addData('宝骏510', 80); // 2.5
+        addData('比亚迪宋MAX', 60); // 1.0
+        addData('奇瑞艾瑞泽5', 58); // 10.5
+        addData('江淮瑞风S3', 56); // 4.5
+        addData('现代领动', 44); // 11.0
+        addData('绅宝D50', 38); // 6.0
+        addData('斯柯达柯迪亚克', 34); // 11.5
+        addData('哈弗F5', 32); // 17.5
+        addData('现代菲斯塔', 28); // 10.5
+        addData('别克GL8', 26); // 8.0
+        addData('本田凌派', 24); // 12.5
+        addData('本田雅阁', 14); // 14.5
+        addData('三菱欧蓝德', 12); //  9.0
+        addData('大众迈腾', 10); // 12.0
+        addData('起亚智跑', 10); // 13.0
+        addData('别克昂科威', 10); // 13.0
+        addData('魏派VV5', 10); // 18.0
+        addData('奔驰C200', 10); // 20.0
+        addData('传祺GS7', 8); // 14.5
+        addData('东风AX7', 8);// 15.0
+        addData('大众途观L', 8); // 18.0
+        addData('比亚迪唐', 8); // 21.5
+        addData('雷诺科雷傲', 6); //  4.5
+        addData('日产天籁', 6); // 10.5
+        addData('福特福克斯', 4); // 21.0
+        addData('日产西玛', 2); //  5.5
+        addData('宝马318i', 2); // 18.5
+        addData('众泰T600', 0); // 14.0
+        addData('丰田凯美瑞', 0); // 15.5
+        addData('领克01', 0); // 16.0
+        addData('丰田亚洲龙', 0); // 16.5
+        addData('丰田雷凌', 0); // 17.5
+        addData('凯迪拉克XT4', 0); // 18.5
+        addData('沃尔沃XC60', 0); // 26.0
+        addData('丰田奕泽', 0); // 31.5
+
+        for (let i = 0; i < legendData.length; i++) {
+            let seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10,//柱状条宽度
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true,//鼠标悬停时显示label数据
+                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: function (params) {
+                            if (params.value < 7) {
+                                return "#4CAF50";
+                            } else if (params.value < 21) {
+                                return "#FFEB3B";
+                            } else if (params.value < 33) {
+                                return "#FF9800";
+                            } else
+                                return "#f44336";
+                        }
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true, //显示数据
+                        position: 'right'//显示数据位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
+                    }
+                },
+                data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailSide', "侧面碰撞（越低越好）", legendData, arrayCar, seriesValue);
+    }
+
+    function initDataTop() {
+        let legendData = ['车顶强度'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
+        }
+
+        addData('雷诺科雷傲', 2.70);
+        addData('宝骏510', 2.86);
+        addData('三菱欧蓝德', 2.89);
+        addData('绅宝D50', 3.31);
+        addData('东风AX7', 3.42);
+        addData('别克GL8', 3.51);
+        addData('日产西玛', 3.57);
+        addData('魏派VV5', 3.60);
+        addData('起亚智跑', 3.70);
+        addData('传祺GS7', 3.75);
+        addData('众泰T600', 3.79);
+        addData('比亚迪宋MAX', 3.85);
+        addData('江淮瑞风S3', 3.90);
+        addData('比亚迪唐', 4.04);
+        addData('本田雅阁', 4.15);
+        addData('现代菲斯塔', 4.17);
+        addData('别克昂科威', 4.36);
+        addData('大众途观L', 4.44);
+        addData('本田凌派', 4.49);
+        addData('哈弗F5', 4.51);
+        addData('奇瑞艾瑞泽5', 4.53);
+        addData('斯柯达柯迪亚克', 4.55);
+        addData('凯迪拉克XT4', 4.59);
+        addData('日产天籁', 4.73);
+        addData('宝马318i', 4.89);
+        addData('沃尔沃XC60', 5.06);
+        addData('大众迈腾', 5.12);
+        addData('领克01', 5.21);
+        addData('现代领动', 5.32);
+        addData('本田思域', 5.34);
+        addData('福特福克斯', 5.61);
+        addData('丰田雷凌', 5.66);
+        addData('丰田奕泽', 5.75);
+        addData('丰田凯美瑞', 5.98);
+        addData('丰田亚洲龙', 6.03);
+        addData('奔驰C200', 6.06);
+
+        for (let i = 0; i < legendData.length; i++) {
+            let seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10,//柱状条宽度
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true,//鼠标悬停时显示label数据
+                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: function (params) {
+                            if (params.value >= 4.0) {
+                                return "#4CAF50";
+                            } else if (params.value >= 3.25) {
+                                return "#FFEB3B";
+                            } else if (params.value >= 2.50) {
+                                return "#FF9800";
+                            } else
+                                return "#f44336";
+                        }
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true, //显示数据
+                        position: 'right'//显示数据位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
+                    }
+                },
+                data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailTop', "车顶强度（越高越好）", legendData, arrayCar, seriesValue);
+    }
+
+    function initDataRoadUser() {
+        let legendData = ['行人保护'];
+        let arrayCar = [];
+        let seriesValue = [];
+        let arrayScore = [];
+
+        function addData(car, score) {
+            arrayCar.push(car);
+            arrayScore.push(score);
+        }
+
+        addData('东风AX7', 10.820);
+        addData('传祺GS7', 14.955);
+        addData('起亚智跑', 15.500);
+        addData('众泰T600', 16.027);
+        addData('现代菲斯塔', 16.991);
+        addData('宝骏510', 17.632);
+        addData('奇瑞艾瑞泽5', 17.951);
+        addData('奔驰C200', 18.190);
+        addData('绅宝D50', 18.233);
+        addData('江淮瑞风S3', 18.446);
+        addData('现代领动', 18.645);
+        addData('大众途观L', 18.736);
+        addData('别克GL8', 19.445);
+        addData('比亚迪唐', 19.879);
+        addData('本田思域', 20.081);
+        addData('领克01', 20.311);
+        addData('大众迈腾', 20.347);
+        addData('魏派VV5', 20.415);
+        addData('日产西玛', 20.926);
+        addData('日产天籁', 20.930);
+        addData('雷诺科雷傲', 20.965);
+        addData('哈弗F5', 21.000);
+        addData('宝马318i', 21.000);
+        addData('比亚迪宋MAX', 21.393);
+        addData('斯柯达柯迪亚克', 21.411);
+        addData('福特福克斯', 21.557);
+        addData('丰田亚洲龙', 21.779);
+        addData('三菱欧蓝德', 22.093);
+        addData('凯迪拉克XT4', 22.266);
+        addData('沃尔沃XC60', 23.036);
+        addData('本田雅阁', 23.150);
+        addData('丰田雷凌', 23.182);
+        addData('丰田凯美瑞', 23.802);
+        addData('别克昂科威', 24.023);
+        addData('丰田奕泽', 24.200);
+        addData('本田凌派', 26.488);
+
+        for (let i = 0; i < legendData.length; i++) {
+            let seriesDataVal = null;
+            seriesDataVal = {
+                barWidth: 10,//柱状条宽度
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        show: true,//鼠标悬停时显示label数据
+                        barBorderRadius: [10, 10, 10, 10],//柱形图圆角，初始化效果
+                        color: function (params) {
+                            if (params.value >= 19.5) { // 30x65%
+                                return "#4CAF50";
+                            } else if (params.value >= 15) { // 30x50%
+                                return "#FFEB3B";
+                            } else if (params.value >= 12) { // 30x40%
+                                return "#FF9800";
+                            } else
+                                return "#f44336";
+                        }
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true, //显示数据
+                        position: 'right'//显示数据位置 'top/right/left/insideLeft/insideRight/insideTop/insideBottom'
+                    }
+                },
+                data: arrayScore
+            };
+            seriesValue.push(seriesDataVal);
+        }
+        buildChart('detailRoadUser', "行人保护（越高越好）", legendData, arrayCar, seriesValue);
+    }
+
+    //生成Echarts图形
+    function buildChart(chartId, title, legendData, arrayCar, seriesValue) {
+        var chart = document.getElementById(chartId);
+        var echart = echarts.init(chart);
+        var option = {
+            title: {
+                text: title,//正标题
+                x: "center", //标题水平方向位置
+                y: "0", //标题竖直方向位置
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold',//'normal',
+                    color: '#DDDDDD' //'#BDBDBD'
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'//阴影，若需要为直线，则值为'line';'shadow'
+                }
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    saveAsImage: {show: true}
+                }
+            },
+            legend: {
+                x: 'left',
+                y: 'top',//图例说明文字设置
+                padding: [15, 0, 0, 10],
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '5%',
+                top: '5%',
+                containLabel: true
+            },
+            yAxis: [{
+                min: 0,
+                type: 'category', //纵向柱状图，若需要为横向，则此处值为'value'， 下面 yAxis 的type值为'category'
+                data: arrayCar,
+                axisLabel: {
+                    color: '#DDDDDD' //"#BDBDBD" //刻度线标签颜色
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#DDDDDD' //'#BDBDBD' //更改坐标轴颜色
+                    }
+                }
+            }],
+            xAxis: [{
+                min: 0,
+                type: 'value',
+                splitArea: {show: false},
+                axisLabel: {
+                    color: '#DDDDDD' //"#BDBDBD" //刻度线标签颜色
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#DDDDDD' //'#BDBDBD' //更改坐标轴颜色
+                    }
+                }
+            }],
+            label: {
+                normal: { //显示bar数据
+                    show: true,
+                    position: 'top'
+                }
+            },
+            series: seriesValue,
+            backgroundColor: '#2b3942'
+        };
+
+        echart.setOption(option);
+    }
+</script>
+
+<script type="text/javascript">
+    location.href = '/car';
+</script>
+
+</body>
+</html>

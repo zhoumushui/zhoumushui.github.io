@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+
+    <!-- Site CSS -->
+    <link href="../../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../resource/css/az.css" rel="stylesheet">
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/love.garden.js"></script>
+    <script type="text/javascript" src="js/love.functions.js"></script>
+    <style>
+        .alex-love-anne {
+            color: #E91E63;
+            font-size: 48px
+        }
+
+        .digit {
+            text-align: right;
+            font-family: "digit";
+            color: #00a1d8;
+            font-size: 32px
+        }
+
+        .dateRange {
+            font-family: "digit";
+            color: #00a1d8;
+            font-size: 24px
+        }
+
+        .line-divide {
+            width: 80%;
+            color: #00a1d8;
+            border: dotted;
+            border-width: 1px
+        }
+
+        #code {
+            float: left;
+            width: 440px;
+            height: 400px;
+            color: #333;
+            font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
+            font-size: 12px
+        }
+
+        #code .string {
+            color: #2a36ff
+        }
+
+        #code .keyword {
+            color: #7f0055;
+            font-weight: bold
+        }
+
+        #code .placeholder {
+            margin-left: 15px
+        }
+
+        #code .space {
+            margin-left: 7px
+        }
+
+        #code .comments {
+            color: #3f7f5f
+        }
+
+        #copyright {
+            margin-top: 10px;
+            text-align: center;
+            width: 100%;
+            color: #666
+        }
+
+        #errorMsg {
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            position: absolute;
+            top: 100px;
+            left: 0
+        }
+
+    </style>
+
+    <!-- Material Floating Button -->
+    <link href="../../resource/css/essay.material.floating.button.css" rel="stylesheet">
+</head>
+
+<body>
+
+<canvas style="position: fixed; top: 0px; left: 0px; z-index: 0;"></canvas>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <div class="card">
+        <div class="action-header">
+                <span class="actions essay-back-arrow">
+                    <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+            <span class="essay-title">1314</span>
+            <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-favorite"></i>&nbsp;<span class="essay-type">Love</span>&nbsp;&nbsp;
+                <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2017-06-06 13:14</span>
+                </span>
+
+            <!--
+            AZ Share: Material Floating Button;
+            Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+            Position:mfb-component--br,bl,tr,tl;
+            Action:hover,click
+            -->
+            <script>
+                var essayTitle = document.title;
+                var essaySummary = '2013.11.01-2017.06.06';
+                var essayUrl = window.location.href;
+                //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+            </script>
+            <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+        </div>
+
+        <div class="card__body">
+            <div id="elapseClock" align="center"></div>
+            <hr class="line-divide">
+            <br>
+            <div id="mainDiv" style="height: 1314px">
+                <div id="content">
+                    <div id="code">
+                        Love<br/>
+                        <span class="placeholder">--Roy Croft</span><br/><br/>
+                        I love you,<span class="comments"> // 我爱你，</span><br/>
+                        Not for what you are,<span class="comments"> // 不光因为你的样子，</span><br/>
+                        But for what I am<span class="comments"> // 还因为，</span><br/>
+                        When I am with you.<span class="comments"> // 和你在一起时，我的样子。</span><br/>
+                        <br/>
+                        I love you,<span class="comments"> // 我爱你，</span><br/>
+                        Not only for what<span class="comments"> // 不光因为</span><br/>
+                        You have made of yourself,<span class="comments"> // 你为我而做的事，</span><br/>
+                        But for what<span class="comments"> //　还因为，</span><br/>
+                        You are making of me.<span class="comments"> // 为了你，我能做成的事。</span><br/>
+                        <br/>
+                        I love you<span class="comments"> // 我爱你，</span><br/>
+                        For the part of me<span class="comments"></span><br/>
+                        That you bring out;<span class="comments"> //  因为你能唤出，我最真的那部分。</span><br/>
+                        <br/>
+                        I love you<span class="comments"> // 我爱你，</span><br/>
+                        For putting your hand<span class="comments"> // 因为你</span><br/>
+                        Into my heaped-up heart<span class="comments"> // 穿越我心灵的旷野，</span><br/>
+                        And passing over<span class="comments"> // 如同阳光穿越水晶般容易。</span><br/>
+                        All the foolish, weak things<span class="comments"> // 我的傻气，我的弱点，</span><br/>
+                        That you can’t help<span class="comments"> </span><br/>
+                        Dimly seeing there,<span class="comments"> // 在你的目光里几乎不存在。</span><br/>
+                        And for drawing out<span class="comments"> // 而我心里最美丽的地方，</span><br/>
+                        Into the light<span class="comments"> // 却被你的光芒照得通亮。</span><br/>
+                        All the beautiful belongings<span class="comments"> // 别人都不曾费心走那么远，</span><br/>
+                        That no one else had looked<span class="comments"> // 别人都觉得寻找太麻烦，</span><br/>
+                        Quite far enough to find.<span class="comments"> // 所以没人到过这里。</span><br/>
+                        <br/>
+                        I love you because you<span class="comments"> // 我爱你，</span><br/>
+                        Are helping me to make<span class="comments"> // 因为你将我的生活</span><br/>
+                        Of the lumber of my life<span class="comments"> // 化腐朽为神奇。</span><br/>
+                        Not a tavern<span class="comments"> // 因为有你，我的生命，不再是平凡的旅店，</span><br/>
+                        But a temple;<span class="comments"> // 而成为了恢弘的庙宇，</span><br/>
+                        Out of the works<span class="comments"></span><br/>
+                        Of my every day<span class="comments"> // 我日复一日的工作里，</span><br/>
+                        Not a reproach<span class="comments"> // 不再充满抱怨，</span><br/>
+                        But a song.<span class="comments"> // 而是美妙的旋律。</span><br/>
+                        <br/>
+                        I love you<span class="comments"> // 我爱你，</span><br/>
+                        Because you have done<span class="comments"> // 因为你</span><br/>
+                        More than any creed<span class="comments"> // 比信念</span><br/>
+                        Could have done<span class="comments"> // 更能</span><br/>
+                        To make me good<span class="comments"> // 使我的生活变得无比美好，</span><br/>
+                        And more than any fate<span class="comments"> // 因为你比命运</span><br/>
+                        Could have done<span class="comments"> // 更能</span><br/>
+                        To make me happy.<span class="comments"> // 使我的生活变得充满欢乐。</span><br/>
+                        You have done it<span class="comments"> // 而你做出这一切的一切，</span><br/>
+                        Without a touch,<span class="comments"> // 不费一丝力气，</span><br/>
+                        Without a word,<span class="comments"> // 一句言辞，</span><br/>
+                        Without a sign.<span class="comments"> // 一个暗示，</span><br/>
+                        You have done it<span class="comments"> // 你做出这一切的一切，</span><br/>
+                        By being yourself.<span class="comments"> // 只是因为你就是你，</span><br/>
+                        Perhaps that is what<span class="comments"> // 毕竟，</span><br/>
+                        Being a friend means,<span class="comments"> // 这也许就是朋友的含义。</span><br/>
+                        After all.
+                    </div>
+
+                    <div id="loveHeart" style="display: none">
+                        <canvas id="garden"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="../../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Site Functions & Actions -->
+<script src="../../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<!--
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../js/canvas-nest.min.js"></script>
+        -->
+
+<script type="text/javascript">
+    let offsetX = $("#loveHeart").width() / 2;
+    let offsetY = $("#loveHeart").height() / 2 - 55;
+    let together = new Date();
+    together.setFullYear(2013, 11-1, 1); // 2003-11-01
+    together.setHours(0);
+    together.setMinutes(0);
+    together.setSeconds(0);
+    together.setMilliseconds(0);
+
+    if (!document.createElement('canvas').getContext) {
+        let msg = document.createElement("div");
+        msg.id = "errorMsg";
+        msg.innerHTML = "Your browser doesn't support HTML5!";
+        document.body.appendChild(msg);
+        $("#code").css("display", "none")
+        $("#copyright").css("position", "absolute");
+        $("#copyright").css("bottom", "10px");
+        document.execCommand("stop");
+    } else {
+        setTimeout(function () {
+            startHeartAnimation();
+        }, 3000);
+
+        timeElapse(together);
+        setInterval(function () {
+            timeElapse(together);
+        }, 500);
+
+        adjustCodePosition();
+        $("#code").typewriter();
+    }
+</script>
+
+<!-- AZ:Love Heart Background -->
+<script>
+    let canvas = document.querySelector("canvas"),
+        ctx = canvas.getContext("2d");
+
+    let ww, wh;
+
+    function onResize() {
+        ww = canvas.width = window.innerWidth;
+        wh = canvas.height = window.innerHeight;
+    }
+
+    ctx.strokeStyle = "red";
+    ctx.shadowBlur = 25;
+    ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
+
+    let precision = 100;
+    let hearts = [];
+    let mouseMoved = false;
+    function onMove(e) {
+        mouseMoved = true;
+        if (e.type === "touchmove") {
+            hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
+            hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
+        }
+        else {
+            hearts.push(new Heart(e.clientX, e.clientY));
+            hearts.push(new Heart(e.clientX, e.clientY));
+        }
+    }
+
+    var Heart = function (x, y) {
+        this.x = x || Math.random() * ww;
+        this.y = y || Math.random() * wh;
+        this.size = Math.random() * 2 + 1;
+        this.shadowBlur = Math.random() * 10;
+        this.speedX = (Math.random() + 0.2 - 0.6) * 8;
+        this.speedY = (Math.random() + 0.2 - 0.6) * 8;
+        this.speedSize = Math.random() * 0.05 + 0.01;
+        this.opacity = 1;
+        this.vertices = [];
+        for (let i = 0; i < precision; i++) {
+            let step = (i / precision - 0.5) * (Math.PI * 2);
+            let vector = {
+                x: (15 * Math.pow(Math.sin(step), 3)),
+                y: -(13 * Math.cos(step) - 5 * Math.cos(2 * step) - 2 * Math.cos(3 * step) - Math.cos(4 * step))
+            }
+            this.vertices.push(vector);
+        }
+    }
+
+    Heart.prototype.draw = function () {
+        this.size -= this.speedSize;
+        this.x += this.speedX;
+        this.y += this.speedY;
+        ctx.save();
+        ctx.translate(-1000, this.y);
+        ctx.scale(this.size, this.size);
+        ctx.beginPath();
+        for (let i = 0; i < precision; i++) {
+            let vector = this.vertices[i];
+            ctx.lineTo(vector.x, vector.y);
+        }
+        ctx.globalAlpha = this.size;
+        ctx.shadowBlur = Math.round((3 - this.size) * 10);
+        ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
+        ctx.shadowOffsetX = this.x + 1000;
+        ctx.globalCompositeOperation = "screen"
+        ctx.closePath();
+        ctx.fill()
+        ctx.restore();
+    };
+
+    function render(a) {
+        requestAnimationFrame(render);
+
+        hearts.push(new Heart())
+        ctx.clearRect(0, 0, ww, wh);
+        for (let i = 0; i < hearts.length; i++) {
+            hearts[i].draw();
+            if (hearts[i].size <= 0) {
+                hearts.splice(i, 1);
+                i--;
+            }
+        }
+    }
+
+    onResize();
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("touchmove", onMove);
+    window.addEventListener("resize", onResize);
+    requestAnimationFrame(render);
+</script>
+
+<!-- Toolbox -->
+<script src="../../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 2;</script>
+<script src="../../resource/js/zms.page.pattern.js"></script>
+</body>
+</html>

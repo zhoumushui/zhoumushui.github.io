@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../resource/css/az.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <script src="../../resource/js/google.prettify.js"></script>
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../resource/css/essay.material.floating.button.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="../../resource/css/qunee.demo.css"/>
+    <!-- jQuery -->
+    <script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!--
+AZ Share: Material Floating Button;
+Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+Position:mfb-component--br,bl,tr,tl;
+Action:hover,click
+-->
+<script>
+    var essayTitle = 'Android知识图谱';
+    var essaySummary = 'Android知识图谱';
+    var essayUrl = 'http://www.zhoumushui.com/essay/6.1.html';
+    //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+    var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+</script>
+<ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+
+<!-- AZ:MindMap START height: 1500px;max-width: 1000px -->
+<div class="q-panel" style="height: 1500px;max-width: 2000px;margin-right: 100px">
+    <div role="toolbar" class="q-toolbar" style="display: none">
+        <div>
+            <div id="toolbar"></div>
+            <div id="demo_menu" class="q-right">
+                <div id="btnOverview" class="btn btn-default btn-sm">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="q-content">
+        <div id="canvas"></div>
+        <div class="Q-Export-JSON" id="Q-JSON-Panel" style="height: 0px; overflow: hidden;">
+            <textarea id="json_code_panel"></textarea>
+        </div>
+        <div class="mask" id="mask_panel">
+            <div class="loading">加载中...</div>
+        </div>
+    </div>
+</div>
+<!-- AZ:MindMap END -->
+
+<footer id="footer" class="font-yahei">&copy; <span id="footer-copyright"></span> zhoumushui
+    <ul class="footer__menu">
+        <li><a href="../../comment/index.html">留言板</a></li>
+        <span id="busuanzi_container_site_pv">本站访问量: <span id="busuanzi_value_site_pv"></span></span>
+    </ul>
+</footer>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers
+        to access this website.</p>
+    <div class="ie-warning__container">
+        <ul class="ie-warning__download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="../../resource/img/browsers/chrome.png" alt="">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="../../resource/img/browsers/firefox.png" alt="">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="../../resource/img/browsers/opera.png" alt="">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="../../resource/img/browsers/safari.png" alt="">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="../../resource/img/browsers/ie.png" alt="">
+                    <div>IE (New)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+<!-- Go Up -->
+<script type="text/javascript" src="../../resource/js/zms.goup.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../../resource/js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<!--
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../js/canvas-nest.min.js"></script>
+        -->
+
+<script src="../../resource/js/essay.material.floating.button.js"></script>
+<script type="text/javascript">
+    var panel = document.getElementById('panel'),
+        menu = document.getElementById('menu'),
+        showcode = document.getElementById('showcode'),
+        selectFx = document.getElementById('selections-fx'),
+        selectPos = document.getElementById('selections-pos'),
+        // demo defaults
+        effect = 'mfb-zoomin',
+        pos = 'mfb-component--br';
+
+    showcode.addEventListener('click', _toggleCode);
+    selectFx.addEventListener('change', switchEffect);
+    selectPos.addEventListener('change', switchPos);
+
+    function _toggleCode() {
+        panel.classList.toggle('viewCode');
+    }
+
+    function switchEffect(e) {
+        effect = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function switchPos(e) {
+        pos = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function renderMenu() {
+        menu.style.display = 'none';
+        // ?:-)
+        setTimeout(function () {
+            menu.style.display = 'block';
+            menu.className = pos + effect;
+        }, 1);
+    }
+</script>
+
+
+<script type="text/javascript" src="../../resource/js/qunee/qunee.min.js"></script>
+<script type="text/javascript" src="../../resource/js/qunee/qunee.common.js"></script>
+<script type="text/javascript" src="../../essay/mindmap/android.qunee.js"></script>
+
+<!-- Copyright Year -->
+<script>
+    $("#footer-copyright").html(new Date().getFullYear());
+</script>
+
+</body>
+</html>

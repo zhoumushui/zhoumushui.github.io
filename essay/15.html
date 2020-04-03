@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../resource/css/az.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <script src="../resource/js/google.prettify.js"></script>
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../resource/css/essay.material.floating.button.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <div class="card">
+            <div class="action-header">
+                <span class="actions essay-back-arrow">
+                    <a href="../essay.html"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title"><i class="zmdi zmdi-select-all"></i> CPU</span>
+                <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-select-all"></i>&nbsp;<span class="essay-type">CPU.list</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2017-10-30 09:50</span>
+                </span>
+
+                <!--
+                AZ Share: Material Floating Button;
+                Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+                Position:mfb-component--br,bl,tr,tl;
+                Action:hover,click
+                -->
+                <script>
+                    var essayTitle = 'CPU';
+                    var essaySummary = 'CPU List';
+                    var essayUrl = 'http://www.zhoumushui.com/essay/15.html';
+                    // var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                    var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+                </script>
+                <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+            </div>
+
+
+            <div class="card__body"><!-- HIDE style="display: none" -->
+                <div class="table-responsive">
+                    <!-- id="data-table-basic,data-table-selection,data-table-command" -->
+                    <table id="table-cpu-list" class="table table-striped"
+                           style="font-family: 'Microsoft YaHei', sans-serif">
+                        <thead>
+                        <tr>
+                            <th data-column-id="brand" data-formatter="brand">Brand</th>
+                            <th data-column-id="series" data-formatter="series">Series</th>
+                            <th data-column-id="name" data-formatter="name">Name</th>
+                            <th data-column-id="core" data-type="numeric">C</th>
+                            <th data-column-id="thread" data-formatter="thread" data-type="numeric">T</th>
+                            <th data-column-id="freq_base" data-formatter="freq_base" data-type="numeric">Base</th>
+                            <th data-column-id="freq_turbo" data-formatter="freq_turbo" data-type="numeric">Turbo</th>
+                            <th data-column-id="lithography" data-type="numeric">nm</th>
+                            <th data-column-id="package">Package</th>
+                            <th data-column-id="tdp" data-formatter="tdp" data-type="numeric">TDP</th>
+                            <th data-column-id="date">Date</th>
+                            <th data-column-id="az" data-formatter="az" data-type="numeric" data-order="desc">
+                                AZ Score
+                            </th>
+                            <!-- data-order="desc,asc" -->
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>XEON Phi</td><!-- Series -->
+                            <td>7290</td><!-- Name -->
+                            <td>72</td><!-- Core -->
+                            <td>288</td><!-- Thread -->
+                            <td>1.50</td><!-- Base Frequency -->
+                            <td>1.70</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>LGA3647</td><!-- Socket Package -->
+                            <td>245</td><!-- TDP -->
+                            <td>2016Q4</td><!-- Launch Date -->
+                            <td>48960</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>XEON</td><!-- Series -->
+                            <td>Platinum 8180</td><!-- Name -->
+                            <td>28</td><!-- Core -->
+                            <td>56</td><!-- Thread -->
+                            <td>2.50</td><!-- Base Frequency -->
+                            <td>3.80</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>LGA3647</td><!-- Socket Package -->
+                            <td>205</td><!-- TDP -->
+                            <td>2017Q3</td><!-- Launch Date -->
+                            <td>21280</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>EPYC</td><!-- Series -->
+                            <td>7601</td><!-- Name -->
+                            <td>32</td><!-- Core -->
+                            <td>64</td><!-- Thread -->
+                            <td>2.20</td><!-- Base Frequency -->
+                            <td>3.20</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>-</td><!-- Socket Package -->
+                            <td>180</td><!-- TDP -->
+                            <td>-</td><!-- Launch Date -->
+                            <td>20480</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>EPYC</td><!-- Series -->
+                            <td>7501</td><!-- Name -->
+                            <td>32</td><!-- Core -->
+                            <td>64</td><!-- Thread -->
+                            <td>2.00</td><!-- Base Frequency -->
+                            <td>3.00</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>-</td><!-- Socket Package -->
+                            <td>170</td><!-- TDP -->
+                            <td>-</td><!-- Launch Date -->
+                            <td>19200</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>XEON</td><!-- Series -->
+                            <td>E7 8890v4</td><!-- Name -->
+                            <td>24</td><!-- Core -->
+                            <td>48</td><!-- Thread -->
+                            <td>2.20</td><!-- Base Frequency -->
+                            <td>3.40</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>LGA2011</td><!-- Socket Package -->
+                            <td>165</td><!-- TDP -->
+                            <td>2016Q2</td><!-- Launch Date -->
+                            <td>16319</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>XEON</td><!-- Series -->
+                            <td>E5 2699v4</td><!-- Name -->
+                            <td>22</td><!-- Core -->
+                            <td>44</td><!-- Thread -->
+                            <td>2.20</td><!-- Base Frequency -->
+                            <td>3.60</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>LGA2011</td><!-- Socket Package -->
+                            <td>145</td><!-- TDP -->
+                            <td>2016Q2</td><!-- Launch Date -->
+                            <td>15840</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i9 7980XE</td><!-- Name -->
+                            <td>18</td><!-- Core -->
+                            <td>36</td><!-- Thread -->
+                            <td>2.60</td><!-- Base Frequency -->
+                            <td>4.20</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>LGA2066</td><!-- Socket Package -->
+                            <td>165</td><!-- TDP -->
+                            <td>2017Q3</td><!-- Launch Date -->
+                            <td>15120</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>EPYC</td><!-- Series -->
+                            <td>7401</td><!-- Name -->
+                            <td>24</td><!-- Core -->
+                            <td>48</td><!-- Thread -->
+                            <td>2.00</td><!-- Base Frequency -->
+                            <td>3.00</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>-</td><!-- Socket Package -->
+                            <td>170</td><!-- TDP -->
+                            <td>-</td><!-- Launch Date -->
+                            <td>14400</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RYZEN</td><!-- Series -->
+                            <td>TR 1950X</td><!-- Name -->
+                            <td>16</td><!-- Core -->
+                            <td>32</td><!-- Thread -->
+                            <td>3.40</td><!-- Base Frequency -->
+                            <td>4.00</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>sTR4</td><!-- Socket Package -->
+                            <td>180</td><!-- TDP -->
+                            <td>2017Q2</td><!-- Launch Date -->
+                            <td>12800</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i7 6950X</td><!-- Name -->
+                            <td>10</td><!-- Core -->
+                            <td>20</td><!-- Thread -->
+                            <td>3.00</td><!-- Base Frequency -->
+                            <td>3.50</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>LGA2011</td><!-- Socket Package -->
+                            <td>140</td><!-- TDP -->
+                            <td>2016Q2</td><!-- Launch Date -->
+                            <td>7000</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RYZEN</td><!-- Series -->
+                            <td>7 1800X</td><!-- Name -->
+                            <td>8</td><!-- Core -->
+                            <td>16</td><!-- Thread -->
+                            <td>3.60</td><!-- Base Frequency -->
+                            <td>4.00</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>AM4</td><!-- Socket Package -->
+                            <td>95</td><!-- TDP -->
+                            <td>2017Q1</td><!-- Launch Date -->
+                            <td>6400</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RYZEN</td><!-- Series -->
+                            <td>7 1700X</td><!-- Name -->
+                            <td>8</td><!-- Core -->
+                            <td>16</td><!-- Thread -->
+                            <td>3.40</td><!-- Base Frequency -->
+                            <td>3.80</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>AM4</td><!-- Socket Package -->
+                            <td>95</td><!-- TDP -->
+                            <td>2017Q2</td><!-- Launch Date -->
+                            <td>6080</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i7 8700K</td><!-- Name -->
+                            <td>6</td><!-- Core -->
+                            <td>12</td><!-- Thread -->
+                            <td>3.70</td><!-- Base Frequency -->
+                            <td>4.70</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>LGA1151</td><!-- Socket Package -->
+                            <td>95</td><!-- TDP -->
+                            <td>2017Q4</td><!-- Launch Date -->
+                            <td>5640</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RYZEN</td><!-- Series -->
+                            <td>5 1600X</td><!-- Name -->
+                            <td>6</td><!-- Core -->
+                            <td>12</td><!-- Thread -->
+                            <td>3.60</td><!-- Base Frequency -->
+                            <td>4.00</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>AM4</td><!-- Socket Package -->
+                            <td>95</td><!-- TDP -->
+                            <td>2017Q2</td><!-- Launch Date -->
+                            <td>4800</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i7 7700K</td><!-- Name -->
+                            <td>4</td><!-- Core -->
+                            <td>8</td><!-- Thread -->
+                            <td>4.20</td><!-- Base Frequency -->
+                            <td>4.50</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>LGA1151</td><!-- Socket Package -->
+                            <td>91</td><!-- TDP -->
+                            <td>2017Q1</td><!-- Launch Date -->
+                            <td>3600</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i7 6700K</td><!-- Name -->
+                            <td>4</td><!-- Core -->
+                            <td>8</td><!-- Thread -->
+                            <td>4.00</td><!-- Base Frequency -->
+                            <td>4.20</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>LGA1151</td><!-- Socket Package -->
+                            <td>91</td><!-- TDP -->
+                            <td>2015Q3</td><!-- Launch Date -->
+                            <td>3360</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i7 7700HQ</td><!-- Name -->
+                            <td>4</td><!-- Core -->
+                            <td>8</td><!-- Thread -->
+                            <td>2.80</td><!-- Base Frequency -->
+                            <td>3.80</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>BGA1440</td><!-- Socket Package -->
+                            <td>45</td><!-- TDP -->
+                            <td>2017Q1</td><!-- Launch Date -->
+                            <td>3040</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RYZEN</td><!-- Series -->
+                            <td>5 1500</td><!-- Name -->
+                            <td>4</td><!-- Core -->
+                            <td>8</td><!-- Thread -->
+                            <td>3.50</td><!-- Base Frequency -->
+                            <td>3.70</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>AM4</td><!-- Socket Package -->
+                            <td>65</td><!-- TDP -->
+                            <td>2017Q2</td><!-- Launch Date -->
+                            <td>2960</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RYZEN</td><!-- Series -->
+                            <td>5 1400</td><!-- Name -->
+                            <td>4</td><!-- Core -->
+                            <td>8</td><!-- Thread -->
+                            <td>3.20</td><!-- Base Frequency -->
+                            <td>3.40</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>AM4</td><!-- Socket Package -->
+                            <td>65</td><!-- TDP -->
+                            <td>2017Q2</td><!-- Launch Date -->
+                            <td>2720</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i5 8600K</td><!-- Name -->
+                            <td>6</td><!-- Core -->
+                            <td>6</td><!-- Thread -->
+                            <td>3.60</td><!-- Base Frequency -->
+                            <td>4.30</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>LGA1151</td><!-- Socket Package -->
+                            <td>95</td><!-- TDP -->
+                            <td>2017Q4</td><!-- Launch Date -->
+                            <td>2579</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i7 2630QM</td><!-- Name -->
+                            <td>4</td><!-- Core -->
+                            <td>8</td><!-- Thread -->
+                            <td>2.00</td><!-- Base Frequency -->
+                            <td>2.90</td><!-- Turbo Frequency -->
+                            <td>32</td><!-- Lithography(nm) -->
+                            <td>PGA988</td><!-- Socket Package -->
+                            <td>45</td><!-- TDP -->
+                            <td>2011Q1</td><!-- Launch Date -->
+                            <td>2320</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i5 7600K</td><!-- Name -->
+                            <td>4</td><!-- Core -->
+                            <td>4</td><!-- Thread -->
+                            <td>3.80</td><!-- Base Frequency -->
+                            <td>4.20</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>LGA1151</td><!-- Socket Package -->
+                            <td>91</td><!-- TDP -->
+                            <td>2017Q1</td><!-- Launch Date -->
+                            <td>1680</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i3 7350K</td><!-- Name -->
+                            <td>2</td><!-- Core -->
+                            <td>4</td><!-- Thread -->
+                            <td>4.20</td><!-- Base Frequency -->
+                            <td>4.20</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>LGA1151</td><!-- Socket Package -->
+                            <td>60</td><!-- TDP -->
+                            <td>2017Q1</td><!-- Launch Date -->
+                            <td>1680</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i3 8350K</td><!-- Name -->
+                            <td>4</td><!-- Core -->
+                            <td>4</td><!-- Thread -->
+                            <td>4.00</td><!-- Base Frequency -->
+                            <td>4.00</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>LGA1151</td><!-- Socket Package -->
+                            <td>91</td><!-- TDP -->
+                            <td>2017Q4</td><!-- Launch Date -->
+                            <td>1600</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>AMD</td><!-- Brand -->
+                            <td>RYZEN</td><!-- Series -->
+                            <td>3 1300X</td><!-- Name -->
+                            <td>4</td><!-- Core -->
+                            <td>4</td><!-- Thread -->
+                            <td>3.50</td><!-- Base Frequency -->
+                            <td>3.70</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>AM4</td><!-- Socket Package -->
+                            <td>65</td><!-- TDP -->
+                            <td>2017Q3</td><!-- Launch Date -->
+                            <td>1480</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i5 7300HQ</td><!-- Name -->
+                            <td>4</td><!-- Core -->
+                            <td>4</td><!-- Thread -->
+                            <td>2.50</td><!-- Base Frequency -->
+                            <td>3.50</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>BGA1440</td><!-- Socket Package -->
+                            <td>45</td><!-- TDP -->
+                            <td>2017Q1</td><!-- Launch Date -->
+                            <td>1400</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i5 760</td><!-- Name -->
+                            <td>4</td><!-- Core -->
+                            <td>4</td><!-- Thread -->
+                            <td>2.80</td><!-- Base Frequency -->
+                            <td>3.33</td><!-- Turbo Frequency -->
+                            <td>45</td><!-- Lithography(nm) -->
+                            <td>LGA1156</td><!-- Socket Package -->
+                            <td>95</td><!-- TDP -->
+                            <td>2010Q3</td><!-- Launch Date -->
+                            <td>1332</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i5 4300M</td><!-- Name -->
+                            <td>2</td><!-- Core -->
+                            <td>4</td><!-- Thread -->
+                            <td>2.60</td><!-- Base Frequency -->
+                            <td>3.30</td><!-- Turbo Frequency -->
+                            <td>22</td><!-- Lithography(nm) -->
+                            <td>PGA946</td><!-- Socket Package -->
+                            <td>37</td><!-- TDP -->
+                            <td>2013Q4</td><!-- Launch Date -->
+                            <td>1320</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i5 2410M</td><!-- Name -->
+                            <td>2</td><!-- Core -->
+                            <td>4</td><!-- Thread -->
+                            <td>2.30</td><!-- Base Frequency -->
+                            <td>2.90</td><!-- Turbo Frequency -->
+                            <td>32</td><!-- Lithography(nm) -->
+                            <td>PGA988</td><!-- Socket Package -->
+                            <td>35</td><!-- TDP -->
+                            <td>2011Q1</td><!-- Launch Date -->
+                            <td>1160</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CORE</td><!-- Series -->
+                            <td>i5 460M</td><!-- Name -->
+                            <td>2</td><!-- Core -->
+                            <td>4</td><!-- Thread -->
+                            <td>2.53</td><!-- Base Frequency -->
+                            <td>2.80</td><!-- Turbo Frequency -->
+                            <td>32</td><!-- Lithography(nm) -->
+                            <td>PGA988</td><!-- Socket Package -->
+                            <td>35</td><!-- TDP -->
+                            <td>2010Q3</td><!-- Launch Date -->
+                            <td>1120</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>PENTIUM</td><!-- Series -->
+                            <td>N3540</td><!-- Name -->
+                            <td>4</td><!-- Core -->
+                            <td>4</td><!-- Thread -->
+                            <td>2.16</td><!-- Base Frequency -->
+                            <td>2.66</td><!-- Turbo Frequency -->
+                            <td>22</td><!-- Lithography(nm) -->
+                            <td>BGA1170</td><!-- Socket Package -->
+                            <td>7.5</td><!-- TDP -->
+                            <td>2014Q3</td><!-- Launch Date -->
+                            <td>1064</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>PENTIUM</td><!-- Series -->
+                            <td>4415U</td><!-- Name -->
+                            <td>2</td><!-- Core -->
+                            <td>4</td><!-- Thread -->
+                            <td>2.30</td><!-- Base Frequency -->
+                            <td>2.30</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>BGA1356</td><!-- Socket Package -->
+                            <td>15</td><!-- TDP -->
+                            <td>2017Q1</td><!-- Launch Date -->
+                            <td>919</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CELERON</td><!-- Series -->
+                            <td>G3950</td><!-- Name -->
+                            <td>2</td><!-- Core -->
+                            <td>2</td><!-- Thread -->
+                            <td>3.00</td><!-- Base Frequency -->
+                            <td>3.00</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>LGA1151</td><!-- Socket Package -->
+                            <td>51</td><!-- TDP -->
+                            <td>2017Q1</td><!-- Launch Date -->
+                            <td>600</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CELERON</td><!-- Series -->
+                            <td>3965U</td><!-- Name -->
+                            <td>2</td><!-- Core -->
+                            <td>2</td><!-- Thread -->
+                            <td>2.20</td><!-- Base Frequency -->
+                            <td>2.20</td><!-- Turbo Frequency -->
+                            <td>14</td><!-- Lithography(nm) -->
+                            <td>BGA1356</td><!-- Socket Package -->
+                            <td>15</td><!-- TDP -->
+                            <td>2017Q1</td><!-- Launch Date -->
+                            <td>440</td><!-- AZ Score -->
+                        </tr>
+                        <tr>
+                            <td>Intel</td><!-- Brand -->
+                            <td>CELERON</td><!-- Series -->
+                            <td>430</td><!-- Name -->
+                            <td>1</td><!-- Core -->
+                            <td>1</td><!-- Thread -->
+                            <td>1.80</td><!-- Base Frequency -->
+                            <td>1.80</td><!-- Turbo Frequency -->
+                            <td>65</td><!-- Lithography(nm) -->
+                            <td>LGA775</td><!-- Socket Package -->
+                            <td>35</td><!-- TDP -->
+                            <td>2007Q2</td><!-- Launch Date -->
+                            <td>180</td><!-- AZ Score -->
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <link rel="stylesheet" href="../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<script src="../resource/js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../resource/js/canvas-nest.min.js"></script>
+
+<script src="../resource/js/essay.material.floating.button.js"></script>
+<script type="text/javascript">
+    var panel = document.getElementById('panel'),
+        menu = document.getElementById('menu'),
+        showcode = document.getElementById('showcode'),
+        selectFx = document.getElementById('selections-fx'),
+        selectPos = document.getElementById('selections-pos'),
+        // demo defaults
+        effect = 'mfb-zoomin',
+        pos = 'mfb-component--br';
+
+    showcode.addEventListener('click', _toggleCode);
+    selectFx.addEventListener('change', switchEffect);
+    selectPos.addEventListener('change', switchPos);
+
+    function _toggleCode() {
+        panel.classList.toggle('viewCode');
+    }
+
+    function switchEffect(e) {
+        effect = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function switchPos(e) {
+        pos = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function renderMenu() {
+        menu.style.display = 'none';
+        // ?:-)
+        setTimeout(function () {
+            menu.style.display = 'block';
+            menu.className = pos + effect;
+        }, 1);
+    }
+</script>
+
+<!-- Flot Charts -->
+<script src="../resource/js/flot-charts/curved-line.js"></script>
+<script src="../resource/js/sparkline-charts.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.pie.js"></script>
+<script src="../vendors/bower_components/flot/jquery.flot.resize.js"></script>
+<script src="../vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+<!-- Sparkline Charts -->
+<script src="../vendors/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+
+<!-- Toolbox -->
+<script src="../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 1;</script>
+<script src="../resource/js/zms.page.pattern.js"></script>
+<script>
+    // AZ: for lists of CPU page.
+    $("#table-cpu-list").bootgrid({
+        ajax: false,
+        selection: false, // AZ:Show Select Icon
+        rowCount: 1000, // AZ: -1 mains show all
+        //Override default icon classes
+        css: {
+            icon: 'table-bootgrid__icon zmdi',
+            iconSearch: 'zmdi-search',
+            iconColumns: 'zmdi-view-column',
+            iconDown: 'zmdi-sort-amount-desc',
+            iconRefresh: 'zmdi-refresh',
+            iconUp: 'zmdi-sort-amount-asc',
+            dropDownMenu: 'dropdown form-group--select',
+            search: 'table-bootgrid__search',
+            actions: 'table-bootgrid__actions',
+            header: 'table-bootgrid__header',
+            footer: 'table-bootgrid__footer',
+            dropDownItem: 'table-bootgrid__label',
+            table: 'table table-bootgrid',
+            pagination: 'pagination table-bootgrid__pagination'
+        },
+
+        //Override default module markups
+        templates: {
+            actionDropDown: "<span class=\"{{css.dropDownMenu}}\">" + "<a href='' data-toggle=\"dropdown\">{{ctx.content}}</a><ul class=\"{{css.dropDownMenuItems}}\" role=\"menu\"></ul></span>",
+            search: "<div class=\"{{css.search}} form-group\"><span class=\"{{css.icon}} {{css.iconSearch}}\"></span><input type=\"text\" class=\"{{css.searchField}}\" placeholder=\"{{lbl.search}}\" /><i class='form-group__bar'></i></div>",
+            header: "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div>",
+            actionDropDownCheckboxItem: "<li><div class='tabe-bootgrid__checkbox checkbox checkbox--dark'><label class=\"{{css.dropDownItem}}\"><input name=\"{{ctx.name}}\" type=\"checkbox\" value=\"1\" class=\"{{css.dropDownItemCheckbox}}\" {{ctx.checked}} /> {{ctx.label}}<i class='input-helper'></i></label></div></li>",
+            footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 table-bootgrid__showing hidden-xs\"><p class=\"{{css.infos}}\"></p></div></div></div>"
+        },
+        formatters: {
+            "brand": function (column, row) {
+                switch (row.brand) {
+                    case 'Intel':
+                        return "<span class=\"cpu-brand-intel\">" + row.brand + "</span>";
+                    case 'AMD':
+                        return "<span class=\"cpu-brand-amd\">" + row.brand + "</span>";
+                    default:
+                        return row.brand;
+                }
+            },
+            "series": function (column, row) {
+                switch (row.brand) {
+                    case 'Intel':
+                        return "<span class=\"cpu-brand-intel\">" + row.series + "</span>";
+                    case 'AMD':
+                        return "<span class=\"cpu-brand-amd\">" + row.series + "</span>";
+                    default:
+                        return row.series;
+                }
+            },
+            "name": function (column, row) {
+                switch (row.name) {
+                    case 'i7 6700K':
+                    case 'i7 2630QM':
+                    case 'i5 760':
+                    case 'i5 460M':
+                        return "<span class=\"cpu-used\">" + row.name + "</span>";
+                    default:
+                        return row.name;
+                }
+            },
+            "freq_base": function (column, row) {
+                return row.freq_base.toFixed(2);
+            },
+            "freq_turbo": function (column, row) {
+                return row.freq_turbo.toFixed(2);
+            },
+            "tdp": function (column, row) {
+                var tdp = row.tdp;
+                if (tdp < 0) {
+                    return tdp;
+                } else if (tdp < 50) {
+                    return "<span class=\"cpu-tdp-low\">" + tdp + "</span>";
+                } else if (tdp < 100) {
+                    return "<span class=\"cpu-tdp-middle\">" + tdp + "</span>";
+                } else {
+                    return "<span class=\"cpu-tdp-high\">" + tdp + "</span>";
+                }
+            },
+            "az": function (column, row) {
+                var frequencyTurbo = row.freq_turbo; // V1: freq_turbo * thread * 100
+                var thread = row.thread;
+                var pricePerformance = 100; // 价格-性能系数
+                return parseInt(frequencyTurbo * thread * pricePerformance);
+            }
+        }
+    });
+</script>
+</body>
+</html>

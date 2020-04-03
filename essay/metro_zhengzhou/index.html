@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随笔</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Light Gallery -->
+    <link href="../../vendors/bower_components/lightgallery/dist/css/lightgallery.min.css" rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../resource/css/az.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <script src="../../resource/js/google.prettify.js"></script>
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../resource/css/essay.material.floating.button.css" rel="stylesheet">
+
+    <!-- AMap -->
+    <style type="text/css">
+        #container_amap {
+            height: 100%; /*580px;*/
+            min-height: 580px;
+            width: 100%;
+            margin: 0px;
+        }
+
+        .button-fullscreen {
+            position: absolute;
+            bottom: 80%; /* 20px; */
+            right: 50%; /* 20px; */
+            font-size: 12px;
+            padding: 10px;
+        }
+
+        .button-fullscreen .button {
+            height: 28px;
+            line-height: 28px;
+            background-color: #0D9BF2;
+            color: #FFF;
+            border: 0;
+            outline: none;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-radius: 3px;
+            margin-bottom: 4px;
+            cursor: pointer;
+        }
+
+        .button-recent-plan {
+            position: absolute;
+            bottom: 68%; /* 20px; */
+            right: 5px; /* 20px; */
+            font-size: 9px;
+            padding: 1px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script type="text/javascript"
+            src="http://webapi.amap.com/maps?v=1.4.0&key=00adddac7e40038a02471b299a505dbd"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <div class="card">
+            <div class="action-header">
+                <span class="actions essay-back-arrow">
+                    <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title">郑州地铁</span>
+                <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-subway"></i>&nbsp;<span class="essay-type">Subway</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2018-03-08 15:15</span>
+                </span>
+
+                <!--
+                AZ Share: Material Floating Button;
+                Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+                Position:mfb-component--br,bl,tr,tl;
+                Action:hover,click
+                -->
+                <script>
+                    var essayTitle = '郑州地铁';
+                    var essaySummary = '交通（地铁）';
+                    var essayUrl = 'http://www.zhoumushui.com/essay/33.html';
+                    //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                    var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+                </script>
+                <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+            </div>
+
+            <div class="card__body" style="font-size: 15px" id="container_amap" tabindex="0"></div>
+            <div class="button-fullscreen">
+                <span class="button" style="display:block;cursor:pointer;text-align:center;">
+                    <i class="zmdi zmdi-fullscreen-alt" id="fullscreen"> 全屏查看</i>
+                </span>
+                <!--
+                <input type="button" class="button" value="开始" id="start"/>
+                <input type="button" class="button" value="暂停" id="pause"/>
+                <input type="button" class="button" value="继续" id="resume"/>
+                <input type="button" class="button" value="停止" id="stop"/>
+                -->
+            </div>
+
+
+            <!--
+            <span class="lightbox button-recent-plan" style="float: right;">
+                     <span data-src="../img/essay/22.1.jpg">
+                        <a href="" target="_blank"
+                           class="btn btn-default"><i class="zmdi zmdi-image"></i>&nbsp;规划</a>
+                     </span>
+                </span>
+             -->
+
+            <script type="text/javascript"
+                    src="../../resource/js/essay.zhengzhoumetro.array.js"></script>
+            <script type="text/javascript">
+                var map;
+                var iconStar, iconCar;
+                var iconPurpleDot, iconBlueDot, iconTealDot, iconGreenDot, iconYellowDot, iconRedDot;
+                var colorYellow;
+                var colorRed;
+                var colorBlue;
+                var colorTeal;
+                var colorGrey;
+
+                function initialMap(center) {
+                    map = new AMap.Map('container_amap', { // AZ:Initial Map
+                        resizeEnable: true,
+                        // pitch: 75, // 初始俯仰角度[0,83]
+                        // viewMode: '3D', // 开启3D地图
+                        /**
+                         * normal-标准
+                         * whitesmoke-远山黛
+                         * macaron-马卡龙
+                         * graffiti-涂鸦
+                         * darkblue-极夜蓝
+                         * blue-靛青蓝
+                         * fresh-草色青
+                         * dark-幻影黑
+                         * light-月光银
+                         * grey-雅士灰
+                         */
+                        mapStyle: 'amap://styles/normal', // 样式URL{setMapStyle}
+                        zoom: 12, // {setZoom}
+                        center: center // {setCenter}
+                    });
+                    map.plugin([
+                        "AMap.ToolBar",
+                        'AMap.Scale',
+                        //'AMap.OverView',
+                        'AMap.MapType'
+                    ], function () {
+                        map.addControl(new AMap.ToolBar()); // 工具条
+                        map.addControl(new AMap.Scale()); // 比例尺
+                        // map.addControl(new AMap.OverView({isOpen:true})); // 鹰眼-右下角缩略图
+                        map.addControl(new AMap.MapType({defaultType: 0})); // 实现默认图层与卫星图、实施交通图层之间切换
+                    });
+                    // bg-地图背景 point-兴趣点 road-道路 building-建筑物
+                    // map.setFeatures(['bg', 'point', 'road', 'building'])//多个种类要素显示
+                }
+
+                function initialIcon() {
+                    iconStar = new AMap.Icon({
+                        image: 'https://vdata.amap.com/icons/b18/1/2.png',
+                        size: new AMap.Size(24, 24)
+                    });
+                    iconCar = "http://webapi.amap.com/images/car.png";
+                    iconTealDot = new AMap.Icon({image: '../img/essay/14.0.png', size: new AMap.Size(15, 15)});
+                    iconBlueDot = new AMap.Icon({image: '../img/essay/14.1.png', size: new AMap.Size(15, 15)});
+                    iconGreenDot = new AMap.Icon({image: '../img/essay/14.2.png', size: new AMap.Size(15, 15)});
+                    iconYellowDot = new AMap.Icon({image: '../img/essay/14.3.png', size: new AMap.Size(15, 15)});
+                    iconRedDot = new AMap.Icon({image: '../img/essay/14.4.png', size: new AMap.Size(15, 15)});
+                    iconPurpleDot = new AMap.Icon({image: '../img/essay/14.5.png', size: new AMap.Size(15, 15)});
+                }
+
+                function initialColor() {
+                    colorRed = "#f44336"; // 一环
+                    colorYellow = "#FFEB3B"; // 二环
+                    colorTeal = "#009688"; // 三环
+                    colorBlue = "#00BCD4";
+                    colorGrey = "#9E9E9E";
+                }
+
+                // AZ:替换JSON中的户型数字为汉字
+                function getMetroState(state) {
+                    switch (state) {
+                        case 2:
+                            return "运行";
+                        case 1:
+                            return "修建";
+                        case 0:
+                        default:
+                            return "规划";
+                    }
+                }
+
+                function drawPoint() {
+                    var arrayMarkerPoint = []; // essay.zhengzhoumetro.array.js
+                    for (var i = 0; i < arrayMetro.length; i += 1) {
+                        var markerPoint;
+                        var iconPoint;
+                        switch (arrayMetro[i].state) {
+                            case 2: // 建成
+                                iconPoint = iconBlueDot;
+                                break;
+                            case 0: // 规划
+                            case 1: // 修建
+                            default:
+                                iconPoint = iconTealDot;
+                                break;
+                        }
+                        markerPoint = new AMap.Marker({
+                            animation: "AMAP_ANIMATION_NONE",//点标记的动画效果：AMAP_ANIMATION_NONE-无动画效果(默认)；AMAP_ANIMATION_DROP-点标掉落效果；AMAP_ANIMATION_BOUNCE-点标弹跳效果
+                            bubble: false, // 默认false，true的时候事件可以穿透到地图
+                            clickable: true, // 点标记是否可点击
+                            //content:"Content",// 点标记显示内容，可以是HTML要素字符串或者HTML DOM对象。content有效时，icon属性将被覆盖
+                            // cursor:, // 指定鼠标悬停时的鼠标样式，自定义cursor，IE仅支持cur/ani/ico格式，Opera不支持自定义cursor
+                            draggable: false, // 设置点标记是否可拖拽移动，默认为false
+                            icon: iconPoint, // icon可缺省，缺省时为默认的蓝色水滴图标
+                            map: map,
+                            offset: new AMap.Pixel(-7, -7), // (-12,-12)
+                            position: arrayMetro[i].position.split(','),
+                            //shadow:, // 点标记阴影，不设置该属性则点标记无阴影
+                            visible: true, // 点标记是否可见，默认为true
+                            title: // 鼠标滑过点标记时的文字提示，不设置则鼠标滑过点标无文字提示
+                            "【线路】" + arrayMetro[i].line +
+                            "\n【名称】" + arrayMetro[i].name +
+                            "\n【状态】" + getMetroState(arrayMetro[i].state),
+                            zIndex: 101 // 标记的叠加顺序。地图上存在多个点标记叠加时，通过该属性使级别较高的点标记在上层显示，默认100
+                        });
+//                            map.setCenter(markerPoint.getPosition());
+                        arrayMarkerPoint.push(markerPoint);
+                    }
+                }
+
+                /**
+                 *
+                 * @param destinationMap 目标地图
+                 * @param arrayPathPoint 路径点
+                 * @param lineWeight 线宽
+                 * @param lineColor 线色
+                 */
+                function drawPath(destinationMap, arrayPathPoint, lineWeight, lineColor, strokeStyle, strokeOpacity) {
+                    // 绘制轨迹
+                    var polyline = new AMap.Polyline({
+                        map: destinationMap,
+                        path: arrayPathPoint,
+                        strokeColor: lineColor,  // 线颜色
+                        strokeOpacity: strokeOpacity,     // 线透明度
+                        strokeWeight: lineWeight, // 线宽
+                        showDir: false, // 显示方向箭头
+                        strokeStyle: strokeStyle  // 线样式:solid/dashed
+                    });
+                    var passedPolyline = new AMap.Polyline({
+                        map: destinationMap,
+                        // path: arrayPathPoint,
+                        strokeColor: "#FF0000",  //线颜色
+                        // strokeOpacity: 1,     //线透明度
+                        strokeWeight: 3,      //线宽
+                        // strokeStyle: "solid"  //线样式
+                    });
+//                    markerPath_Step55555.on('moving', function (e) {
+//                        passedPolyline.setPath(e.passedPath);
+//                    })
+//                    destinationMap.setFitView();
+//                    AMap.event.addDomListener(document.getElementById('start'), 'click', function () {
+//                        markerPath_Step55555.moveAlong(arrayPathPoint, 500);
+//                    }, false);
+//                    AMap.event.addDomListener(document.getElementById('pause'), 'click', function () {
+//                        markerPath_Step55555.pauseMove();
+//                    }, false);
+//                    AMap.event.addDomListener(document.getElementById('resume'), 'click', function () {
+//                        markerPath_Step55555.resumeMove();
+//                    }, false);
+//                    AMap.event.addDomListener(document.getElementById('stop'), 'click', function () {
+//                        markerPath_Step55555.stopMove();
+//                    }, false);
+                }
+
+                function drawCircle(map, center, radius, fillOpacity, strokeWeight) {
+                    new AMap.Circle({
+                        map: map,
+                        center: center,
+                        radius: radius,
+                        fillOpacity: fillOpacity,
+                        strokeWeight: strokeWeight
+                    })
+                }
+
+                var pointZiJinShan = [113.682049, 34.762173]; // 紫荆山（1&2号线换乘站）
+                var pointXingYang = [113.383221, 34.787375]; // 荥阳市政府
+                var pointAirport = [113.854823, 34.526056]; // 新郑国际机场
+                var pointKaiFeng = [114.341447, 34.797049]; // 开封
+                var pointZhongMu = [113.975817, 34.720374]; // 中牟县政府
+
+
+                initialMap(pointZiJinShan);
+                initialIcon();
+                initialColor();
+
+                // drawPath(map, arraySubway01, 2, colorRed, "dashed", 0.8);
+                drawPoint();
+
+                drawCircle(map, pointZiJinShan, 5000, 0.0, 1);  //  5km
+                drawCircle(map, pointZiJinShan, 10000, 0.0, 1); // 10km
+                drawCircle(map, pointZiJinShan, 15000, 0.0, 1); // 15km
+                drawCircle(map, pointXingYang, 5000, 0.0, 1); // 荥阳
+                drawCircle(map, pointAirport, 5000, 0.0, 1); // 新郑机场
+                drawCircle(map, pointKaiFeng, 5000, 0.0, 1); // 开封
+                drawCircle(map, pointZhongMu, 5000, 0.0, 1); // 中牟
+            </script>
+        </div>
+
+    </section>
+
+    <link rel="stylesheet" href="../../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+
+<!-- jQuery -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Light Gallery -->
+<script src="../../vendors/bower_components/lightgallery/dist/js/lightgallery.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-fullscreen.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-thumbnail.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-zoom.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-video.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../../resource/js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<!--<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../js/canvas-nest.min.js"></script>-->
+
+<script src="../../resource/js/essay.material.floating.button.js"></script>
+<script type="text/javascript">
+    var panel = document.getElementById('panel'),
+        menu = document.getElementById('menu'),
+        showcode = document.getElementById('showcode'),
+        selectFx = document.getElementById('selections-fx'),
+        selectPos = document.getElementById('selections-pos'),
+        // demo defaults
+        effect = 'mfb-zoomin',
+        pos = 'mfb-component--br';
+
+    showcode.addEventListener('click', _toggleCode);
+    selectFx.addEventListener('change', switchEffect);
+    selectPos.addEventListener('change', switchPos);
+
+    function _toggleCode() {
+        panel.classList.toggle('viewCode');
+    }
+
+    function switchEffect(e) {
+        effect = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function switchPos(e) {
+        pos = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function renderMenu() {
+        menu.style.display = 'none';
+        // ?:-)
+        setTimeout(function () {
+            menu.style.display = 'block';
+            menu.className = pos + effect;
+        }, 1);
+    }
+</script>
+
+<!-- Toolbox -->
+<script src="../../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 2;</script>
+<script src="../../resource/js/zms.page.pattern.js"></script>
+<script>
+
+    function requestFullScreen(element) {
+        var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+        if (requestMethod) {
+            requestMethod.call(element);
+        } else if (typeof window.ActiveXObject !== "undefined") {
+            var wscript = new ActiveXObject("WScript.Shell");
+            if (wscript !== null) {
+                wscript.SendKeys("{F11}");
+            }
+        }
+    }
+
+    function exitFullscreen() {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
+    }
+
+    function isFullscreen() {
+        if (navigator.userAgent.indexOf("Firefox") != -1) {
+            return document.mozFullScreen;
+        } else if (navigator.userAgent.indexOf("Chrome") != -1) {
+            return document.webkitIsFullScreen;
+        }
+        return document.fullscreen;
+    }
+
+    var btnFullscreen = document.getElementById("fullscreen");
+    btnFullscreen.onclick = function () {
+        var elem = document.getElementById("container_amap");
+        requestFullScreen(elem);
+    };
+</script>
+
+</body>
+</html>

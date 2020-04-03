@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Android知识图谱</title>
+
+    <!-- Vendors -->
+
+    <!-- Animate CSS -->
+    <link href="../../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Light Gallery -->
+    <link href="../../vendors/bower_components/lightgallery/dist/css/lightgallery.min.css" rel="stylesheet">
+
+    <!-- Bootgrid -->
+    <link href="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../../resource/css/app-1.min.css" rel="stylesheet">
+
+    <link href="../../resource/css/az.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <script src="../../resource/js/google.prettify.js"></script>
+
+    <!-- Page loader -->
+    <!--
+    <script src="js/page-loader.min.js"></script>
+    -->
+
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel=icon/>
+    <link type="image/x-icon" href="../../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../../resource/css/essay.material.floating.button.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../resource/css/qunee.demo.css"/>
+
+    <style>
+        .list-item-link {
+            height: 20px;
+            padding: 0 5px 0;
+        }
+
+        hr {
+            border: solid;
+            border-width: thin;
+            color: #8a9ba1; /* #009688 */
+        }
+    </style>
+
+    <!-- jQuery -->
+    <script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e3a97a0eee3cb03b5caf792f58032743";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
+</div>
+-->
+
+<!-- Header -->
+<header id="header"></header>
+
+<section id="main">
+
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">随</a>
+            <a href="" data-toggle="tab">笔</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+
+    <section id="content">
+
+        <div class="card">
+            <div class="action-header">
+                <span class="actions essay-back-arrow">
+                    <a href="../../"><i class="zmdi zmdi-arrow-left" title="返回列表"></i></a>
+                </span>&nbsp;&nbsp;&nbsp;
+                <span class="essay-title">Android知识图谱</span>
+                <span align="right" style="float: right;">
+                    <i class="zmdi zmdi-android"></i>&nbsp;<span class="essay-type">Android</span>&nbsp;&nbsp;
+                    <i class="zmdi zmdi-time"></i>&nbsp;<span class="essay-time">2014-07-07 07:07</span>
+                </span>
+
+                <!--
+                AZ Share: Material Floating Button;
+                Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+                Position:mfb-component--br,bl,tr,tl;
+                Action:hover,click
+                -->
+                <script>
+                    var essaySummary = 'Android知识图谱';
+                    document.title = essaySummary;
+                    var essayTitle = document.title;
+                    var essayUrl = window.location.href;
+                    //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+                    var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+                </script>
+                <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+            </div>
+            <div class="card__body" style="color: #8a9ba1">
+                <!-- AZ:MindMap START -->
+                <a href="6.1.html" target="_blank" class="btn btn-default  btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> MindMap</a>
+                <!-- AZ:MindMap END -->
+
+                <a href="#android_view" class="btn btn-primary btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> View</a>
+                <a href="#canvas_paint" class="btn btn-success btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> Canvas Paint</a>
+                <a href="#listview" class="btn btn-warning btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> ListView</a>
+                <a href="#activity" class="btn btn-default btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> Activity</a>
+                <a href="#broadcast-receiver" class="btn btn-primary btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> Broadcast Receiver</a>
+                <a href="#content-provider" class="btn btn-danger btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> Content Provider</a>
+                <a href="#service" class="btn btn-success btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> Service</a>
+                <a href="#fragment" class="btn btn-default btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> Fragment</a>
+                <a href="#event_message" class="btn btn-primary btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> 事件&消息</a>
+                <a href="#process_thread" class="btn btn-primary btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> 进程线程</a>
+                <a href="#jvm" class="btn btn-warning btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> JVM</a>
+                <a href="#oom" class="btn  btn-default btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> OOM</a>
+                <a href="#network" class="btn  btn-danger btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> 网络</a>
+                <a href="#sql" class="btn b btn-success btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> 数据库</a>
+                <a href="#security" class="btn  btn-warning btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> 安全</a>
+                <a href="#build_package_install" class="btn btn-default btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> 编译安装</a>
+                <a href="#ide" class="btn  btn-info btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> IDE</a>
+                <a href="#java" class="btn b btn-warning btn--icon-text">
+                    <i class="zmdi zmdi-coffee"></i> Java</a>
+                <a href="#jni" class="btn btn-success btn--icon-text">
+                    <i class="zmdi zmdi-coffee"></i> JNI</a>
+                <a href="#design_pattern" class="btn btn-danger btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> 设计模式</a>
+                <a href="#algorithm" class="btn  btn-primary btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> 算法</a>
+                <a href="#data_structure" class="btn btn-success btn--icon-text">
+                    <i class="zmdi zmdi-android"></i> 数据结构</a>
+
+                <br>
+                <hr>
+                <h2 id="android_view">View</h2>
+                <ul>
+                    <li>
+                            <span class="lightbox">
+                                <span data-src="img/3.png">
+                                   <a href="6.1.html" target="_blank"
+                                      class="btn btn-default btn-default btn--icon-text list-item-link">
+                                    View的绘制流程：Measure -> Layout -> Draw
+                                   &nbsp;<i class="zmdi zmdi-image"></i></a>
+                                </span>
+                            </span>
+                    </li>
+                    <li>自定义View的机型适配</li>
+                    <li>自定义View的事件分发
+                        <ul>
+                            <li>事件分发中的onTouch 和onTouchEvent 有什么区别，又该如何使用？
+                                <a href="https://www.cnblogs.com/Claire6649/p/5947139.html" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>public boolean dispatchTouchEvent(MotionEvent ev); //用来分派event</li>
+                            <li>public boolean onInterceptTouchEvent(MotionEvent ev); //用来拦截event</li>
+                            <li>public boolean onTouchEvent(MotionEvent ev); //用来处理event</li>
+                            <li>其中Activity和View控件（TextView）拥有分派和处理事件方法，View容器（LinearLayout）具有分派，拦截，处理事件方法。</li>
+                        </ul>
+                    </li>
+                    <li>View和ViewGroup分别有哪些事件分发相关的回调方法</li>
+                    <li>自定义View如何提供获取View属性的接口</li>
+                    <li>view渲染
+                        <a href="https://www.cnblogs.com/ldq2016/p/6668148.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>计算一个view的嵌套层级
+                        <a href="https://blog.csdn.net/zx_android/article/details/79558509" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>View事件传递
+                        <a href="https://www.cnblogs.com/baron89/p/4642721.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>屏幕适配的处理技巧都有哪些；</li>
+                    <li>
+                        View的绘制流程；自定义View如何考虑机型适配；自定义View的事件分发机制；View和ViewGroup分别有哪些事件分发相关的回调方法；自定义View如何提供获取View属性的接口；
+                    </li>
+                    <li>微信上消息小红点的原理</li>
+                    <li>动态布局:LayoutParams
+                        <a href="https://www.jianshu.com/p/0d6f753fdd92" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>介绍下SurfaceView
+                        <a href="https://blog.csdn.net/android_cmos/article/details/68955134" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>LinearLayout、RelativeLayout、FrameLayout的特性、使用场景</li>
+                </ul>
+
+                <hr>
+                <h2 id="canvas_paint">Canvas Paint</h2>
+                <ul>
+                    <li>在View的onDraw中使用Canvas.drawXXX()绘制
+                        <ul>
+                            <li>线段：canvas.drawPath(Path path, Paint paint);</li>
+                            <li>线段：canvas.drawLine(float startX, float startY, float stopX, float stopY, Paint
+                                paint)
+                            </li>
+                            <li>文字：canvas.drawText(String text, float x, float y, Paint paint);</li>
+                            <li>矩形：canvas.drawRect(float left, float top, float right, float bottom, Paint paint);
+                            </li>
+                            <li>圆形：canvas.drawCircle(float cx, float cy, float radius, Paint paint);</li>
+                            <li>图片：canvas.drawBitmap(Bitmap bitmap, float left, float top, Paint paint);</li>
+                        </ul>
+                    </li>
+                    <li>Paint画笔
+                        <ul>
+                            <li>颜色：paint.setColor(int color);</li>
+                            <li>颜色：paint.setARGB(int a, int r, int g, int b);
+                                // setColor((a << 24) | (r << 16) | (g << 8) | b);
+                            </li>
+                            <li>实心空心：paint.setStyle(Style style); // FILL, STROKE-空心, FILL_AND_STROKE</li>
+                            <li>线条粗细：paint.setStrokeWidth(float width);</li>
+                            <li>抗锯齿：paint.setAntiAlias(boolean aa);</li>
+                            <li>透明度：paint.setAlpha(int a); // [0..255]</li>
+                            <li>图像抖动处理：paint.setDither(boolean dither);</li>
+                            <li>过滤Bitmap优化：paint.setFilterBitmap(boolean filter);
+                                // 如果该项设置为true，则图像在动画进行中会滤掉对Bitmap图像的优化操作，加快显示
+                            </li>
+                            <li>颜色过滤：setColorFilter(ColorFilter colorFilter); // 在绘制颜色时实现不用颜色的变换效果</li>
+                            <li>
+                                图像效果(着色器)：paint.setShader(Shader shader);
+                                // 使用Shader着色器可以绘制出各种渐变效果，注意：在设置了 Shader 的情况下， Paint.setColor/ARGB()
+                                所设置的颜色就不再起作用。
+                                <ul>
+                                    <li>// Shader.TileMode: CLAMP-在端点外延续端点的颜色；MIRROR-镜像；REPEAT-重复</li>
+                                    <li>线性渐变：LinearGradient(float x0, float y0, float x1, float y1, int color0,
+                                        int
+                                        color1, Shader.TileMode tile)
+                                    </li>
+                                    <li>辐射渐变：RadialGradient(float centerX, float centerY, float radius, int
+                                        centerColor,
+                                        int edgeColor, TileMode tileMode)
+                                    </li>
+                                    <li>扫描渐变：SweepGradient(float cx, float cy, int color0, int color1)</li>
+                                    <li>用Bitmap的像素来作为图形或文字的填充：BitmapShader(Bitmap bitmap, Shader.TileMode tileX,
+                                        Shader.TileMode tileY)
+                                    </li>
+                                    <li>混合着色器：ComposeShader(Shader shaderA, Shader shaderB, PorterDuff.Mode
+                                        mode);
+                                        // Shader shader = new ComposeShader(shader1, shader2,
+                                        PorterDuff.Mode.SRC_OVER);
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                PorterDuff.Mode // 用来指定两个图像共同绘制时的颜色策略，
+                                把<span style="color:#3691f9">源图像(Source)</span>绘制到<span style="color:#f00460">目标图像(Destination)</span>处时应该怎样确定二者结合后的颜色
+                                <ul>
+                                    <li>
+                                        <span class="lightbox">
+                                            <span data-src="img/1.jpg">
+                                                <a href="6.1.html" target="_blank"
+                                                   class="btn btn-default btn-default btn--icon-text list-item-link">
+                                                    Alpha 合成 (Alpha Compositing),12种
+                                                    &nbsp;<i class="zmdi zmdi-image"></i></a>
+                                            </span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="lightbox">
+                                            <span data-src="img/2.jpg">
+                                                <a href="6.1.html" target="_blank"
+                                                   class="btn btn-default btn-default btn--icon-text list-item-link">
+                                                     混合 (Blending)
+                                                    &nbsp;<i class="zmdi zmdi-image"></i></a>
+                                            </span>
+                                        </span>
+                                        // 操作的是颜色本身而不是 Alpha 通道，并不属于 Alpha 合成，
+                                        所以和 Porter 与 Duff 没关系，不过为了方便，也加进了 PorterDuff 里
+
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                阴影效果：setShadowLayer(float radius ,float dx,float dy,int color);
+                                // radius为阴影的角度，dx和dy为阴影在x轴和y轴上的距离，color为阴影的颜色
+                            </li>
+                            <li>绘制时各图形的结合方式：setSrokeJoin(Paint.Join join); // 如平滑效果</li>
+                            <li>虚线实线：paint.setPathEffect(effect);
+                                PathEffect effect = new DashPathEffect(new float[] { 14, 14, 14, 14 },
+                                1); // {实线,空白,实线,空白:偶数}
+                            </li>
+                            <li>图形重叠时的处理方式：paint.setXfermode(Xfermode xfermode)</li>
+                            <li>模拟实现粗体文字：paint.setFakeBoldText(boolean fakeBoldText); // 设置在小字体上效果会非常差</li>
+                            <li>像素文字：paint.setSubpixelText(boolean subpixelText); // 为true，将有助于文本在LCD屏幕上的显示效果
+                            </li>
+                            <li>文字对齐：paint.setTextAlign(Paint.Align align);</li>
+                            <li>文字x轴拉伸：paint.setTextScaleX(float scaleX);</li>
+                            <li>文字大小：paint.setTextSize(float textSize);</li>
+                            <li>斜体文字：paint.setTextSkewX(float skewX); // skewX为倾斜弧度</li>
+                            <li>字体：paint.setTypeface(Typeface typeface);</li>
+                            <li>下划线：paint.setUnderlineText(boolean underlineText);</li>
+                            <li>删除线：paint.setStrikeThruText(boolean strikeThruText);</li>
+                            <li>滤镜效果：paint.setMaskFilter(MaskFilter maskfilter); // 如滤化，立体等
+                                <ul>
+                                    <li>BlurMaskFilter // 指定了一个模糊的样式和半径来处理Paint的边缘</li>
+                                    <li>EmbossMaskFilter // 指定了光源的方向和环境光强度来添加浮雕效果</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="listview">ListView RecycleView</h2>
+                <ul>
+                    <li>ListView重用的是什么
+                        <a href="https://blog.csdn.net/u011692041/article/details/53099584" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                        <a href="https://www.cnblogs.com/RGogoing/p/5554086.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                        <a href="http://blog.csdn.net/qinjunni2014/article/details/45653747" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>ListView 中图片错位的问题是如何产生的；listview图片加载错乱的原理和解决方案
+                        <a href="http://blog.csdn.net/a394268045/article/details/50726560" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>recycleview listview 的区别,性能
+                        <a href="https://segmentfault.com/a/1190000007331249" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>RecycleView的使用，原理，RecycleView优化
+                        <a href="https://blog.csdn.net/u012124438/article/details/53495951" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>封装view的时候怎么知道view的大小
+                        <a href="http://blog.csdn.net/carson_ho/article/details/56011064" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>ListView的优化
+                        <a href="https://www.cnblogs.com/yuhanghzsd/p/5595532.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                        <a href="http://www.xuanyusong.com/archives/1252" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="activity">Activity</h2>
+                <ul>
+                    <li>
+                         <span class="lightbox">
+                              <span data-src="img/4.jpg">
+                                  <a href="6.1.html" target="_blank"
+                                     class="btn btn-default btn-default btn--icon-text list-item-link">
+									   Activity生命周期
+                                      &nbsp;<i class="zmdi zmdi-image"></i></a>
+                              </span>
+                          </span>
+                    </li>
+                    <li>Activity 上有 Dialog 的时候按 home 键时的生命周期</li>
+                    <li>Activity四种启动模式launchMode对比
+                        <ul>
+                            <li>
+                                standard（标准模式-默认）：每次启动一个Activity都会重写创建一个新的实例，不管这个实例存不存在，这种模式下，谁启动了该模式的Activity，该Activity就属于启动它的Activity的任务栈中。这个Activity它的onCreate()，onStart()，onResume()方法都会被调用。
+                            </li>
+                            <li>
+                                singleTop（栈顶复用模式）：如果新的activity已经位于栈顶，那么这个Activity不会被重写创建，同时它的onNewIntent方法会被调用，通过此方法的参数我们可以去除当前请求的信息。如果栈顶不存在该Activity的实例，则情况与standard模式相同。需要注意的是这个Activity它的onCreate()，onStart()方法不会被调用，因为它并没有发生改变。
+                            </li>
+                            <li>
+                                singleTask（栈内复用模式）：在这个模式下，如果栈中存在这个Activity的实例就会复用这个Activity，不管它是否位于栈顶，复用时，会将它上面的Activity全部出栈，并且会回调该实例的onNewIntent方法。其实这个过程还存在一个任务栈的匹配，因为这个模式启动时，会在自己需要的任务栈中寻找实例，这个任务栈就是通过taskAffinity属性指定。如果这个任务栈不存在，则会创建这个任务栈。（如Launcher3、Camera2）
+                            </li>
+                            <li>singleInstance（全局唯一模式）：
+                                该模式具备singleTask模式的所有特性外，与它的区别就是，这种模式下的Activity会单独占用一个Task栈，具有全局唯一性，即整个系统中就这么一个实例，由于栈内复用的特性，后续的请求均不会创建新的Activity实例，除非这个特殊的任务栈被销毁了。以singleInstance模式启动的Activity在整个系统中是单例的，如果在启动这样的Activity时，已经存在了一个实例，那么会把它所在的任务调度到前台，重用这个实例。（如Gallery2）
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Application Context和Activity Context的区别
+                        <a href="http://blog.csdn.net/vincent_czz/article/details/8663871" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>前台切换到后台，然后再回到前台，Activity生命周期回调方法。弹出Dialog，生命值周期回调方法。
+                        <a href="https://blog.csdn.net/scorpioneal/article/details/19049475" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>两个Activity 之间跳转时必然会执行的是哪几个方法？答：一般情况下比如说有两个activity,分别叫A,B,当在A 里面激活B 组件的时候, A 会调用onPause()方法,然后B
+                        调用onCreate() ,onStart(), onResume()。
+                    </li>
+                    <li>这个时候B 覆盖了窗体, A 会调用onStop()方法. 如果B 是个透明的,或者是对话框的样式, 就不会调用A 的onStop()方法。</li>
+                    <li>Activity状态保存与恢复
+                        <a href="http://blog.csdn.net/sinat_33921105/article/details/78631823" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                        <a href="http://blog.csdn.net/timejay/article/details/52838221" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>简述Activity启动全部过程？
+                        <a href="https://www.jianshu.com/p/6037f6fda285" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>activity栈</li>
+                    <li>Activity与Fragment之间生命周期比较
+                        <a href="http://blog.csdn.net/u012702547/article/details/50253955" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>横竖屏切换的时候，Activity 各种情况下的生命周期</li>
+                    <li>ActivityThread相关？(UI主线程)
+                        <a href="https://www.cnblogs.com/younghao/p/5126408.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>startActivityForResult是哪个类的方法，使用场景？在Adapter中使用如何解耦？</li>
+                    <li>Activity 怎么和Service 绑定，怎么在Activity 中启动自己对应的Service；</li>
+                    <li>AlertDialog,PopupWindow,Activity区别</li>
+                    <li>
+                        应用内切换主题有哪些方案可以实现
+                        <a href="https://github.com/ZhaoKaiQiang/AndroidDifficultAnalysis/blob/master/07.%E5%BA%94%E7%94%A8%E5%86%85%E5%88%87%E6%8D%A2%E4%B8%BB%E9%A2%98%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E6%A1%88%E5%8F%AF%E4%BB%A5%E5%AE%9E%E7%8E%B0.md"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>说说Activity、Intent、Service 是什么关系；</li>
+                    <li>动态权限适配方案，权限组的概念
+                        <a href="https://www.cnblogs.com/dubo-/p/6018262.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>AndroidManifest的作用与理解</li>
+                </ul>
+
+                <hr>
+                <h2 id="broadcast-receiver">Broadcast Receiver</h2>
+                <ul>
+                    <li>广播的分类？
+                        <ul>
+                            <li>普通广播（Normal Broadcast）</li>
+                            <li>系统广播（System Broadcast）</li>
+                            <li>有序广播（Ordered Broadcast）
+                                <ul>
+                                    <li>发送出去的广播被广播接收者按照先后顺序接收</li>
+                                    <li>广播接受者接收广播的顺序规则（同时面向静态和动态注册的广播接受者）:
+                                        ①按照Priority属性值从大-小排序；
+                                        ②Priority属性相同者，动态注册的广播优先；
+                                    </li>
+                                    <li>先接收的广播接收者可以对广播进行截断，即后接收的广播接收者不再接收到此广播</li>
+                                    <li>先接收的广播接收者可以对广播进行修改，那么后接收的广播接收者将接收到被修改后的广播</li>
+                                    <li>有序广播的使用过程与普通广播非常类似，差异仅在于广播的发送方式：sendOrderedBroadcast(intent);</li>
+                                </ul>
+                            </li>
+                            <li>App应用内广播（Local Broadcast）
+                                <ul>
+                                    <li>App应用内广播可理解为一种局部广播，广播的发送者和接收者都同属于一个App</li>
+                                    <li>相比于全局广播（普通广播），App应用内广播优势体现在：安全性高 & 效率高</li>
+                                    <li>将全局广播设置为局部广播：
+                                        <ul>
+                                            <li>①注册广播时将exported属性设置为false，使得非本App内部发出的此广播不被接收；</li>
+                                            <li>②在广播发送和接收时，增设相应权限permission，用于权限验证；</li>
+                                            <li>③发送广播时指定该广播接收器所在的包名，此广播将只会发送到此包中的App内与之相匹配的有效广播接收器中。</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="lightbox">
+                                            <span data-src="img/5.png">
+                                                <a href="6.1.html" target="_blank"
+                                                   class="btn btn-default btn-default btn--icon-text list-item-link">
+                                                    使用封装好的LocalBroadcastManager类
+                                                    &nbsp;<i class="zmdi zmdi-image"></i></a>
+                                            </span>
+                                        </span>
+                                        使用方式上与全局广播几乎相同，只是注册/取消注册广播接收器和发送广播时将参数的context变成了LocalBroadcastManager的单一实例
+                                        (注：对于LocalBroadcastManager方式发送的应用内广播，只能通过LocalBroadcastManager动态注册，不能静态注册)
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>粘性广播（Sticky Broadcast）:在Android5.0 & API 21中已经失效，所以不建议使用</li>
+                        </ul>
+                    </li>
+                    <li>对于不同注册方式的广播接收器回调OnReceive（Context context，Intent intent）中的context返回值是不一样的：
+                        <ul>
+                            <li>对于静态注册（全局+应用内广播），回调onReceive(context, intent)中的context返回值是：ReceiverRestrictedContext；
+                            </li>
+                            <li>对于全局广播的动态注册，回调onReceive(context, intent)中的context返回值是：Activity Context；
+                            </li>
+                            <li>对于应用内广播的动态注册（LocalBroadcastManager方式），回调onReceive(context,
+                                intent)中的context返回值是：Application
+                                Context。
+                            </li>
+                            <li>对于应用内广播的动态注册（非LocalBroadcastManager方式），回调onReceive(context,
+                                intent)中的context返回值是：Activity
+                                Context；
+                            </li>
+                        </ul>
+                    </li>
+                    <li>如何通过广播拦截和abort一条短信:abortBroadcast();广播是否可以请求网络；</li>
+                    <li>广播引起anr的时间限制；</li>
+                    <li>在manifest 和代码中如何注册和使用BroadcastReceiver；</li>
+                </ul>
+
+                <hr>
+                <h2 id="content-provider">Content Provider</h2>
+                <ul>
+                    <li>ContentProvider的权限管理（读写分离，权限控制-精确到表级，URL控制）</li>
+                    <li>说说ContentProvider、ContentResolver、ContentObserver 之间的关系；
+                        <a href="https://blog.csdn.net/rankun1/article/details/51439574" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>Android系统为什么会设计ContentProvider，进程共享和线程安全问题</li>
+                    <li>请介绍下ContentProvider 是如何实现数据共享的；</li>
+                </ul>
+
+                <hr>
+                <h2 id="service">Service</h2>
+                <ul>
+                    <li>
+                        <span class="lightbox">
+                              <span data-src="img/6.png">
+                                  <a href="6.1.html" target="_blank"
+                                     class="btn btn-default btn-default btn--icon-text list-item-link">
+									   Service生命周期
+                                      &nbsp;<i class="zmdi zmdi-image"></i></a>
+                              </span>
+                          </span>
+                    </li>
+                    <li>Service的开启方式</li>
+                    <li>如何保证一个后台服务不被杀死;比较省电的方式是什么</li>
+                    <li>怎么启动service，service和activity怎么进行数据交互</li>
+                    <li>service生命周期</li>
+                </ul>
+
+                <hr>
+                <h2 id="fragment">Fragment</h2>
+                <ul>
+                    <li>
+                        <span class="lightbox">
+                              <span data-src="img/7.png">
+                                  <a href="6.1.html" target="_blank"
+                                     class="btn btn-default btn-default btn--icon-text list-item-link">
+									   fragment 各种情况下的生命周期
+                                      &nbsp;<i class="zmdi zmdi-image"></i></a>
+                              </span>
+                          </span>
+                        <a href="https://www.cnblogs.com/LangZXG/p/6501839.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>fragment之间传递数据的方式？
+                        <a href="https://www.jianshu.com/p/f87baad32662" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>Fragment状态保存</li>
+                    <li>如何实现Fragment的滑动</li>
+                    <li>ViewPager使用细节，如何设置成每次只初始化当前的Fragment，其他的不初始化
+                        <a href="https://blog.csdn.net/fan7983377/article/details/51889269" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>微信主页面的实现方式
+                        <a href="https://blog.csdn.net/C_c_tt/article/details/51280412" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>Activity和Fragment通信
+                        <a href="https://juejin.im/entry/56a87b2b2e958a0051906227" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+
+                    <li>Fragment全解析系列：那些年踩过的坑
+                        <a href="https://www.jianshu.com/p/d9143a92ad94" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                        <a href="https://www.jianshu.com/p/fd71d65f0ec6" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                        <a href="https://www.jianshu.com/p/38f7994faa6b" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="animation">Animation</h2>
+                <ul>
+                    <li>FrameAnimation（逐帧动画）:将多张图片组合起来进行播放，类似于早期电影的工作原理，很多App的loading是采用这种方式</li>
+                    <li>TweenAnimation（补间动画）：是对某个View进行一系列的动画的操作，包括淡入淡出（Alpha），缩放（Scale），平移（Translate），旋转（Rotate）四种模式。
+                    </li>
+                    <li>
+                        PropertyAnimation（属性动画）：属性动画不再仅仅是一种视觉效果了，而是一种不断地对值进行操作的机制，并将值赋到指定对象(ObjectAnimator)的指定属性上，可以是任意对象的任意属性。
+                        <a href="https://www.cnblogs.com/whoislcj/p/5738478.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>差值器(Interpolators)&估值器</li>
+                </ul>
+
+                <hr>
+                <h2 id="event_message">事件，消息:分发，广播</h2>
+                <ul>
+                    <li>触摸事件的分发？</li>
+                    <li>Android消息机制原理实现</li>
+                    <li>Android事件分发机制</li>
+                    <li>事件传递机制的介绍</li>
+                    <li>点击事件被拦截，但是想传到下面的view，如何操作？</li>
+                    <li>简述消息机制相关</li>
+                    <li>进程间通信方式？
+                        <ul>
+                            <li>访问其他应用程序的Activity，如调用系统通话应用</li>
+                            <li>Content Provider，如访问系统相册</li>
+                            <li>广播（Broadcast），如显示系统时间</li>
+                            <li>AIDL服务</li>
+                        </ul>
+                    </li>
+                    <li>广播的使用方式，场景</li>
+                    <li>Activity与Service通信的方式</li>
+                    <li>Activity之间的通信方式</li>
+                    <li>android 事件传递机制</li>
+                </ul>
+
+                <hr>
+                <h2 id="optimize">性能优化</h2>
+                <ul>
+                    <li>如何对Android 应用进行性能分析以及优化；</li>
+                    <li>ddms 和 traceView的区别；</li>
+                    <li>性能优化,怎么保证应用启动不卡顿</li>
+                    <li>性能优化如何分析systrace？
+                        <a href="https://blog.csdn.net/jscese/article/details/48373319"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>怎么去除重复代码（使用ProGuard去掉一些未使用的代码）
+                        <a href="http://toughcoder.net/blog/2014/10/25/tricks-to-remove-duplicates/" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>统计启动时长,标准
+                        <a href="https://www.jianshu.com/p/c967653a9468" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>如何保持应用的稳定性</li>
+                    <li>描述清点击 Android Studio 的 build 按钮后发生了什么</li>
+                    <li>大体说清一个应用程序安装到手机上时发生了什么；</li>
+                    <li>Android相关优化（如内存优化Allocation Tracker、网络优化Network Monitor、布局优化hierarchy viewer、电量优化、业务优化）</li>
+                    <li>
+                        Anroid性能优化系列——Improving Layout Performance
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=401265446&idx=1&sn=ce4d1eb4137cb07b385e0f3cc989da27&scene=21#wechat_redirect"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=401271647&idx=1&sn=2ce87939f40efcc59c1a6c233292304e&scene=21#wechat_redirect"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=401275734&idx=1&sn=79814fa79a15b774fd8b029eaa75ce71&scene=21#wechat_redirect"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="process_thread">进程，线程</h2>
+                <ul>
+                    <li>进程
+                        <ul>
+                            <li>多进程场景遇见过么？
+                                <a href="https://blog.csdn.net/seu_calvin/article/details/53932171" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                                <a href="https://blog.csdn.net/beixiaozhang/article/details/52973753" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>进程保活
+                                <a href="https://blog.csdn.net/u013263323/article/details/56285475" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>进程调度</li>
+                            <li>进程状态</li>
+                            <li>进程和 Application 的生命周期；</li>
+                            <li>Android进程分类：
+                                <ul>
+                                    <li>① 前台进程（foreground process）</li>
+                                    <li>② 可视进程（visible process）</li>
+                                    <li>③ 服务进程（service process）</li>
+                                    <li>④ 后台进程（background process）</li>
+                                    <li>⑤ 空进程（empty process）</li>
+                                </ul>
+                            </li>
+                            <li>SP是进程同步的吗?有什么方法做到同步
+                                <a href="https://www.jianshu.com/p/bdebf741221e" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>同步的方法；多进程开发以及多进程应用场景；</li>
+                        </ul>
+                    </li>
+
+                    <li>线程
+                        <ul>
+                            <li>线程和进程的区别？为什么要有线程，而不是仅仅用进程？
+                                <a href="https://blog.csdn.net/zhou753099943/article/details/51771220" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>线程如何关闭，
+                                <a href="https://blog.csdn.net/u010429311/article/details/53333262" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+
+                                以及如何防止线程的内存泄漏
+                            </li>
+                            <li>为什么不能在子线程更新UI
+                                <a href="https://www.zhihu.com/question/37334646" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>开启线程的三种方式,run()和start()方法区别</li>
+                        </ul>
+                    </li>
+
+                    <li>多线程
+                        <ul>
+                            <li>多线程：怎么用、有什么问题要注意；</li>
+                            <li>多线程断点续传原理
+                                <a href="https://blog.csdn.net/crazy__chen/article/details/41947577" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>如何保证多线程读写文件的安全？
+                                <a href="https://blog.csdn.net/rlanffy/article/details/26622521" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>如何实现线程同步？
+                                <a href="https://www.cnblogs.com/goody9807/p/6522176.html" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>多线程：如何实现一个定时调度和循环调度的工具类。但提交任务处理不过来的时候，拒绝机制应该如何处理；线程池默认有哪几种拒绝机制；</li>
+                            <li>多线程：ThreadLocal原理，如何实现一个ThreadLocal；如何保证Local属性；</li>
+                            <li>多线程（关于AsyncTask缺陷引发的思考）</li>
+                            <li>Java的并发、多线程、线程模型；</li>
+                            <li>服务器只提供数据接收接口，在多线程或多进程条件下，如何保证数据的有序到达；</li>
+                        </ul>
+                    </li>
+
+                    <li>线程池
+                        <ul>
+                            <li>什么是线程池，如何使用? 答：线程池就是事先将多个线程对象放到一个容器中，当使用的时候就不用new
+                                线程而是直接去池中拿线程即可，节省了开辟子线程的时间，提高的代码执行效率。
+                            </li>
+                            <li>Android线程有没有上限(无)，然后提到线程池的上限</li>
+                            <li>Android 四种常见的线程池
+                                <a href="https://blog.csdn.net/xiangzhihong8/article/details/52856327" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                                <ul>
+                                    <li>FixedThreadPool()
+                                        ：固定线程数量的线程池，该线程池中的线程数量始终不变，即不会再创建新的线程，也不会销毁已经创建好的线程，自始自终都是那几个固定的线程在工作，所以该线程池可以控制线程的最大并发数。
+                                    </li>
+                                    <li>CachedThreadPool()：根据实际情况调整线程池中线程的数量的线程池。即该线程池中的线程数量不确定，是根据实际情况动态调整的。</li>
+                                    <li>
+                                        SingleThreadPool()：只有一个线程的线程池，即每次只能执行一个线程任务，多余的任务会保存到一个任务队列中，等待这一个线程空闲，当这个线程空闲了再按FIFO方式顺序执行任务队列中的任务。
+                                    </li>
+                                    <li>ScheduledThreadPool()：可以控制线程池内线程定时或周期性执行某任务的线程池。</li>
+                                </ul>
+                            </li>
+                            <li>如何控制某个方法允许并发访问线程的个数；(Semaphore)
+                                <a href="https://blog.csdn.net/anhenzhufeng/article/details/70225415" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2>AsyncTask Handler Message MessageQueue Looper IntentService</h2>
+                <ul>
+                    <li>请解释下在单线程模型中Message、Handler、Message Queue、Looper之间的关系；</li>
+                    <li>
+                        Android 异步消息处理机制 让你深入理解 Looper、Handler、Message三者关系
+                        <a href="https://blog.csdn.net/lmj623565791/article/details/38377229" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>Handler机制及底层实现；</li>
+                    <li>handler实现机制（很多细节需要关注：如线程如何建立和退出消息循环等等）</li>
+                    <li>handler发消息给子线程，looper怎么启动</li>
+                    <li>关于handler，在任何地方new handler 都是什么线程下</li>
+                    <li>IntentService原理；
+                        <a href="http://blog.csdn.net/lmj623565791/article/details/47143563" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>AsyncTask原理及不足
+                        <a href="http://blog.csdn.net/iispring/article/details/50670388" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>AstncTask+HttpClient与AsyncHttpClient有什么区别；</li>
+                    <li>AsyncTask 如何使用；
+                        <a href="https://blog.csdn.net/iispring/article/details/50639090" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+
+                    </li>
+                    <li>如何取消AsyncTask
+                        <a href="https://www.cnblogs.com/hxb2016/p/6143648.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="lock">锁 多线程安全 lock synchronized volatile ReentrantLock NIO</h2>
+                <ul>
+                    <li>Java中同步使用的关键字，死锁的概念</li>
+                    <li>线程死锁的四个必要条件，怎么避免死锁：
+                        <a href="http://www.cnblogs.com/jijiji/p/4855581.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>数据一致性如何保证；synchronized关键字，类锁，方法锁，重入锁；</li>
+                    <li>synchronized与lock的原理</li>
+                    <li>简述synchronized?Object；Monitor机制；</li>
+                    <li>简述happen-before规则；</li>
+                    <li>synchronized 和volatile关键字的作用；
+                        <ul>
+                            <li>1）保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。</li>
+                            <li>2）禁止进行指令重排序。</li>
+                        </ul>
+                    </li>
+                    <li>volatile 本质是在告诉jvm 当前变量在寄存器（工作内存）中的值是不确定的，需要从主存中读取；synchronized
+                        则是锁定当前变量，只有当前线程可以访问该变量，其他线程被阻塞住。
+                    </li>
+                    <li>volatile的原理和用法：
+                        <ul>
+                            <li>1.volatile 仅能使用在变量级别；synchronized 则可以使用在变量、方法、和类级别的</li>
+                            <li>2.volatile 仅能实现变量的修改可见性，并不能保证原子性；synchronized 则可以保证变量的修改可见性和原子性</li>
+                            <li>3.volatile 不会造成线程的阻塞；synchronized 可能会造成线程的阻塞。</li>
+                            <li>4.volatile 标记的变量不会被编译器优化；synchronized 标记的变量可以被编译器优化</li>
+                        </ul>
+                    </li>
+                    <li>static synchronized 方法的多线程访问和作用，同一个类里面两个synchronized方法，两个线程同时访问的问题</li>
+                    <li>ReentrantLock 、synchronized和volatile（n面）</li>
+                    <li>ReentrantLock重入锁的内部实现
+                        <a href="https://blog.csdn.net/yanyan19880509/article/details/52345422" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>Atomic包的实现原理是什么；</li>
+                    <li>说说你了解的一个线程安全队列；</li>
+                    <li>CAS介绍，CAS又是怎么保证原子性的；</li>
+                    <li>JUC和Object；Monitor机制区别是什么；简述AQS原理；</li>
+                    <li>简述DCL（Double Check Lock，双重检查加锁）失效原因，解决方法；</li>
+                    <li>如何保证线程安全？
+                        <a href="http://www.jasongj.com/java/thread_safe/" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                        <a href="https://www.cnblogs.com/w2154/p/6637717.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                        <a href="https://blog.csdn.net/zhouzhaoxiong1227/article/details/74932180" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>在Java中wait和sleep方法的不同；答：最大的不同是在等待时wait 会释放锁，而sleep 一直持有锁。wait 通常被用于线程间交互，sleep通常被用于暂停执行。
+                    </li>
+                    <li>wait/notify</li>
+                    <li>NIO</li>
+                    <li>简述nio原理
+                        <a href="https://zhuanlan.zhihu.com/p/23488863" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="anr">ANR</h2>
+                <ul>
+                    <li>什么是ANR 如何避免它？
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=401393886&idx=1&sn=4ebae4243d1fc7b40b5ff3f3ce4d1467&scene=21#wechat_redirect"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                        答：在Android 上，如果你的应用程序有一段时间响应不够灵敏，系统会向用户显示一个对话框，这个对话框称作应用程序无响应（ANR：Application Not
+                        Responding）对话框。用户可以选择让程序继续运行，但是，他们在使用你的应用程序时，并不希望每次都要处理这个对话框。因此，在程序里对响应性能的设计很重要，这样，系统不会显示ANR给用户。
+
+                    <li>ANR怎么分析解决
+                        <ul>
+                            <li>ANR的时间限制(主线程（Activity、Service）是5秒，BroadCastReceiver 是10 秒)</li>
+                            <li>将所有耗时操作，比如访问网络，Socket 通信，查询大量SQL 语句，复杂逻辑计算等都放在子线程中去，然后
+                                通过handler.sendMessage、runonUITread、AsyncTask 等方式更新UI。无论如何都要确保用户界面操作的流畅度。
+                                如果耗时操作需要让用户等待，那么可以在界面上显示进度条。
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="ipc">IPC AIDL Binder</h2>
+                <ul>
+                    <li>简述IPC进程间通信的机制？</li>
+                    <li>Android 上的 Inter-Process-Communication 跨进程通信时如何工作的；</li>
+                    <li>什么是AIDL 以及如何使用；</li>
+                    <li>进程间通信，AIDL；</li>
+                    <li>AIDL机制,进程间通讯如何使用
+                        <a href="https://blog.csdn.net/luoyanglizi/article/details/51980630" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>为什么 Android 要采用 Binder 作为 IPC 机制？
+                        <a href="https://www.zhihu.com/question/39440766/answer/89210950" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>Binder机制介绍</li>
+                    <li>Binder相关？</li>
+                    <li>Binder机制及底层实现</li>
+                    <li>Android中的Service：默默的奉献者 (1)
+                        <a href="https://blog.csdn.net/luoyanglizi/article/details/51586437" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>Android中的Service：Binder，Messenger，AIDL（2）
+                        <a href="https://blog.csdn.net/luoyanglizi/article/details/51594016" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="jvm">JVM</h2>
+                <ul>
+                    <li>jvm相关
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=401528475&idx=1&sn=e70855bdcf95bd6a4b0b98123ae218db&scene=21#wechat_redirect"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>JVM内存模型</li>
+                    <li>垃圾回收机制与调用System.gc()区别</li>
+                    <li>内存回收机制与GC算法(各种算法的优缺点以及应用场景)；GC原理时机以及GC对象；内存泄露场景及解决方法；</li>
+                    <li>Android中进程内存的分配，能不能自己分配定额内存</li>
+                    <li>
+                        虚拟机
+                        <ul>
+                            <li>Art和Dalvik对比
+                                <a href="http://www.jianshu.com/p/58f817d176b7" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>对 Dalvik、ART 虚拟机有基本的了解；</li>
+                            <li>如何自己设计一个虚拟机（内存管理，类加载，双亲委派）</li>
+                            <li>JVM 内存区域 开线程影响哪块内存</li>
+                            <li>JVM内存模型
+                                <a href=" https://www.ziwenxie.site/2017/06/01/java-jvm-memory-model/" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>JVM类加载机制
+                                <a href="https://www.ziwenxie.site/2017/06/07/java-jvm-classloader/" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>JVM垃圾回收算法及回收器详解
+                                <a href="https://www.ziwenxie.site/2017/07/24/java-jvm-gc/" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>内存对象的循环引用以及避免</li>
+                        </ul>
+                    </li>
+                    <li>内存回收机制与GC算法
+                        <ul>
+                            <li>各种算法的优缺点及应用场景</li>
+                            <li>GC原理时机及GC对象</li>
+                            <li>内存泄漏场景及解决方法</li>
+                            <li>OOM的避免以及解决方法</li>
+                        </ul>
+                    </li>
+                    <li>Java中对象的生命周期</li>
+                    <li>垃圾收集机制 对象创建，新生代与老年代</li>
+                    <li>jvm运行时数据区域有哪几部分组成，各自作用；</li>
+                    <li>gc垃圾回收算法有哪些；gc垃圾回收收集器有哪些；</li>
+                    <li>App 是如何沙箱化，为什么要这么做；</li>
+                </ul>
+
+                <hr>
+                <h2 id="oom">OOM</h2>
+                <ul>
+                    <li>内存泄漏产生的可能原因？
+                        <a href="https://www.jianshu.com/p/90caf813682d" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>OOM是否可以try catch？
+                        <a href="https://www.zhihu.com/question/54630917" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>缓存文件可以放在哪里？它们各自的特点是什么？
+                        <a href="https://github.com/ZhaoKaiQiang/AndroidDifficultAnalysis/blob/master/06.%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6%E5%8F%AF%E4%BB%A5%E6%94%BE%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F%E5%AE%83%E4%BB%AC%E5%90%84%E8%87%AA%E7%9A%84%E7%89%B9%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.md"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>再谈android内存泄漏—常见的八种导致 APP 内存泄漏的问题
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649548034&idx=1&sn=7aeeecc135c22163e577bd9536a6ed66&scene=21#wechat_redirect"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>用IDE如何分析内存泄漏？</li>
+                    <li>最全最系统的 Android 界面性能调优资料
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=401489267&idx=1&sn=123c02bf33ce7ec61da359e319715efa&scene=21#wechat_redirect"
+                           target="_blank" class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>String分析1000次循环subString用了多少内存；</li>
+                    <li>LRUCache原理</li>
+                </ul>
+
+                <hr>
+                <h2 id="network">网络</h2>
+                <ul>
+                    <li>下拉状态栏会不会影响activity的生命周期（不会），如果在onStop的时候做了网络请求，onResume的时候怎么恢复</li>
+                    <li>OkHttp源码？
+                        <a href="https://blog.csdn.net/fightingXia/article/details/70947701"
+                           target="_blank" class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>TCP的3次握手和四次挥手；
+                        <a href="https://blog.csdn.net/qzcsu/article/details/72861891"
+                           target="_blank" class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>TCP与UDP区别与应用（三次握手和四次挥手）涉及到部分细节（如client如何确定自己发送的消息被server收到） HTTP相关
+                        提到过WebSocket，问了WebSocket相关以及与Socket的区别
+                        <a href="https://blog.csdn.net/li_ning_/article/details/52117463"
+                           target="_blank" class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>HTTP协议；HTTP1.0与2.0的区别；HTTP报文结构；</li>
+                    <li>HTTP与HTTPS的区别以及如何实现安全性；
+                        <a href="http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=402028607&idx=2&sn=0d1aaa1ee14b61131f3321f7a4853fa2&scene=21#wechat_redirect"
+                           target="_blank" class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>Https请求慢的解决办法，DNS，携带数据，直接访问IP</li>
+                    <li>网络请求缓存处理，okhttp如何处理网络缓存的</li>
+                    <li>https相关，如何验证证书的合法性，https中哪里用了对称加密，哪里用了非对称加密，对加密算法（如RSA）等是否有了解</li>
+                    <li>断点续传的实现</li>
+                    <li>常见通信协议HTTP、TCP、UDP的简单介绍
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547404&idx=1&sn=79d9bd0506553f82eed32cfeb08e7648&scene=21#wechat_redirect"
+                           target="_blank" class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>携程App的网络性能优化实践
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547359&idx=1&sn=9f069a28f5dbe73fb6c241cfa1049571&scene=21#wechat_redirect"
+                           target="_blank" class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>
+                        Android网络框架源码分析一---Volley
+                        <a href="https://www.jianshu.com/p/9e17727f31a1" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="ide">IDE:Android Studio & ADT</h2>
+                <ul>
+                    <li>AS添加so:把so库文件放到 Module/libs/下面,修改Module的build.gradle文件：
+                        在android{}添加：
+                        sourceSets {
+                        main {
+                        jniLibs.srcDirs = ['libs']
+                        }
+                        }
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="sql">数据库</h2>
+                <ul>
+                    <li>数据库数据迁移问题</li>
+                    <li>讲讲你平常是如何针对具体的SQL做优化；</li>
+                    <li>mysql的存储引擎有哪些，区别；</li>
+                    <li>sqlite升级，增加字段的语句
+                        <a href="https://blog.csdn.net/xu_song/article/details/49658195" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>Android上SQLite的性能优化问题
+                        <a href="https://blog.csdn.net/txvaqh/article/details/52412958" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>浅析SQLite的锁机制和WAL技术
+                        <a href="http://liuduo.me/2016/04/02/sqlitelockandwal/" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="security">安全</h2>
+                <ul>
+                    <li>指纹识别</li>
+                    <li>视频加密传输</li>
+                </ul>
+
+                <hr>
+                <h2 id="picture">图片</h2>
+                <ul>
+                    <li>Bitmap 使用时候注意什么</li>
+                    <li>图片加载库相关，bitmap如何处理大图，如一张30M的大图，如何预防OOM</li>
+                    <li>一张Bitmap所占用内存以及内存占用的计算
+                        <a href="https://blog.csdn.net/hudashi/article/details/7856519" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>bitmap recycler 相关</li>
+                    <li>Glide源码？</li>
+                    <li>Glide 使用什么缓存？</li>
+                    <li>Glide 内存缓存如何控制大小？</li>
+                    <li>图片加载原理</li>
+                    <li>
+                        Android DiskLruCache完全解析，硬盘缓存的最佳方案
+                        <a href="https://blog.csdn.net/guolin_blog/article/details/28863651" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>【LruCache和DiskLruCache结合】图片缓存机制
+                        <a href="https://blog.csdn.net/boyupeng/article/details/47127605" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>
+                        Android 三大图片缓存原理、特性对比
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547344&idx=2&sn=e3fa99b52055a37202634fe61a62d439&scene=21#wechat_redirect"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>
+                        史上最全最详细的Facebook的强大Android图片加载的框架Fresco讲解
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547525&idx=1&sn=81d36de63ea8a87d916bf8159134dfad&scene=21#wechat_redirect"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="build_package_install">编译，打包，安装，启动，更新，热修复</h2>
+                <ul>
+                    <li>谈谈classloader</li>
+                    <li>应用安装过程</li>
+                    <li>App启动崩溃异常捕捉</li>
+                    <li>对于应用更新这块是如何做的？(灰度，强制更新，分区域更新)；</li>
+                    <li>Android分包原理
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547390&idx=1&sn=1fae14b1753e437a032640be81c475b8&scene=21#wechat_redirect"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+
+                    <li>热修复 1：JavaSisst 2：AspectJ 3：Xpose</li>
+                    <li>Android 热修复方案分析
+                        <a href="https://blog.csdn.net/l2show/article/details/53129564" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+
+                    <li>混合开发
+                        <ul>
+                            <li>ReactNative
+                                <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547607&idx=1&sn=5936af2e888d5c7f6152dfd9422d8e29&scene=21#wechat_redirect"
+                                   target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                                <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649548587&idx=1&sn=437950900486c2d5e65f505a8e869e93&chksm=f1180c56c66f85406c477d706135c4d6b01577c0185d6fdc764c8d46ed16877e82bf92dcdf46&scene=21#wechat_redirect"
+                                   target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>weex</li>
+                            <li>H5</li>
+                            <li>小程序</li>
+                        </ul>
+                    </li>
+                    <li>简述class加载各阶段过程；class；loader有哪些模型；</li>
+                    <li>简述字节码文件组成；</li>
+                    <li>App启动流程，从点击桌面开始</li>
+                </ul>
+
+                <hr>
+                <h2 id="java">Java</h2>
+                <ul>
+                    <li>双亲委派模型
+                        <a href="https://blog.csdn.net/p10010/article/details/50448491" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>Java四种引用
+                        <a href="https://www.cnblogs.com/huajiezh/p/5835618.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>软引用、弱引用区别</li>
+                    <li>强引用置为null，会不会被回收？会</li>
+                    <li>线程间 操作 List</li>
+                    <li>抽象类和接口的区别</li>
+                    <li>静态内部类的设计意图。</li>
+                    <li>Java中String的了解。</li>
+                    <li>String 为什么要设计成不可变的？</li>
+                    <li>内部类和静态内部类和匿名内部类，以及项目中的应用</li>
+                    <li>object类的equal 和hashcode 方法重写，为什么？</li>
+                    <li>String buffer 与String builder的区别？</li>
+                    <li>String StringBuilder StringBuffer对比；</li>
+                    <li>String to Integer</li>
+                    <li>集合类以及集合框架</li>
+                    <li>java注解</li>
+                    <li>Java中实现多态的机制是什么？
+                        <a href="https://blog.csdn.net/id19870510/article/details/5344044" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                        答：方法的重写Overriding和重载Overloading是Java多态性的不同表现.
+                        重写Overriding是父类与子类之间多态性的一种表现
+                        重载Overloading是一个类中多态性的一种表现.
+                    </li>
+                    <li>如何将一个Java对象序列化到文件里；</li>
+                    <li>说说你对Java反射的理解； 答：Java 中的反射首先是能够获取到Java 中要反射类的字节码， 获取字节码有三种方法，
+                        1.Class.forName(className) 2.类名.class
+                        3.this.getClass()。然后将字节码中的方法，变量，构造函数等映射成相应的Method、Filed、Constructor
+                        等类，这些类提供了丰富的方法可以被我们所使用。
+                        <a href="http://www.jianshu.com/p/3968ffabdf9d" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>接口与回调；回调的原理；写一个回调demo；</li>
+                    <li>泛型原理，举例说明；解析与分派；
+                        <a href="http://www.cnblogs.com/lwbqqyumidi/p/3837629.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>抽象类与接口的区别；应用场景；抽象类是否可以没有方法和属性；</li>
+                    <li>静态属性和静态方法是否可以被继承？是否可以被重写？以及原因？</li>
+
+                    <li>Java的异常体系；
+                        <a href="https://www.cnblogs.com/yiwangzhibujian/p/7141390.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>如何控制某个方法允许并发访问线程的个数；（Semaphore.acquire()、Semaphore.release()）</li>
+                    <li>动态代理的区别，什么场景使用；</li>
+                    <li>说说你对Java反射的理解； 答：Java 中的反射首先是能够获取到Java 中要反射类的字节码， 获取字节码有三种方法，1.Class.forName(className)
+                        2.类名.class 3.this.getClass()。然后将字节码中的方法，变量，构造函数等映射成相应的Method、Filed、Constructor
+                        等类，这些类提供了丰富的方法可以被我们所使用。
+                    </li>
+                    <li>说说你对泛型的了解；</li>
+                    <li>动态代理的区别，什么场景使用；</li>
+                    <li>简述常用的JDK命令行工具；</li>
+                </ul>
+
+                <hr>
+                <h2 id="jni">JNI NDK</h2>
+                <ul>
+                    <li>JNI 用过么？</li>
+                    <li>Java如何调用c、c++语言；</li>
+                    <li>是否熟悉Android JNI开发，JNI如何调用java层代码
+                        <a href="https://blog.csdn.net/honjane/article/details/53958166" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>请介绍一下NDK；
+                        <a href="https://developer.android.google.cn/ndk/guides/concepts.html" target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>什么是NDK库，如何在jni中注册native函数，有几种注册方式；</li>
+
+                    <li>[JNI] 开发基础
+                        <ul>
+                            <li>（1） c语言基本类型
+                                <a href="https://blog.csdn.net/tsdfk1455/article/details/53446642" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>（2） 指针
+                                <a href="https://blog.csdn.net/tsdfk1455/article/details/53447721" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>（3）指针操作
+                                <a href="https://blog.csdn.net/tsdfk1455/article/details/53557988" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>（4）函数指针及指针函数
+                                <a href="https://blog.csdn.net/tsdfk1455/article/details/53558564" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>（5）内存分配
+                                <a href="https://blog.csdn.net/tsdfk1455/article/details/53561055" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>（6）字符串相关操作
+                                <a href="https://blog.csdn.net/tsdfk1455/article/details/53573908" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>（7）结构体
+                                <a href="https://blog.csdn.net/tsdfk1455/article/details/53574555" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>（8）c语言typedef
+                                <a href="https://blog.csdn.net/tsdfk1455/article/details/53574671" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="hardware">Camera NFC Bluetooth Wi-Fi GPS</h2>
+                <ul>
+                    <li>Android中开启摄像头的主要步骤</li>
+                </ul>
+
+                <hr>
+                <h2 id="design_pattern">设计模式</h2>
+                <ul>
+                    你所知道的设计模式有哪些； 答：
+                    Java中一般认为有23种设计模式，我们不需要所有的都会，但是其中常用的几种设计模式应该去掌握。下面列出了所有的设计模式。总体来说设计模式分为三大类：
+                    <li>创建型模式，共五种：
+                        <ul>
+                            <li>工厂方法模式（Factory Method）和抽象工厂模式（Abstract Factory）
+                                <a href="http://blog.csdn.net/jason0539/article/details/23020989"
+                                   target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>单例模式
+                                <a href="http://blog.csdn.net/jason0539/article/details/23297037/"
+                                   target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i></a>
+                                <a href="http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=401348467&idx=1&sn=b472063cc387ae711d98d3b19f5129ec&scene=21#wechat_redirect"
+                                   target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i></a>
+                                <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=401348467&idx=1&sn=b472063cc387ae711d98d3b19f5129ec&scene=21#wechat_redirect"
+                                   target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+
+                            </li>
+                            <li>建造者模式</li>
+                            <li>原型模式</li>
+                        </ul>
+                    <li>
+                    <li>结构型模式，共七种：
+                        <ul>
+                            <li>适配器模式</li>
+                            <li>装饰器模式</li>
+                            <li>代理模式</li>
+                            <li>外观模式</li>
+                            <li>桥接模式</li>
+                            <li>组合模式</li>
+                            <li>享元模式</li>
+                        </ul>
+                    <li>
+                    <li>行为型模式，共十一种:
+                        <ul>
+                            <li>策略模式</li>
+                            <li>模板方法模式</li>
+                            <li>观察者模式
+                                <a href="http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=401536662&idx=1&sn=b434e76e5fa86eefe8fe6370dab4048e&scene=21#wechat_redirect"
+                                   target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                                <a href="https://www.cnblogs.com/luohanguo/p/7825656.html"
+                                   target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>迭代子模式</li>
+                            <li>责任链模式</li>
+                            <li>命令模式</li>
+                            <li>备忘录模式
+                                <a href="http://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=401686419&idx=2&sn=8b5b10b08926b90f345711b1beb2dc21&scene=21#wechat_redirect"
+                                   target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>状态模式</li>
+                            <li>访问者模式</li>
+                            <li>中介者模式</li>
+                            <li>解释器模式</li>
+                        </ul>
+                    </li>
+                    <li>适配器模式，装饰者模式，外观模式的异同？</li>
+                    <li>MVP模式</li>
+                    <li>Java设计模式，观察者模式</li>
+                    <li>MVC MVP MVVM; 写出观察者模式的代码；</li>
+                    <li>设计模式相关（例如Android中哪里使用了观察者模式，单例模式相关）</li>
+                    <li>模式MVP，MVC介绍</li>
+                    <li>手写生产者/消费者模式</li>
+                    <li>设计模式之Adapter
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=401359785&idx=1&sn=17613ee50a033b7bfe740ff4b03358b2&scene=21#wechat_redirect"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>Android官方MVP架构示例项目解读
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547602&idx=1&sn=571db7e744c998ef4ca762ec6a1398d5&scene=21#wechat_redirect"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>Android官方MVP架构示例项目解析
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547649&idx=1&sn=2dd53cf351e6de8ee147ee927b03f830&scene=21#wechat_redirect"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="algorithm">算法</h2>
+                <ul>
+                    <li>优劣评定：时间复杂度、空间复杂度、正确性、可读性、健壮性</li>
+                    <li>分析方法（递归法、穷举法、贪心法、分治法、动态规划法、迭代法、回溯法）</li>
+                    <li>排序算法
+                        <ul>
+                            <li>
+                                插入排序
+                                <ul>
+                                    <li>直接插入排序</li>
+                                    <li>二分法插入排序</li>
+                                    <li>希尔排序</li>
+                                </ul>
+                            </li>
+                            <li>选择排序
+                                <ul>
+                                    <li>简单选择排序</li>
+                                    <li>堆排序</li>
+                                </ul>
+                            </li>
+                            <li>交换排序
+                                <ul>
+                                    <li>冒泡排序
+                                        <a href="https://www.cnblogs.com/chengxiao/p/6103002.html" target="_blank"
+                                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                            <i class="zmdi zmdi-link"></i>
+                                        </a>
+                                    </li>
+                                    <li>快速排序</li>
+                                </ul>
+                            </li>
+                            <li>归并排序</li>
+                            <li>基数排序</li>
+                            <li>排序算法总结
+                                <a href="https://www.jianshu.com/p/ae97c3ceea8d" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>递归算法
+                        <ul>
+                            <li>二分法查找</li>
+                            <li>欧几里得算法</li>
+                            <li>汉若塔算法</li>
+                            <li>阶乘求解算法</li>
+                        </ul>
+                    </li>
+                    <li>穷举法经典算法
+                        <ul>
+                            <li>泊松算法</li>
+                            <li>哥德巴赫猜想</li>
+                        </ul>
+                    </li>
+                    <li>贪心法经典算法
+                        <ul>
+                            <li>背包算法</li>
+                            <li>普利姆算法</li>
+                        </ul>
+                    </li>
+                    <li>分治法经典算法
+                        <ul>
+                            <li>循环赛日常表</li>
+                            <li>棋盘覆盖算法</li>
+                        </ul>
+                    </li>
+                    <li>动态规划法经典算法
+                        <ul>
+                            <li>最长公共子序列</li>
+                            <li>KMP算法</li>
+                        </ul>
+                    </li>
+                    <li>回溯法经典算法
+                        <ul>
+                            <li>八皇后</li>
+                            <li>数独构造算法</li>
+                        </ul>
+                    </li>
+                    <li>其他经典算法
+                        <ul>
+                            <li>约瑟夫杀人法</li>
+                            <li>斐波拉契数列</li>
+                            <li>蒙特卡洛</li>
+                            <li>水仙花</li>
+                        </ul>
+                    </li>
+                    <li>两个不重复的数组集合中，求共同的元素。</li>
+                    <li>上一问扩展，海量数据，内存中放不下，怎么求出。</li>
+                    <li>排序，快速排序的实现</li>
+                    <li>堆排序过程，时间复杂度，空间复杂度</li>
+                    <li>快速排序的时间复杂度，空间复杂度</li>
+                    <li>一个无序，不重复数组，输出N个元素，使得N个元素的和相加为M，给出时间复杂度、空间复杂度。手写算法</li>
+                    <li>翻转一个单项链表</li>
+                    <li>链表反转</li>
+                    <li>合并多个单有序链表（假设都是递增的）</li>
+                    <li>排序，堆排序实现</li>
+                    <li>程序员必须知道的10大基础实用算法及其讲解
+                        <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=401441966&idx=1&sn=653fe22c5a7e6c221fbf121124fd18a2&scene=21#wechat_redirect"
+                           target="_blank"
+                           class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>判断环（猜测应该是链表环）</li>
+                    <li>算法判断单链表成环与否？
+                        <a href="https://blog.csdn.net/fu908323236/article/details/78205462"
+                           target="_blank" class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                    </li>
+                    <li>string分析1000次循环subString用了多少内存；</li>
+                    <li>最快的排序算法是哪个？给阿里2万多名员工按年龄排序应该选择哪个算法？堆和树的区别；写出快排代码；链表逆序代码；</li>
+                    <li>求1000以内的水仙花数以及40亿以内的水仙花数；</li>
+                    <li>子串包含问题(KMP 算法)写代码实现；</li>
+                    <li>蚁群算法与蒙特卡洛算法；</li>
+                    <li>写出你所知道的排序算法及时空复杂度，稳定性；</li>
+                    <li>百度POI中如何试下查找最近的商家功能(坐标镜像+R树)。</li>
+                </ul>
+
+                <hr>
+                <h2 id="data_structure">数据结构</h2>
+                <ul>
+                    <li>集合
+                        <ul>
+                            <li>并发集合了解哪些</li>
+                            <li>集合 Set实现 Hash 怎么防止碰撞</li>
+                            <li>集合的接口和具体实现类，介绍</li>
+                        </ul>
+                    </li>
+
+                    <li>HashMap
+                        <a href="https://www.cnblogs.com/skywang12345/p/3310835.html"
+                           target="_blank" class="btn btn-default btn-primary btn--icon-text list-item-link">
+                            <i class="zmdi zmdi-link"></i>
+                        </a>
+                        <ul>
+                            <li>HashMap如何put数据（从HashMap源码角度讲解）？</li>
+                            <li>HashMap的实现，与HashSet的区别</li>
+                            <li>HashSet与HashMap怎么判断集合元素重复</li>
+                            <li>HashMap数据结构？</li>
+                            <li>HashMap源码,SpareArray原理</li>
+                            <li>HashMap{实现原理（扩容机制、hash算法、索引机制）、散列链表}</li>
+                            <li>ConCurrentHashMap实现原理</li>
+                            <li>修改对象A的equals方法的签名，那么使用HashMap存放这个对象实例的时候，会调用哪个equals方法；</li>
+                            <li>集合类以及集合框架；HashMap与HashTable实现原理，线程安全性，hash冲突及处理算法；ConcurrentHashMap；</li>
+                            <li>HashMap与HashTable实现原理，线程安全性，hash冲突及处理算法；</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        树
+                        <ul>
+                            <li>基本概念:结点（结点的度）、层次、深度（高）、有序树与无序树、森林</li>
+                            <li>树的存储结构（双亲表示法、孩子表示法、孩子兄弟表示法）</li>
+                            <li>二叉树
+                                <a href="https://www.cnblogs.com/33debug/p/7252371.html"
+                                   target="_blank" class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                                <ul>
+                                    <li>二叉树的类型（特殊二叉树、满二叉树、完全二叉树）</li>
+                                    <li>二叉树的存储结构</li>
+                                    <li>二叉树的遍历（前序遍历、中序遍历、后序遍历、层序遍历）</li>
+                                    <li>二叉树的建立（树、森林、二叉树的转换、赫夫曼树、赫夫曼编码（压缩算法）</li>
+                                    <li>查找二叉树</li>
+                                    <li>二叉树 深度遍历与广度遍历</li>
+                                    <li>二叉树，给出根节点和目标节点，找出从根节点到目标节点的路径</li>
+                                </ul>
+                            </li>
+                            <li>平衡树</li>
+                            <li>红黑树
+                                <a href="https://blog.csdn.net/sun_tttt/article/details/65445754"
+                                   target="_blank" class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>树：B+树的介绍</li>
+                            <li>B树、B+树</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        图
+                        <ul>
+                            <li>图的特征与基本概念（无向图、有向图、图的权值、连通图、图的度）</li>
+                            <li>图的存储结构
+                                <ul>
+                                    <li>邻接矩阵</li>
+                                    <li>带权邻接矩阵</li>
+                                    <li>邻接表</li>
+                                    <li>带权值邻接表</li>
+                                    <li>十字链表</li>
+                                </ul>
+                            </li>
+                            <li>图的遍历
+                                <ul>
+                                    <li>深度优先遍历</li>
+                                    <li>广度优先遍历</li>
+                                    <li>最小生成树（普利姆算法、克鲁斯卡尔算法）</li>
+                                    <li>最短路径（迪杰斯特拉算法）</li>
+                                    <li>拓扑排序</li>
+                                </ul>
+                            </li>
+                            <li>图：有向无环图的解释</li>
+                        </ul>
+                    </li>
+
+                    <li>序列化
+                        <ul>
+                            <li>序列化的作用，Android为什么引入Parcelable</li>
+                            <li>有没有尝试简化Parcelable的使用</li>
+                            <li>Serializable和Parcelable的区别
+                                <a href="http://www.cnblogs.com/yezhennan/p/5527506.html" target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>堆栈
+                        <ul>
+                            <li>数据结构中堆的概念，堆排序</li>
+                            <li>堆和栈在内存中的区别是什么(数据结构方面以及实际实现方面)；</li>
+                        </ul>
+
+                    </li>
+
+                    <li>常用数据结构简介</li>
+                    <li>常见编码方式；utf-8编码中的中文占几个字节；int型几个字节；</li>
+                    <li>List,Set,Map的区别</li>
+                    <li>ArrayList和LinkedList的异同，以及应用场景</li>
+                    <li>逻辑结构（集合结构、线性结构、树形结构、图形结构）</li>
+                    <li>存储结构（顺序存储、链式存储）</li>
+                    <li>线性表{顺序线性表、链表（循环链表、双向循环链表）、栈（逆波兰表达式（中缀表达式））、队列（循环队列）}</li>
+                    <li>TreeMap具体实现</li>
+                    <li>List 和 Map 的实现方式以及存储方式。</li>
+                </ul>
+
+                <hr>
+                <h2>框架</h2>
+                <ul>
+                    <li>RxJava
+                        <ul>
+                            <li>RxJava的作用，与平时使用的异步操作来比，优势</li>
+                            <li>RxJava的作用，优缺点</li>
+                            <li>RxJava简介及其源码解读？</li>
+                            <li>RxJava的功能与原理实现</li>
+                            <li>使用RxJava构造Android清晰框架
+                                <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547562&idx=1&sn=356915a93bff2c37d515804d4e03e130&scene=21#wechat_redirect"
+                                   target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>Airbnb：我们的安卓客户端是如何使用 RxJava 的
+                                <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547614&idx=1&sn=0027459142c5e1ec38313500f94f20e8&scene=21#wechat_redirect"
+                                   target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+
+                            </li>
+
+                            <li>好好和h5沟通！几种常见的hybrid通信方式
+                                <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649548005&idx=1&sn=1b91f7cef8f77b920f97c59ea998ad3d&scene=21#wechat_redirect"
+                                   target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>豆瓣混合开发实践
+                                <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649547335&idx=2&sn=5e7f46a33ea9663e8448478e1ec87538&scene=21#wechat_redirect"
+                                   target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                            <li>用到的一些开源框架，介绍一个看过源码的，内部实现过程。</li>
+                            <li>都使用过哪些框架、平台；</li>
+                            <li>都使用过哪些自定义控件；</li>
+                            <li>基于Retrotfit2.1+Material Design+ijkplayer开发的一个APP（新闻，gif 动图，视频播放）
+                                <a href="https://mp.weixin.qq.com/s?__biz=MzI0MjE3OTYwMg==&mid=2649548564&idx=1&sn=10034e927628aa08d7c6ccd2bf2fcea0&chksm=f1180c69c66f857f48bcf5efa3673b47ab23daf7f3840d49f5e148b78e20b599a377884b38b6&scene=21#wechat_redirect"
+                                   target="_blank"
+                                   class="btn btn-default btn-primary btn--icon-text list-item-link">
+                                    <i class="zmdi zmdi-link"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>EventBus
+                        <ul>
+                            <li>EventBus实现原理</li>
+                            <li>EventBus作用，实现方式，代替EventBus的方式</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <hr>
+                <h2 id="other">Other</h2>
+                <ul>
+                    <li>实现一个Json解析器(可以通过正则提高速度)；</li>
+                    <li>Bundle 机制</li>
+                    <li>OSGI</li>
+                    <li>画出 Android 的大体架构图</li>
+                    <li>权限管理系统（底层的权限是如何进行 grant 的）</li>
+                    <li>App中唤醒其他进程的实现方式</li>
+                    <li>项目组件化的理解</li>
+                    <li>逻辑地址与物理地址，为什么使用逻辑地址</li>
+                    <li>系统启动流程 Zygote进程 –> SystemServer进程 –> 各种系统服务 –> 应用进程</li>
+                    <li>Android中数据存储方式</li>
+                </ul>
+
+                <hr>
+                <h2 id="logic">逻辑</h2>
+                <ul>
+                    <li>x个苹果，一天只能吃一个、两个、或者三个，问多少天可以吃完</li>
+                    <li>N * N的方格纸,里面有多少个正方形：1²+2²+...+n²</li>
+                    <li>5枚硬币，2正3反如何划分为两堆然后通过翻转让两堆中正面向上的硬币和反面向上的硬币个数相同；</li>
+                    <li>时针走一圈，时针分针重合几次；</li>
+                </ul>
+
+                <hr>
+                <h2 id="intelligence">非技术问题</h2>
+                <ul>
+                    <li>研究比较深入的领域有哪些；</li>
+                    <li>对业内信息的关注渠道有哪些；</li>
+                    <li>最近都读哪些书；</li>
+                    <li>自己最擅长的技术点，最感兴趣的技术领域和技术点；</li>
+                    <li>项目中用了哪些开源库，如何避免因为引入开源库而导致的安全性和稳定性问题；</li>
+                    <li>实习过程中做了什么，有什么产出；</li>
+                    <li>现在下载速度很慢,试从网络协议的角度分析原因,并优化(网络的5层都可以涉及)。</li>
+                </ul>
+
+                <hr>
+                <h2 id="hr">HR</h2>
+                <ul>
+                    <li>您在前一家公司的离职原因是什么？</li>
+                    <li>讲一件你印象最深的一件事情；</li>
+                    <li>介绍一个你影响最深的项目；</li>
+                    <li>介绍你最热爱最擅长的专业领域；</li>
+                    <li>公司实习最大的收获是什么；</li>
+                    <li>与上级意见不一致时，你将怎么办；</li>
+                    <li>自己的优点和缺点是什么？并举例说明？</li>
+                    <li>你的学习方法是什么样的？实习过程中如何学习？实习项目中遇到的最大困难是什么以及如何解决的；</li>
+                    <li>说一件最能证明你能力的事情；</li>
+                    <li>针对你你申请的这个职位，你认为你还欠缺什么；</li>
+                    <li>如果通过这次面试我们单位录用了你，但工作一段时间却发现你根本不适合这个职位，你怎么办；</li>
+                    <li>项目中遇到最大的困难是什么？如何解决的；</li>
+                    <li>你的职业规划以及个人目标；未来发展路线及求职定位；</li>
+                    <li>如果你在这次面试中没有被录用，你怎么打算；</li>
+                    <li>评价下自己，评价下自己的技术水平，个人代码量如何；</li>
+                    <li>通过哪些渠道了解的招聘信息，其他同学都投了哪些公司；</li>
+                    <li>业余都有哪些爱好；</li>
+                    <li>你做过的哪件事最令自己感到骄傲；</li>
+                    <li>假如你晚上要去送一个出国的同学去机场，可单位临时有事非你办不可，你怎么办；</li>
+                    <li>就你申请的这个职位，你认为你还欠缺什么；</li>
+                    <li>当前的offer状况；如果BATH都给了offer该如何选；</li>
+                    <li>你对一份工作更看重哪些方面？平台，技术，氛围，城市，money；</li>
+                    <li>理想薪资范围；杭州岗和北京岗选哪个；</li>
+                    <li>理想中的工作环境是什么；</li>
+                    <li>谈谈你对跳槽的看法；</li>
+                    <li>说说你对行业、技术发展趋势的看法；</li>
+                    <li>实习过程中周围同事/同学有哪些值得学习的地方；</li>
+                    <li>家人对你的工作期望及自己的工作期望；</li>
+                    <li>如果你的工作出现失误，给本公司造成经济损失，你认为该怎么办；</li>
+                    <li>若上司在公开会议上误会你了，该如何解决；</li>
+                    <li>是否可以实习，可以实习多久；</li>
+                    <li>在五年的时间内，你的职业规划；</li>
+                    <li>你看中公司的什么？或者公司的那些方面最吸引你。</li>
+                </ul>
+
+
+            </div>
+        </div>
+
+    </section>
+
+    <link rel="stylesheet" href="../../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
+
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
+
+<!-- Javascript Libraries -->
+<!-- jQuery -->
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Go Up -->
+<script type="text/javascript" src="../../resource/js/zms.goup.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Malihu ScrollBar -->
+<script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+
+<!-- Bootgrid -->
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+
+<!-- Light Gallery -->
+<script src="../../vendors/bower_components/lightgallery/dist/js/lightgallery.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-fullscreen.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-thumbnail.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-zoom.min.js"></script>
+<script src="../../vendors/bower_components/lightgallery/demo/js/lg-video.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+<!-- Demo Only -->
+<!--<script src="js/misc.js"></script>-->
+<script src="../../resource/js/data-table.js"></script>
+
+<!-- Site Functions & Actions -->
+<script src="../../resource/js/app.min.js"></script>
+
+<!-- busuanzi PV&UV -->
+<script async src="../../resource/js/busuanzi.pure.mini.js"></script>
+
+<!-- Nest Follow Mouse Background -->
+<!--
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../js/canvas-nest.min.js"></script>
+        -->
+
+<script src="../../resource/js/essay.material.floating.button.js"></script>
+<script type="text/javascript">
+    let panel = document.getElementById('panel'),
+        menu = document.getElementById('menu'),
+        showcode = document.getElementById('showcode'),
+        selectFx = document.getElementById('selections-fx'),
+        selectPos = document.getElementById('selections-pos'),
+        // demo defaults
+        effect = 'mfb-zoomin',
+        pos = 'mfb-component--br';
+
+    showcode.addEventListener('click', _toggleCode);
+    selectFx.addEventListener('change', switchEffect);
+    selectPos.addEventListener('change', switchPos);
+
+    function _toggleCode() {
+        panel.classList.toggle('viewCode');
+    }
+
+    function switchEffect(e) {
+        effect = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function switchPos(e) {
+        pos = this.options[this.selectedIndex].value;
+        renderMenu();
+    }
+
+    function renderMenu() {
+        menu.style.display = 'none';
+        // ?:-)
+        setTimeout(function () {
+            menu.style.display = 'block';
+            menu.className = pos + effect;
+        }, 1);
+    }
+</script>
+
+<!-- Toolbox -->
+<script src="../../resource/js/toolbox.main.js"></script>
+
+<script>var directoryDepth = 2;</script>
+<script src="../../resource/js/zms.page.pattern.js"></script>
+</body>
+</html>

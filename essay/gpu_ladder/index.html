@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="hb-loaded" style="font-size: 100px;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>显卡天梯榜</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/checked.min.css">
+    <link rel="stylesheet" type="text/css" href="css/data.css">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/gpu.data.js"></script>
+    <script src="js/chart.js" type="text/javascript"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?26198db7f6242a852264bc76b1d1ff9a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    <script type="text/javascript">
+        function checkhtml5() {
+            if (typeof(Worker) == "undefined") alert("您的浏览器可能不支持HTML5，请更换为Chrome等内核浏览器。");
+        }
+        checkhtml5();
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 640) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <style id="style-1-cropbar-clipper">
+        .en-markup-crop-options {
+            top: 18px !important;
+            left: 50% !important;
+            margin-left: -100px !important;
+            width: 200px !important;
+            border: 2px rgba(255, 255, 255, .38) solid !important;
+            border-radius: 4px !important;
+        }
+
+        .en-markup-crop-options div div:first-of-type {
+            margin-left: 0px !important;
+        }
+    </style>
+
+    <!-- Material Design Icons -->
+    <link href="../../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e3a97a0eee3cb03b5caf792f58032743";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+<a href="../../" class="back-to-essay"><i class="zmdi zmdi-arrow-left" title="返回列表"></i> 返回列表</a>
+
+<!--复选框 start  -->
+<label class="onlabel">
+    显示标签<input onchange="setlabel()" type="checkbox" name="x" class="checked-focus" id="xsbq" checked="checked">
+</label>
+
+<!-- 下拉菜单 -->
+<div class="xknx">
+    <p>年限</p>
+    <select name="" id="xlcd" value="年限" onchange="selectTest(this)">
+        <option value="1">1</option>
+        <option value="5" selected="selected">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+    </select>
+</div>
+<!-- end -->
+<script type="text/javascript">
+    function selectTest(obj) {
+        setop(obj.options[obj.selectedIndex].value, Inter);
+    }
+    //修改其中的一些样式
+    jQuery(document).ready(function ($) {
+        $('#xcld>*').css('background', 'skyblue');
+    });
+</script>
+
+<!-- 数据表格 -->
+<div id="expindex" style="height: 100%;margin:0 auto;"></div>
+
+<script type="text/javascript">
+
+    function setlabel() {
+        if (document.getElementById("xsbq").checked) enlabel = true;
+        else enlabel = false;
+        setop(Whenago, Inter);
+    }
+
+    var dom = document.getElementById("expindex");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+
+    var colorList = ['#9F1417', '#82B41B', '#0075C5', '#ffff00', '#fff'];
+    var enlabel = true;
+    var enlenged = true;
+    var Inter = 2;
+    var Whenago = 5; // 年限
+    var clicktime = new Date().getTime();
+    var TData = [{
+        "Name": " ",
+        "Brand": "",
+        "GPU": "",
+        "LaunchDate": "",
+        "LaunchPrice": "",
+        "CoreClock": "",
+        "BoostClock": "",
+        "MemClock": "",
+        "ShaderClock": "",
+        "MemInterface": "",
+        "SP": "",
+        "EXPIndex": "0",
+        "Review": " ",
+        "MemSize": "",
+        "TBP": "1",
+        "DirectX": "",
+        "MemType": "",
+        "DieSize": "",
+        "TCount": "",
+        "MProcess": "",
+        "ImgURL": ""
+    }];
+    var tline = [];
+    var Interfield = ['1', '2', '3', '5', '10', '15', '20', '50', '99'];
+    var Whenagofield = ['30', '20', '15', '10', '5', '3', '2', '1'];
+    app.config = {
+        显示近几年产品: '30',
+        性能PK对位精度: '2',
+        onChange: function () {
+            var w = parseInt(app.config.显示近几年产品);
+            var i = parseInt(app.config.性能PK对位精度);
+            setop(w, i);
+        }
+    };
+    app.configParameters = {
+        显示近几年产品: {
+            options: Whenagofield
+        },
+        性能PK对位精度: {
+            options: Interfield
+        }
+    };
+
+    function setop(w, i) {
+        Whenago = w;
+        Inter = i;
+        GPUSI = getnewly(GPUData, Whenago);
+        var winwd = getwidth().winWidth;
+        GPUSI.sort(function (a, b) {
+            return a.EXPIndex - b.EXPIndex;
+        });
+        IndexData = GPUSI.slice(0);
+        GPUSI.sort(function (a, b) {
+            return b.MProcess - a.MProcess;
+        });
+        var ZhiData = GPUSI.concat();
+        GPUSI.sort(function (a, b) {
+            return b.TBP - a.TBP;
+        });
+        TDPData = GPUSI.concat();
+        LaunchData = getlanuchdata(GPUSI);
+        backNVData = getcompdata('NVIDIA');
+        backAMDData = getcompdata('AMD');
+        NVlaunch = getlanuchdata(backNVData);
+        AMDlaunch = getlanuchdata(backAMDData);
+        NVData = getnewly(backNVData, Whenago);
+        AMDData = getnewly(backAMDData, Whenago);
+        initna();
+        myChart.setOption({
+            baseOption: {
+                timeline: {
+                    axisType: 'category',
+                    autoPlay: false,
+                    playInterval: 3000,
+                    padding: 10,
+                    left: getwidth().tll,
+                    bottom: getwidth().tlb,
+                    width: getwidth().tlw,
+                    symbolSize: 14,
+                    tooltip: {
+                        show: false
+                    },
+                    label: {
+                        normal: {
+                            textStyle: {
+                                color: '#eee',
+                            }
+                        },
+                        emphasis: {
+                            textStyle: {
+                                color: '#cc0000'
+                            }
+                        }
+                    },
+                    lineStyle: {
+                        color: 'rgba(155,155,155,0.9)'
+                    },
+                    checkpointStyle: {
+                        color: '#cc0000',
+                        borderColor: '#cc0000',
+                        borderWidth: 6
+                    },
+                    controlStyle: {
+                        showNextBtn: false,
+                        showPrevBtn: false,
+                        showPlayBtn: false,
+                        normal: {
+                            color: '#666',
+                            borderColor: '#666'
+                        },
+                        emphasis: {
+                            color: '#aaa',
+                            borderColor: '#aaa'
+                        }
+                    },
+                    data: tline
+                },
+                backgroundColor: "#344b58",
+                title: {
+                    show: enlenged,
+                    text: "超能指数全排行",
+                    subtext: "ver 0.01 By 超能网",
+                    textStyle: {
+                        color: '#fff',
+                        fontSize: '18'
+                    },
+                    subtextStyle: {
+                        color: '#90979c',
+                        fontSize: '12',
+                    },
+                    bottom: '19%',
+                    left: getwidth().ls
+                },
+                tooltip: {
+                    padding: 10,
+                    extraCssText: 'box-shadow: 0 0 3px rgba(255, 255, 255, 0.2);',
+                    textStyle: {},
+                    confine: true,
+                    axisPointer: {
+                        type: 'cross',
+                        crossStyle: {
+                            width: 1,
+                            opacity: 1
+                        },
+                        label: {
+                            precision: 1,
+                            formatter: function (params) {
+                                if (params.value == 'undefined') return '';
+                                if (typeof(params.value) == 'undefined') return '';
+                                else if (typeof(params.value) == 'number') return params.value.toFixed(1);
+                                else return params.value;
+                            },
+                            borderColor: '#ddd',
+                            shadowBlur: 0,
+                        }
+                    }
+                },
+                toolbox: {
+                    show: true,
+                    right: getwidth().dz,
+                    itemSize: 12,
+                    top: '2%',
+                    //z:11,
+                    //itemGap:4,
+                    iconStyle: {
+                        normal: {
+                            borderWidth: 1,
+                            borderColor: '#ccc',
+                            // shadowBlur:5,
+                            // shadowColor:'#cc0000'
+                            //color:'#000'
+
+                        }
+                    },
+                    feature: {
+                        restore: {
+                            show: true
+                        },
+                        magicType: {
+                            show: true,
+                            type: ['line', 'bar']
+                        },
+                        saveAsImage: {
+                            show: true
+                        }
+                    }
+                },
+                calculable: true,
+            },
+            xAxis: [{}, {}, {}],
+            yAxis: [{
+                type: "value"
+            }, {
+                type: "value"
+            }, {
+                type: "value",
+            }],
+            dataZoom: [{}, {
+                type: "inside"
+            }],
+            options: [
+                //----------------0 华山论剑
+                {
+                    title: {
+                        text: tline[0],
+                        subtext: "倚天在手，唯屠龙宝刀能敌",
+                    },
+                    legend: {
+                        show: enlenged,
+                        top: getwidth().lengtop,
+                        right: getwidth().ls,
+                        itemHeight: 12,
+                        itemWidth: 15,
+                        data: ['超能指数', 'TDP|W', '晶体管数|亿'],
+                        textStyle: {
+                            color: '#bbb'
+                        },
+                        selected: {
+                            '超能指数': true,
+                            'TDP|W': false,
+                            'TDP功耗': false,
+                            '晶体管数|亿': false
+                        }
+                    },
+                    dataZoom: [{
+                        show: true,
+                        width: getwidth().dzw,
+                        orient: 'vertical',
+                        right: getwidth().dz,
+                        yAxisIndex: [0, 2],
+                        start: getwidth().start0,
+                        end: 100,
+                        handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+                        handleSize: '110%',
+                        handleStyle: {
+                            color: "#d3dee5",
+                        },
+                        textStyle: {
+                            color: "#fff"
+                        },
+                        borderColor: "#888"
+                    }, {
+                        type: "inside",
+                        show: true,
+                        orient: 'vertical',
+                        yAxisIndex: [0, 2],
+                    },],
+                    grid: [{
+                        show: false,
+                        left: getwidth().ls,
+                        top: getwidth().ts,
+                        bottom: getwidth().bs,
+                        width: getwidth().ws,
+                    }, {
+                        show: false,
+                        right: getwidth().ls,
+                        bottom: getwidth().bs,
+                        top: getwidth().ts,
+                        width: getwidth().ws,
+                    },],
+                    tooltip: {
+                        formatter: function (params) {
+                            if (NVData[params.dataIndex].Name == params.name) {
+                                return gettip(NVData[params.dataIndex]);
+                            } else if (NVData[params.dataIndex].TBP == params.data) {
+                                return gettip(NVData[params.dataIndex]);
+                            } else if (NVData[params.dataIndex].TCount == params.data * 100) {
+                                return gettip(NVData[params.dataIndex]);
+                            } else {
+                                return gettip(AMDData[params.dataIndex]);
+                            }
+                        },
+                    },
+                    xAxis: [{
+                        type: 'value',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: colorList[1]
+                            }
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                        position: 'bottom',
+                        nameLocation: 'start',
+                        name: '\n\nNVIDIA',
+                        nameGap: -100,
+                        nameTextStyle: {
+                            color: '#ffff00',
+                            fontWeight: 'bolder'
+                        },
+                        inverse: true,
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '00b200',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#fff',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }, {
+                        show: false
+                    }, {
+                        gridIndex: 1,
+                        xAxisIndex: 2,
+                        type: 'value',
+                        nameLocation: 'start',
+                        nameGap: -90,
+                        name: '\n\nAMD',
+                        nameTextStyle: {
+                            color: '#ffff00',
+                            fontWeight: 'bolder'
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                        position: 'bottom',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: colorList[0]
+                            }
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#B2B2B2',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#cc0000',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }],
+                    yAxis: [{
+                        position: 'right',
+                        axisLine: {
+                            lineStyle: {
+                                color: colorList[1]
+                            },
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        show: true,
+                        xAxisIndex: 0,
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: NVData.map(function (user) {
+                            return user.Name
+                        })
+                    }, {
+                        yAxisIndex: 1,
+                        show: false,
+                    }, {
+                        gridIndex: 1,
+                        yAxisIndex: 2,
+                        show: false,
+                        position: 'left',
+                        axisLine: {
+                            lineStyle: {
+                                color: colorList[0]
+                            },
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: AMDData.map(function (user) {
+                            return user.Name
+                        })
+                    }],
+                    series: [{
+                        name: '超能指数',
+                        type: "bar",
+                        barCategoryGap: 0.01,
+                        z: 0,
+                        itemStyle: {
+                            normal: {
+                                color: colorList[1],
+                                label: {
+                                    show: true,
+                                    position: 'insideRight',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: function (params) {
+                                        if (enlabel) return params.name + ' / ' + params.data + " ";
+                                        else return ''
+                                    }
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: NVData.map(function (user) {
+                            return user.EXPIndex
+                        })
+                    }, {
+                        type: "bar",
+                        name: '超能指数',
+                        xAxisIndex: 2,
+                        yAxisIndex: 2,
+                        barCategoryGap: 0.01,
+                        z: 0,
+                        itemStyle: {
+                            normal: {
+                                color: colorList[0],
+                                label: {
+                                    show: true,
+                                    position: 'insideLeft',
+                                    textStyle: {
+                                        color: '#eee',
+                                        fontSize: 10
+                                    },
+                                    formatter: function (params) {
+                                        if (enlabel) return ' ' + params.data + ' / ' + params.name;
+                                        else return ''
+                                    }
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(220, 220, 220, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: AMDData.map(function (user) {
+                            return user.EXPIndex
+                        })
+                    }, {
+                        name: 'TDP|W',
+                        type: "line",
+                        symbol: 'circle',
+                        symbolSize: 30,
+                        barCategoryGap: 0.01,
+                        lineStyle: {
+                            normal: {
+                                color: colorList[1],
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(NVData, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'inside',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: '{c}',
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: NVData.map(function (user) {
+                            return user.TBP
+                        })
+                    }, {
+                        name: 'TDP|W',
+                        type: "line",
+                        xAxisIndex: 2,
+                        yAxisIndex: 2,
+                        symbol: 'circle',
+                        symbolSize: 30,
+                        barCategoryGap: 0.01,
+                        lineStyle: {
+                            normal: {
+                                color: colorList[0],
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(AMDData, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'insideRight',
+                                    textStyle: {
+                                        color: '#eee',
+                                        fontSize: 10
+                                    },
+                                    formatter: '{c}',
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: AMDData.map(function (user) {
+                            return user.TBP
+                        })
+                    }, {
+                        name: '晶体管数|亿',
+                        type: "line",
+                        symbol: 'circle',
+                        symbolSize: 30,
+                        barCategoryGap: 0.01,
+                        lineStyle: {
+                            normal: {
+                                color: colorList[1],
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(NVData, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'inside',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: '{c}',
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: NVData.map(function (user) {
+                            return user.TCount / 100
+                        })
+                    }, {
+                        name: '晶体管数|亿',
+                        type: "line",
+                        xAxisIndex: 2,
+                        yAxisIndex: 2,
+                        symbol: 'circle',
+                        symbolSize: 30,
+                        barCategoryGap: 0.01,
+                        lineStyle: {
+                            normal: {
+                                color: colorList[0],
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(AMDData, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'inside',
+                                    textStyle: {
+                                        color: '#eee',
+                                        fontSize: 10
+                                    },
+                                    formatter: '{c}',
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: AMDData.map(function (user) {
+                            return user.TCount / 100
+                        })
+                    },]
+                },
+                //----------------1 超能指数全榜
+                {
+                    title: {
+                        text: tline[1],
+                        subtext: "有我在手，挑卡无忧",
+                    },
+                    legend: {
+                        show: enlenged,
+                        data: ['超能指数', '能耗比'],
+                        textStyle: {
+                            color: '#bbb'
+                        },
+                        selected: {
+                            'TDP功耗': true,
+                            '超能指数': true,
+                            '能耗比': true,
+                            'TDP|W': false,
+                            '晶体管数|亿': false
+                        }
+                    },
+                    dataZoom: [{
+                        start: getwidth().start2,
+                        end: 100,
+                    }, {}],
+                    grid: [{
+                        show: false,
+                        left: getwidth().ls,
+                        top: getwidth().ts,
+                        bottom: getwidth().bs,
+                        width: getwidth().ws,
+                    }, {
+                        show: false,
+                        right: getwidth().ls,
+                        bottom: getwidth().bs,
+                        top: getwidth().ts,
+                        width: getwidth().ws,
+                    },],
+                    tooltip: {
+                        formatter: function (params) {
+                            return gettip(IndexData[params.dataIndex])
+                        },
+                    },
+                    xAxis: [{
+                        type: 'value',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#90979c'
+                            }
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                        inverse: true,
+                        position: 'bottom',
+                        nameLocation: 'start',
+                        name: '\n\n超能指数',
+                        nameGap: -100,
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '00b200',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#fff',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }, {
+                        show: false
+                    }, {
+                        gridIndex: 1,
+                        xAxisIndex: 2,
+                        type: 'value',
+                        position: 'bottom',
+                        nameLocation: 'start',
+                        name: '\n\n能耗比',
+                        nameGap: -90,
+                        axisTick: {
+                            show: false,
+                        },
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#90979c'
+                            }
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#B2B2B2',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#cc0000',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }],
+                    yAxis: [{
+                        position: 'right',
+                        show: false,
+                        xAxisIndex: 0,
+                        axisLabel: {
+                            show: enlabel,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: IndexData.map(function (user) {
+                            return user.Name
+                        })
+                    }, {
+                        yAxisIndex: 1,
+                        show: false,
+                    }, {
+                        gridIndex: 1,
+                        yAxisIndex: 2,
+                        show: false,
+                        position: 'left',
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: IndexData.map(function (user) {
+                            return user.Name
+                        })
+                    }],
+                    series: [{
+                        name: '超能指数',
+                        type: "bar",
+                        symbol: 'circle',
+                        symbolSize: 20,
+                        barCategoryGap: 0.01,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(IndexData, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'insideRight',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: function (params) {
+                                        if (enlabel) return params.name + ' / ' + params.data + " ";
+                                        else return ''
+                                    }
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: IndexData.map(function (user) {
+                            return user.EXPIndex
+                        })
+                    }, {
+                        type: "bar",
+                        name: '能耗比',
+                        symbol: 'circle',
+                        xAxisIndex: 2,
+                        yAxisIndex: 2,
+                        symbolSize: 25,
+                        barCategoryGap: 0.01,
+                        z: 0,
+                        lineStyle: {
+                            normal: {
+                                color: 'rgba(220, 220, 220, 0.48)'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(IndexData, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'insideLeft',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: ' {c} / 能耗比'
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(220, 220, 220, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: IndexData.map(function (user) {
+                            return (100 * user.EXPIndex / user.TBP).toFixed(0)
+                        })
+                    },]
+                },
+                //-------------------2 NVIDIA全家福
+                {
+                    title: {
+                        text: tline[2],
+                        subtext: "The way it’s meant to be played",
+                    },
+                    legend: {
+                        show: enlenged,
+                        data: ['显卡性能排列', '发布时间排列'],
+                        selected: {
+                            'NVIDIA': false,
+                            'AMD': false,
+                            'TDP功耗|W': false,
+                            'TDP功耗': false,
+                            '晶体管数|亿': false
+                        }
+                    },
+                    dataZoom: [{
+                        start: getwidth().start1,
+                        end: 100,
+                    }, {}],
+                    grid: [{
+                        show: false,
+                        left: getwidth().ls,
+                        top: getwidth().ts,
+                        bottom: getwidth().bs,
+                        width: getwidth().ws,
+                    }, {
+                        show: false,
+                        right: getwidth().ls,
+                        bottom: getwidth().bs,
+                        top: getwidth().ts,
+                        width: getwidth().ws,
+                    },],
+                    tooltip: {
+                        formatter: function (params) {
+                            if (backNVData[params.dataIndex].EXPIndex == params.data) return gettip(backNVData[params.dataIndex]);
+                            else return gettip(NVlaunch[params.dataIndex])
+                        },
+                    },
+                    xAxis: [{
+                        type: 'value',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: colorList[0]
+                            }
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                        inverse: true,
+                        position: 'bottom',
+                        nameLocation: 'start',
+                        name: '\n\n显卡性能排列',
+                        nameGap: -130,
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '00b200',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#fff',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }, {
+                        show: false
+                    }, {
+                        gridIndex: 1,
+                        xAxisIndex: 2,
+                        type: 'value',
+                        position: 'bottom',
+                        nameLocation: 'start',
+                        name: '\n\n发布时间排列',
+                        nameGap: -120,
+                        axisTick: {
+                            show: false,
+                        },
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: colorList[0]
+                            }
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#B2B2B2',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#cc0000',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }],
+                    yAxis: [{
+                        position: 'right',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: colorList[0]
+                            }
+                        },
+                        show: true,
+                        xAxisIndex: 0,
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: backNVData.map(function (user) {
+                            return user.Name
+                        })
+                    }, {
+                        yAxisIndex: 1,
+                        show: false,
+                    }, {
+                        gridIndex: 1,
+                        yAxisIndex: 2,
+                        show: false,
+                        position: 'left',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: colorList[0]
+                            }
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: NVlaunch.map(function (user) {
+                            return user.Name
+                        })
+                    }],
+                    series: [{
+                        name: '显卡性能排列',
+                        type: "bar",
+                        symbol: 'circle',
+                        symbolSize: 20,
+                        barCategoryGap: 0.01,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(backNVData, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'insideRight',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: function (params) {
+                                        if (enlabel) return params.name + ' / ' + params.data + " ";
+                                        else return ''
+                                    }
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: backNVData.map(function (user) {
+                            return user.EXPIndex
+                        })
+                    }, {
+                        type: "bar",
+                        name: '发布时间排列',
+                        symbol: 'circle',
+                        xAxisIndex: 2,
+                        yAxisIndex: 2,
+                        symbolSize: 25,
+                        barCategoryGap: 0.01,
+                        z: 0,
+                        lineStyle: {
+                            normal: {
+                                color: colorList[1],
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(NVlaunch, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'insideLeft',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: function (params) {
+                                        if (enlabel) return ' ' + params.name;
+                                        else return ''
+                                    }
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(220, 220, 220, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: NVlaunch.map(function (user) {
+                            return user.EXPIndex
+                        })
+                    },]
+                },
+                //----------------3 AMD一家亲
+                {
+                    title: {
+                        text: tline[3],
+                        subtext: "Gaming Evolved",
+                    },
+                    legend: {
+                        show: enlenged,
+                        data: ['显卡性能排列', '发布时间排列'],
+                        selected: {
+                            'NVIDIA': false,
+                            'AMD': false,
+                            'TDP功耗|W': false,
+                            'TDP功耗': false,
+                            '晶体管数|亿': false
+                        }
+                    },
+                    dataZoom: [{
+                        start: getwidth().start1,
+                        end: 100,
+                    }, {}],
+                    grid: [{
+                        show: false,
+                        left: getwidth().ls,
+                        top: getwidth().ts,
+                        bottom: getwidth().bs,
+                        width: getwidth().ws,
+                    }, {
+                        show: false,
+                        right: getwidth().ls,
+                        bottom: getwidth().bs,
+                        top: getwidth().ts,
+                        width: getwidth().ws,
+                    },],
+                    tooltip: {
+                        formatter: function (params) {
+                            if (backAMDData[params.dataIndex].EXPIndex == params.data) return gettip(backAMDData[params.dataIndex]);
+                            else return gettip(AMDlaunch[params.dataIndex])
+                        },
+                    },
+                    xAxis: [{
+                        type: 'value',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: colorList[1]
+                            }
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                        inverse: true,
+                        position: 'bottom',
+                        nameLocation: 'start',
+                        name: '\n\n显卡性能排列',
+                        nameGap: -130,
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '00b200',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#fff',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }, {
+                        show: false
+                    }, {
+                        gridIndex: 1,
+                        xAxisIndex: 2,
+                        type: 'value',
+                        position: 'bottom',
+                        nameLocation: 'start',
+                        name: '\n\n发布时间排列',
+                        nameGap: -120,
+                        axisTick: {
+                            show: false,
+                        },
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: colorList[1]
+                            }
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#B2B2B2',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#cc0000',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }],
+                    yAxis: [{
+                        position: 'right',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: colorList[1]
+                            }
+                        },
+                        show: true,
+                        xAxisIndex: 0,
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: backAMDData.map(function (user) {
+                            return user.Name
+                        })
+                    }, {
+                        yAxisIndex: 1,
+                        show: false,
+                    }, {
+                        gridIndex: 1,
+                        yAxisIndex: 2,
+                        show: false,
+                        position: 'left',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: colorList[1]
+                            }
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: AMDlaunch.map(function (user) {
+                            return user.Name
+                        })
+                    }],
+                    series: [{
+                        name: '显卡性能排列',
+                        type: "bar",
+                        symbol: 'circle',
+                        symbolSize: 20,
+                        barCategoryGap: 0.01,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(backAMDData, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'insideRight',
+                                    textStyle: {
+                                        color: '#eee',
+                                        fontSize: 10
+                                    },
+                                    formatter: function (params) {
+                                        if (enlabel) return params.name + ' / ' + params.data + " ";
+                                        else return ''
+                                    }
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: backAMDData.map(function (user) {
+                            return user.EXPIndex
+                        })
+                    }, {
+                        type: "bar",
+                        name: '发布时间排列',
+                        symbol: 'circle',
+                        xAxisIndex: 2,
+                        yAxisIndex: 2,
+                        symbolSize: 25,
+                        barCategoryGap: 0.01,
+                        z: 0,
+                        lineStyle: {
+                            normal: {
+                                color: colorList[1],
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(AMDlaunch, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'insideLeft',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: function (params) {
+                                        if (enlabel) return ' ' + params.name;
+                                        else return ''
+                                    }
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(220, 220, 220, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: AMDlaunch.map(function (user) {
+                            return user.EXPIndex
+                        })
+                    },]
+                },
+
+                //-------------------4 编年史
+                {
+                    title: {
+                        text: tline[4],
+                        subtext: "你仰望奇迹，我创造神奇",
+                    },
+                    legend: {
+                        show: enlenged,
+                        data: ['发布顺序', '制程变迁'],
+                        selected: {
+                            '发布顺序': true,
+                            '制程变迁': true,
+                            '能耗比': false,
+                            'AMD': false,
+                            'TDP功耗|W': false,
+                            'TDP功耗': false,
+                            '晶体管数|亿': false
+                        }
+                    },
+                    dataZoom: [{
+                        start: getwidth().start2,
+                        end: 100,
+                    }, {}],
+                    grid: [{
+                        show: false,
+                        left: getwidth().ls,
+                        top: getwidth().ts,
+                        bottom: getwidth().bs,
+                        width: getwidth().ws,
+                    }, {
+                        show: false,
+                        right: getwidth().ls,
+                        bottom: getwidth().bs,
+                        top: getwidth().ts,
+                        width: getwidth().ws,
+                    },],
+                    tooltip: {
+                        formatter: function (params) {
+                            return gettip(LaunchData[params.dataIndex])
+                        },
+                    },
+                    xAxis: [{
+                        type: 'value',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#90979c'
+                            }
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                        inverse: true,
+                        position: 'bottom',
+                        nameLocation: 'start',
+                        name: '\n\n发布顺序',
+                        nameGap: -110,
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '00b200',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#fff',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }, {
+                        show: false
+                    }, {
+                        gridIndex: 1,
+                        xAxisIndex: 2,
+                        type: 'value',
+                        position: 'bottom',
+                        nameLocation: 'start',
+                        name: '\n\n制程变迁',
+                        nameGap: -100,
+                        axisTick: {
+                            show: false,
+                        },
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#90979c'
+                            }
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#B2B2B2',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#cc0000',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }],
+                    yAxis: [{
+                        position: 'right',
+                        show: true,
+                        xAxisIndex: 0,
+                        axisLabel: {
+                            show: enlabel,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: LaunchData.map(function (user) {
+                            return user.LaunchDate
+                        })
+                    }, {
+                        yAxisIndex: 1,
+                        show: false,
+                    }, {
+                        gridIndex: 1,
+                        yAxisIndex: 2,
+                        show: false,
+                        position: 'left',
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: LaunchData.map(function (user) {
+                            return user.Name
+                        })
+                    }],
+                    series: [{
+                        name: '发布顺序',
+                        type: "bar",
+                        symbol: 'circle',
+                        symbolSize: 20,
+                        barCategoryGap: 0.01,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(LaunchData, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'insideRight',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: function (params) {
+                                        if (enlabel) return LaunchData[params.dataIndex].Name + ' ';
+                                        else return ''
+                                    }
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: LaunchData.map(function (user) {
+                            return user.EXPIndex
+                        })
+                    }, {
+                        type: "line",
+                        name: '制程变迁',
+                        symbol: 'circle',
+                        xAxisIndex: 2,
+                        yAxisIndex: 2,
+                        symbolSize: 25,
+                        barCategoryGap: 0.01,
+                        z: 0,
+                        lineStyle: {
+                            normal: {
+                                color: colorList[1],
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(LaunchData, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'inside',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: ' {c}'
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(220, 220, 220, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: LaunchData.map(function (user) {
+                            return user.MProcess
+                        })
+                    },]
+                },
+
+                //---------------5 TDP
+                {
+                    title: {
+                        text: tline[5],
+                        subtext: "黑色的眼睛注定寻找光明",
+                    },
+                    legend: {
+                        show: enlenged,
+                        data: ['时间排序', '能耗比'],
+                        selected: {
+                            '能耗比': true,
+                            '超能指数': false,
+                            '制程变迁': false,
+                            'TDP功耗|W': false,
+                            'TDP功耗': false,
+                            '晶体管数|亿': false
+                        }
+                    },
+                    dataZoom: [{
+                        start: getwidth().start2,
+                        end: 100,
+                    }, {}],
+                    grid: [{
+                        show: false,
+                        left: getwidth().ls,
+                        top: getwidth().ts,
+                        bottom: getwidth().bs,
+                        width: getwidth().ws,
+                    }, {
+                        show: false,
+                        right: getwidth().ls,
+                        bottom: getwidth().bs,
+                        top: getwidth().ts,
+                        width: getwidth().ws,
+                    },],
+                    tooltip: {
+                        formatter: function (params) {
+                            if (LaunchData[params.dataIndex].TBP == params.data) return gettip(LaunchData[params.dataIndex]);
+                            else return gettip(TDPData[params.dataIndex])
+                        },
+                    },
+                    xAxis: [{
+                        type: 'value',
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#90979c'
+                            }
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                        inverse: true,
+                        position: 'bottom',
+                        nameLocation: 'start',
+                        name: '\n\n时间排序',
+                        nameGap: -100,
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '00b200',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#fff',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }, {
+                        show: false
+                    }, {
+                        gridIndex: 1,
+                        xAxisIndex: 2,
+                        type: 'value',
+                        position: 'bottom',
+                        nameLocation: 'start',
+                        name: '\n\n能耗比(大好)',
+                        nameGap: -90,
+                        axisTick: {
+                            show: false,
+                        },
+                        axisLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#90979c'
+                            }
+                        },
+                        axisLabel: {
+                            show: false,
+                            textStyle: {
+                                color: '#B2B2B2',
+                                fontSize: 12,
+                            },
+                        },
+                        splitLine: {
+                            show: false,
+                            lineStyle: {
+                                color: '#cc0000',
+                                width: 1,
+                                type: 'solid',
+                            },
+                        },
+                    }],
+                    yAxis: [{
+                        position: 'right',
+                        show: true,
+                        xAxisIndex: 0,
+                        axisLabel: {
+                            show: enlabel,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: LaunchData.map(function (user) {
+                            return user.LaunchDate
+                        })
+                    }, {
+                        yAxisIndex: 1,
+                        show: false,
+                    }, {
+                        gridIndex: 1,
+                        yAxisIndex: 2,
+                        show: false,
+                        position: 'left',
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#9D9EA0',
+                                fontSize: 12,
+                            },
+                        },
+                        data: LaunchData.map(function (user) {
+                            return user.LaunchDate
+                        })
+                    }],
+                    series: [{
+                        name: '时间排序',
+                        type: "bar",
+                        symbol: 'circle',
+                        symbolSize: 20,
+                        barCategoryGap: 0.01,
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(LaunchData, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'insideRight',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: function (params) {
+                                        if (enlabel) return LaunchData[params.dataIndex].Name + ' / ' + LaunchData[params.dataIndex].TBP + 'W';
+                                        else return ''
+                                    }
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(20, 20, 20, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: LaunchData.map(function (user) {
+                            return user.TBP
+                        })
+                    }, {
+                        type: "effectScatter",
+                        name: '能耗比',
+                        symbol: 'circle',
+                        xAxisIndex: 2,
+                        yAxisIndex: 2,
+                        symbolSize: 25,
+                        barCategoryGap: 0.01,
+                        z: 0,
+                        lineStyle: {
+                            normal: {
+                                color: colorList[1],
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    return getcolor(LaunchData, params.dataIndex)
+                                },
+                                label: {
+                                    show: true,
+                                    position: 'inside',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: 10
+                                    },
+                                    formatter: '{c}'
+                                },
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(220, 220, 220, 0.5)'
+                            },
+                            emphasis: {
+                                borderWidth: 2,
+                                borderColor: colorList[3]
+                            }
+                        },
+                        data: LaunchData.map(function (user) {
+                            return (100 * user.EXPIndex / user.TBP).toFixed(0)
+                        })
+                    },]
+                },
+            ]
+        });
+    }
+
+    function getwidth() {
+        var winWidth = 0;
+        var ls = 0;
+        ws = 0;
+        tll = 0; // 底部导航栏左边距
+        tlw = 0; // 底部导航宽度
+        dz = 0;
+        var ts = 0;
+        var bs = 0;
+        var tlb = 0;
+        var winHeight = 0;
+        var datap = 0.8;
+        var lengtop = '8%';
+        tline = ['全部', '搜索', 'nVIDIA', 'AMD', '编年史', 'TDP'];
+        winWidth = myChart.getWidth();
+        winHeight = myChart.getHeight();
+        console.log("W:" + winWidth + ",H:" + winHeight);
+        if (winWidth < 800) enlenged = false;
+        if (winWidth > winHeight * 1.25) { // 宽屏
+            ls = 100 * (winWidth - 1.1 * winHeight) / 2 / winWidth;
+            ws = 50 - ls;
+            dz = 96 - ls - ws * 2;
+            if (dz < 1) dz = 1;
+            dz = dz + '%';
+            ws = ws + "%";
+            ls = ls + "%";
+            tll = (winWidth - 0.9 * winHeight) / 2;
+            tlw = 0.9 * winHeight;
+        } else {
+            ls = '4%';
+            ws = '46%';
+            tll = '12%';
+            tlw = '76%';
+            dz = '1%'
+        }
+        ts = '10%';
+        bs = '8%';
+        tlb = 1;
+        datap = 0.82;
+        if (winWidth > winHeight && winHeight < 1380) { // 1366*768
+            ts = '11%';
+            bs = '9%';
+            tlb = 1;
+            datap = 0.80
+        }
+        ;
+        if (winWidth > winHeight && winHeight < 1140) {
+            ts = '12.5%';
+            bs = '11%';
+            tlb = 2;
+            datap = 0.765
+        }
+        ;
+        if (winWidth > winHeight && winHeight < 990) {
+            ts = '12.5%';
+            bs = '12%';
+            tlb = 2;
+            datap = 0.755
+        }
+        ;
+        if (winWidth > winHeight && winHeight < 840) {
+            ts = '13%';
+            bs = '12.5%';
+            tlb = 2;
+            datap = 0.745
+        }
+        ;
+        if (winWidth > winHeight && winHeight < 708) {
+            ts = '13%';
+            bs = '18%';
+            tlb = 15;
+            datap = 0.69
+        }
+        ;
+        if (winWidth < winHeight && winHeight < 800) {
+            enlenged = false;
+            ts = '10%';
+            bs = '15%';
+            tlb = 2;
+            datap = 0.75;
+            tline = ['全部', '搜索', 'nVIDIA', 'AMD', '编年史'];
+            if (winHeight < 500) {
+                ts = '12%';
+                bs = '19%';
+                tlb = 5;
+                datap = 0.69
+            }
+        }
+        var dzw = 8 + winWidth / 100;
+        var start0 = 100 - winHeight * datap / 50 * 200 / GPUSI.length / Math.sqrt(winHeight / 900);
+        var start1 = 100 - winHeight * datap / 38.5 * 200 / (GPUSI.length - 8) / Math.sqrt(winHeight / 900);
+        var start2 = 100 - winHeight * datap / 34 * 100 / GPUSI.length / Math.sqrt(winHeight / 900);
+        return {
+            ls,
+            ws,
+            tll,
+            tlw,
+            dz,
+            ts,
+            bs,
+            tlb,
+            winWidth,
+            dzw,
+            winHeight,
+            start0,
+            start1,
+            start2,
+            lengtop
+        }
+    }
+
+    function getmax() {
+        var indexmax = IndexData[IndexData.length - 1].EXPIndex;
+        indexmax = Math.ceil(indexmax) + 1;
+        return indexmax
+    }
+
+    function gettip(tip) {
+        if (tip.EXPIndex == 0) return '';
+        var pic = '"' + tip.ImgURL + '"';
+        if (pic.length > 30) pic = '<br /><br /><img src=' + pic + ' width=150>';
+        else pic = '';
+        var ms = tip.MemClock / 1000;
+        if (tip.EXPIndex > 8 && ms < 2 && tip.MemType.indexOf('DDR5') >= 0) ms = 2 * ms;
+        if (ms < 2 && tip.MemType.indexOf('HBM') >= 0) ms = 2 * ms;
+        return '<font color=#ffff00>' + tip.Name + '</font><br />超能指数：' + tip.EXPIndex + '<br />排名：' + getrank(tip.EXPIndex) +
+            '　击败' + ((IndexData.length - getrank(tip.EXPIndex) + 1) / IndexData.length * 100).toFixed(1) +
+            '%对手<br /><font color=#999>————————————</font><br />核心代号：' + tip.GPU + '<br />TDP功耗：' + tip.TBP + ' W<br />流处理器：' + tip.SP +
+            '<br />GPU频率：' + tip.CoreClock + ' MHz<br />超频频率：' + tip.BoostClock + ' MHz<br />显存速率：' + ms.toFixed(2) +
+            ' Gbps<br />显存容量：' + tip.MemSize + '  MB<br />制程工艺：' + tip.MProcess + 'nm<br />核心面积：' + tip.DieSize +
+            'mm2<br />晶体管数：' + tip.TCount + 'M<br />发布时间：' + tip.LaunchDate + '<br />'
+    }
+
+    function getinterval(arr, n) {
+        var start = n * Inter;
+        var end = (n + 1) * Inter;
+        var si = -1;
+        var ei = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i].EXPIndex > start) {
+                si = i;
+                i = arr.length
+            }
+        }
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i].EXPIndex <= end) ei = i + 1
+        }
+        if (si < 0) {
+            si = arr.length;
+            ei = arr.length
+        }
+        if (ei < si) ei = si;
+        return {
+            si,
+            ei
+        }
+    }
+
+    function initna() {
+        var internum = 0;
+        if (NVData[NVData.length - 1].EXPIndex > AMDData[AMDData.length - 1].EXPIndex) {
+            internum = Math.ceil(NVData[NVData.length - 1].EXPIndex / Inter)
+        } else internum = Math.ceil(AMDData[AMDData.length - 1].EXPIndex / Inter);
+        for (var i = 0; i < internum; i++) {
+            var nstart = getinterval(NVData, i).si;
+            var nend = getinterval(NVData, i).ei;
+            var astart = getinterval(AMDData, i).si;
+            var aend = getinterval(AMDData, i).ei;
+            var ni = nend - nstart;
+            var ai = aend - astart;
+            if (ni - ai > 0) {
+                for (var j = 0; j < ni - ai; j++) {
+                    if (astart < AMDData.length) AMDData.splice(astart, 0, TData);
+                    else AMDData.push(TData)
+                }
+            }
+            if (ai - ni > 0) {
+                for (var t = 0; t < ai - ni; t++) {
+                    if (astart < NVData.length) NVData.splice(nstart, 0, TData);
+                    else NVData.push(TData)
+                }
+            }
+        }
+    }
+
+    function getrank(p) {
+        for (var i = 0; i < IndexData.length; i++) {
+            if (IndexData[i].EXPIndex == p) return IndexData.length - i
+        }
+    }
+
+    function getcolor(arr, i) {
+        var Cts = arr[i].Brand;
+        var setcolor = 0;
+        if (Cts == "AMD") setcolor = 0;
+        if (Cts == "NVIDIA") setcolor = 1;
+        if (Cts == "Intel") setcolor = 2;
+        return colorList[setcolor]
+    }
+
+    function getlanuchdata(arr) {
+        var ldata = arr.concat();
+        for (var i = 0; i < ldata.length; i++) {
+            ldata[i].LaunchDate = ldata[i].LaunchDate.replace(/-/g, '/')
+        }
+        return ldata.sort(function (a, b) {
+            return Date.parse(a.LaunchDate) - Date.parse(b.LaunchDate)
+        })
+    }
+
+    function getnewly(arr, n) {
+        var s = n * 366 * 24 * 60 * 60 * 1000;
+        var curtime = new Date().getTime();
+        var tnew = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (curtime - Date.parse(arr[i].LaunchDate) < s) {
+                tnew.push(arr[i])
+            }
+        }
+        return tnew
+    }
+
+    function getcompdata(s) {
+        var compdata = GPUSI.concat();
+        var pdata = compdata.map(function (user) {
+            return user.Name
+        });
+        for (var i = GPUSI.length - 1; i >= 0; i--) {
+            if (!enlenged) compdata[i].Name = compdata[i].Name.replace('GeForce ', '').replace('Geforce ', '').replace('Radeon ', '');
+            pdata[i] = pdata[i].replace('GeForce ', '').replace('Radeon ', '');
+            if (GPUSI[i].Brand.replace(/ /g, '') != s) {
+                compdata.splice(i, 1)
+            }
+        }
+        return compdata.sort(function (a, b) {
+            return a.EXPIndex - b.EXPIndex
+        })
+    }
+
+    function getpost(s) {
+        for (var i = 0; i < GPUSI.length; i++) {
+            if (GPUSI[i].Name == s) return GPUSI[i].Review
+        }
+        return -1
+    }
+
+    function mysearch() {
+        var name = prompt("请输入关键字（如2080Ti)进行对比", "");
+        if (name) {
+            var sn = name.toLowerCase().replace('nvidia', '').replace('amd', '').replace('-', '').replace(/ /g, '');
+            var i = -1;
+            var nl = 1000;
+            var t = [];
+            for (var j = IndexData.length - 1; j >= 0; j--) {
+                var gpuname = IndexData[j].Name.replace('NVIDIA', '').replace('Intel', '').replace('AMD', '').replace('-', '').replace(/ /g, '').toLowerCase().replace(sn + 'mhz', '');
+                if (gpuname.indexOf(sn) >= 0) {
+                    if (gpuname.length < nl) {
+                        nl = gpuname.length;
+                        i = j
+                    }
+                    t.push(IndexData[j].Name.replace('NVIDIA', '').replace('Intel', '').replace('AMD', ''));
+                }
+            }
+            if (i >= 0) {
+                var pos = Math.ceil(myChart.getHeight() * 0.75 / 200);
+                if (t.length > 1) alert('共找到' + t.length + '个GPU：\n' + t + '\n将显示匹配度较高的一个。');
+                //alert(gettip(GPUSI[i]));
+                var yx = IndexData.map(function (user) {
+                    return user.Name
+                });
+                myChart.dispatchAction({
+                    type: 'dataZoom',
+                    startValue: yx[Math.max(i - 3 * pos, 0)],
+                    endValue: yx[Math.min(i + pos, yx.length - 1)],
+                });
+
+                myChart.dispatchAction({
+                    type: 'highlight',
+                    // 可选，系列 index，可以是一个数组指定多个系列
+                    //seriesIndex?: number|Array,
+                    // 可选，系列名称，可以是一个数组指定多个系列
+                    //seriesName?: string|Array,
+                    // 可选，数据的 index
+                    dataIndex: i,
+                    // 可选，数据的 名称
+                    //name: MultiIndex[j].Name
+                });
+                return;
+            } else {
+                alert('抱歉，没有找到！');
+                setop(Whenago, Inter);
+            }
+        }
+        else setop(Whenago, Inter);
+    }
+
+    myChart.on('click', function (params) {
+        if (params.name == '搜索') mysearch();
+        var curtime = new Date().getTime();
+        if (curtime - clicktime > 500) {
+            clicktime = new Date().getTime();
+            return
+        }
+        ;
+        var i = -1;
+        var str = [];
+        var pname = '';
+        if (params.componentType == 'timeline') {
+            return
+        }
+        if (params.name == LaunchData[params.dataIndex].LaunchDate) {
+            i = LaunchData[params.dataIndex].Review;
+            pname = LaunchData[params.dataIndex].Name
+        }
+        if (params.name == params.data) {
+            if (params.data == NVData[params.dataIndex].EXPIndex) {
+                i = NVData[params.dataIndex].Review;
+                pname = NVData[params.dataIndex].Name
+            } else if (params.data == AMDData[params.dataIndex].EXPIndex) {
+                i = AMDData[params.dataIndex].Review;
+                pname = AMDData[params.dataIndex].Name
+            }
+        }
+        if (pname.length < 2) {
+            i = getpost(params.name);
+            pname = params.name
+        }
+        if (i) {
+            i = i.replace(/ /g, '');
+            window.open('http://www.expreview.com/' + i + '.html')
+        } else {
+            str = pname.split(' ').slice(1, 3);
+            window.open('http://www.expreview.com/exp_new/exp4_search.php?action=search&category=all&keyword=' + encodeURIComponent(str))
+        }
+    });
+
+    setop(Whenago, Inter);
+
+    if (option && typeof option === "object") {
+        //myChart.setOption(option, true)
+    }
+    window.onresize = myChart.resize;
+
+</script>
+
+</body>
+</html>
