@@ -321,10 +321,10 @@
         formatters: {
             "title": function (column, row) {
                 if (row.id.indexOf('c_iasi') == 0)
-                //return "<span style='font-size: 15px' >" +
-                //    "<a href='https://zhongbaoyan.github.io' target='_blank' > " + row.title + " </a></span > ";
                     return "<span style='font-size: 15px' >" +
-                        "<a href='./car' target='_blank' > " + row.title + " </a></span > ";
+                        "<a href='https://zhongbaoyan.github.io' target='_blank' > " + row.title + " </a></span > ";
+                //     return "<span style='font-size: 15px' >" +
+                //         "<a href='./car' target='_blank' > " + row.title + " </a></span > ";
                 else
                     return "<span style='font-size: 15px' >" +
                         "<a href=\"essay\\" + row.id + "\">" + row.title + " </a>" +
