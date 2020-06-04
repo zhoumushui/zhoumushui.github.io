@@ -120,6 +120,8 @@
                         2018 <span id="bike2018" style="color: #00a1d8"></span>
                         &nbsp;
                         2019 <span id="bike2019" style="color: #00a1d8"></span>
+                        &nbsp;
+                        2020 <span id="bike2020" style="color: #00a1d8"></span>
                     </div>
 
                     <div class="card__body">
@@ -164,7 +166,21 @@
                         </thead>
                         <!-- M:Mobike O:ofo B:bluegogo H:HelloBike Q:QingJu-->
                         <tbody>
-
+                        <tr>
+                            <td>1</td>
+                            <td>M</td>
+                            <td>2020-05-06 08:14</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>M</td>
+                            <td>2020-04-29 14:19</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>H</td>
+                            <td>2020-04-26 20:15</td>
+                        </tr>
                         <tr>
                             <td>1</td>
                             <td>H</td>
@@ -7818,7 +7834,7 @@
         let start = 1, // 开始计算的行号，忽略第一行的表头
             end = trs.length; // 结束计算的行号，忽略最后合计的一行
         let total = 0;
-        let num2016 = 0, num2017 = 0, num2018 = 0, num2019 = 0;
+        let num2016 = 0, num2017 = 0, num2018 = 0, num2019 = 0, num2020 = 0;
 
         for (let i = start; i < end; i++) {
             let tdNumber = trs[i].getElementsByTagName('td')[0];
@@ -7849,6 +7865,8 @@
                     num2018 += number;
                 } else if (tdDate.innerHTML.indexOf('2019') == 0) {
                     num2019 += number;
+                } else if (tdDate.innerHTML.indexOf('2020') == 0) {
+                    num2020 += number;
                 }
             }
         }
@@ -7866,6 +7884,7 @@
         document.getElementById("bike2017").innerHTML = num2017;
         document.getElementById("bike2018").innerHTML = num2018;
         document.getElementById("bike2019").innerHTML = num2019;
+        document.getElementById("bike2020").innerHTML = num2020;
     };
     calculateMake(document.getElementById('table-bike-list'));
 
@@ -7880,7 +7899,7 @@
         let data2018 = [[1, 71], [2, 39], [3, 82], [4, 92], [5, 73], [6, 83],
             [7, 93], [8, 75], [9, 97], [10, 3], [11, 3], [12, 0]];
         let data2019 = [[1, 2], [2, 0], [3, 0], [4, 0], [5, 1], [6, 3],
-            [7, 0], [8, 0], [9,], [10,], [11,], [12,]];
+            [7, 0], [8,], [9,], [10,], [11,], [12,]];
 
         let barData = [ // Create an Array push the data + Draw the bars
             {
