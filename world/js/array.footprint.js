@@ -6,14 +6,6 @@ let LIMIT_W = 109.082946; // 经度
 let LIMIT_E = 120.316838; // 经度
 let LIMIT_S = 21.565269; // 纬度
 let LIMIT_N = 34.802846; // 纬度
-let arrayRectangleLimit = [
-    [LIMIT_W, LIMIT_N], // 左上
-    [LIMIT_E, LIMIT_N], // 右上
-    [LIMIT_E, LIMIT_S], // 右下
-    [LIMIT_W, LIMIT_S], // 左下
-    [LIMIT_W, LIMIT_N]  // 左上
-];
-
 /**
  * @type {
  * [0,NotYet],
@@ -55,7 +47,7 @@ var arrayFootprint = [
     {"center": "113.778555,34.759095", "type": 1, "name": "郑州东站"},
     {"center": "113.788690,34.693248", "type": 1, "name": "拓丰·祥和居"},
     {"center": "113.822872,34.020906", "type": 1, "name": "许昌汽车站"},
-    {"center": "113.854823,34.526056", "type": 1, "name": "新郑国际机场"},
+    {"center": "113.854823,34.526056", "type": 2, "name": "新郑国际机场"},
     {"center": "113.860586,34.685960", "type": 1, "name": "九龙新城"},
     {"center": "113.903949,34.775550", "type": 1, "name": "融创美盛象湖壹号"},
     {"center": "113.957555,33.802639", "type": 1, "name": "南街村"},
@@ -205,6 +197,7 @@ var arrayFootprint = [
     {"center": "113.837006,22.587536", "type": 1, "name": "宝安西湾红树林公园"},
     {"center": "113.847281,22.611534", "type": 2, "name": "深港驾校三围训练基地"},
     {"center": "113.849314,22.672775", "type": 1, "name": "凤凰山森林公园"},
+    {"center": "113.850556,22.572203", "type": 1, "name": "共乐派出所"},
     {"center": "113.853877,22.563685", "type": 1, "name": "大兴一汽丰田"},
     {"center": "113.853963,22.579046", "type": 2, "name": "西乡体育中心"},
     {"center": "113.854844,22.583503", "type": 1, "name": "碧海湾公园"},
@@ -327,9 +320,19 @@ var arrayFootprint = [
     {"center": "104.073694,30.697218", "type": 0, "name": "成都站"},
     {"center": "106.545536,29.549257", "type": 0, "name": "重庆站"},
     {"center": "108.961763,34.277651", "type": 0, "name": "西安站"},
+    {"center": "109.508268,18.247872", "type": 0, "name": "三亚市"},
     {"center": "112.436296,34.684994", "type": 0, "name": "洛阳站"},
     {"center": "116.427793,39.902814", "type": 0, "name": "北京站"},
     {"center": "117.210061,39.135884", "type": 0, "name": "天津站"},
     {"center": "121.224896,31.337983", "type": 0, "name": "上海国际赛车场"}
 
+
+];
+
+let arrayRectangleLimit = [
+    [LIMIT_W, LIMIT_N], // 左上
+    [LIMIT_E, LIMIT_N], // 右上
+    [LIMIT_E, LIMIT_S], // 右下
+    [LIMIT_W, LIMIT_S], // 左下
+    [LIMIT_W, LIMIT_N]  // 左上
 ];
