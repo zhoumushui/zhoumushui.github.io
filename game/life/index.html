@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>生命游戏</title>
+<link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<style>
+    body {top:0; right:0; bottom:0; left:0; margin:0; position:fixed; font-size:12px; }
+    #container {padding:6px; overflow:scroll; } 
+    #x-slider, #y-slider, #d-slider, #s-slider {width:inherit; margin:6px 0; }
+    input {text-align:center;}
+</style>
+</head>
+
+<body>
+<div id="panel" title="选项">
+    <h3>Control</h3>
+    <div id="control">
+        <button id="clear">清空画面(c)</button>
+        <button id="random">随机生成新画面(r)</button>
+        <button id="step">进行单步演化(space)</button>
+        <button id="start">开始不间断演化(Enter,Ctrl+Enter)</button>
+        <button id="stop">结束不间断演化(Enter,Shift+Enter)</button>
+    </div>
+    <h3>Options</h3>
+    <div id="options">
+        <div class="ui-state-highlight ui-corner-all" style="padding:0.5em;margin:0.5em 0;">
+            <span class="ui-icon ui-icon-info" style="float:left;"></span>&nbsp;
+            <strong>注意：</strong>提交或恢复默认值后会生成一份新的随机画面，已有的将不再保存！
+        </div>
+        <form class="ui-widget-content ui-corner-all" style="padding:0.5em;margin:0.5em 0;" method="get">
+            <div>图宽:　　　　　　<input type="text" style="width:32px;" name="x" id="x"/></div>
+            <div id="x-slider"></div>
+            <div>图高:　　　　　　<input type="text" style="width:32px;" name="y" id="y"/></div>
+            <div id="y-slider"></div>
+            <div>初始死亡率（％）:<input type="text" style="width:32px;" name="d" id="d"/></div>
+            <div id="d-slider"></div>
+            <div>速度:　　　　　　<input type="text" style="width:32px;" name="s" id="s"/></div>
+            <div id="s-slider"></div>
+            <div style="float:right;"><input type="submit" value="提交"/>　<input type="submit" id="default" value="恢复默认值"/></div>
+            <br clear="both"/>
+        </form>
+    </div>
+</div>
+<div id="wrapper">
+    <h3>Graph</h3>
+    <div id="container" class="ui-corner-all"><noscript><strong>您的浏览器不支持此游戏！</strong></noscript></div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/ctrl.life.min.js"></script>
+<!-- "life.js" "ctrl.js" uncompressed file -->
+</body>
+</html>
