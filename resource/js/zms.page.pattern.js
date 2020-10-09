@@ -45,7 +45,7 @@ function insertHeader() {
         "<li class=\"top-menu__profile dropdown\">" +
         "<a data-toggle=\"dropdown\" href=\"\"> <img src=\"" + path + "/resource/img/logo/1.jpg\" alt=\"\"> </a>" +
         "<ul class=\"dropdown-menu pull-right dropdown-menu--icon\">" +
-        "<li class=\"hidden-xs\"><a href=\"" + path + "index.html\"><i class=\"zmdi zmdi-home\"></i>返回主页</a></li>" +
+        "<li class=\"hidden-xs\"><a href=\"" + path + "index-remote.html\"><i class=\"zmdi zmdi-home\"></i>返回主页</a></li>" +
         "<li class=\"hidden-xs\"><a data-mae-action=\"fullscreen\" href=\"\"><i class=\"zmdi zmdi-fullscreen\"></i>全屏模式</a></li>" +
         "<li><a data-mae-action=\"clear-localstorage\" href=\"\"><i class=\"zmdi zmdi-delete\"></i>清除缓存</a></li>" +
         "</ul>" +
