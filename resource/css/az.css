@@ -257,31 +257,6 @@
     color: #ffffff;
 }
 
-/* Bike */
-.bike-mobike {
-    color: #E91E63;
-}
-
-.bike-ofo {
-    color: #FFEB3B;
-}
-
-.bike-bluegogo {
-    color: #2196F3;
-}
-
-.bike-hello {
-    color: #ffffff;
-}
-
-.bike-qingju {
-    color: #009688;
-}
-
-.bike-default {
-    color: #9E9E9E;
-}
-
 .cpu-brand-intel {
     font-family: 'Microsoft YaHei', sans-serif;
     color: #0071c5;
