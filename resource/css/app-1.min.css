@@ -1526,6 +1526,18 @@ p { margin-bottom: 20px }
 .photos-timeline__date:after, .photos-timeline__date:before { content: ""; position: absolute }
 .photos-timeline__date:before { width: 1px; height: calc(100% + 38px); background: #404c55; top: 14px; right: -20px }
 .photos-timeline__date:after { top: 2px; right: -26px; width: 13px; height: 13px; border: 1px solid #566672; border-radius: 50% }
+
+.games-timeline { position: relative; padding-left: 80px; margin-bottom: 50px }
+.games-timeline [data-src] { /* Movie Timeline Frame */
+    float: left; width: 120px; height: 220px; margin: 20px 20px 5px 0 }
+.games-timeline:last-child .games-timeline__date:before { height: 100% }
+.games-timeline__title { font-size: 15px; font-weight: 400; margin-bottom: 20px }
+.games-timeline__date { position: absolute; left: 0; top: 0; height: 100%; line-height: 14px; text-align: right; color: rgba(177, 188, 192, .47) }
+.games-timeline__date > span { display: block }
+.games-timeline__date:after, .games-timeline__date:before { content: ""; position: absolute }
+.games-timeline__date:before { width: 1px; height: calc(100% + 38px); background: #404c55; top: 14px; right: -20px }
+.games-timeline__date:after { top: 2px; right: -26px; width: 13px; height: 13px; border: 1px solid #566672; border-radius: 50% }
+
 .contacts__item { border-radius: 2px; background-color: #2b3942; position: relative }
 @media (min-width: 768px) { .contacts__item { margin-bottom: 30px }
     .contacts__item .contacts__img { display: block }

@@ -6,247 +6,266 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Game</title>
+    <title>通过的游戏</title>
 
-    <style>
-        .game_title {
-            font-family: "Microsoft YaHei", sans-serif;
-            font-size: large;
-            color: #ffffff;
-            text-decoration: none;
-        }
-    </style>
+    <!-- Animate CSS -->
+    <link href="../vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link href="../vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+          rel="stylesheet">
+
+    <!-- Malihu Scrollbar -->
+    <link href="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">
+
+    <!-- Light Gallery -->
+    <link href="../vendors/bower_components/lightgallery/dist/css/lightgallery.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="../resource/css/app-1.min.css" rel="stylesheet">
+
+    <!-- AZ CSS -->
+    <link href="../resource/css/az.css" rel="stylesheet">
+
+    <!-- Page loader -->
+    <!--<script src="js/page-loader.min.js"></script>-->
 
     <link type="image/x-icon" href="../resource/img/favicon.ico" rel=icon/>
     <link type="image/x-icon" href="../resource/img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Material Floating Button -->
+    <link href="../resource/css/essay.material.floating.button.css" rel="stylesheet">
+    <style>
+        /* AZ:show flash light when hover movie image */
+        m {
+            position: relative;
+            width: 120px;
+            height: 200px;
+            overflow: hidden;
+            margin: 0 auto
+        }
+
+        m a { display: inline-block }
+
+        m a:before {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 200px;
+            margin-top: 0px;
+            margin-left: -120px;
+            overflow: hidden;
+            z-index: 6;
+            background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.4)), color-stop(100%, rgba(255, 255, 255, 0)));
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+            background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+            -webkit-transform: skewX(-25deg);
+            transform: skewX(-25deg)
+        }
+
+        m:hover a:before {
+            -webkit-animation: aniBlink120 .3s ease-out forwards;
+            -moz-animation: aniBlink120 .3s ease-out forwards;
+            -o-animation: aniBlink120 .3s ease-out forwards;
+            animation: aniBlink120 .3s ease-out forwards
+        }
+
+        .m-rat {
+            position: absolute;
+            width: 120px;
+            height: 200px;
+            top: 178px;
+            text-align: center;
+            color: #ffff00;
+            /* text-shadow: 1px 1px 0 black,-1px 1px 0 black,1px -1px 0 black,-1px -1px 0 black; */
+            /*text-shadow: 2px 2px 5px #000;*/
+            text-shadow: 0 0 5px black, 0 0 10px #ffff00;
+        }
+
+        .m-tit {
+            color: #00a5bb;
+            text-overflow: clip; /* ellipsis,clip */
+            font-size: xx-small; /* xx-small */
+            font-family: 'Microsoft YaHei', sans-serif;
+            word-break: normal; /* keep-all,break-all */
+            white-space: normal; /* nowrap */
+            overflow: auto; /* auto,hidden */
+            text-align: center;
+            width: 120px
+        }
+
+        .m-img { /* Thumbnail Image */
+            height: 200px;
+            width: 120px;
+            align: center;
+        }
+
+        .year-count { font-size: small; font-weight: 400; color: #00BCD4; }
+        .mov-year { font-weight: bold; color: #ffffff; }
+    </style>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e3a97a0eee3cb03b5caf792f58032743";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </head>
 
 <body>
-<div id="container" style="width:100%;height:100%;position: fixed; top: 0px; left: 0px; z-index: 0;">
-    <div id="anitOut"></div>
+<!-- Page Loader -->
+<!--
+<div id="page-loader">
+    <div class="preloader preloader--xl preloader--light">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"/>
+        </svg>
+    </div>
 </div>
+-->
 
-<div align="center" style="position: relative;">
-    <p><a class="game_title" target="_blank" href="2048/">2048</a></p>
-    <p><a class="game_title" target="_blank" href="tic_tac_toe/">Tic-Tac-Toe</a></p>
-    <p><a class="game_title" target="_blank" href="building_brick/">Building Brick</a></p>
-    <p><a class="game_title" target="_blank" href="insert_niddle/">Insert Niddle</a></p>
-    <p><a class="game_title" target="_blank" href="pac_man/">Pac-Man</a></p>
-    <p><a class="game_title" target="_blank" href="gomoku/">Gomoku</a></p>
-    <p><a class="game_title" target="_blank" href="tower_defence_simple/">TowerDefence</a></p>
-</div>
+<!-- Header -->
+<header id="header"></header>
+<section id="main">
 
-<script type="text/javascript" src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript">
-    $(function () { // http://im-img.qq.com/pcqq/js/200/cav.js?_=1428576021379
-        if (!window.ActiveXObject && !!document.createElement("canvas").getContext) {
-            $.getScript("../js/game.bg.cav.js",
-                function () {
-                    var t = {
-                        width: 1.5,
-                        height: 1.5,
-                        depth: 10,
-                        segments: 12,
-                        slices: 6,
-                        xRange: 0.8,
-                        yRange: 0.1,
-                        zRange: 1,
-                        ambient: "#525252",
-                        diffuse: "#FFFFFF",
-                        speed: 0.0002
-                    };
-                    var G = {
-                        count: 2,
-                        xyScalar: 1,
-                        zOffset: 100,
-                        ambient: "#002c4a",
-                        diffuse: "#005584",
-                        speed: 0.001,
-                        gravity: 1200,
-                        dampening: 0.95,
-                        minLimit: 10,
-                        maxLimit: null,
-                        minDistance: 20,
-                        maxDistance: 400,
-                        autopilot: false,
-                        draw: false,
-                        bounds: CAV.Vector3.create(),
-                        step: CAV.Vector3.create(Math.randomInRange(0.2, 1), Math.randomInRange(0.2, 1), Math.randomInRange(0.2, 1))
-                    };
-                    var m = "canvas";
-                    var E = "svg";
-                    var x = {
-                        renderer: m
-                    };
-                    var i, n = Date.now();
-                    var L = CAV.Vector3.create();
-                    var k = CAV.Vector3.create();
-                    var z = document.getElementById("container");
-                    var w = document.getElementById("anitOut");
-                    var D, I, h, q, y;
-                    var g;
-                    var r;
+    <aside id="navigation">
+        <div class="navigation__header">
+            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
+        </div>
+        <div class="navigation__toggles">
+            <a href="" data-toggle="tab">游</a>
+            <a href="" data-toggle="tab">戏</a>
+        </div>
+        <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
+    </aside>
+    <section id="content">
 
-                    function C() {
-                        F();
-                        p();
-                        s();
-                        B();
-                        v();
-                        K(z.offsetWidth, z.offsetHeight);
-                        o()
+        <script>
+            var essayTitle = '通关的游戏';
+            var essaySummary = '游戏人生';
+            var essayUrl = window.location.href;
+            //  var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // Default
+            var essayPic = 'http://www.zhoumushui.com/img/logo/1.jpg'; // This
+        </script>
+        <!--
+        AZ Share: Material Floating Button;
+        Anim:mfb-zoomin,mfb-slidein,mfb-slidein-spring,mfb-fountain;
+        Position:mfb-component--br,bl,tr,tl;
+        Action:hover,click
+        -->
+        <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover"></ul>
+
+
+
+        <div class="card" class="pass-container">
+            <div class="action-header" style="font-family: 'Microsoft YaHei', sans-serif">
+                <div style="margin-left: 25px">通关 <span id="movieCount" style="color: #00a1d8"></span> 部游戏</div>
+                <div class="actions">
+                    <a href="" class="action-header__toggle  action-header__actions-az"> <i class="zmdi zmdi-info"></i></a>
+                    <a href="#footer" class="hidden-xs action-header__actions"><i class="zmdi zmdi-caret-down-circle" title="页面底部"></i></a>
+                </div>
+            </div>
+            <div id="div-movie-list" class="card__body" style="font-family: 'Microsoft YaHei', sans-serif">
+
+                <div class="games-timeline" id="m_2017">
+                    <div class="games-timeline__date">
+                        <span class="mov-year">2017</span>
+                        <span class="year-count">+1</span>
+                    </div>
+                    <div class="games-timeline__body">
+                        <div class="lightbox">
+                            <m data-src="img/TheLegendOfZelda_BreathOfTheWild.jpg">
+                                <a href="#" target="_blank">
+                                    <img class="m-img" src="img/TheLegendOfZelda_BreathOfTheWild_s.jpg"/>
+                                    <div class="m-tit">塞尔达传说：旷野之息</div>
+                                    <span class="m-rat">10</span>
+                                </a>
+                            </m>
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AZ: Add for movie count -->
+    <script>
+        let todoCount = 0;
+        let replaceDigitByStar = function (list) {
+            let movieList = list.getElementsByTagName('m');
+            for (let i = 0; i < movieList.length; i++) {
+                let star = movieList[i].getElementsByTagName('a')[0].getElementsByTagName('span')[0];
+                let result = "";
+                let intScore = parseInt(star.innerHTML);
+                if (intScore == 0) {
+                    result = '待玩';
+                    todoCount++;
+                } else {
+                    for (let i = 0; i < parseInt(intScore / 2); i++) {
+                        result += "<i class='zmdi zmdi-star'></i>";
                     }
+                    if (intScore % 2) result += "<i class='zmdi zmdi-star-half'></i>";
+                }
+                star.innerHTML = result;
+            }
+        };
+        replaceDigitByStar(document.getElementById('div-movie-list'));
 
-                    function F() {
-                        g = new CAV.CanvasRenderer();
-                        H(x.renderer)
-                    }
+        let calculateMovieCount = function (list) {
+            let movieCount = list.getElementsByTagName('m').length - todoCount;
+            document.getElementById("movieCount").innerHTML = movieCount;
+            document.title = "通关 " + movieCount + " 部游戏"; // 设置标题
+        };
+        calculateMovieCount(document.getElementById('div-movie-list'));
+    </script>
 
-                    function H(N) {
-                        if (D) {
-                            w.removeChild(D.element)
-                        }
-                        switch (N) {
-                            case m:
-                                D = g;
-                                break
-                        }
-                        D.setSize(z.offsetWidth, z.offsetHeight);
-                        w.appendChild(D.element)
-                    }
+    <link rel="stylesheet" href="../resource/css/toolbox.reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../resource/css/toolbox.style.css"> <!-- Resource style -->
+    <footer id="footer" class="font-yahei"></footer>
+</section>
 
-                    function p() {
-                        I = new CAV.Scene()
-                    }
+<!-- Older IE Warning -->
+<!--[if lt IE 9]>
+<div class="ie-warning"></div>
+<![endif]-->
 
-                    function s() {
-                        I.remove(h);
-                        D.clear();
-                        q = new CAV.Plane(t.width * D.width, t.height * D.height, t.segments, t.slices);
-                        y = new CAV.Material(t.ambient, t.diffuse);
-                        h = new CAV.Mesh(q, y);
-                        I.add(h);
-                        var N, O;
-                        for (N = q.vertices.length - 1; N >= 0; N--) {
-                            O = q.vertices[N];
-                            O.anchor = CAV.Vector3.clone(O.position);
-                            O.step = CAV.Vector3.create(Math.randomInRange(0.2, 1), Math.randomInRange(0.2, 1), Math.randomInRange(0.2, 1));
-                            O.time = Math.randomInRange(0, Math.PIM2)
-                        }
-                    }
+<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script><!-- jQuery -->
+<script type="text/javascript" src="../resource/js/zms.goup.js"></script><!-- Go Up -->
+<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script><!-- Bootstrap -->
+<!-- Malihu ScrollBar -->
+<script src="../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- Bootstrap Notify -->
+<script src="../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+<!-- Light Gallery -->
+<script src="../vendors/bower_components/lightgallery/dist/js/lightgallery.min.js"></script>
+<script src="../vendors/bower_components/lightgallery/demo/js/lg-fullscreen.min.js"></script>
+<script src="../vendors/bower_components/lightgallery/demo/js/lg-thumbnail.min.js"></script>
+<script src="../vendors/bower_components/lightgallery/demo/js/lg-zoom.min.js"></script>
+<script src="../vendors/bower_components/lightgallery/demo/js/lg-video.min.js"></script>
 
-                    function B() {
-                        var O, N;
-                        for (O = I.lights.length - 1; O >= 0; O--) {
-                            N = I.lights[O];
-                            I.remove(N)
-                        }
-                        D.clear();
-                        for (O = 0; O < G.count; O++) {
-                            N = new CAV.Light(G.ambient, G.diffuse);
-                            N.ambientHex = N.ambient.format();
-                            N.diffuseHex = N.diffuse.format();
-                            I.add(N);
-                            N.mass = Math.randomInRange(0.5, 1);
-                            N.velocity = CAV.Vector3.create();
-                            N.acceleration = CAV.Vector3.create();
-                            N.force = CAV.Vector3.create()
-                        }
-                    }
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
 
-                    function K(O, N) {
-                        D.setSize(O, N);
-                        CAV.Vector3.set(L, D.halfWidth, D.halfHeight);
-                        s()
-                    }
+<script src="../resource/js/app.min.js"></script><!-- Site Functions & Actions -->
+<script async src="../resource/js/busuanzi.pure.mini.js"></script><!-- busuanzi PV&UV -->
 
-                    function o() {
-                        i = Date.now() - n;
-                        u();
-                        M();
-                        requestAnimationFrame(o)
-                    }
+<!-- Nest Follow Mouse Background -->
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
+        src="../resource/js/canvas-nest.min.js"></script>
 
-                    function u() {
-                        var Q, P, O, R, T, V, U, S = t.depth / 2;
-                        CAV.Vector3.copy(G.bounds, L);
-                        CAV.Vector3.multiplyScalar(G.bounds, G.xyScalar);
-                        CAV.Vector3.setZ(k, G.zOffset);
-                        for (R = I.lights.length - 1; R >= 0; R--) {
-                            T = I.lights[R];
-                            CAV.Vector3.setZ(T.position, G.zOffset);
-                            var N = Math.clamp(CAV.Vector3.distanceSquared(T.position, k), G.minDistance, G.maxDistance);
-                            var W = G.gravity * T.mass / N;
-                            CAV.Vector3.subtractVectors(T.force, k, T.position);
-                            CAV.Vector3.normalise(T.force);
-                            CAV.Vector3.multiplyScalar(T.force, W);
-                            CAV.Vector3.set(T.acceleration);
-                            CAV.Vector3.add(T.acceleration, T.force);
-                            CAV.Vector3.add(T.velocity, T.acceleration);
-                            CAV.Vector3.multiplyScalar(T.velocity, G.dampening);
-                            CAV.Vector3.limit(T.velocity, G.minLimit, G.maxLimit);
-                            CAV.Vector3.add(T.position, T.velocity)
-                        }
-                        for (V = q.vertices.length - 1; V >= 0; V--) {
-                            U = q.vertices[V];
-                            Q = Math.sin(U.time + U.step[0] * i * t.speed);
-                            P = Math.cos(U.time + U.step[1] * i * t.speed);
-                            O = Math.sin(U.time + U.step[2] * i * t.speed);
-                            CAV.Vector3.set(U.position, t.xRange * q.segmentWidth * Q, t.yRange * q.sliceHeight * P, t.zRange * S * O - S);
-                            CAV.Vector3.add(U.position, U.anchor)
-                        }
-                        q.dirty = true
-                    }
+<script src="../resource/js/toolbox.main.js"></script><!-- Toolbox -->
 
-                    function M() {
-                        D.render(I)
-                    }
-
-                    function J(O) {
-                        var Q, N, S = O;
-                        var P = function (T) {
-                            for (Q = 0, l = I.lights.length; Q < l; Q++) {
-                                N = I.lights[Q];
-                                N.ambient.set(T);
-                                N.ambientHex = N.ambient.format()
-                            }
-                        };
-                        var R = function (T) {
-                            for (Q = 0, l = I.lights.length; Q < l; Q++) {
-                                N = I.lights[Q];
-                                N.diffuse.set(T);
-                                N.diffuseHex = N.diffuse.format()
-                            }
-                        };
-                        return {
-                            set: function () {
-                                P(S[0]);
-                                R(S[1])
-                            }
-                        }
-                    }
-
-                    function v() {
-                        window.addEventListener("resize", j)
-                    }
-
-                    function A(N) {
-                        CAV.Vector3.set(k, N.x, D.height - N.y);
-                        CAV.Vector3.subtract(k, L)
-                    }
-
-                    function j(N) {
-                        K(z.offsetWidth, z.offsetHeight);
-                        M()
-                    }
-
-                    C();
-                })
-        } else {
-            alert('调用cav.js失败');
-        }
-    });
-</script>
-
+<script>var directoryDepth = 1;</script>
+<script src="../resource/js/zms.page.pattern.js"></script>
 </body>
 </html>
