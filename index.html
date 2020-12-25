@@ -43,6 +43,9 @@
     </style>
 
     <script>
+        // Force redirect to faster gitee server
+        if (location.href.indexOf("gitee.io") < 0) location.href = 'https://zhoumushui.gitee.io';
+
         var _hmt = _hmt || [];
         (function () {
             var hm = document.createElement("script");
