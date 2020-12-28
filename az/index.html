@@ -149,12 +149,6 @@
 
                         <tbody>
                         <tr>
-                            <td>annual_summary_2019</td>
-                            <td>think</td>
-                            <td>2019年终总结</td>
-                            <td>2019-12-31 23:55</td>
-                        </tr>
-                        <tr>
                             <td>delicious_kingdom</td>
                             <td>eat</td>
                             <td>不负美食</td>
@@ -167,40 +161,22 @@
                             <td>2019-01-21 22:58</td>
                         </tr>
                         <tr>
-                            <td>annual_summary_2018</td>
-                            <td>think</td>
-                            <td>2018年终总结</td>
-                            <td>2018-12-31 23:55</td>
-                        </tr>
-                        <tr>
                             <td>house_loan</td>
                             <td>home-yellow</td>
                             <td>HouseLoan</td>
                             <td>2018-06-12 08:00</td>
                         </tr>
                         <tr>
-                            <td>hospital_zhengzhou</td>
-                            <td>hospital</td>
-                            <td>郑州医院</td>
-                            <td>2018-03-08 18:18</td>
-                        </tr>
-                        <tr>
-                            <td>metro_zhengzhou</td>
-                            <td>subway</td>
-                            <td>郑州地铁</td>
-                            <td>2018-03-08 15:15</td>
+                            <td>zhengzhou</td>
+                            <td>home-green</td>
+                            <td>郑州</td>
+                            <td>2018-01-29 13:00</td>
                         </tr>
                         <tr>
                             <td>quotation</td>
                             <td>quote</td>
                             <td>语录</td>
                             <td>2018-01-20 11:30</td>
-                        </tr>
-                        <tr>
-                            <td>annual_summary_2017</td>
-                            <td>think</td>
-                            <td>2017年终总结</td>
-                            <td>2017-12-31 23:55</td>
                         </tr>
                         <tr>
                             <td>driving_license</td>
@@ -227,16 +203,16 @@
                             <td>2017-06-06 13:14</td>
                         </tr>
                         <tr>
-                            <td>annual_summary_2016</td>
+                            <td>annual_summary</td>
                             <td>think</td>
-                            <td>2016年终总结</td>
-                            <td>
+                            <td>年终总结</td>
+                            <td>2016-12-31 23:55</td>
+                        </tr>
                         <tr>
                             <td>shared_bicycle</td>
                             <td>bike</td>
                             <td>共享单车骑行日志</td>
                             <td>2016-12-18 10:05</td>
-                        </tr>2016-12-31 23:55</td>
                         </tr>
                         <tr>
                             <td>keep_moving</td>
@@ -249,12 +225,6 @@
                             <td>eye</td>
                             <td>㉫Y㉫</td>
                             <td>2010-01-03 17:55</td>
-                        </tr>
-                        <tr>
-                            <td>real_estate_zhengzhou</td>
-                            <td>home-green</td>
-                            <td>郑州楼盘</td>
-                            <td>2018-01-29 13:00</td>
                         </tr>
                         <tr>
                             <td>real_estate_luohe</td>
@@ -416,13 +386,23 @@
         },
         formatters: {
             "title": function (column, row) {
-                if (row.id.indexOf('c_iasi') == 0)
+                if (row.id.indexOf('c_iasi') == 0) {
+                    return "<span style='font-size: 15px'><a href='../car/' > " + row.title + " </a></span> ";
+                } else if (row.id.indexOf('zhengzhou') == 0) {
+                    return "<span style='font-size: 15px'><b>郑州：</b>" +
+                        "<a href='../az/zhengzhou/real_estate.html' target='_blank'>楼盘</a> | " + 
+                        "<a href='../az/zhengzhou/metro.html' target='_blank'>地铁</a> | " + 
+                        "<a href='../az/zhengzhou/hospital.html' target='_blank'>医院</a></span>";
+                } else if (row.id.indexOf('annual_summary') == 0) {
+                    return "<span style='font-size: 15px'><b>总结：</b>" +
+                        "<a href='../az/annual_summary/2016.html' target='_blank'>2016</a> | " + 
+                        "<a href='../az/annual_summary/2017.html' target='_blank'>2017</a> | " + 
+                        "<a href='../az/annual_summary/2018.html' target='_blank'>2018</a> | " + 
+                        "<a href='../az/annual_summary/2019.html' target='_blank'>2019</a> | " + 
+                        "<a href='../az/annual_summary/2020.html' target='_blank'>2020</a></span>";
+                } else
                     return "<span style='font-size: 15px' >" +
-                        "<a  href='\car\' > " + row.title + " </a></span > ";
-                else
-                    return "<span style='font-size: 15px' >" +
-                        "<a  href=\"../\az\\" + row.id + "\">" + row.title + " </a>" +
-                        "</span>";
+                        "<a href='../az/" + row.id + "/'>" + row.title + " </a></span>";
             },
             "type": function (column, row) {
                 switch (row.type) {

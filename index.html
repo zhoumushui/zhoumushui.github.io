@@ -38,13 +38,13 @@
 
         .essay-list-date {
             font-size: medium;
-            font-family: Helvetica-Neue-LT-Pro;
         }
     </style>
 
     <script>
         // Force redirect to faster gitee server
-        if (location.href.indexOf("gitee.io") < 0) location.href = 'https://zhoumushui.gitee.io';
+        if (location.href.indexOf("Website") < 0 && location.href.indexOf("gitee.io") < 0)
+        location.href = 'https://zhoumushui.gitee.io';
 
         var _hmt = _hmt || [];
         (function () {
@@ -122,6 +122,14 @@
                             <td>中保研碰撞测试汇总</td>
                             <td>2019-03-30 03:00</td>
                         </tr>
+                        <!--
+                        <tr>
+                            <td>tga_</td>
+                            <td>car-green</td>
+                            <td>TGA年度最佳游戏</td>
+                            <td>2020-12-31 20:20</td>
+                        </tr>
+                        -->
                         <tr>
                             <td>golden_boot</td>
                             <td>golden_boot</td>
@@ -154,7 +162,7 @@
                         </tr>
                         <tr>
                             <td>consumer_reports_10_best_car</td>
-                            <td>car-red</td>
+                            <td>car-green</td>
                             <td>《消费者报告》年度十佳车型</td>
                             <td>2019-04-11 18:50</td>
                         </tr>
@@ -175,14 +183,8 @@
                         <tr>
                             <td>cpu_ladder</td>
                             <td>chip-red</td>
-                            <td>CPU天梯图</td>
+                            <td>超能网天梯图：CPU | GPU | 电源</td>
                             <td>2018-10-29 18:00</td>
-                        </tr>
-                        <tr>
-                            <td>gpu_ladder</td>
-                            <td>chip-green</td>
-                            <td>显卡天梯图</td>
-                            <td>2018-10-27 11:11</td>
                         </tr>
                         <tr>
                             <td>gareth_was_here</td>
@@ -220,20 +222,7 @@
                             <td>Android知识图谱</td>
                             <td>2014-07-07 07:07</td>
                         </tr>
-
                         <!--
-                        <tr>
-                            <td>16</td>
-                            <td>chip</td>
-                            <td>GPU</td>
-                            <td>2017-10-30 16:30</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>chip</td>
-                            <td>CPU</td>
-                            <td>2017-10-30 09:50</td>
-                        </tr>
                         <tr>
                             <td>1</td>
                             <td>android</td>
@@ -247,7 +236,6 @@
                 </div>
             </div>
         </div>
-
     </section>
 
     <link rel="stylesheet" href="resource/css/toolbox.reset.css"><!-- CSS reset -->
@@ -328,8 +316,10 @@
                         row.title + " </a></span > ";
                 //    return "<span style='font-size: 15px' ><a href='./car' target='_blank' > " + row.title + " </a></span > ";
                 else if (row.id.indexOf('cpu_ladder') == 0) {
-                    return "<span style='font-size: 15px' ><a href='https://topic.expreview.com/CPU/' target='_blank' > " + 
-                        row.title + " </a></span > ";
+                    return "<span style='font-size: 15px' >超能网天梯图：" +
+                        "<a href='https://topic.expreview.com/CPU/' target='_blank'>CPU</a> | " + 
+                        "<a href='https://topic.expreview.com/GPU/' target='_blank'>显卡</a> | " + 
+                        "<a href='https://topic.expreview.com/Power/' target='_blank'>电源</a></span >";
                 } else if (row.id.indexOf('gpu_ladder') == 0) {
                     return "<span style='font-size: 15px' ><a href='https://topic.expreview.com/GPU/' target='_blank' > " + 
                         row.title + " </a></span > ";
@@ -339,103 +329,54 @@
             },
             "type": function (column, row) {
                 switch (row.type) {
-                    case 'ai':
-                        return "<i class=\"essay-list-type zmdi zmdi-blur yellow\"></i>";
-                    case 'android':
-                        return "<i class=\"essay-list-type zmdi zmdi-android green\"></i>";
-                    case 'apple':
-                        return "<i class=\"essay-list-type zmdi zmdi-apple grey\"></i>";
-                    case 'bike':
-                        return "<i class=\"essay-list-type zmdi zmdi-bike orange\"></i>";
-                    case 'book':
-                        return "<i class=\"essay-list-type zmdi zmdi-book grey\"></i>";
-                    case 'car':
-                        return "<i class=\"essay-list-type zmdi zmdi-car blue\"></i>";
-                    case 'car-green':
-                        return "<i class=\"essay-list-type zmdi zmdi-car green\"></i>";
-                    case 'car-grey':
-                        return "<i class=\"essay-list-type zmdi zmdi-car grey\"></i>";
-                    case 'car-red':
-                        return "<i class=\"essay-list-type zmdi zmdi-car red\"></i>";
-                    case 'car-pink':
-                        return "<i class=\"essay-list-type zmdi zmdi-car pink\"></i>";
-                    case 'car-yellow':
-                        return "<i class=\"essay-list-type zmdi zmdi-car yellow\"></i>";
-                    case 'chip-green':
-                        return "<i class=\"essay-list-type zmdi zmdi-memory green\"></i>";
-                    case 'chip-red':
-                        return "<i class=\"essay-list-type zmdi zmdi-memory red\"></i>";
-                    case 'cloud':
-                        return "<i class=\"essay-list-type zmdi zmdi-cloud\"></i>";
-                    case 'css':
-                        return "<i class=\"essay-list-type zmdi zmdi-language-css3 brown\"></i>";
-                    case 'eat':
-                        return "<i class=\"essay-list-type zmdi zmdi-local-pizza yellow\"></i>";
-                    case 'eye':
-                        return "<i class=\"essay-list-type zmdi zmdi-eye brown\"></i>";
-                    case 'fit':
-                        return "<i class=\"essay-list-type zmdi zmdi-run orange\"></i>";
-                    case 'fun':
-                        return "<i class=\"essay-list-type zmdi zmdi-mood yellow\"></i>";
-                    case 'gear':
-                        return "<i class=\"essay-list-type zmdi zmdi-settings grey\"></i>";
-                    case 'git':
-                        return "<i class=\"essay-list-type zmdi zmdi-github-alt purple\"></i>";
-                    case 'global':
-                        return "<i class=\"essay-list-type zmdi zmdi-globe green\"></i>";
-                    case 'golden_boot':
-                        return "<i class=\"essay-list-type zmdi zmdi-n-1-square yellow\"></i>";
-                    case 'google':
-                        return "<i class=\"essay-list-type zmdi zmdi-google red\"></i>";
-                    case 'home':
-                        return "<i class=\"essay-list-type zmdi zmdi-home pink\"></i>";
-                    case 'home-green':
-                        return "<i class=\"essay-list-type zmdi zmdi-home green\"></i>";
-                    case 'home-yellow':
-                        return "<i class=\"essay-list-type zmdi zmdi-home yellow\"></i>";
-                    case 'hospital':
-                        return "<i class=\"essay-list-type zmdi zmdi-hospital red\"></i>";
-                    case 'html':
-                        return "<i class=\"essay-list-type zmdi zmdi-language-html5 yellow\"></i>";
-                    case 'idea':
-                        return "<i class=\"essay-list-type zmdi zmdi-lamp yellow\"></i>";
-                    case 'js':
-                        return "<i class=\"essay-list-type zmdi zmdi-language-javascript\"></i>";
-                    case 'love':
-                        return "<i class=\"essay-list-type zmdi zmdi-favorite red\"></i>";
-                    case 'map':
-                        return "<i class=\"essay-list-type zmdi zmdi-map green\"></i>";
-                    case 'movie':
-                        return "<i class=\"essay-list-type zmdi zmdi-movie blue-grey\"></i>";
-                    case 'phone':
-                        return "<i class=\"essay-list-type zmdi zmdi-smartphone-android green\"></i>";
-                    case 'quote':
-                        return "<i class=\"essay-list-type zmdi zmdi-quote orange\"></i>";
-                    case 'router':
-                        return "<i class=\"essay-list-type zmdi zmdi-router green\"></i>";
-                    case 'subway':
-                        return "<i class=\"essay-list-type zmdi zmdi-subway orange\"></i>";
-                    case 'sun':
-                        return "<i class=\"essay-list-type zmdi zmdi-sun pink\"></i>";
-                    case 'think':
-                        return "<i class=\"essay-list-type zmdi zmdi-coffee brown\"></i>";
-                    case 'tv':
-                        return "<i class=\"essay-list-type zmdi zmdi-tv green\"></i>";
-                    case 'up':
-                        return "<i class=\"essay-list-type zmdi zmdi-trending-up red\"></i>";
-                    case 'walk':
-                        return "<i class=\"essay-list-type zmdi zmdi-walk orange\"></i>";
-                    case 'windows':
-                        return "<i class=\"essay-list-type zmdi zmdi-windows blue\"></i>";
-                    case 'x':
-                        return "<i class=\"essay-list-type zmdi zmdi-close-circle red\"></i>";
-                    case 'yi':
-                        return "<i class=\"essay-list-type zmdi zmdi-n-1-square green\"></i>";
-
-                    default:
-                        return "<i class=\"essay-list-type zmdi zmdi-widgets blue\"></i>";
+                    case 'ai':          return "<i class=\"essay-list-type zmdi zmdi-blur yellow\"></i>";
+                    case 'android':     return "<i class=\"essay-list-type zmdi zmdi-android green\"></i>";
+                    case 'apple':       return "<i class=\"essay-list-type zmdi zmdi-apple grey\"></i>";
+                    case 'bike':        return "<i class=\"essay-list-type zmdi zmdi-bike orange\"></i>";
+                    case 'book':        return "<i class=\"essay-list-type zmdi zmdi-book grey\"></i>";
+                    case 'car':         return "<i class=\"essay-list-type zmdi zmdi-car blue\"></i>";
+                    case 'car-green':   return "<i class=\"essay-list-type zmdi zmdi-car green\"></i>";
+                    case 'car-grey':    return "<i class=\"essay-list-type zmdi zmdi-car grey\"></i>";
+                    case 'car-red':     return "<i class=\"essay-list-type zmdi zmdi-car red\"></i>";
+                    case 'car-pink':    return "<i class=\"essay-list-type zmdi zmdi-car pink\"></i>";
+                    case 'car-yellow':  return "<i class=\"essay-list-type zmdi zmdi-car yellow\"></i>";
+                    case 'chip-green':  return "<i class=\"essay-list-type zmdi zmdi-memory green\"></i>";
+                    case 'chip-red':    return "<i class=\"essay-list-type zmdi zmdi-memory red\"></i>";
+                    case 'cloud':       return "<i class=\"essay-list-type zmdi zmdi-cloud\"></i>";
+                    case 'css':         return "<i class=\"essay-list-type zmdi zmdi-language-css3 brown\"></i>";
+                    case 'eat':         return "<i class=\"essay-list-type zmdi zmdi-local-pizza yellow\"></i>";
+                    case 'eye':         return "<i class=\"essay-list-type zmdi zmdi-eye brown\"></i>";
+                    case 'fit':         return "<i class=\"essay-list-type zmdi zmdi-run orange\"></i>";
+                    case 'fun':         return "<i class=\"essay-list-type zmdi zmdi-mood yellow\"></i>";
+                    case 'gear':        return "<i class=\"essay-list-type zmdi zmdi-settings grey\"></i>";
+                    case 'git':         return "<i class=\"essay-list-type zmdi zmdi-github-alt purple\"></i>";
+                    case 'global':      return "<i class=\"essay-list-type zmdi zmdi-globe green\"></i>";
+                    case 'golden_boot': return "<i class=\"essay-list-type zmdi zmdi-n-1-square yellow\"></i>";
+                    case 'google':      return "<i class=\"essay-list-type zmdi zmdi-google red\"></i>";
+                    case 'home':        return "<i class=\"essay-list-type zmdi zmdi-home pink\"></i>";
+                    case 'home-green':  return "<i class=\"essay-list-type zmdi zmdi-home green\"></i>";
+                    case 'home-yellow': return "<i class=\"essay-list-type zmdi zmdi-home yellow\"></i>";
+                    case 'hospital':    return "<i class=\"essay-list-type zmdi zmdi-hospital red\"></i>";
+                    case 'html':        return "<i class=\"essay-list-type zmdi zmdi-language-html5 yellow\"></i>";
+                    case 'idea':        return "<i class=\"essay-list-type zmdi zmdi-lamp yellow\"></i>";
+                    case 'js':          return "<i class=\"essay-list-type zmdi zmdi-language-javascript\"></i>";
+                    case 'love':        return "<i class=\"essay-list-type zmdi zmdi-favorite red\"></i>";
+                    case 'map':         return "<i class=\"essay-list-type zmdi zmdi-map green\"></i>";
+                    case 'movie':       return "<i class=\"essay-list-type zmdi zmdi-movie blue-grey\"></i>";
+                    case 'phone':       return "<i class=\"essay-list-type zmdi zmdi-smartphone-android green\"></i>";
+                    case 'quote':       return "<i class=\"essay-list-type zmdi zmdi-quote orange\"></i>";
+                    case 'router':      return "<i class=\"essay-list-type zmdi zmdi-router green\"></i>";
+                    case 'subway':      return "<i class=\"essay-list-type zmdi zmdi-subway orange\"></i>";
+                    case 'sun':         return "<i class=\"essay-list-type zmdi zmdi-sun pink\"></i>";
+                    case 'think':       return "<i class=\"essay-list-type zmdi zmdi-coffee brown\"></i>";
+                    case 'tv':          return "<i class=\"essay-list-type zmdi zmdi-tv green\"></i>";
+                    case 'up':          return "<i class=\"essay-list-type zmdi zmdi-trending-up red\"></i>";
+                    case 'walk':        return "<i class=\"essay-list-type zmdi zmdi-walk orange\"></i>";
+                    case 'windows':     return "<i class=\"essay-list-type zmdi zmdi-windows blue\"></i>";
+                    case 'x':           return "<i class=\"essay-list-type zmdi zmdi-close-circle red\"></i>";
+                    case 'yi':          return "<i class=\"essay-list-type zmdi zmdi-n-1-square green\"></i>";
+                    default:            return "<i class=\"essay-list-type zmdi zmdi-widgets blue\"></i>";
                 }
-
             },
             "link": function (column, row) {
                 return "<a class=\"btn btn-default btn-sm\" href=\"essay\\" + row.id + "\"><i class=\"zmdi zmdi-eye\"></i> 查看</a>";
