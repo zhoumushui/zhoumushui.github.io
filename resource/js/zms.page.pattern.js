@@ -176,6 +176,59 @@ setCopyRightYear();
 insertShareButton();
 //insertIEWarning();
 
+function getIconByType(type) {
+    switch (type) {
+        case 'ai':          return "<i class=\"essay-list-type zmdi zmdi-blur yellow\"></i>";
+        case 'android':     return "<i class=\"essay-list-type zmdi zmdi-android green\"></i>";
+        case 'apple':       return "<i class=\"essay-list-type zmdi zmdi-apple grey\"></i>";
+        case 'bike':        return "<i class=\"essay-list-type zmdi zmdi-bike orange\"></i>";
+        case 'book':        return "<i class=\"essay-list-type zmdi zmdi-book grey\"></i>";
+        case 'car':         return "<i class=\"essay-list-type zmdi zmdi-car blue\"></i>";
+        case 'car-green':   return "<i class=\"essay-list-type zmdi zmdi-car green\"></i>";
+        case 'car-grey':    return "<i class=\"essay-list-type zmdi zmdi-car grey\"></i>";
+        case 'car-red':     return "<i class=\"essay-list-type zmdi zmdi-car red\"></i>";
+        case 'car-pink':    return "<i class=\"essay-list-type zmdi zmdi-car pink\"></i>";
+        case 'car-yellow':  return "<i class=\"essay-list-type zmdi zmdi-car yellow\"></i>";
+        case 'chip-green':  return "<i class=\"essay-list-type zmdi zmdi-memory green\"></i>";
+        case 'chip-red':    return "<i class=\"essay-list-type zmdi zmdi-memory red\"></i>";
+        case 'cloud':       return "<i class=\"essay-list-type zmdi zmdi-cloud\"></i>";
+        case 'css':         return "<i class=\"essay-list-type zmdi zmdi-language-css3 brown\"></i>";
+        case 'eat':         return "<i class=\"essay-list-type zmdi zmdi-local-pizza yellow\"></i>";
+        case 'eye':         return "<i class=\"essay-list-type zmdi zmdi-eye brown\"></i>";
+        case 'fit':         return "<i class=\"essay-list-type zmdi zmdi-run orange\"></i>";
+        case 'fun':         return "<i class=\"essay-list-type zmdi zmdi-mood yellow\"></i>";
+        case 'gear':        return "<i class=\"essay-list-type zmdi zmdi-settings grey\"></i>";
+        case 'git':         return "<i class=\"essay-list-type zmdi zmdi-github-alt purple\"></i>";
+        case 'global':      return "<i class=\"essay-list-type zmdi zmdi-globe green\"></i>";
+        case 'golden_boot': return "<i class=\"essay-list-type zmdi zmdi-n-1-square yellow\"></i>";
+        case 'google':      return "<i class=\"essay-list-type zmdi zmdi-google red\"></i>";
+        case 'home':        return "<i class=\"essay-list-type zmdi zmdi-home pink\"></i>";
+        case 'home-green':  return "<i class=\"essay-list-type zmdi zmdi-home green\"></i>";
+        case 'home-yellow': return "<i class=\"essay-list-type zmdi zmdi-home yellow\"></i>";
+        case 'hospital':    return "<i class=\"essay-list-type zmdi zmdi-hospital red\"></i>";
+        case 'html':        return "<i class=\"essay-list-type zmdi zmdi-language-html5 yellow\"></i>";
+        case 'idea':        return "<i class=\"essay-list-type zmdi zmdi-lamp yellow\"></i>";
+        case 'js':          return "<i class=\"essay-list-type zmdi zmdi-language-javascript\"></i>";
+        case 'love':        return "<i class=\"essay-list-type zmdi zmdi-favorite red\"></i>";
+        case 'map':         return "<i class=\"essay-list-type zmdi zmdi-map green\"></i>";
+        case 'movie':       return "<i class=\"essay-list-type zmdi zmdi-movie blue-grey\"></i>";
+        case 'phone':       return "<i class=\"essay-list-type zmdi zmdi-smartphone-android green\"></i>";
+        case 'quote':       return "<i class=\"essay-list-type zmdi zmdi-quote orange\"></i>";
+        case 'router':      return "<i class=\"essay-list-type zmdi zmdi-router green\"></i>";
+        case 'subway':      return "<i class=\"essay-list-type zmdi zmdi-subway orange\"></i>";
+        case 'sun':         return "<i class=\"essay-list-type zmdi zmdi-sun pink\"></i>";
+        case 'think':       return "<i class=\"essay-list-type zmdi zmdi-coffee brown\"></i>";
+        case 'tv':          return "<i class=\"essay-list-type zmdi zmdi-tv green\"></i>";
+        case 'up':          return "<i class=\"essay-list-type zmdi zmdi-trending-up red\"></i>";
+        case 'walk':        return "<i class=\"essay-list-type zmdi zmdi-walk orange\"></i>";
+        case 'windows':     return "<i class=\"essay-list-type zmdi zmdi-windows blue\"></i>";
+        case 'x':           return "<i class=\"essay-list-type zmdi zmdi-close-circle red\"></i>";
+        case 'yi':          return "<i class=\"essay-list-type zmdi zmdi-n-1-square green\"></i>";
+        default:            return "<i class=\"essay-list-type zmdi zmdi-widgets blue\"></i>";
+    }
+
+}
+
 
 
 
