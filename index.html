@@ -143,15 +143,9 @@
                             <td>2019-10-09 18:00</td>
                         </tr>
                         <tr>
-                            <td>wrc</td>
+                            <td>car_match</td>
                             <td>car-pink</td>
-                            <td>WRC历届冠军</td>
-                            <td>2019-09-11 19:30</td>
-                        </tr>
-                        <tr>
-                            <td>24h_le_mans</td>
-                            <td>car-yellow</td>
-                            <td>勒芒24小时耐力赛</td>
+                            <td>汽车赛事冠军：</td>
                             <td>2019-09-10 18:20</td>
                         </tr>
                         <tr>
@@ -311,15 +305,20 @@
         },
         formatters: {
             "title": function (column, row) {
-                if (row.id.indexOf('c_iasi') == 0)
+                if (row.id.indexOf('c_iasi') == 0) {
                   return "<span style='font-size: 15px' ><a href='https://zhongbaoyan.gitee.io' target='_blank' > " + 
                         row.title + " </a></span > ";
                 //    return "<span style='font-size: 15px' ><a href='./car' target='_blank' > " + row.title + " </a></span > ";
-                else if (row.id.indexOf('cpu_ladder') == 0) {
+                } else if (row.id.indexOf('cpu_ladder') == 0) {
                     return "<span style='font-size: 15px' >超能网天梯图：" +
                         "<a href='https://topic.expreview.com/CPU/' target='_blank'>CPU</a> | " + 
                         "<a href='https://topic.expreview.com/GPU/' target='_blank'>显卡</a> | " + 
                         "<a href='https://topic.expreview.com/Power/' target='_blank'>电源</a></span >";
+                } else if (row.id.indexOf('car_match') == 0) {
+                    return "<span style='font-size: 15px' >汽车赛事冠军：" +
+                        "<a href='essay/f1/' target='_blank'>F1</a> | " + 
+                        "<a href='essay/wrc/' target='_blank'>WRC</a> | " + 
+                        "<a href='essay/24h_le_mans/' target='_blank'>勒芒</a>";
                 } else if (row.id.indexOf('gpu_ladder') == 0) {
                     return "<span style='font-size: 15px' ><a href='https://topic.expreview.com/GPU/' target='_blank' > " + 
                         row.title + " </a></span > ";
@@ -327,9 +326,7 @@
                     return "<span style='font-size: 15px' ><a href=\"essay\\" + 
                         row.id + "\">" + row.title + " </a></span>";
             },
-            "type": function (column, row) {
-                return getIconByType(row.type);
-            },
+            "type": function (column, row) { return getIconByType(row.type); },
             "link": function (column, row) {
                 return "<a class=\"btn btn-default btn-sm\" href=\"essay\\" + row.id + "\"><i class=\"zmdi zmdi-eye\"></i> 查看</a>";
             },

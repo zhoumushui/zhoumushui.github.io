@@ -482,7 +482,13 @@ function getLogoByMake(m, depth, size) {
     else if (m.indexOf("Delahaye") != -1) n = "Delahaye";
     else if (m.indexOf("阿斯顿马丁") != -1 || m.indexOf("Aston Martin") != -1) n = "AstonMartin";
     else if (m.indexOf("Lagonda") != -1) n = "Lagonda";
-    else if (m.indexOf("阿尔法罗密欧") != -1 || m.indexOf("Alfa Romeo") != -1) n = "AlfaRomeo";
+    else if (m.indexOf("罗密欧") != -1 || m.indexOf("Alfa Romeo") != -1) n = "AlfaRomeo";
+    else if (m.indexOf("迈凯伦") != -1 || m.indexOf("Mclaren") != -1) n = "Mclaren";
+    else if (m.indexOf("威廉姆斯") != -1 || m.indexOf("Williams") != -1) n = "Williams";
+    else if (m.indexOf("莲花") != -1 || m.indexOf("Lotus") != -1) n = "Lotus";
+    else if (m.indexOf("红牛") != -1 || m.indexOf("RedBull") != -1) n = "RedBull";
+    else if (m.indexOf("布拉汉姆") != -1 || m.indexOf("Brabham") != -1) n = "Brabham";
+    else if (m.indexOf("库珀") != -1 || m.indexOf("Cooper") != -1) n = "Cooper";
     else if (m.indexOf("雷诺") != -1 || m.indexOf("Renault") != -1) n = "RENAULT";
     else if (m.indexOf("标致") != -1 || m.indexOf("Peugeot") != -1) n = "Peugeot";
     else if (m.indexOf("雪铁龙") != -1 || m.indexOf("Citroen") != -1) n = "Citroen";
