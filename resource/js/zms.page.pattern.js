@@ -197,6 +197,7 @@ function getIconByType(type) {
         case 'eye':         return "<i class=\"essay-list-type zmdi zmdi-eye brown\"></i>";
         case 'fit':         return "<i class=\"essay-list-type zmdi zmdi-run orange\"></i>";
         case 'fun':         return "<i class=\"essay-list-type zmdi zmdi-mood yellow\"></i>";
+        case 'game':        return "<i class=\"essay-list-type zmdi zmdi-xbox green\"></i>";
         case 'gear':        return "<i class=\"essay-list-type zmdi zmdi-settings grey\"></i>";
         case 'git':         return "<i class=\"essay-list-type zmdi zmdi-github-alt purple\"></i>";
         case 'global':      return "<i class=\"essay-list-type zmdi zmdi-globe green\"></i>";
