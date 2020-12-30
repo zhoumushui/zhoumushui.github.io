@@ -28,9 +28,7 @@ function cala() {
     setCookie("riqia", $("decday").value);
 
     theform.submit();
-
 }
-
 
 function output_a(dateStr, ly, lm, ld) {
     theday = new Date(dateStr);

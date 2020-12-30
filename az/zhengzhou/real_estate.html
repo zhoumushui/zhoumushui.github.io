@@ -113,10 +113,7 @@
         <div class="navigation__header">
             <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
         </div>
-        <div class="navigation__toggles">
-            <a href="" data-toggle="tab">随</a>
-            <a href="" data-toggle="tab">笔</a>
-        </div>
+        <div class="navigation__toggles"> <a href="" data-toggle="tab">随</a> <a href="" data-toggle="tab">笔</a></div>
         <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
     </aside>
 
@@ -172,8 +169,7 @@
                 </span>
              -->
 
-            <script type="text/javascript"
-                    src="js/essay.zhengzhouhouse.array.js"></script>
+            <script type="text/javascript" src="js/essay.zhengzhouhouse.array.js"></script>
             <script type="text/javascript">
                 let map;
                 let iconStar, iconCar;
@@ -248,16 +244,11 @@
                     if (strHx.indexOf("0") >= 0) {
                         strHx = strHx.replace(/0/g, "未知");
                     } else {
-                        if (strHx.indexOf("1") >= 0)
-                            strHx = strHx.replace(/1/g, "一房 ");
-                        if (strHx.indexOf("2") >= 0)
-                            strHx = strHx.replace(/2/g, "二房 ");
-                        if (strHx.indexOf("3") >= 0)
-                            strHx = strHx.replace(/3/g, "三房 ");
-                        if (strHx.indexOf("4") >= 0)
-                            strHx = strHx.replace(/4/g, "四房 ");
-                        if (strHx.indexOf("5") >= 0)
-                            strHx = strHx.replace(/5/g, "五房 ");
+                        if (strHx.indexOf("1") >= 0) strHx = strHx.replace(/1/g, "一房 ");
+                        if (strHx.indexOf("2") >= 0) strHx = strHx.replace(/2/g, "二房 ");
+                        if (strHx.indexOf("3") >= 0) strHx = strHx.replace(/3/g, "三房 ");
+                        if (strHx.indexOf("4") >= 0) strHx = strHx.replace(/4/g, "四房 ");
+                        if (strHx.indexOf("5") >= 0) strHx = strHx.replace(/5/g, "五房 ");
                     }
                     return strHx;
                 }
