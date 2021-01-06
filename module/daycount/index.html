@@ -5,20 +5,7 @@
     <style>
         body {
             font-size: medium;
-            line-height: 1.8em;
-            /*
-            background: #f0f0f0;
-            margin: 10px;
-            */
-        }
-
-        div {
-            margin-bottom: 1em;
-            text-align: left
-        }
-
-        input {
-            height: 1.5em;
+            line-height: 2.0em;
         }
     </style>
 
@@ -28,36 +15,45 @@
 </head>
 
 <body>
-    <div style="text-align: center;"></div>
-    
-    <br>
     <input size=2 id=startYear>年<input size=1 id=startMonth>月<input size=1 id=startDate>日
     <select id="pom"><option value=1>往后</option><option value="-1">往前</option></select>
     <input size=2 id=dnum>
     <select id="dtype"><option value=1>天</option><option value=2>周</option><option value=3>月</option></select>   
-    <input type=button value=" 是 " onclick="dayadd()"><span id=result1></span>
+    <input type=button value=" 是 " onclick="dayadd()"> <span id=result1></span>
     <br>
     <input size=2 id=endYear>年<input size=1 id=endMonth>月<input size=1 id=endDate>日
     <input type=button value="相  差" onclick="countDay()"> <span id=result2></span>
 <br>
 
 <script>
-    var date = new Date();
-    setStartDay(date.getFullYear(), date.getMonth() + 1, date.getDate());
-    setEndDay(date.getFullYear(), date.getMonth() + 1, date.getDate());
-    //loadLastInput();
+    function getDateString(dobj) {
+        return dobj.getFullYear() + "年" + (1 + dobj.getMonth()) + "月" + dobj.getDate() + "日" + "星期" + cweekday(dobj.getDay());
+    }
+
+    function setStartDay(year, month, date) {
+        $("startYear").value = year;
+        $("startMonth").value = month;
+        $("startDate").value = date;
+    }
+
+    function setEndDay(year, month, date) {
+        $("endYear").value = year;
+        $("endMonth").value = month;
+        $("endDate").value = date;
+    }
 
     function dayadd() {
         var sy = parseInt($("startYear").value);
         var sm = parseInt($("startMonth").value) - 1;
         var sd = parseInt($("startDate").value);
         var day0 = new Date(sy, sm, sd);
+        var day1;
         if (day0 == "Invalid Date") {
             alert("请输入正确日期");
             return;
         }
         var dnum = parseInt($("dnum").value) * $("pom").value;
-        var dtype = $("dtype").value;
+        var dtype = parseInt($("dtype").value);
         switch(dtype) {
             case 1:
                 day1 = new Date(sy, sm, sd + dnum);
@@ -70,14 +66,35 @@
                 break;
         }
 
-        $("result1").innerHTML = getdatestring(day1);
-
+        $("result1").innerHTML = getDateString(day1);
         localStorage.setItem("dayadd", $("dnum").value+"," + $("dtype").value+"," + $("pom").value);
-        }
+    }
 
+    function countDay() {
+        y2 = $("startYear").value;
+        m2 = $("startMonth").value;
+        d2 = $("startDate").value;
+        y3 = $("endYear").value;
+        m3 = $("endMonth").value;
+        d3 = $("endDate").value;
+
+        var dateStart = new Date(y2, m2 - 1, d2);
+        var dateEnd = new Date(y3, m3 - 1, d3);
+
+        if (dateStart == "Invalid Date" || dateEnd == "Invalid Date") {
+            alert("请输入正确日期");
+            return;
+        }
+        setCookie("riqib", y3 + "-" + m3 + "-" + d3);
+
+        $("result2").innerHTML = (dateEnd - dateStart) / 86400000 + "天";
+    }
+
+    var date = new Date();
+    setStartDay(date.getFullYear(), date.getMonth() + 1, date.getDate());
+    setEndDay(date.getFullYear(), date.getMonth() + 1, date.getDate());
+    //loadLastInput();
 </script>
 
 </body>
 </html>
-
-

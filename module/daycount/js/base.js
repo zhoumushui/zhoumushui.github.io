@@ -29,10 +29,6 @@ function cweekday(wday) {
     return hzWeek[wday];
 }
 
-function getdatestring(dobj) {
-    return dobj.getFullYear() + "年" + (1 + dobj.getMonth()) + "月" + dobj.getDate() + "日" + "星期" + cweekday(dobj.getDay());
-}
-
 var nStr1 = new Array('', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二');
 var nStr2 = new Array('初', '十', '廿', '卅', '□');
 Animals = new Array("鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪");
@@ -62,7 +58,37 @@ function GetcMon(m) {
 }
 
 function getlinfo(ly, lm, ld) {
-
     return Animals[(ly + 8) % 12] + "年" + GetcMon(lm) + "月" + GetcDay(ld);
+}
+
+function loadLastInput() {
+    var temp = getCookie("riqib");
+    if (temp != "") {
+        var ss = temp.split('-');
+        $("endYear").value = ss[0];
+        $("endMonth").value = ss[1];
+        $("endDate").value = ss[2];
+    }
+    var temp = getCookie("riqia");
+    if (temp != "") {
+        $("decday").value = temp;
+    }
+}
+
+var day0;
+
+function cala() {
+    day0 = new Date($("startYear").value, $("startMonth").value - 1, $("startDate").value);
+    if (day0 == "Invalid Date") {
+        alert("请输入正确日期");
+        return;
+    }
+    setCookie("riqia", $("decday").value);
+    theform.submit();
+}
+
+function output_a(dateStr, ly, lm, ld) {
+    theday = new Date(dateStr);
+    $("result1").innerHTML = getdatestring(theday) + "&nbsp;" + getlinfo(ly, lm, ld);
 
 }
