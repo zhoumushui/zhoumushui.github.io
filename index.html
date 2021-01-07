@@ -104,15 +104,11 @@
                         <tr><td>cpu_ladder</td><td>chip-red</td><td>超能网天梯图</td><td>2018-10-29 18:00</td></tr>
                         <tr><td>consumer_reports_10_best_car</td><td>car-green</td><td>《消费者报告》年度十佳车型</td><td>2019-04-11 18:50</td></tr>
                         <tr><td>ward_10_best_engines</td><td>car-grey</td><td>沃德十佳发动机</td><td>2019-04-04 21:30</td></tr>
-                        <!--
-                        <tr><td>game_of_the_year</td><td>game</td><td>年度最佳游戏</td><td>2020-12-31 20:20</td></tr>
-                        -->
+                        <!--<tr><td>game_of_the_year</td><td>game</td><td>年度最佳游戏</td><td>2020-12-31 20:20</td></tr>-->
                         <tr><td>golden_boot</td><td>golden_boot</td><td>足球联赛金靴</td><td>2019-10-12 12:00</td></tr>
                         <tr><td>i-vista</td><td>car-red</td><td>中国智能汽车指数</td><td>2019-10-09 18:00</td></tr>
                         <tr><td>dog_intelligence</td><td>sun</td><td>犬类智商排行</td><td>2019-09-05 12:00</td></tr>
-                        <!--
-                        <tr><td>lap_times</td><td>car-red</td><td>圈速</td><td>2019-04-11 18:50</td></tr>
-                        -->
+                        <!--<tr><td>lap_times</td><td>car-red</td><td>圈速</td><td>2019-04-11 18:50</td></tr>-->
                         <tr><td>gareth_was_here</td><td>gear</td><td>机械之美</td><td>2018-03-07 16:00</td></tr>
                         <tr><td>clash_royale</td><td>fun</td><td>皇室战争卡牌</td><td>2018-01-18 15:15</td></tr>
                         <!--
@@ -120,7 +116,7 @@
                         <tr><td>sign_graph</td><td>fun</td><td>你根本不是注释！</td><td>2017-01-23 04:56</td></tr>
                         -->
                         <tr><td>screen_quality</td><td>tv</td><td>显示参数</td><td>2016-10-01 10:01</td></tr>
-                        <tr><td>android_skill</td><td>android</td><td>Android知识图谱</td><td>2014-07-07 07:07</td></tr>
+                        <!--<tr><td>android_skill</td><td>android</td><td>Android知识图谱</td><td>2014-07-07 07:07</td></tr>-->
                         </tbody>
                     </table>
                 </div>
@@ -204,10 +200,14 @@
                         return "<span style='font-size: 15px' ><a href='https://zhongbaoyan.gitee.io' target='_blank' > " + 
                         row.title + " </a></span > ";
                     case 'cpu_ladder':
-                        return "<span style='font-size: 15px' >超能网天梯图: " +
+                        return "<span style='font-size: 15px'>超能网天梯图: " +
                         "<a href='https://topic.expreview.com/CPU/' target='_blank'>CPU</a> | " + 
                         "<a href='https://topic.expreview.com/GPU/' target='_blank'>显卡</a> | " + 
                         "<a href='https://topic.expreview.com/Power/' target='_blank'>电源</a></span >";
+                    case 'screen_quality': 
+                        return "<span style='font-size: 15px'>显示: " +
+                        "<a href='essay/screen_quality/'>屏幕参数</a> | " + 
+                        "<a href='module/screentest/' target='_blank'>屏幕测试</a>";
                     // case 'car_match':
                     //     return "<span style='font-size: 15px' >汽车赛事冠军: <a href='essay/f1/' target='_blank'>F1</a> | <a href='essay/wrc/' target='_blank'>WRC</a> | <a href='essay/24h_le_mans/' target='_blank'>勒芒</a>";
                     case 'consumer_reports_10_best_car':
