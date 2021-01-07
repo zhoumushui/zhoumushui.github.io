@@ -138,6 +138,7 @@
                         <b>2017</b> <span style="color: #00a1d8">169万</span>&nbsp;
                         <b>2018</b> <span style="color: #00a1d8">253万</span>
                         <b>2019</b> <span style="color: #00a1d8">160万</span>
+                        <b>2020</b> <span style="color: #00a1d8">127万</span>
                         <div id="step-month-line" class="flot-chart"></div>
                         <div class="flot-chart-legend flot-chart-legend--line"></div>
                     </div>
@@ -149,7 +150,7 @@
                 <b>2017</b>: 720<sup style="color: #2196F3"> +274</sup><br>
                 <b>2018</b>: 800<sup style="color: #2196F3"> +80</sup><br>
                 <b>2019</b>: 1070<sup style="color: #2196F3"> +270</sup><br>
-                <b>2020</b>: <sup style="color: #2196F3"> +</sup><br>
+                <b>2020</b>: 1099<sup style="color: #2196F3"> +29</sup><br>
 
                 <br><br>
                 <h4><b><a href="../../book/" target="_blank">书籍</a></b></h4>
@@ -269,33 +270,16 @@
             [7, 7075], [8, 8357], [9, 6023], [10, 5301], [11, 4235], [12, 3522]];
         let data2019 = [[1, 5443], [2, 2685], [3, 2439], [4, 3007], [5, 5029], [6, 5959],
             [7, 6979], [8, 5030], [9, 4008], [10, 4430], [11, 4424], [12, 3037]];
+        let data2020 = [[1, 3499], [2, 2186], [3, 2061], [4, 3024], [5, 4424], [6, 2113],
+            [7, 2212], [8, 4272], [9, 3956], [10, 5703], [11, 4132], [12, 3947]];
 
         let barData = [ // Create an Array push the data + Draw the bars
-            {
-                label: '2015',
-                data: data2015,
-                color: '#009688'
-            },
-            {
-                label: '2016',
-                data: data2016,
-                color: '#2196F3'
-            },
-            {
-                label: '2017',
-                data: data2017,
-                color: '#9C27B0'
-            },
-            {
-                label: '2018',
-                data: data2018,
-                color: '#E91E63'
-            },
-            {
-                label: '2019',
-                data: data2019,
-                color: '#FFEB3B'
-            }
+            { label: '2015', data: data2015, color: '#9C27B0' },
+            { label: '2016', data: data2016, color: '#009688' },
+            { label: '2017', data: data2017, color: '#E91E63' },
+            { label: '2018', data: data2018, color: '#2196F3' },
+            { label: '2019', data: data2019, color: '#FF9800' },
+            { label: '2020', data: data2020, color: '#FFEB3B' }
         ]
         // Let's create the chart
         if ($('#step-month-line')[0]) {
@@ -310,27 +294,16 @@
                 yaxis: {
                     tickColor: '#31424b',
                     tickDecimals: 0,
-                    font: {
-                        lineHeight: 13,
-                        style: "normal",
-                        color: "#98a7ac"
-                    },
+                    font: { lineHeight: 13, style: "normal", color: "#98a7ac" },
                     shadowSize: 0
                 },
                 xaxis: {
                     tickColor: '#31424b',
                     tickDecimals: 0,
-                    font: {
-                        lineHeight: 13,
-                        style: "normal",
-                        color: "#98a7ac"
-                    },
+                    font: { lineHeight: 13, style: "normal", color: "#98a7ac" },
                     shadowSize: 0
                 },
-                legend: {
-                    container: '.flot-chart-legend--line',
-                    noColumns: 5
-                }
+                legend: { container: '.flot-chart-legend--line', noColumns: 5 }
             });
         }
         // Tooltips for Flot Charts
