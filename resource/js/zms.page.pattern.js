@@ -34,8 +34,9 @@ function insertHeader() {
         "<ul class=\"dropdown-menu pull-right\">" +
         "<li><a href=\"" + path + "\"><i class=\"zmdi zmdi-file-text\"></i><small>随笔</small></a></li>" +
         // "<li><a href=\"" + path + "app.html\"> <i class=\"zmdi zmdi-android\"></i><small>开发</small></a></li>" +
-        "<li><a href=\"" + path + "movie\"><i class=\"zmdi zmdi-movie\"></i><small>电影</small></a></li>" +
         "<li><a href=\"" + path + "book\"> <i class=\"zmdi zmdi-book\"></i><small>书籍</small></a></li>" +
+        "<li><a href=\"" + path + "movie\"><i class=\"zmdi zmdi-movie\"></i><small>电影</small></a></li>" +
+        "<li><a href=\"" + path + "game\"> <i class=\"zmdi zmdi-gamepad\"></i><small>游戏</small></a></li>" +
         "<li><a href=\"" + path + "world\"> <i class=\"zmdi zmdi-globe\"></i><small>足迹</small></a></li>" +
         //"<li><a href=\"" + path + "timeline.html\"> <i class=\"zmdi zmdi-chart\"></i><small>年鉴</small></a></li>" +
         //"<li><a href=\"" + path + "dream\"> <i class=\"zmdi zmdi-flag\"></i><small>梦想</small></a></li>" +
@@ -93,8 +94,9 @@ function insertNavigation() {
     document.getElementById("page-pattern-navigation").innerHTML = "<ul>" +
         ((htmlName == 'essay') ? liActive : liNormal) + "<a href='" + path + "'><i class='zmdi zmdi-file-text'></i><span class='nav-left'>随笔</span></a></li>" +
         // (htmlName == 'app' ? liActive : liNormal ) + "<a href='" + path + "app.html'><i class=\"zmdi zmdi-android\"></i><span class=\"nav-left\">开发</span></a></li>" +
-        (htmlName == 'movie' ? liActive : liNormal) + "<a href='" + path + "movie'><i class='zmdi zmdi-movie'></i><span class='nav-left'>电影</span></a></li>" +
         (htmlName == 'book' ? liActive : liNormal) + "<a href='" + path + "book'><i class='zmdi zmdi-book'></i><span class='nav-left'>书籍</span></a></li>" +
+        (htmlName == 'movie' ? liActive : liNormal) + "<a href='" + path + "movie'><i class='zmdi zmdi-movie'></i><span class='nav-left'>电影</span></a></li>" +
+        (htmlName == 'game' ? liActive : liNormal) + "<a href='" + path + "game'><i class='zmdi zmdi-gamepad'></i><span class='nav-left'>游戏</span></a></li>" +
         (htmlName == 'world' ? liActive : liNormal) + "<a href='" + path + "world'><i class='zmdi zmdi-globe'></i><span class='nav-left'>足迹</span></a></li>" +
         //(htmlName == 'timeline' ? liActive : liNormal) + "<a href='" + path + "az/timeline/'><i class='zmdi zmdi-chart'></i><span class='nav-left'>年鉴</span></a></li>" +
         //(htmlName == 'dream' ? liActive : liNormal) + "<a href='" + path + "dream'><i class='zmdi zmdi-flag'></i><span class='nav-left'>梦想</span></a></li>" +
@@ -158,6 +160,7 @@ function isPublic() {
     return !(str.indexOf("az") != -1 ||
         str.indexOf("movie") != -1 ||
         str.indexOf("book") != -1 ||
+        str.indexOf("game") != -1 ||
         str.indexOf("world") != -1 ||
         str.indexOf("dream") != -1 ||
         str.indexOf("profile") != -1);

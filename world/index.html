@@ -42,7 +42,7 @@
     <style type="text/css">
         #container_amap { /* 地图属性 */
             height: 100%; /*580px;*/
-            min-height: 600px;
+            min-height: 630px;
             width: 100%;
             margin: 0px;
         }
@@ -113,20 +113,13 @@
 <header id="header"></header>
 
 <section id="main">
-
     <aside id="navigation">
-        <div class="navigation__header">
-            <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
-        </div>
-        <div class="navigation__toggles">
-            <a href="" data-toggle="tab">足</a>
-            <a href="" data-toggle="tab">迹</a>
-        </div>
+        <div class="navigation__header"><i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i></div>
+        <div class="navigation__toggles"><a href="" data-toggle="tab">足</a><a href="" data-toggle="tab">迹</a></div>
         <div id="page-pattern-navigation" class="navigation__menu c-overflow"></div>
     </aside>
 
     <section id="content">
-
         <div class="card">
             <!--
             AZ Share: Material Floating Button;
@@ -340,31 +333,41 @@
                 initialMap();
                 initialColor();
 
-                drawPath(map, arrayPath_HighSchool, 1, colorBlue, "solid");
-                drawPath(map, arrayPath_Zhoukou_Dongyang, 1, colorBlue, "solid");
-                drawPath(map, arrayPath_k21_2013, 1, colorBlue, "solid");
-                drawPath(map, arrayPath_Guilin_LiuZhou, 1, colorBlue, "solid");
-                drawPath(map, arrayPath_Liuzhou_Jishou, 1, colorBlue, "solid");
-                drawPath(map, arrayPath_Guangzhou_Hengyang, 1, colorBlue, "solid");
-                drawPath(map, arrayPath_Guangzhou_Zhuhai, 1, colorBlue, "solid");
-                drawPath(map, arrayPath_Guangzhou_Shenzhen, 1, colorBlue, "solid");
-                drawPath(map, arrayPath_ShenzhenNorth_GuangzhouSouth, 1, colorBlue, "solid");
-                drawPath(map, arrayPath_Shekou_JiuZhou, 1, colorBlue, "solid");
+                let PATH_COLOR = colorBlue;
+                let PATH_WIDTH = 2;
+                let PATH_STYLE = "solid";
 
-                drawPath(map, arrayPathStep_HomeToWork1, 1, colorRed, "solid");
-                drawPath(map, arrayPathStep_HomeToWork2, 1, colorRed, "solid");
-                drawPath(map, arrayPathStep_HomeToWork3, 1, colorRed, "solid");
-                drawPath(map, arrayPathStep_HomeToWork4, 1, colorRed, "solid");
-                drawPath(map, arrayPath_HomeToWork4_2, 1, colorRed, "solid");
-                drawPath(map, arrayPath_HomeToWork5, 1, colorRed, "solid");
-                drawPath(map, arrayPathStep_20170909, 1, colorRed, "solid");
-                drawPath(map, arrayRectangleLimit, 1, colorTeal, "dashed");
+                drawPath(map, arrayPath_HighSchool, PATH_WIDTH, PATH_COLOR, PATH_STYLE);
+                drawPath(map, arrayPath_Zhoukou_Dongyang, PATH_WIDTH, PATH_COLOR, PATH_STYLE);
+                drawPath(map, arrayPath_k21_2013, PATH_WIDTH, PATH_COLOR, PATH_STYLE);
+                drawPath(map, arrayPath_Guilin_LiuZhou, PATH_WIDTH, PATH_COLOR, PATH_STYLE);
+                drawPath(map, arrayPath_Liuzhou_Jishou, PATH_WIDTH, PATH_COLOR, PATH_STYLE);
+                drawPath(map, arrayPath_Guangzhou_Hengyang, PATH_WIDTH, PATH_COLOR, PATH_STYLE);
+                drawPath(map, arrayPath_Guangzhou_Zhuhai, PATH_WIDTH, PATH_COLOR, PATH_STYLE);
+                drawPath(map, arrayPath_Guangzhou_Shenzhen, PATH_WIDTH, PATH_COLOR, PATH_STYLE);
+                drawPath(map, arrayPath_ShenzhenNorth_GuangzhouSouth, PATH_WIDTH, PATH_COLOR, PATH_STYLE);
+                drawPath(map, arrayPath_Shekou_JiuZhou, PATH_WIDTH, PATH_COLOR, PATH_STYLE);
+
+                let STEP_COLOR = colorRed;
+                let STEP_WIDTH = 2;
+                let STEP_STYLE = "solid";
+
+                drawPath(map, arrayPath_HomeToWork1_1, STEP_WIDTH, STEP_COLOR, STEP_STYLE);
+                drawPath(map, arrayPath_HomeToWork2_1, STEP_WIDTH, STEP_COLOR, STEP_STYLE);
+                drawPath(map, arrayPath_HomeToWork3_1, STEP_WIDTH, STEP_COLOR, STEP_STYLE);
+                drawPath(map, arrayPath_HomeToWork4_1, STEP_WIDTH, STEP_COLOR, STEP_STYLE);
+                drawPath(map, arrayPath_HomeToWork4_2, STEP_WIDTH, STEP_COLOR, STEP_STYLE);
+                drawPath(map, arrayPath_HomeToWork5_1, STEP_WIDTH, STEP_COLOR, STEP_STYLE);
+                drawPath(map, arrayPath_HomeToWork5_2, STEP_WIDTH, STEP_COLOR, STEP_STYLE);
+                drawPath(map, arrayPath_HomeToWork5_3, STEP_WIDTH, STEP_COLOR, STEP_STYLE);
+                drawPath(map, arrayPathStep_20170909,  STEP_WIDTH, STEP_COLOR, STEP_STYLE);
+
                 //drawPath(map, arrayTravelAroundChina, 1, colorRed, "dashed");
+                drawPath(map, arrayRectangleLimit, STEP_WIDTH,  colorTeal, "dashed");
                 countArea(map, arrayRectangleLimit);
                 drawPoint();
             </script>
         </div>
-
     </section>
 
     <link rel="stylesheet" href="../resource/css/toolbox.reset.css"> <!-- CSS reset -->
@@ -392,10 +395,7 @@
 <script src="../vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
 <![endif]-->
 
-<!-- Demo Only -->
-<!--<script src="js/misc.js"></script>-->
 <script src="../resource/js/data-table.js"></script>
-
 <script src="../resource/js/app.min.js"></script><!-- Site Functions & Actions -->
 <script async src="../resource/js/busuanzi.pure.mini.js"></script><!-- busuanzi PV&UV -->
 
@@ -447,7 +447,6 @@
 <script>var directoryDepth = 1;</script>
 <script src="../resource/js/zms.page.pattern.js"></script>
 <script>
-
     function requestFullScreen(element) {
         var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
         if (requestMethod) {

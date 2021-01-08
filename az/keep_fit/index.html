@@ -110,12 +110,8 @@
                         离总数55555还需要<span id="push-up-day-left" style="color: #00a1d8"></span> 天）
                     </h2>
                 </div>
-
-                <div class="card__body">
-                    <div id="push-up-trend-dynamic" class="flot-chart"></div>
-                </div>
+                <div class="card__body"><div id="push-up-trend-dynamic" class="flot-chart"></div></div>
             </div>
-
 
             <div class="card">
                 <div class="card__header">
@@ -125,10 +121,7 @@
                         离总数55555还需要<span id="sit-up-day-left" style="color: #009688"></span> 天）
                     </h2>
                 </div>
-
-                <div class="card__body">
-                    <div id="sit-up-trend-dynamic" class="flot-chart"></div>
-                </div>
+                <div class="card__body"><div id="sit-up-trend-dynamic" class="flot-chart"></div></div>
             </div>
 
             <div class="card">
@@ -140,852 +133,154 @@
                         离总数55555还需要<span id="rope-skip-day-left" style="color: #4CAF50"></span> 天）
                     </h2>
                 </div>
-
-                <div class="card__body">
-                    <div id="rope-skip-trend-dynamic" class="flot-chart"></div>
-                </div>
+                <div class="card__body"><div id="rope-skip-trend-dynamic" class="flot-chart"></div></div>
             </div>
 
             <div class="card">
                 <div class="card__header">
-                    <h2><b style="color: #FFEB3B">SPRING-EXPANDER</b> 合计 <span id="springExpanderTotal"
-                                                                               style="color: #FFEB3B"></span>
+                    <h2><b style="color: #FFEB3B">SPRING-EXPANDER</b> 合计 
+                        <span id="springExpanderTotal" style="color: #FFEB3B"></span>
                         （共 <span id="spring-expander-row-count" style="color: #FFEB3B"></span> 天，
                         日均 <span id="springExpanderAverage" style="color: #FFEB3B"></span>，
                         离总数55555还需要<span id="spring-expander-day-left" style="color: #FFEB3B"></span> 天）
                     </h2>
                 </div>
-
-                <div class="card__body">
-                    <div id="spring-expander-trend-dynamic" class="flot-chart"></div>
-                </div>
+                <div class="card__body"><div id="spring-expander-trend-dynamic" class="flot-chart"></div></div>
             </div>
 
             <div class="card">
                 <div class="card__header">
-                    <h2><b style="color: #f6393f">RUNNING</b> 合计 <span id="runTotal"
-                                                                       style="color: #f6393f"></span>
+                    <h2><b style="color: #f6393f">RUNNING</b> 合计 
+                        <span id="runTotal" style="color: #f6393f"></span>
                         （共 <span id="run-row-count" style="color: #f6393f"></span> 天，
                         日均 <span id="runAverage" style="color: #f6393f"></span> 分钟，
                         离总数5555还需要<span id="run-day-left" style="color: #f6393f"></span> 天）
                     </h2>
                 </div>
-
-                <div class="card__body">
-                    <div id="run-trend-dynamic" class="flot-chart"></div>
-                </div>
+                <div class="card__body"><div id="run-trend-dynamic" class="flot-chart"></div></div>
             </div>
 
             <div class="card__body"><!-- HIDE  style="display: none" -->
                 <div class="table-responsive">
                     <!-- id="data-table-basic,data-table-selection,data-table-command" -->
-                    <table id="table-fit-list" class="table table-striped"
-                           style="font-family: 'Microsoft YaHei', sans-serif">
+                    <table id="table-fit-list" class="table table-striped" style="font-family: 'Microsoft YaHei', sans-serif">
                         <thead>
                         <tr>
                             <th data-column-id="date" data-formatter="date" data-order="desc">DATE</th>
-                            <th data-column-id="number_push_up" data-formatter="number_push_up" data-type="numeric">
-                                PUSH-UP
-                            </th>
-                            <th data-column-id="number_sit_up" data-formatter="number_sit_up" data-type="numeric">
-                                SIT-UP
-                            </th>
-                            <th data-column-id="number_rope_skip" data-formatter="number_rope_skip" data-type="numeric">
-                                ROPE-SKIPPING
-                            </th>
-                            <th data-column-id="number_spring_expander" data-formatter="number_spring_expander"
-                                data-type="numeric">
-                                SPRING-EXPANDER
-                            </th>
-                            <th data-column-id="number_run" data-formatter="number_run"
-                                data-type="numeric">
-                                RUNNING
-                            </th>
+                            <th data-column-id="number_push_up" data-formatter="number_push_up" data-type="numeric">PUSH-UP</th>
+                            <th data-column-id="number_sit_up" data-formatter="number_sit_up" data-type="numeric">SIT-UP</th>
+                            <th data-column-id="number_rope_skip" data-formatter="number_rope_skip" data-type="numeric">ROPE-SKIPPING</th>
+                            <th data-column-id="number_spring_expander" data-formatter="number_spring_expander" data-type="numeric">SPRING-EXPANDER</th>
+                            <th data-column-id="number_run" data-formatter="number_run" data-type="numeric">RUNNING</th>
                             <!--<th data-column-id="id"  data-identifier="true">编号</th>-->
                             <!-- data-order="desc,asc" -->
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>2019-11-07</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>65</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-11-05</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>73</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-10-30</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>63</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-10-28</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>59</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-10-25</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>37</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-09-29</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>58</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-09-26</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>41</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-09-24</td><!-- date -->
-                            <td>20</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>1000</td><!-- rope-skipping -->
-                            <td>150</td><!-- spring-expander -->
-                            <td>5</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-09-23</td><!-- date -->
-                            <td>40</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>1000</td><!-- rope-skipping -->
-                            <td>150</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-09-22</td><!-- date -->
-                            <td>30</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>100</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-09-17</td><!-- date -->
-                            <td>20</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>200</td><!-- rope-skipping -->
-                            <td>200</td><!-- spring-expander -->
-                            <td>15</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-07-13</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>33</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-07-10</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>31</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-06-27</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>30</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-06-18</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>32</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-06-15</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>30</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-06-14</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>24</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-06-06</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>2</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-06-05</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>30</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-01-16</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>50</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-01-15</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>50</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-01-14</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>50</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-01-13</td><!-- date -->
-                            <td>20</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>50</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-01-11</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>50</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-01-10</td><!-- date -->
-                            <td>20</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>100</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-01-09</td><!-- date -->
-                            <td>20</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>150</td><!-- spring-expander -->
-                            <td>5</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-01-08</td><!-- date -->
-                            <td>50</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>100</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-01-07</td><!-- date -->
-                            <td>50</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>150</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-01-06</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>50</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2019-01-05</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>100</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2018-05-13</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>100</td><!-- spring-expander -->
-                            <td>10</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2018-05-09</td><!-- date -->
-                            <td>20</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2018-05-08</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>100</td><!-- spring-expander -->
-                            <td>20</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2018-05-07</td><!-- date -->
-                            <td>20</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2018-05-03</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>70</td><!-- spring-expander -->
-                            <td>10</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-10-10</td><!-- date -->
-                            <td>100</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>500</td><!-- rope-skipping -->
-                            <td>200</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-10-08</td><!-- date -->
-                            <td>50</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>500</td><!-- rope-skipping -->
-                            <td>100</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-10-07</td><!-- date -->
-                            <td>50</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>300</td><!-- rope-skipping -->
-                            <td>100</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-28</td><!-- date -->
-                            <td>50</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>400</td><!-- rope-skipping -->
-                            <td>100</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-27</td><!-- date -->
-                            <td>100</td><!-- push-up -->
-                            <td>100</td><!-- sit-up -->
-                            <td>500</td><!-- rope-skipping -->
-                            <td>200</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-24</td><!-- date -->
-                            <td>75</td><!-- push-up -->
-                            <td>100</td><!-- sit-up -->
-                            <td>500</td><!-- rope-skipping -->
-                            <td>200</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-23</td><!-- date -->
-                            <td>60</td><!-- push-up -->
-                            <td>100</td><!-- sit-up -->
-                            <td>300</td><!-- rope-skipping -->
-                            <td>150</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-21</td><!-- date -->
-                            <td>55</td><!-- push-up -->
-                            <td>100</td><!-- sit-up -->
-                            <td>450</td><!-- rope-skipping -->
-                            <td>150</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-20</td><!-- date -->
-                            <td>50</td><!-- push-up -->
-                            <td>100</td><!-- sit-up -->
-                            <td>350</td><!-- rope-skipping -->
-                            <td>150</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-19</td><!-- date -->
-                            <td>100</td><!-- push-up -->
-                            <td>150</td><!-- sit-up -->
-                            <td>350</td><!-- rope-skipping -->
-                            <td>150</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-18</td><!-- date -->
-                            <td>65</td><!-- push-up -->
-                            <td>180</td><!-- sit-up -->
-                            <td>180</td><!-- rope-skipping -->
-                            <td>90</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-16</td><!-- date -->
-                            <td>60</td><!-- push-up -->
-                            <td>160</td><!-- sit-up -->
-                            <td>200</td><!-- rope-skipping -->
-                            <td>90</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-15</td><!-- date -->
-                            <td>65</td><!-- push-up -->
-                            <td>180</td><!-- sit-up -->
-                            <td>100</td><!-- rope-skipping -->
-                            <td>90</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-14</td><!-- date -->
-                            <td>60</td><!-- push-up -->
-                            <td>150</td><!-- sit-up -->
-                            <td>160</td><!-- rope-skipping -->
-                            <td>50</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-13</td><!-- date -->
-                            <td>60</td><!-- push-up -->
-                            <td>125</td><!-- sit-up -->
-                            <td>200</td><!-- rope-skipping -->
-                            <td>70</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-12</td><!-- date -->
-                            <td>25</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>60</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-11</td><!-- date -->
-                            <td>55</td><!-- push-up -->
-                            <td>150</td><!-- sit-up -->
-                            <td>100</td><!-- rope-skipping -->
-                            <td>25</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-10</td><!-- date -->
-                            <td>65</td><!-- push-up -->
-                            <td>150</td><!-- sit-up -->
-                            <td>50</td><!-- rope-skipping -->
-                            <td>90</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-08</td><!-- date -->
-                            <td>65</td><!-- push-up -->
-                            <td>115</td><!-- sit-up -->
-                            <td>210</td><!-- rope-skipping -->
-                            <td>65</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-07</td><!-- date -->
-                            <td>70</td><!-- push-up -->
-                            <td>100</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-06</td><!-- date -->
-                            <td>65</td><!-- push-up -->
-                            <td>90</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-05</td><!-- date -->
-                            <td>65</td><!-- push-up -->
-                            <td>100</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-04</td><!-- date -->
-                            <td>50</td><!-- push-up -->
-                            <td>70</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-03</td><!-- date -->
-                            <td>40</td><!-- push-up -->
-                            <td>60</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-02</td><!-- date -->
-                            <td>40</td><!-- push-up -->
-                            <td>70</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-09-01</td><!-- date -->
-                            <td>40</td><!-- push-up -->
-                            <td>60</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-08-31</td><!-- date -->
-                            <td>35</td><!-- push-up -->
-                            <td>65</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-08-30</td><!-- date -->
-                            <td>40</td><!-- push-up -->
-                            <td>55</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-08-29</td><!-- date -->
-                            <td>40</td><!-- push-up -->
-                            <td>50</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-08-28</td><!-- date -->
-                            <td>32</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2017-08-27</td><!-- date -->
-                            <td>30</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <!-- OLD DATA 2015.03.07 ~ 2016.08.08 -->
-                        <tr>
-                            <td>2015-03-07 ~ 2016-08-08</td><!-- date -->
-                            <td>1885</td><!-- push-up -->
-                            <td>1380</td><!-- sit-up -->
-                            <td>700</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>0</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2014-04-22</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>12</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2014-04-21</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>12</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2014-04-20</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>3</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-09-25</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>18</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-09-02</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>17</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-29</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>23</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-26</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>24</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-23</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>23</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-22</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>21</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-20</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>9</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-19</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>23</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-18</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>46</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-16</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>30</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-13</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>20</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-11</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>30</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-10</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>4</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-09</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>49</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-07</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>35</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-06</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>19</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-05</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>22</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-04</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>63</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-06-01</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>22</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-05-31</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>36</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-05-29</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>36</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-05-27</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>20</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-05-20</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>24</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-05-17</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>28</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-05-16</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>20</td><!-- running -->
-                        </tr>
-                        <tr>
-                            <td>2013-04-28</td><!-- date -->
-                            <td>0</td><!-- push-up -->
-                            <td>0</td><!-- sit-up -->
-                            <td>0</td><!-- rope-skipping -->
-                            <td>0</td><!-- spring-expander -->
-                            <td>2</td><!-- running -->
-                        </tr>
-
+                            <!--       日期          俯卧撑    仰卧起坐    跳绳     弹簧拉力     跑步      -->
+                            <tr><td>2019-11-07</td><td>0</td><td>0</td><td>0</td><td>0</td><td>65</td></tr>
+                            <tr><td>2019-11-05</td><td>0</td><td>0</td><td>0</td><td>0</td><td>73</td></tr>
+                            <tr><td>2019-10-30</td><td>0</td><td>0</td><td>0</td><td>0</td><td>63</td></tr>
+                            <tr><td>2019-10-28</td><td>0</td><td>0</td><td>0</td><td>0</td><td>59</td></tr>
+                            <tr><td>2019-10-25</td><td>0</td><td>0</td><td>0</td><td>0</td><td>37</td></tr>
+                            <tr><td>2019-09-29</td><td>0</td><td>0</td><td>0</td><td>0</td><td>58</td></tr>
+                            <tr><td>2019-09-26</td><td>0</td><td>0</td><td>0</td><td>0</td><td>41</td></tr>
+                            <tr><td>2019-09-24</td><td>20</td><td>0</td><td>1000</td><td>150</td><td>5</td></tr>
+                            <tr><td>2019-09-23</td><td>40</td><td>0</td><td>1000</td><td>150</td><td>0</td></tr>
+                            <tr><td>2019-09-22</td><td>30</td><td>0</td><td>0</td><td>100</td><td>0</td></tr>
+                            <tr><td>2019-09-17</td><td>20</td><td>0</td><td>200</td><td>200</td><td>15</td></tr>
+                            <tr><td>2019-07-13</td><td>0</td><td>0</td><td>0</td><td>0</td><td>33</td></tr>
+                            <tr><td>2019-07-10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>31</td></tr>
+                            <tr><td>2019-06-27</td><td>0</td><td>0</td><td>0</td><td>0</td><td>30</td></tr>
+                            <tr><td>2019-06-18</td><td>0</td><td>0</td><td>0</td><td>0</td><td>32</td></tr>
+                            <tr><td>2019-06-15</td><td>0</td><td>0</td><td>0</td><td>0</td><td>30</td></tr>
+                            <tr><td>2019-06-14</td><td>0</td><td>0</td><td>0</td><td>0</td><td>24</td></tr>
+                            <tr><td>2019-06-06</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+                            <tr><td>2019-06-05</td><td>0</td><td>0</td><td>0</td><td>0</td><td>30</td></tr>
+                            <tr><td>2019-01-16</td><td>0</td><td>0</td><td>0</td><td>50</td><td>0</td></tr>
+                            <tr><td>2019-01-15</td><td>0</td><td>0</td><td>0</td><td>50</td><td>0</td></tr>
+                            <tr><td>2019-01-14</td><td>0</td><td>0</td><td>0</td><td>50</td><td>0</td></tr>
+                            <tr><td>2019-01-13</td><td>20</td><td>0</td><td>0</td><td>50</td><td>0</td></tr>
+                            <tr><td>2019-01-11</td><td>0</td><td>0</td><td>0</td><td>50</td><td>0</td></tr>
+                            <tr><td>2019-01-10</td><td>20</td><td>0</td><td>0</td><td>100</td><td>0</td></tr>
+                            <tr><td>2019-01-09</td><td>20</td><td>0</td><td>0</td><td>150</td><td>5</td></tr>
+                            <tr><td>2019-01-08</td><td>50</td><td>0</td><td>0</td><td>100</td><td>0</td></tr>
+                            <tr><td>2019-01-07</td><td>50</td><td>0</td><td>0</td><td>150</td><td>0</td></tr>
+                            <tr><td>2019-01-06</td><td>0</td><td>0</td><td>0</td><td>50</td><td>0</td></tr>
+                            <tr><td>2019-01-05</td><td>0</td><td>0</td><td>0</td><td>100</td><td>0</td></tr>
+                            <tr><td>2018-05-13</td><td>0</td><td>0</td><td>0</td><td>100</td><td>10</td></tr>
+                            <tr><td>2018-05-09</td><td>20</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>2018-05-08</td><td>0</td><td>0</td><td>0</td><td>100</td><td>20</td></tr>
+                            <tr><td>2018-05-07</td><td>20</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>2018-05-03</td><td>0</td><td>0</td><td>0</td><td>70</td><td>10</td></tr>
+                            <tr><td>2017-10-10</td><td>100</td><td>0</td><td>500</td><td>200</td><td>0</td></tr>
+                            <tr><td>2017-10-08</td><td>50</td><td>0</td><td>500</td><td>100</td><td>0</td></tr>
+                            <tr><td>2017-10-07</td><td>50</td><td>0</td><td>300</td><td>100</td><td>0</td></tr>
+                            <tr><td>2017-09-28</td><td>50</td><td>0</td><td>400</td><td>100</td><td>0</td></tr>
+                            <tr><td>2017-09-27</td><td>100</td><td>100</td><td>500</td><td>200</td><td>0</td></tr>
+                            <tr><td>2017-09-24</td><td>75</td><td>100</td><td>500</td><td>200</td><td>0</td></tr>
+                            <tr><td>2017-09-23</td><td>60</td><td>100</td><td>300</td><td>150</td><td>0</td></tr>
+                            <tr><td>2017-09-21</td><td>55</td><td>100</td><td>450</td><td>150</td><td>0</td></tr>
+                            <tr><td>2017-09-20</td><td>50</td><td>100</td><td>350</td><td>150</td><td>0</td></tr>
+                            <tr><td>2017-09-19</td><td>100</td><td>150</td><td>350</td><td>150</td><td>0</td></tr>
+                            <tr><td>2017-09-18</td><td>65</td><td>180</td><td>180</td><td>90</td><td>0</td></tr>
+                            <tr><td>2017-09-16</td><td>60</td><td>160</td><td>200</td><td>90</td><td>0</td></tr>
+                            <tr><td>2017-09-15</td><td>65</td><td>180</td><td>100</td><td>90</td><td>0</td></tr>
+                            <tr><td>2017-09-14</td><td>60</td><td>150</td><td>160</td><td>50</td><td>0</td></tr>
+                            <tr><td>2017-09-13</td><td>60</td><td>125</td><td>200</td><td>70</td><td>0</td></tr>
+                            <tr><td>2017-09-12</td><td>25</td><td>0</td><td>0</td><td>60</td><td>0</td></tr>
+                            <tr><td>2017-09-11</td><td>55</td><td>150</td><td>100</td><td>25</td><td>0</td></tr>
+                            <tr><td>2017-09-10</td><td>65</td><td>150</td><td>50</td><td>90</td><td>0</td></tr>
+                            <tr><td>2017-09-08</td><td>65</td><td>115</td><td>210</td><td>65</td><td>0</td></tr>
+                            <tr><td>2017-09-07</td><td>70</td><td>100</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>2017-09-06</td><td>65</td><td>90</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>2017-09-05</td><td>65</td><td>100</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>2017-09-04</td><td>50</td><td>70</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>2017-09-03</td><td>40</td><td>60</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>2017-09-02</td><td>40</td><td>70</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>2017-09-01</td><td>40</td><td>60</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>2017-08-31</td><td>35</td><td>65</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>2017-08-30</td><td>40</td><td>55</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>2017-08-29</td><td>40</td><td>50</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>2017-08-28</td><td>32</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>2017-08-27</td><td>30</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <!-- OLD DATA 2015.03.07 ~ 2016.08.08 -->
+                            <tr><td>2015-03-07 ~ 2016-08-08</td><td>1885</td><td>1380</td><td>700</td><td>0</td><td>0</td></tr>
+                            <tr><td>2014-04-22</td><td>0</td><td>0</td><td>0</td><td>0</td><td>12</td></tr>
+                            <tr><td>2014-04-21</td><td>0</td><td>0</td><td>0</td><td>0</td><td>12</td></tr>
+                            <tr><td>2014-04-20</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
+                            <tr><td>2013-09-25</td><td>0</td><td>0</td><td>0</td><td>0</td><td>18</td></tr>
+                            <tr><td>2013-09-02</td><td>0</td><td>0</td><td>0</td><td>0</td><td>17</td></tr>
+                            <tr><td>2013-06-29</td><td>0</td><td>0</td><td>0</td><td>0</td><td>23</td></tr>
+                            <tr><td>2013-06-26</td><td>0</td><td>0</td><td>0</td><td>0</td><td>24</td></tr>
+                            <tr><td>2013-06-23</td><td>0</td><td>0</td><td>0</td><td>0</td><td>23</td></tr>
+                            <tr><td>2013-06-22</td><td>0</td><td>0</td><td>0</td><td>0</td><td>21</td></tr>
+                            <tr><td>2013-06-20</td><td>0</td><td>0</td><td>0</td><td>0</td><td>9</td></tr>
+                            <tr><td>2013-06-19</td><td>0</td><td>0</td><td>0</td><td>0</td><td>23</td></tr>
+                            <tr><td>2013-06-18</td><td>0</td><td>0</td><td>0</td><td>0</td><td>46</td></tr>
+                            <tr><td>2013-06-16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>30</td></tr>
+                            <tr><td>2013-06-13</td><td>0</td><td>0</td><td>0</td><td>0</td><td>20</td></tr>
+                            <tr><td>2013-06-11</td><td>0</td><td>0</td><td>0</td><td>0</td><td>30</td></tr>
+                            <tr><td>2013-06-10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4</td></tr>
+                            <tr><td>2013-06-09</td><td>0</td><td>0</td><td>0</td><td>0</td><td>49</td></tr>
+                            <tr><td>2013-06-07</td><td>0</td><td>0</td><td>0</td><td>0</td><td>35</td></tr>
+                            <tr><td>2013-06-06</td><td>0</td><td>0</td><td>0</td><td>0</td><td>19</td></tr>
+                            <tr><td>2013-06-05</td><td>0</td><td>0</td><td>0</td><td>0</td><td>22</td></tr>
+                            <tr><td>2013-06-04</td><td>0</td><td>0</td><td>0</td><td>0</td><td>63</td></tr>
+                            <tr><td>2013-06-01</td><td>0</td><td>0</td><td>0</td><td>0</td><td>22</td></tr>
+                            <tr><td>2013-05-31</td><td>0</td><td>0</td><td>0</td><td>0</td><td>36</td></tr>
+                            <tr><td>2013-05-29</td><td>0</td><td>0</td><td>0</td><td>0</td><td>36</td></tr>
+                            <tr><td>2013-05-27</td><td>0</td><td>0</td><td>0</td><td>0</td><td>20</td></tr>
+                            <tr><td>2013-05-20</td><td>0</td><td>0</td><td>0</td><td>0</td><td>24</td></tr>
+                            <tr><td>2013-05-17</td><td>0</td><td>0</td><td>0</td><td>0</td><td>28</td></tr>
+                            <tr><td>2013-05-16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>20</td></tr>
+                            <tr><td>2013-04-28</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-
         </div>
-
-
     </section>
-
     <link rel="stylesheet" href="../../resource/css/toolbox.reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="../../resource/css/toolbox.style.css"> <!-- Resource style -->
     <footer id="footer" class="font-yahei"></footer>
@@ -997,24 +292,16 @@
 <![endif]-->
 
 <!-- Javascript Libraries -->
-
-<!-- jQuery -->
-<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
-
-<!-- Go Up -->
-<script type="text/javascript" src="../../resource/js/zms.goup.js"></script>
-
-<!-- Bootstrap -->
-<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script><!-- jQuery -->
+<script type="text/javascript" src="../../resource/js/zms.goup.js"></script><!-- Go Up -->
+<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script><!-- Bootstrap -->
 
 <!-- Malihu ScrollBar -->
 <script src="../../vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 
 <!-- Bootstrap Notify -->
 <script src="../../vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
-
-<!-- Bootgrid -->
-<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+<script src="../../vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script><!-- Bootgrid -->
 
 <!-- Placeholder for IE9 -->
 <!--[if IE 9 ]>
@@ -1022,16 +309,11 @@
 <![endif]-->
 
 <script src="../../resource/js/data-table.js"></script>
-
-<!-- Site Functions & Actions -->
 <script src="../../resource/js/app.min.js"></script>
-
-<!-- busuanzi PV&UV -->
-<script async src="../../resource/js/busuanzi.pure.mini.js"></script>
+<script async src="../../resource/js/busuanzi.pure.mini.js"></script><!-- busuanzi PV&UV -->
 
 <!-- Nest Follow Mouse Background -->
-<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50"
-        src="../../resource/js/canvas-nest.min.js"></script>
+<script type="text/javascript" color="255,255,255" opacity='1.0' zIndex="-1" count="50" src="../../resource/js/canvas-nest.min.js"></script>
 
 <script src="../../resource/js/essay.material.floating.button.js"></script>
 <script type="text/javascript">
@@ -1212,10 +494,8 @@
     };
     calculateFit(document.getElementById('table-fit-list'));
 
-
     'use strict';
     $(document).ready(function () {
-
         /* Update chart */
         function update() {
             plotPushUp.setData([dataArrayPushUp]); // plot.setData([getRandomData()]);
@@ -1241,11 +521,7 @@
             let plotPushUp = $.plot("#push-up-trend-dynamic", [dataArrayPushUp], {
                 series: {
                     label: " 俯卧撑",
-                    lines: {
-                        show: true,
-                        lineWidth: 0.2,
-                        fill: 0.8
-                    },
+                    lines: { show: true, lineWidth: 0.2,  fill: 0.8 },
                     color: '#00BCD4', // '#009688', //'#2196F3',//'#edeff0',
                     shadowSize: 0
                 },
@@ -1254,22 +530,14 @@
                     max: 100, // AZ:axis-Y
                     tickColor: '#31424b',
                     show: true,
-                    font: {
-                        lineHeight: 13,
-                        style: "normal",
-                        color: "#98a7ac"
-                    },
+                    font: { lineHeight: 13, style: "normal", color: "#98a7ac" },
                     position: 'left',
                     shadowSize: 0
                 },
                 xaxis: {
                     tickColor: '#31424b',
                     show: true,
-                    font: {
-                        lineHeight: 10,
-                        style: "normal",
-                        color: "#98a7ac"
-                    },
+                    font: { lineHeight: 10, style: "normal", color: "#98a7ac" },
                     shadowSize: 0,
                     min: 0,
                     max: dataArrayPushUp.length - 1 // AZ:axis-X
@@ -1289,11 +557,7 @@
             let plotSitUp = $.plot("#sit-up-trend-dynamic", [dataArraySitUp], {
                 series: {
                     label: " 仰卧起坐",
-                    lines: {
-                        show: true,
-                        lineWidth: 0.2,
-                        fill: 0.8
-                    },
+                    lines: { show: true, lineWidth: 0.2, fill: 0.8 },
                     color: '#009688', // '#009688', //'#2196F3',//'#edeff0',
                     shadowSize: 0
                 },
@@ -1302,22 +566,14 @@
                     max: 200, // AZ:axis-Y
                     tickColor: '#31424b',
                     show: true,
-                    font: {
-                        lineHeight: 13,
-                        style: "normal",
-                        color: "#98a7ac"
-                    },
+                    font: { lineHeight: 13, style: "normal", color: "#98a7ac" },
                     position: 'left',
                     shadowSize: 0
                 },
                 xaxis: {
                     tickColor: '#31424b',
                     show: true,
-                    font: {
-                        lineHeight: 10,
-                        style: "normal",
-                        color: "#98a7ac"
-                    },
+                    font: { lineHeight: 10, style: "normal", color: "#98a7ac" },
                     shadowSize: 0,
                     min: 0,
                     max: dataArraySitUp.length - 1 // AZ:axis-X
@@ -1337,11 +593,7 @@
             let plotRopeSkip = $.plot("#rope-skip-trend-dynamic", [dataArrayRopeSkip], {
                 series: {
                     label: " 跳绳",
-                    lines: {
-                        show: true,
-                        lineWidth: 0.2,
-                        fill: 0.8
-                    },
+                    lines: { show: true, lineWidth: 0.2, fill: 0.8 },
                     color: '#4CAF50', // '#009688', //'#2196F3',//'#edeff0',
                     shadowSize: 0
                 },
@@ -1350,22 +602,14 @@
                     max: 1000, // AZ:axis-Y
                     tickColor: '#31424b',
                     show: true,
-                    font: {
-                        lineHeight: 13,
-                        style: "normal",
-                        color: "#98a7ac"
-                    },
+                    font: { lineHeight: 13, style: "normal", color: "#98a7ac" },
                     position: 'left',
                     shadowSize: 0
                 },
                 xaxis: {
                     tickColor: '#31424b',
                     show: true,
-                    font: {
-                        lineHeight: 10,
-                        style: "normal",
-                        color: "#98a7ac"
-                    },
+                    font: { lineHeight: 10, style: "normal", color: "#98a7ac" },
                     shadowSize: 0,
                     min: 0,
                     max: dataArrayRopeSkip.length - 1 // AZ:axis-X
@@ -1385,11 +629,7 @@
             let plotSpringExpander = $.plot("#spring-expander-trend-dynamic", [dataArraySpringExpander], {
                 series: {
                     label: " 弹簧拉力器",
-                    lines: {
-                        show: true,
-                        lineWidth: 0.2,
-                        fill: 0.8
-                    },
+                    lines: { show: true, lineWidth: 0.2, fill: 0.8 },
                     color: '#FFEB3B', // '#009688', //'#2196F3',//'#edeff0',
                     shadowSize: 0
                 },
@@ -1398,22 +638,14 @@
                     max: 200, // AZ:axis-Y
                     tickColor: '#31424b',
                     show: true,
-                    font: {
-                        lineHeight: 13,
-                        style: "normal",
-                        color: "#98a7ac"
-                    },
+                    font: { lineHeight: 13, style: "normal", color: "#98a7ac" },
                     position: 'left',
                     shadowSize: 0
                 },
                 xaxis: {
                     tickColor: '#31424b',
                     show: true,
-                    font: {
-                        lineHeight: 10,
-                        style: "normal",
-                        color: "#98a7ac"
-                    },
+                    font: { lineHeight: 10, style: "normal", color: "#98a7ac" },
                     shadowSize: 0,
                     min: 0,
                     max: dataArraySpringExpander.length - 1 // AZ:axis-X
@@ -1433,11 +665,7 @@
             let plotRun = $.plot("#run-trend-dynamic", [dataArrayRun], {
                 series: {
                     label: " 跑步",
-                    lines: {
-                        show: true,
-                        lineWidth: 0.2,
-                        fill: 0.8
-                    },
+                    lines: { show: true, lineWidth: 0.2, fill: 0.8 },
                     color: '#f6393f', // '#009688', //'#2196F3',//'#edeff0',
                     shadowSize: 0
                 },
@@ -1446,22 +674,14 @@
                     max: 150, // AZ:axis-Y
                     tickColor: '#31424b',
                     show: true,
-                    font: {
-                        lineHeight: 13,
-                        style: "normal",
-                        color: "#98a7ac"
-                    },
+                    font: { lineHeight: 13, style: "normal", color: "#98a7ac" },
                     position: 'left',
                     shadowSize: 0
                 },
                 xaxis: {
                     tickColor: '#31424b',
                     show: true,
-                    font: {
-                        lineHeight: 10,
-                        style: "normal",
-                        color: "#98a7ac"
-                    },
+                    font: { lineHeight: 10, style: "normal", color: "#98a7ac" },
                     shadowSize: 0,
                     min: 0,
                     max: dataArrayRun.length - 1 // AZ:axis-X
